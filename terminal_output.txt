@@ -1,0 +1,1000 @@
+  983  ls
+  984  md5sum *
+  985  rm Number11.wav
+  986  ls
+  987  cd ~/Downloads/aaaaaaaa51919519 && i=1; for f in $(ls -v *.wav); do mv "$f" $(printf "Number%02d.wav" $i); ((i++)); done
+  988  md5sum *
+  989  cd ~/Downloads/aaaaaaaa51919519 && i=1; for f in $(ls -v *.wav); do mv "$f" "temp_$(printf "%02d.wav" $i)"; ((i++)); done && i=1; for f in $(ls -v temp_*.wav); do mv "$f" "Number$(printf "%02d.wav" $i)"; ((i++)); done
+  990  ls
+  991  cd ~/Downloads/888888845645633 && i=1; for f in $(ls -v *.wav); do mv "$f" "temp_$(printf "%02d.wav" $i)"; ((i++)); done && i=1; for f in $(ls -v temp_*.wav); do mv "$f" "Number$(printf "%02d.wav" $i)"; ((i++)); done
+  992  cd ~/Downloads/888888845645633 && i=1; find . -maxdepth 1 -name '*.wav' -print0 | sort -z | while IFS= read -r -d '' f; do mv "$f" "temp_$(printf "%02d.wav" $i)"; ((i++)); done && i=1; for f in $(ls -v temp_*.wav); do mv "$f" "Number$(printf "%02d.wav" $i)"; ((i++)); done
+  993  ls
+  994  m5sum *
+  995  md5sum *
+  996  cd ~/Downloads/999999424242424 && i=1; for f in ./*.wav; do mv -- "$f" "temp_$(printf "%02d.wav" "$i")"; ((i++)); done && i=1; for f in ./temp_*.wav; do mv -- "$f" "Number$(printf "%02d.wav" "$i")"; ((i++)); done
+  997  ls
+  998  md5sum *
+  999  cd ~/Downloads/900067865765 && i=1; for f in *.wav; do mv -n "$f" "temp_$(printf "%02d.wav" $i)"; ((i++)); done && i=1; for f in temp_*.wav; do mv -n "$f" "Number$(printf "%02d.wav" $i)"; ((i++)); done
+ 1000  ls
+ 1001  md5sum *
+ 1002  cd ~/Downloads/112200000000121 && i=1; for f in *.wav; do mv "$f" "temp_$(printf "%02d.wav" $i)"; ((i++)); done && i=1; for f in temp_*.wav; do mv "$f" "Number$(printf "%02d.wav" $i)"; ((i++)); done
+ 1003  ls
+ 1004  md5sum *
+ 1005  cd ~/Downloads/44000000000000414 && i=1; for f in *.wav; do mv "$f" "temp_$(printf "%02d.wav" $i)"; ((i++)); done && i=1; for f in temp_*.wav; do mv "$f" "Number$(printf "%02d.wav" $i)"; ((i++)); done
+ 1006  ls
+ 1007  md5sum *
+ 1008  cd ~/Downloads/820000000000000151 && i=1; for f in *.wav; do mv "$f" "temp_$(printf "%02d.wav" $i)"; ((i++)); done && i=1; for f in temp_*.wav; do mv "$f" "Number$(printf "%02d.wav" $i)"; ((i++)); done
+ 1009  ls
+ 1010  md5sum *
+ 1011  cd /home/onojk123/Downloads/2121210000000111112222 && a=1; for f in *.wav; do mv -n "$f" "$(printf 'Number%02d
+ 1012  cd /home/onojk123/Downloads/2121210000000111112222 && a=1; for f in *.wav;
+ 1013  cd /home/onojk123/Downloads/2121210000000111112222 && a=1; for f in *.wav; do mv -n "$f" "$(printf 'Number%02d.wav' $a)"; ((a++)); done
+ 1014  ls
+ 1015  md5sum *
+ 1016  cd /home/onojk123/Downloads/88833333323002 && ls -v *.wav | nl -n rn -w2 | while read n f; do mv -i "$f" "Number$(printf '%02d' "$n").wav"; done
+ 1017  ls
+ 1018  md5sum *
+ 1019  cd /home/onojk123/Downloads/44433333322220001 && ls -v *.wav | nl -n rn -w2 | while read n f; do mv -f -- "$f" "Number$(printf '%02d' "$n").wav"; done
+ 1020  ls
+ 1021  md5sum *
+ 1022  cd /home/onojk123/Downloads && ls -v *.wav | grep -v '^Number[0-9][0-9]\.wav$' | nl -n rz -w2 | while read n f; do mv -f "$f" "Number$(printf '%02d'
+ 1023  cd /home/onojk123/Downloads/4565000000000000001 && ls -v Number*.wav | nl -n rz -w2 | while read -r n f; do mv -f -- "$f" "Number$(printf '%02d' "$n").wav"; done
+ 1024  ls
+ 1025  cd /home/onojk123/Downloads/4565000000000000001 && ls -v *.wav | nl -n rz -w2 | while read -r n f; do mv -f -- "$f" "Number$(printf '%02d' "$n").wav"; done
+ 1026  ls
+ 1027  md5sum *
+ 1028  cd '/home/onojk123/Downloads/7777777000000000777777777'
+ 1029  i=1; for f in *.wav; do mv -v "$f" "$(printf 'Number%02d.wav' $i)"; ((i++)); done
+ 1030  ls
+ 1031  md5sum *
+ 1032  cd ~/Downloads
+ 1033  i=1; for f in *.wav; do mv -v "$f" "$(printf 'Number%02d.wav' $i)"; ((i++)); done
+ 1034  cd '/home/onojk123/Downloads/362111111111000001' 
+ 1035  ls
+ 1036  md5sum *
+ 1037  cd "/home/onojk123/Downloads/22220202020000000000000002" && i=1; for f in "Golden Mean.wav" "Golden Mean Fools.wav" "The Fool and the Wise.wav" "The Fool and the Wise(1).wav" "The Fool Doth Think.wav" "The Fool Doth Think(1).wav" "The Fool Doth Think(2).wav" "The Fool Knows.wav" "The Fool Knows(1).wav" "The Fool Knows Best.wav" "The Fool Knows Himself.wav" "The Fool's Golden Mean.wav" "The Fool's Reflection.wav" "The Fool's Reflection(1).wav" "The Fool's Riddle.wav" "The Wise and the Fool.wav" "The Wise and the Fool(1).wav" "The Wise Fool.wav" "The Wise Man Knows.wav" "The Wise Man Knows(1).wav"; do mv -- "$f" "$(printf "Number%02d.wav" "$i")"; ((i++)); done
+ 1038  ls
+ 1039  cd /home/onojk123/Downloads/33999990000000000077777 && i=1; for f in *.wav; do mv -n -- "$f" "$(printf 'Number%02d.wav' "$i")"; ((i++)); done
+ 1040  ls
+ 1041  md5sum *
+ 1042  cd ~
+ 1043  sudo apt install poppler-utils tesseract-ocr ghostscript
+ 1044  nano sort_and_merge_by_ocr_date.sh
+ 1045  chmod +x sort_and_merge_by_ocr_date.sh
+ 1046  ./sort_and_merge_by_ocr_date.sh 
+ 1047  mkdir ~/payment_receipts
+ 1048  mv ~/Downloads/payment_receipts/payment\ receipts/*.pdf ~/payment_receipts/
+ 1049  /home/onojk123/Downloads/payment receipts/Gmail - Application Payment Confirmation for Megan Kendall for ARBORS AT CALIFORNIA OAKS-MURRIETA, CA9.pdf
+ 1050  /home/onojk123/Downloads/payment receipts/Gmail - Payment Confirmation for Megan Kendall for Arbors at California Oaks.pdf
+ 1051  /home/onojk123/Downloads/payment receipts/Gmail - Payment Confirmation for Megan Kendall for Arbors at California Oaks3.pdf
+ 1052  /home/onojk123/Downloads/payment receipts/Gmail - Payment Confirmation for Megan Kendall for Arbors at California Oaks4.pdf
+ 1053  /home/onojk123/Downloads/payment receipts/Gmail - Payment Confirmation for Megan Kendall for Arbors at California Oaks5.pdf
+ 1054  /home/onojk123/Downloads/payment receipts/Gmail - Payment Confirmation for Megan Kendall for Arbors at California Oaks_2.pdf
+ 1055  /home/onojk123/Downloads/payment receipts/Gmail - Payment Confirmation for Megan Kendall for ARBORS AT CALIFORNIA OAKS-MURRIETA, CA6.pdf
+ 1056  /home/onojk123/Downloads/payment receipts/Gmail - Payment Confirmation for Megan Kendall for ARBORS AT CALIFORNIA OAKS-MURRIETA, CA7.pdf
+ 1057  /home/onojk123/Downloads/payment receipts/Gmail - Payment Confirmation for Megan Kendall for ARBORS AT CALIFORNIA OAKS-MURRIETA, CA8.pdf
+ 1058  /home/onojk123/Downloads/payment receipts/Gmail - Payment Confirmation for Megan Kendall for ARBORS AT CALIFORNIA OAKS-MURRIETA, CA10.pdf
+ 1059  /home/onojk123/Downloads/payment receipts/Gmail - Payment Confirmation for Megan Kendall for ARBORS AT CALIFORNIA OAKS-MURRIETA, CA11.pdf
+ 1060  /home/onojk123/Downloads/payment receipts/Gmail - Payment Confirmation for Megan Kendall for ARBORS AT CALIFORNIA OAKS-MURRIETA, CA12.pdf
+ 1061  /home/onojk123/Downloads/payment receipts/Gmail - Payment Confirmation for Megan Kendall for ARBORS AT CALIFORNIA OAKS-MURRIETA, CA13.pdf
+ 1062  /home/onojk123/Downloads/payment receipts/Gmail - Payment Confirmation for Megan Kendall for ARBORS AT CALIFORNIA OAKS-MURRIETA, CA14.pdf
+ 1063  /home/onojk123/Downloads/payment receipts/Gmail - Payment Confirmation for Megan Kendall for ARBORS AT CALIFORNIA OAKS-MURRIETA, CA15.pdf
+ 1064  /home/onojk123/Downloads/payment receipts/Gmail - Payment Confirmation for Megan Kendall for ARBORS AT CALIFORNIA OAKS-MURRIETA, CA16.pdf
+ 1065  /home/onojk123/Downloads/payment receipts/Gmail - Payment Confirmation for Megan Kendall for ARBORS AT CALIFORNIA OAKS-MURRIETA, CA17.pdf
+ 1066  /home/onojk123/Downloads/payment receipts/Gmail - Payment Confirmation for Megan Kendall for ARBORS AT CALIFORNIA OAKS-MURRIETA, CA18.pdf
+ 1067  /home/onojk123/Downloads/payment receipts/Gmail - Payment Confirmation for Megan Kendall for ARBORS AT CALIFORNIA OAKS-MURRIETA, CA19.pdf
+ 1068  /home/onojk123/Downloads/payment receipts/Gmail - Payment Confirmation for Megan Kendall for ARBORS AT CALIFORNIA OAKS-MURRIETA, CA20.pdf
+ 1069  /home/onojk123/Downloads/payment receipts/Gmail - Payment Confirmation for Megan Kendall for ARBORS AT CALIFORNIA OAKS-MURRIETA, CA21.pdf
+ 1070  /home/onojk123/Downloads/payment receipts/Gmail - Payment Confirmation for Megan Kendall for ARBORS AT CALIFORNIA OAKS-MURRIETA, CA22.pdf
+ 1071  /home/onojk123/Downloads/payment receipts/Gmail - Payment Confirmation for Megan Kendall for ARBORS AT CALIFORNIA OAKS-MURRIETA, CA23.pdf
+ 1072  /home/onojk123/Downloads/payment receipts/Gmail - Payment Confirmation for Megan Kendall for ARBORS AT CALIFORNIA OAKS-MURRIETA, CA24.pdf
+ 1073  /home/onojk123/Downloads/payment receipts/Gmail - Payment Confirmation for Megan Kendall for ARBORS AT CALIFORNIA OAKS-MURRIETA, CA25.pdf
+ 1074  /home/onojk123/Downloads/payment receipts/Gmail - Payment Confirmation for Megan Kendall for ARBORS AT CALIFORNIA OAKS-MURRIETA, CA26.pdf
+ 1075  /home/onojk123/Downloads/payment receipts/Gmail - Payment Confirmation for Megan Kendall for ARBORS AT CALIFORNIA OAKS-MURRIETA, CA27.pdf
+ 1076  /home/onojk123/Downloads/payment receipts/Gmail - Payment Confirmation for Megan Kendall for ARBORS AT CALIFORNIA OAKS-MURRIETA, CA28.pdf
+ 1077  /home/onojk123/Downloads/payment receipts/Gmail - Payment Confirmation for Megan Kendall for ARBORS AT CALIFORNIA OAKS-MURRIETA, CA29.pdf
+ 1078  /home/onojk123/Downloads/payment receipts/Gmail - Payment Confirmation for Megan Kendall for ARBORS AT CALIFORNIA OAKS-MURRIETA, CA30.pdf
+ 1079  nano sort_and_merge_by_ocr_date.sh
+ 1080  ./sort_and_merge_by_ocr_date.sh 
+ 1081  nano sort_and_merge_by_ocr_date.sh
+ 1082  ./sort_and_merge_by_ocr_date.sh 
+ 1083  sudo apt install poppler-utils
+ 1084  nano sort_and_merge_by_ocr_date.sh
+ 1085  ./sort_and_merge_by_ocr_date.sh 
+ 1086  nano sort_and_merge_by_ocr_date.sh
+ 1087  ./sort_and_merge_by_ocr_date.sh 
+ 1088  cd /home/onojk123/Downloads/5555555511111110000001 && a=1; for f in *.wav; do mv -- "$f" "$(printf 'Number%02d.wav' "$a")"; ((a++)); done
+ 1089  ls
+ 1090  md5sum *
+ 1091  i=1; for f in /home/onojk123/Downloads/22222222010201021202/*.wav; do mv -n "$f" "/home/onojk123/Downloads/22222222010201021202/Number$(printf "%02d" $i).wav"; ((i++)); done
+ 1092  cd /home/onojk123/Downloads/22222222010201021202
+ 1093  ls
+ 1094  md5sum *
+ 1095  cd '/home/onojk123/Downloads/77777777777734534' && i=1; for f in *.wav; do mv -- "$f" "$(printf 'Number%02d.wav' "$i")"; ((i++)); done
+ 1096  ls
+ 1097  md5sum*
+ 1098  md5sum *
+ 1099  i=1; for f in /home/onojk123/Downloads/99999999999900000055555555555/*.wav; do mv "$f" "/home/onojk123/Downloads/99999999999900000055555555555/Number$(printf '%02d' $i).wav"; ((i++)); done
+ 1100  cd '/home/onojk123/Downloads/99999999999900000055555555555' 
+ 1101  ls
+ 1102  md5sum *
+ 1103  cd /home/onojk123/Downloads/5555555500000000000111 && a=1; for f in *.wav; do mv -v -- "$f" "$(printf 'Number%02d.wav' "$a")"; ((a++)); done
+ 1104  ls
+ 1105  md5sum *
+ 1106  cd /home/onojk123/Downloads/33333424511111111111 && a=1; for f in *.wav; do mv -- "$f" "Number$(printf "%02d" $a).wav"; ((a++)); done
+ 1107  ls
+ 1108  sudo apt get upgrade
+ 1109  sudo apt upgrade
+ 1110  sudo apt update
+ 1111  sudo apt upgrade
+ 1112  htop
+ 1113  cd ~/kaleido_render_pipeline/media/
+ 1114  ls
+ 1115  ls -lh
+ 1116  find ~/kaleido_render_pipeline -iname "qbist_distorted_grid.png"
+ 1117  cd ~/Downloads/8000000005505504111 && a=1; for f in *.wav; do mv -n "$f" "$(printf 'Number%02d.wav' "$a")"; a=$((a+1)); done
+ 1118  ls
+ 1119  md5sum *
+ 1120  cd ~
+ 1121  cd '/home/onojk123/Downloads/222222222222222222' 
+ 1122  ls
+ 1123  nano jpglistprops.py
+ 1124  python3 jpglistprops.py
+ 1125  pip install pillow numpy
+ 1126  # 1. Create a virtual environment in your folder
+ 1127  python3 -m venv mandala_env
+ 1128  # 2. Activate it
+ 1129  source mandala_env/bin/activate
+ 1130  # 3. Now install packages normally
+ 1131  pip install pillow numpy
+ 1132  # 4. Run the script (inside the venv)
+ 1133  python3 mandala_mosaic.py
+ 1134  sudo apt install pipx
+ 1135  pipx ensurepath
+ 1136  nano mandala_mosaic.py
+ 1137  python3 mandala_mosaic.py
+ 1138  nano mandala_mosaic.py
+ 1139  python3 mandala_mosaic.py
+ 1140  nano mandala_mosaic.py
+ 1141  python3 mandala_mosaic.py
+ 1142  nano mandala_mosaic.py
+ 1143  python3 mandala_mosaic.py
+ 1144  nano mandala_mosaic.py
+ 1145  python3 mandala_mosaic.py
+ 1146  nano mandala_mosaic.py
+ 1147  python3 mandala_mosaic.py
+ 1148  nano build_mandala_from_triangles.py
+ 1149  python3 build_mandala_from_triangles.py
+ 1150  nano build_mandala_from_triangles.py
+ 1151  python3 build_mandala_from_triangles.py
+ 1152  nano build_mandala_from_triangles.py
+ 1153  python3 build_mandala_from_triangles.py
+ 1154  nano build_mandala_from_triangles.py
+ 1155  python3 build_mandala_from_triangles.py
+ 1156  nano build_mandala_from_triangles.py
+ 1157  python3 build_mandala_from_triangles.py
+ 1158  nano build_mandala_from_triangles.py
+ 1159  python3 build_mandala_from_triangles.py
+ 1160  python3 8_kaelidoscopes_auto.py
+ 1161  nano 8_kaelidoscopes_auto.py
+ 1162  python3 8_kaelidoscopes_auto.py
+ 1163  nano build_mandala_from_triangles.py
+ 1164  gedit build_mandala_from_triangles.py
+ 1165  nano build_mandala_from_triangles.py
+ 1166  python3 build_mandala_from_triangles.py
+ 1167  nano mono_sample_kaleidoscope.py
+ 1168  python3 mono_sample_kaleidoscope.py 
+ 1169  nano mandala_grid_20x20.py
+ 1170  python3 mandala_grid_20x20.py 
+ 1171  ls -lh
+ 1172  nano mandala_grid_20x20.py
+ 1173  ls -lh
+ 1174  python3 mandala_grid_20x20.py
+ 1175  # 1. Make folders
+ 1176  mkdir -p scripts examples layers source_images project
+ 1177  # 2. Move files
+ 1178  mv *_sample.py *.py scripts/
+ 1179  mv final_*.jpg kaleidoscope_mandala.jpg mandala_*.png *.jpg examples/
+ 1180  mv mirrored_triangle_*.png mandala_0*.png layers/
+ 1181  mv 5392*.jpg source_images/
+ 1182  mv *.xcf project/
+ 1183  # 3. Optional: exclude virtualenv from git
+ 1184  echo "mandala_env/" >> .gitignore
+ 1185  # 4. Create requirements file
+ 1186  pip freeze > requirements.txt
+ 1187  # 5. Add & commit
+ 1188  git add scripts examples layers source_images project requirements.txt .gitignore
+ 1189  git commit -m "Add all scripts, outputs, source images, and environment config"
+ 1190  git push origin main
+ 1191  cd ~/Downloads/222222222222222222
+ 1192  git init
+ 1193  git remote add origin https://github.com/onojk/kaleidoscope-generator.git
+ 1194  git branch -M main
+ 1195  git remote -v
+ 1196  git add .
+ 1197  git commit -m "Initial commit: structured kaleidoscope generator with scripts, assets, and environment"
+ 1198  git add .
+ 1199  git commit -m "Initial commit: structured kaleidoscope generator with scripts, assets, and environment"
+ 1200  git push -u origin main
+ 1201  git pull origin main --allow-unrelated-histories
+ 1202  git pull origin main --no-rebase
+ 1203  git pull origin main --allow-unrelated-histories
+ 1204  git pull origin main --no-rebase --allow-unrelated-histories
+ 1205  (mandala_env) onojk123@onojk123-Meerkat:~/Downloads/222222222222222222$ git pull origin main --no-rebase --allow-unrelated-histories
+ 1206  From https://github.com/onojk/kaleidoscope-generator
+ 1207  Merge made by the 'ort' strategy.
+ 1208  (mandala_env) onojk123@onojk123-Meerkat:~/Downloads/222222222222222222$ 
+ 1209  git push origin main
+ 1210  sudo apt install git-lfs
+ 1211  git lfs install
+ 1212  git lfs track "*.jpg" "*.png" "*.xcf"
+ 1213  echo "*.jpg filter=lfs diff=lfs merge=lfs -text" >> .gitattributes
+ 1214  echo "*.png filter=lfs diff=lfs merge=lfs -text" >> .gitattributes
+ 1215  echo "*.xcf filter=lfs diff=lfs merge=lfs -text" >> .gitattributes
+ 1216  git add .gitattributes
+ 1217  git add examples/ layers/ project/
+ 1218  git commit -m "Track large files with Git LFS"
+ 1219  git push origin main
+ 1220  find . -type f -size +95M
+ 1221  # 1. Track large PNGs with Git LFS
+ 1222  git lfs track "*.png"
+ 1223  # 2. Stage the .gitattributes file created by LFS
+ 1224  git add .gitattributes
+ 1225  # 3. Re-add the large PNG explicitly
+ 1226  git add examples/mandala_grid_20x20_2_upscayl_4x_upscayl-standard-4x.png
+ 1227  # 4. Commit the LFS tracking info + the large file
+ 1228  git commit -m "Track large PNG with Git LFS"
+ 1229  # 5. Push again
+ 1230  git push origin main
+ 1231  git config --global http.postBuffer 524288000
+ 1232  git config --global http.lowSpeedLimit 0
+ 1233  git config --global http.lowSpeedTime 999999
+ 1234  git push origin main
+ 1235  git rm --cached examples/mandala_grid_20x20_2_upscayl_4x_upscayl-standard-4x.png
+ 1236  git commit -m "Remove oversized PNG for LFS re-add"
+ 1237  git add examples/mandala_grid_20x20_2_upscayl_4x_upscayl-standard-4x.png
+ 1238  git commit -m "Re-add large PNG using Git LFS"
+ 1239  git push origin main
+ 1240  git rm --cached examples/mandala_grid_20x20_2_upscayl_4x_upscayl-standard-4x.png
+ 1241  rm examples/mandala_grid_20x20_2_upscayl_4x_upscayl-standard-4x.png
+ 1242  git commit -m "Removed oversized PNG that exceeded GitHub 100MB limit"
+ 1243  sudo apt install git-filter-repo  # or: pip install git-filter-repo
+ 1244  git filter-repo --path examples/mandala_grid_20x20_2_upscayl_4x_upscayl-standard-4x.png --invert-paths
+ 1245  git filter-repo --path examples/mandala_grid_20x20_2_upscayl_4x_upscayl-standard-4x.png --invert-paths --force
+ 1246  git push origin main --force
+ 1247  git remote add origin https://github.com/onojk/kaleidoscope-generator.git
+ 1248  git push origin main --force
+ 1249  ls
+ 1250  nano README.md 
+ 1251  git filter-repo --path examples/gridsafdf23423.jpg --invert-paths --force
+ 1252  git filter-repo --path examples/mandala_grid_20x20.png --invert-paths --force
+ 1253  git push origin main --force
+ 1254  git remote add origin https://github.com/onojk/kaleidoscope-generator.git
+ 1255  git push origin main --force
+ 1256  nano generate_mandala_grids_8by8.py
+ 1257  python3 generate_mandala_grids_8by8.py
+ 1258  nano generate_mandala_grids_8by8.py
+ 1259  python3 generate_mandala_grids_8by8.py
+ 1260  nano generate_mandala_grids_8by8.py
+ 1261  python3 generate_mandala_grids_8by8.py
+ 1262  nano generate_mandala_grids_8by8.py
+ 1263  python3 generate_mandala_grids_8by8.py
+ 1264  nano generate_mandala_grids_8by8.py
+ 1265  python3 generate_mandala_grids_8by8.py
+ 1266  git status
+ 1267  git add generate_mandala_grids_8by8.py
+ 1268  git commit -m "✅ Rewrite mandala grid generator script with resize and bug fixes"
+ 1269  git push origin main
+ 1270  nano generate_mandala_grids_8by8.py
+ 1271  python3 generate_mandala_grids_8by8.py
+ 1272  nano generate_mandala_grids_8by8.py
+ 1273  python3 generate_mandala_grids_8by8.py
+ 1274  nano generate_mandala_grids_8by8.py
+ 1275  python3 generate_mandala_grids_8by8.py
+ 1276  nano generate_mandala_grids_8by8.py
+ 1277  python3 generate_mandala_grids_8by8.py
+ 1278  nano generate_mandala_grids_8by8.py
+ 1279  python3 generate_mandala_grids_8by8.py
+ 1280  git add .
+ 1281  git commit -m "Add 22.5° mirrored kaleidoscope tile grid generator and output images"
+ 1282  git push origin main
+ 1283  nano README.md 
+ 1284  git add README_Kaleidoscope_Generator.txt
+ 1285  git commit -m "Add README for kaleidoscope tile generator"
+ 1286  git push origin main
+ 1287  git add README.md
+ 1288  git commit -m "Update README for kaleidoscope tile generator"
+ 1289  git push origin main
+ 1290  nano list_jpg_properties.py
+ 1291  python3 list_jpg_properties.py
+ 1292  nano generate_mandala_grids_8by8.py
+ 1293  python3 generate_mandala_grids_8by8.py
+ 1294  git add generated_grids/*.png
+ 1295  git commit -m "✨ Updated mandala grid generator with full-tile kaleidoscope images from new 800x800 source JPGs"
+ 1296  git push origin main
+ 1297  git status
+ 1298  git add generate_mandala_grids_8by8.py list_jpg_properties.py source_images/
+ 1299  git commit -m "Update mandala grid generator and add source image set and utility script"
+ 1300  git push origin main
+ 1301  nano rainbow_kaleido_grid_8x8_1.py
+ 1302  python3 rainbow_kaleido_grid_8x8_1.py
+ 1303  cd ~
+ 1304  mkdir kaleido_render_pipeline
+ 1305  cd kaleido_render_pipeline
+ 1306  git init
+ 1307  nano generate_rainbow.py
+ 1308  python3 generate_rainbow.py
+ 1309  nano distort_rainbow.py
+ 1310  python3 generate_rainbow.py
+ 1311  python3 distort_rainbow.py
+ 1312  nano distort_rainbow.py
+ 1313  python3 distort_rainbow.py
+ 1314  nano distort_rainbow.py
+ 1315  python3 distort_rainbow.py
+ 1316  nano upscale_and_convert.py
+ 1317  python3 upscale_and_convert.py
+ 1318  ls
+ 1319  nano distort_rainbow.py
+ 1320  nano upscale_and_convert.py
+ 1321  python3 distort_rainbow.py
+ 1322  python3 upscale_and_convert.py
+ 1323  mv ~/Downloads/upscayl-2.15.0-linux.AppImage ~/kaleido_render_pipeline/Upscayl.AppImage
+ 1324  chmod +x ~/kaleido_render_pipeline/Upscayl.AppImage
+ 1325  echo "Upscayl.AppImage" >> .gitignore
+ 1326  APPIMAGE_PATH = "./Upscayl.AppImage"
+ 1327  nano upscale_and_convert.py
+ 1328  python3 upscale_and_convert.py
+ 1329  sudo chmod 4755 $(./Upscayl.AppImage --appimage-extract-and-run echo | grep chrome-sandbox)
+ 1330  ./Upscayl.AppImage --appimage-extract
+ 1331  sudo chmod 4755 squashfs-root/chrome-sandbox
+ 1332  upscale_and_convert.py
+ 1333  nano upscale_and_convert.py
+ 1334  python3 upscale_and_convert.py
+ 1335  nano upscale_and_convert.py
+ 1336  python3 upscale_and_convert.py
+ 1337  sudo chmod 4755 squashfs-root/chrome-sandbox
+ 1338  python3 upscale_and_convert.py
+ 1339  sudo chown root:root squashfs-root/chrome-sandbox && sudo chmod 4755 squashfs-root/chrome-sandbox
+ 1340  python3 upscale_and_convert.py
+ 1341  nano upscale_and_convert.py
+ 1342  python3 upscale_and_convert.py
+ 1343  nano upscale_and_convert.py
+ 1344  python3 upscale_and_convert.py
+ 1345  ./squashfs-root/resources/bin/upscayl-bin -i media/distorted_rainbow_grid_small.png -o media -s 4x -m Real-ESRGAN -t png
+ 1346  ./squashfs-root/resources/bin/upscayl-bin   -i media/distorted_rainbow_grid_small.png   -o media/distorted_rainbow_grid_upscaled.png   -s 4x -m Real-ESRGAN -t png
+ 1347  ./squashfs-root/resources/bin/upscayl-bin   -i media/distorted_rainbow_grid_small.png   -o media/distorted_rainbow_grid_upscaled.png   -s 4x -m Real-ESRGAN -t png   --modelDir squashfs-root/resources/models
+ 1348  ./squashfs-root/resources/bin/upscayl-bin   -i media/distorted_rainbow_grid_small.png   -o media/distorted_rainbow_grid_upscaled.png   -s 4   -m squashfs-root/resources/models   -n realesrgan-x4plus   -f png   -v
+ 1349  nano generate_dense_rainbow_grid.py
+ 1350  python3 generate_dense_rainbow_grid.py
+ 1351  nano generate_qbist_contrast_image.py
+ 1352  python3 generate_qbist_contrast_image.py
+ 1353  ls ~/kaleido_render_pipeline/media/
+ 1354  nano generate_qbist_contrast_image.py
+ 1355  ls ~/kaleido_render_pipeline/media/
+ 1356  python3 generate_qbist_contrast_image.py
+ 1357  ls ~/kaleido_render_pipeline/media/
+ 1358  nano generate_qbist_contrast_image.py
+ 1359  python3 generate_qbist_contrast_image.py
+ 1360  nano apply_qbist_contrast.scm
+ 1361  mkdir -p ~/.config/GIMP/2.10/scripts/
+ 1362  cp apply_qbist_contrast.scm ~/.config/GIMP/2.10/scripts/
+ 1363  gimp -i -b '(gimp-quit 0)'
+ 1364  nano generate_qbist_contrast_image.py
+ 1365  python3 generate_qbist_contrast_image.py
+ 1366  nano apply_qbist_contrast.scm
+ 1367  gimp -i -b '(gimp-quit 0)'
+ 1368  python3 generate_qbist_contrast_image.py
+ 1369  nano apply_qbist_contrast.scm
+ 1370  gimp -i -b '(gimp-quit 0)'
+ 1371  python3 generate_qbist_contrast_image.py
+ 1372  nano apply_qbist_contrast.scm
+ 1373  gimp -i -b '(gimp-quit 0)'
+ 1374  nano generate_qbist_contrast_image.py
+ 1375  python3 generate_qbist_contrast_image.py
+ 1376  nano generate_qbist_contrast_image.py
+ 1377  python3 generate_qbist_contrast_image.py
+ 1378  nano generate_qbist_contrast_image.py
+ 1379  python3 generate_qbist_contrast_image.py
+ 1380  gedit generate_qbist_contrast_image.py
+ 1381  nano generate_qbist_contrast_image.py
+ 1382  python3 generate_qbist_contrast_image.py
+ 1383  nano generate_qbist_contrast_image.py
+ 1384  python3 generate_qbist_contrast_image.py
+ 1385  nano generate_qbist_contrast_image.py
+ 1386  python3 generate_qbist_contrast_image.py
+ 1387  nano generate_qbist_contrast_image.py
+ 1388  python3 generate_qbist_contrast_image.py
+ 1389  nano generate_qbist_contrast_image.py
+ 1390  python3 generate_qbist_contrast_image.py
+ 1391  nano generate_qbist_contrast_image.py
+ 1392  python3 generate_qbist_contrast_image.py
+ 1393  nano generate_qbist_contrast_image.py
+ 1394  python3 generate_qbist_contrast_image.py
+ 1395  nano generate_qbist_contrast_image.py
+ 1396  python3 generate_qbist_contrast_image.py
+ 1397  nano generate_qbist_contrast_image.py
+ 1398  python3 generate_qbist_contrast_image.py
+ 1399  nano generate_qbist_contrast_image.py
+ 1400  python3 generate_qbist_contrast_image.py
+ 1401  nano generate_qbist_contrast_image.py
+ 1402  python3 generate_qbist_contrast_image.py
+ 1403  nano generate_qbist_contrast_image.py
+ 1404  python3 generate_qbist_contrast_image.py
+ 1405  nano generate_qbist_contrast_image.py
+ 1406  python3 generate_qbist_contrast_image.py
+ 1407  nano generate_qbist_contrast_image.py
+ 1408  python3 generate_qbist_contrast_image.py
+ 1409  nano generate_qbist_contrast_image.py
+ 1410  python3 generate_qbist_contrast_image.py
+ 1411  nano generate_qbist_contrast_image.py
+ 1412  python3 generate_qbist_contrast_image.py
+ 1413  nano generate_qbist_contrast_image.py
+ 1414  python3 generate_qbist_contrast_image.py
+ 1415  nano generate_qbist_contrast_image.py
+ 1416  python3 generate_qbist_contrast_image.py
+ 1417  nano generate_qbist_contrast_image.py
+ 1418  python3 generate_qbist_contrast_image.py
+ 1419  nano generate_qbist_contrast_image.py
+ 1420  python3 generate_qbist_contrast_image.py
+ 1421  nano generate_qbist_contrast_image.py
+ 1422  python3 generate_qbist_contrast_image.py
+ 1423  nano generate_qbist_contrast_image.py
+ 1424  python3 generate_qbist_contrast_image.py
+ 1425  nano generate_qbist_contrast_image.py
+ 1426  python3 generate_qbist_contrast_image.py
+ 1427  nano generate_qbist_contrast_image.py
+ 1428  python3 generate_qbist_contrast_image.py
+ 1429  nano generate_qbist_contrast_image.py
+ 1430  python3 generate_qbist_contrast_image.py
+ 1431  nano generate_qbist_contrast_image.py
+ 1432  python3 generate_qbist_contrast_image.py
+ 1433  nano generate_qbist_contrast_image.py
+ 1434  python3 generate_qbist_contrast_image.py
+ 1435  nano generate_qbist_contrast_image.py
+ 1436  python3 generate_qbist_contrast_image.py
+ 1437  nano generate_qbist_contrast_image.py
+ 1438  python3 generate_qbist_contrast_image.py
+ 1439  nano generate_qbist_contrast_image.py
+ 1440  python3 generate_qbist_contrast_image.py
+ 1441  nano generate_qbist_contrast_image.py
+ 1442  python3 generate_qbist_contrast_image.py
+ 1443  nano generate_qbist_contrast_image.py
+ 1444  python3 generate_qbist_contrast_image.py
+ 1445  nano generate_qbist_contrast_image.py
+ 1446  python3 generate_qbist_contrast_image.py
+ 1447  nano generate_qbist_contrast_image.py
+ 1448  python3 generate_qbist_contrast_image.py
+ 1449  nano generate_qbist_contrast_image.py
+ 1450  python3 generate_qbist_contrast_image.py
+ 1451  nano generate_qbist_contrast_image.py
+ 1452  python3 generate_qbist_contrast_image.py
+ 1453  nano generate_qbist_contrast_image.py
+ 1454  python3 generate_qbist_contrast_image.py
+ 1455  nano generate_qbist_contrast_image.py
+ 1456  python3 generate_qbist_contrast_image.py
+ 1457  nano generate_qbist_contrast_image.py
+ 1458  python3 generate_qbist_contrast_image.py
+ 1459  nano generate_qbist_contrast_image.py
+ 1460  python3 generate_qbist_contrast_image.py
+ 1461  nano generate_qbist_contrast_image.py
+ 1462  python3 generate_qbist_contrast_image.py
+ 1463  nano generate_qbist_contrast_image.py
+ 1464  python3 generate_qbist_contrast_image.py
+ 1465  nano generate_qbist_contrast_image.py
+ 1466  python3 generate_qbist_contrast_image.py
+ 1467  nano generate_qbist_contrast_image.py
+ 1468  python3 generate_qbist_contrast_image.py
+ 1469  nano generate_qbist_contrast_image.py
+ 1470  python3 generate_qbist_contrast_image.py
+ 1471  nano generate_qbist_contrast_image.py
+ 1472  python3 generate_qbist_contrast_image.py
+ 1473  ls ~/kaleido_render_pipeline/media/
+ 1474  nano generate_qbist_contrast_image.py
+ 1475  ls ~/kaleido_render_pipeline/media/
+ 1476  python3 generate_qbist_contrast_image.py
+ 1477  nano generate_qbist_contrast_image.py
+ 1478  python3 generate_qbist_contrast_image.py
+ 1479  nano generate_qbist_contrast_image.py
+ 1480  python3 generate_qbist_contrast_image.py
+ 1481  nano generate_qbist_contrast_image.py
+ 1482  python3 generate_qbist_contrast_image.py
+ 1483  nano generate_qbist_contrast_image.py
+ 1484  python3 generate_qbist_contrast_image.py
+ 1485  nano generate_qbist_contrast_image.py
+ 1486  python3 generate_qbist_contrast_image.py
+ 1487  ls ~/kaleido_render_pipeline/media/
+ 1488  ls -lh ~/kaleido_render_pipeline/media/
+ 1489  nano generate_qbist_contrast_image.py
+ 1490  ls -lh ~/kaleido_render_pipeline/media/
+ 1491  python3 generate_qbist_contrast_image.py
+ 1492  ls -lh ~/kaleido_render_pipeline/media/
+ 1493  nano generate_qbist_contrast_image.py
+ 1494  python3 generate_qbist_contrast_image.py
+ 1495  nano generate_qbist_contrast_image.py
+ 1496  python3 generate_qbist_contrast_image.py
+ 1497  ls -lh ~/kaleido_render_pipeline/media/
+ 1498  python3 generate_qbist_contrast_image.py
+ 1499  nano generate_qbist_contrast_image.py
+ 1500  python3 generate_qbist_contrast_image.py
+ 1501  ls -lh ~/kaleido_render_pipeline/media/
+ 1502  nano generate_qbist_contrast_image.py
+ 1503  python3 generate_qbist_contrast_image.py
+ 1504  ls -lh ~/kaleido_render_pipeline/media/
+ 1505  nano generate_qbist_contrast_image.py
+ 1506  ls -lh ~/kaleido_render_pipeline/media/
+ 1507  python3 generate_qbist_contrast_image.py
+ 1508  nano generate_qbist_contrast_image.py
+ 1509  python3 generate_qbist_contrast_image.py
+ 1510  nano generate_qbist_contrast_image.py
+ 1511  python3 generate_qbist_contrast_image.py
+ 1512  nano generate_qbist_contrast_image.py
+ 1513  python3 generate_qbist_contrast_image.py
+ 1514  nano generate_qbist_contrast_image.py
+ 1515  python3 generate_qbist_contrast_image.py
+ 1516  nano generate_qbist_contrast_image.py
+ 1517  python3 generate_qbist_contrast_image.py
+ 1518  nano generate_qbist_contrast_image.py
+ 1519  python3 generate_qbist_contrast_image.py
+ 1520  nano generate_qbist_contrast_image.py
+ 1521  python3 generate_qbist_contrast_image.py
+ 1522  nano generate_qbist_contrast_image.py
+ 1523  python3 generate_qbist_contrast_image.py
+ 1524  nano generate_qbist_contrast_image.py
+ 1525  python3 generate_qbist_contrast_image.py
+ 1526  nano generate_qbist_contrast_image.py
+ 1527  python3 generate_qbist_contrast_image.py
+ 1528  nano generate_qbist_contrast_image.py
+ 1529  python3 generate_qbist_contrast_image.py
+ 1530  nano generate_qbist_contrast_image.py
+ 1531  python3 generate_qbist_contrast_image.py
+ 1532  nano generate_qbist_contrast_image.py
+ 1533  python3 generate_qbist_contrast_image.py
+ 1534  nano generate_qbist_contrast_image.py
+ 1535  python3 generate_qbist_contrast_image.py
+ 1536  nano generate_qbist_contrast_image.py
+ 1537  python3 generate_qbist_contrast_image.py
+ 1538  nano generate_qbist_contrast_image.py
+ 1539  python3 generate_qbist_contrast_image.py
+ 1540  nano generate_qbist_contrast_image.py
+ 1541  python3 generate_qbist_contrast_image.py
+ 1542  nano generate_qbist_contrast_image.py
+ 1543  python3 generate_qbist_contrast_image.py
+ 1544  nano generate_qbist_contrast_image.py
+ 1545  python3 generate_qbist_contrast_image.py
+ 1546  nano generate_qbist_contrast_image.py
+ 1547  python3 generate_qbist_contrast_image.py
+ 1548  nano generate_qbist_contrast_image.py
+ 1549  python3 generate_qbist_contrast_image.py
+ 1550  nano generate_qbist_contrast_image.py
+ 1551  python3 generate_qbist_contrast_image.py
+ 1552  nano apply_max_contrast.scm
+ 1553  gimp -i -b '(load "apply_max_contrast.scm")'      -b '(apply-max-contrast "input.png" "output.png")'      -b '(gimp-quit 0)'
+ 1554  nano apply_max_contrast.scm
+ 1555  gimp -i -b '(script-fu-apply-max-contrast "input.png" "output.png")' -b '(gimp-quit 0)'
+ 1556  nano apply_max_contrast.scm
+ 1557  mkdir -p ~/.config/GIMP/2.10/scripts/
+ 1558  cp apply_max_contrast.scm ~/.config/GIMP/2.10/scripts/
+ 1559  gimp -i   -b '(apply-max-contrast-preserve-brightness "input.jpg" "output.jpg")'   -b '(gimp-quit 0)'
+ 1560  nano apply_max_contrast.scm
+ 1561  # Remove old version if exists
+ 1562  rm ~/.config/GIMP/2.10/scripts/apply_max_contrast.scm
+ 1563  # Install corrected version
+ 1564  echo '
+ 1565  (define (script-fu-apply-max-contrast in-filename out-filename)
+ 1566    (let* (
+ 1567          (image (car (gimp-file-load RUN-NONINTERACTIVE in-filename in-filename)))
+ 1568          (drawable (car (gimp-image-get-active-layer image))))
+ 1569          
+ 1570      (gimp-levels-stretch drawable)
+ 1571      (file-jpeg-save RUN-NONINTERACTIVE image drawable out-filename out-filename
+ 1572                      0.9 1 TRUE TRUE FALSE FALSE 1 TRUE TRUE TRUE TRUE FALSE TRUE)
+ 1573      (gimp-image-delete image))
+ 1574  (script-fu-register
+ 1575    "script-fu-apply-max-contrast"
+ 1576    "Apply Max Contrast"
+ 1577    "Applies maximum contrast while preserving brightness"
+ 1578    "Your Name"
+ 1579    "Your Copyright"
+ 1580    "2023"
+ 1581    ""
+ 1582    SF-FILENAME "Input File" ""
+ 1583    SF-FILENAME "Output File" "")
+ 1584  ' > ~/.config/GIMP/2.10/scripts/apply_max_contrast.scm
+ 1585  gimp -i -b '(gimp-message (car (procedural-db-dump ""))' -b '(gimp-quit 0)' | grep "script-fu-apply-max-contrast"
+ 1586  echo '(define (script-fu-test) (gimp-message "Hello from GIMP"))' > ~/.config/GIMP/2.10/scripts/test.scm
+ 1587  gimp -i -b '(script-fu-test)' -b '(gimp-quit 0)'
+ 1588  rm -f ~/.config/GIMP/2.10/scripts/apply_max_contrast.scm
+ 1589  cat > ~/.config/GIMP/2.10/scripts/apply_max_contrast.scm << 'EOF'
+ 1590  (define (script-fu-apply-max-contrast in-filename out-filename)
+ 1591    (let* ((image (car (gimp-file-load RUN-NONINTERACTIVE in-filename in-filename))
+ 1592           (drawable (car (gimp-image-get-active-layer image))))
+ 1593      (gimp-levels-stretch drawable)
+ 1594      (file-jpeg-save RUN-NONINTERACTIVE image drawable out-filename out-filename
+ 1595                      0.9 0 1 1 0 0 1 1 1 1 1 0 1)
+ 1596      (gimp-image-delete image))
+ 1597  EOF
+ 1598  gimp -i -b '(load "/home/onojk123/.config/GIMP/2.10/scripts/apply_max_contrast.scm")' -b '(gimp-quit 0)'
+ 1599  nano apply_max_contrast.scm
+ 1600  cat > ~/.config/GIMP/2.10/scripts/apply_max_contrast.scm << 'EOF'
+ 1601  (define (script-fu-apply-max-contrast in-filename out-filename)
+ 1602    (let* ((image (car (gimp-file-load RUN-NONINTERACTIVE in-filename in-filename)))
+ 1603           (drawable (car (gimp-image-get-active-layer image))))
+ 1604      (gimp-levels-stretch drawable)
+ 1605      (file-jpeg-save RUN-NONINTERACTIVE image drawable out-filename out-filename
+ 1606                      0.9 0 1 1 0 0 1 1 1 1 1 0 1)
+ 1607      (gimp-image-delete image)))
+ 1608  (script-fu-register
+ 1609    "script-fu-apply-max-contrast"
+ 1610    "Apply Max Contrast"
+ 1611    "Applies maximum contrast to an image"
+ 1612    "Your Name"
+ 1613    "Your Copyright"
+ 1614    "2023"
+ 1615    ""
+ 1616    SF-FILENAME "Input File" ""
+ 1617    SF-FILENAME "Output File" "")
+ 1618  EOF
+ 1619  # Check if script is properly registered
+ 1620  gimp -i -b '(gimp-message (car (procedural-db-dump "")))' -b '(gimp-quit 0)' | grep "script-fu-apply-max-contrast"
+ 1621  # Test execution
+ 1622  gimp -i   -b '(script-fu-apply-max-contrast "input.jpg" "output.jpg")'   -b '(gimp-quit 0)'
+ 1623  gimp -i -b '(gimp-message (car (procedures)))' -b '(gimp-quit 0)' | grep "script-fu-apply-max-contrast"
+ 1624  # Check if script file exists and is readable
+ 1625  ls -l ~/.config/GIMP/2.10/scripts/apply_max_contrast.scm
+ 1626  # Check file contents
+ 1627  cat ~/.config/GIMP/2.10/scripts/apply_max_contrast.scm
+ 1628  nano apply_max_contrast.scm
+ 1629  cat > ~/.config/GIMP/2.10/scripts/apply_max_contrast.scm << 'EOF'
+ 1630  (define (script-fu-apply-contrast in out)
+ 1631    (let* ((img (car (gimp-file-load RUN-NONINTERACTIVE in in)))
+ 1632           (layer (car (gimp-image-get-active-layer img))))
+ 1633      (gimp-levels-stretch layer)
+ 1634      (gimp-file-save RUN-NONINTERACTIVE img layer out out)
+ 1635      (gimp-image-delete img)))
+ 1636  (script-fu-register
+ 1637    "script-fu-apply-contrast"
+ 1638    "Apply Max Contrast"
+ 1639    "Simple contrast script"
+ 1640    "Your Name"
+ 1641    "2023"
+ 1642    ""
+ 1643    SF-FILENAME "Input" ""
+ 1644    SF-FILENAME "Output" "")
+ 1645  EOF
+ 1646  # Create test image
+ 1647  convert -size 100x100 xc:gray +noise random test_input.jpg
+ 1648  # Run script
+ 1649  gimp -i   -b '(script-fu-apply-contrast "test_input.jpg" "output.jpg")'   -b '(gimp-quit 0)'
+ 1650  chmod 644 ~/.config/GIMP/2.10/scripts/apply_max_contrast.scm
+ 1651  cat > ~/.config/GIMP/2.10/scripts/apply_max_contrast.scm << 'EOF'
+ 1652  (define (script-fu-apply-contrast in out)
+ 1653    (let* ((img (car (gimp-file-load RUN-NONINTERACTIVE in in)))
+ 1654           (layer (car (gimp-image-get-active-layer img))))
+ 1655      (gimp-levels-stretch layer)
+ 1656      (gimp-file-save RUN-NONINTERACTIVE img layer out out)
+ 1657      (gimp-image-delete img)))
+ 1658  (script-fu-register
+ 1659    "script-fu-apply-contrast"
+ 1660    "Apply Max Contrast"
+ 1661    "Simple contrast script"
+ 1662    "Your Name"
+ 1663    "2023"
+ 1664    ""
+ 1665    SF-FILENAME "Input" ""
+ 1666    SF-FILENAME "Output" "")
+ 1667  EOF
+ 1668  # Create test image
+ 1669  convert -size 100x100 xc:gray +noise random test_input.jpg
+ 1670  # Run script
+ 1671  gimp -i   -b '(script-fu-apply-contrast "test_input.jpg" "output.jpg")'   -b '(gimp-quit 0)'
+ 1672  gimp -i   -b "(script-fu-apply-contrast \"$PWD/test_input.jpg\" \"$PWD/output.jpg\")"   -b '(gimp-quit 0)'
+ 1673  cat > ~/.config/GIMP/2.10/plug-ins/apply_contrast.py << 'EOF'
+ 1674  #!/usr/bin/env python
+ 1675  from gimpfu import *
+ 1676  def apply_contrast(img, layer, in_path, out_path):
+ 1677      pdb.gimp_levels_stretch(layer)
+ 1678      pdb.gimp_file_save(img, layer, out_path, out_path)
+ 1679  register(
+ 1680      "python-fu-apply-contrast",
+ 1681      "Apply Contrast",
+ 1682      "Simple contrast script",
+ 1683      "Your Name", "2023", "",
+ 1684      "",
+ 1685      [(PF_FILE, "in", "Input", ""),
+ 1686       (PF_FILE, "out", "Output", "")],
+ 1687      [],
+ 1688      apply_contrast)
+ 1689  main()
+ 1690  EOF
+ 1691  chmod +x ~/.config/GIMP/2.10/plug-ins/apply_contrast.py
+ 1692  sudo apt update && sudo apt install imagemagick
+ 1693  cat > ~/.config/GIMP/2.10/scripts/apply_max_contrast.scm << 'EOF'
+ 1694  (define (script-fu-apply-contrast in out)
+ 1695    (let* ((img (car (gimp-file-load RUN-NONINTERACTIVE in in)))
+ 1696           (layer (car (gimp-image-get-active-layer img))))
+ 1697      (gimp-levels-stretch layer)
+ 1698      (gimp-file-save RUN-NONINTERACTIVE img layer out out)
+ 1699      (gimp-image-delete img)))
+ 1700  (script-fu-register
+ 1701    "script-fu-apply-contrast"
+ 1702    "Apply Max Contrast"
+ 1703    "Simple contrast script"
+ 1704    "Your Name"
+ 1705    "2023"
+ 1706    ""
+ 1707    SF-STRING "Input" ""
+ 1708    SF-STRING "Output" "")
+ 1709  EOF
+ 1710  # Create a simple black image using Python instead of ImageMagick
+ 1711  python3 -c "from PIL import Image; Image.new('RGB', (100,100)).save('test_input.jpg')"
+ 1712  gimp -i   -b '(script-fu-apply-contrast "test_input.jpg" "output.jpg")'   -b '(gimp-quit 0)'
+ 1713  cat > ~/.config/GIMP/2.10/scripts/apply_max_contrast.scm << 'EOF'
+ 1714  (define (script-fu-apply-contrast in out)
+ 1715    (let* ((img (car (gimp-file-load RUN-NONINTERACTIVE in in)))
+ 1716           (layer (car (gimp-image-get-active-layer img))))
+ 1717      (gimp-levels-stretch layer)
+ 1718      (gimp-file-save RUN-NONINTERACTIVE img layer out out)
+ 1719      (gimp-image-delete img)))
+ 1720  (script-fu-register
+ 1721    "script-fu-apply-contrast"
+ 1722    "Apply Contrast"
+ 1723    "Applies max contrast"
+ 1724    "Your Name"
+ 1725    "2023"
+ 1726    ""
+ 1727    SF-STRING "Input file" ""
+ 1728    SF-STRING "Output file" "")
+ 1729  EOF
+ 1730  # Find GIMP's Python path
+ 1731  gimp_python=$(find /usr/lib -path "*gimp*/python" | head -1)
+ 1732  # Create the plugin with correct Python path
+ 1733  cat > ~/.config/GIMP/2.10/plug-ins/apply_contrast.py << EOF
+ 1734  #!/usr/bin/env python
+ 1735  import sys
+ 1736  sys.path.append("$gimp_python")
+ 1737  from gimpfu import *
+ 1738  def apply_contrast(img, layer, in_path, out_path):
+ 1739      pdb.gimp_levels_stretch(layer)
+ 1740      pdb.gimp_file_save(img, layer, out_path, out_path)
+ 1741  register(
+ 1742      "python-fu-apply-contrast",
+ 1743      "Apply Contrast",
+ 1744      "Applies max contrast",
+ 1745      "Your Name",
+ 1746      "2023",
+ 1747      "",
+ 1748      "",
+ 1749      [
+ 1750          (PF_STRING, "in_path", "Input file", ""),
+ 1751          (PF_STRING, "out_path", "Output file", "")
+ 1752      ],
+ 1753      [],
+ 1754      apply_contrast)
+ 1755  main()
+ 1756  EOF
+ 1757  # Make executable
+ 1758  chmod +x ~/.config/GIMP/2.10/plug-ins/apply_contrast.py
+ 1759  gimp -i   -b '(script-fu-apply-contrast "test_input.jpg" "output.jpg")'   -b '(gimp-quit 0)'
+ 1760  cat > ~/.config/GIMP/2.10/scripts/apply_max_contrast.scm << 'EOF'
+ 1761  (define (script-fu-apply-contrast in out)
+ 1762    (let* ((img (car (gimp-file-load RUN-NONINTERACTIVE in in)))
+ 1763           (layer (car (gimp-image-get-active-layer img))))
+ 1764      (gimp-levels-stretch layer)
+ 1765      (file-jpeg-save RUN-NONINTERACTIVE img layer out out 0.9 0 1 1 0 0 1 1 1 1 1 0 1)
+ 1766      (gimp-image-delete img)))
+ 1767  (script-fu-register
+ 1768    "script-fu-apply-contrast"
+ 1769    "Apply Contrast"
+ 1770    "Applies max contrast"
+ 1771    "Your Name"
+ 1772    "2023"
+ 1773    ""
+ 1774    SF-STRING "Input" ""
+ 1775    SF-STRING "Output" "")
+ 1776  EOF
+ 1777  cat > ~/.config/GIMP/2.10/plug-ins/apply_contrast.py << 'EOF'
+ 1778  #!/usr/bin/env python3
+ 1779  import sys
+ 1780  sys.path.append('/usr/lib/gimp/2.0/python')  # Standard GIMP Python path
+ 1781  from gimpfu import *
+ 1782  def apply_contrast(in_path, out_path):
+ 1783      img = pdb.gimp_file_load(in_path, in_path)
+ 1784      layer = pdb.gimp_image_get_active_layer(img)
+ 1785      pdb.gimp_levels_stretch(layer)
+ 1786      pdb.file_jpeg_save(img, layer, out_path, out_path, 0.9, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1)
+ 1787      pdb.gimp_image_delete(img)
+ 1788  register(
+ 1789      "python-fu-apply-contrast",
+ 1790      "Apply Contrast",
+ 1791      "Applies max contrast",
+ 1792      "Your Name",
+ 1793      "2023",
+ 1794      "",
+ 1795      "",
+ 1796      [
+ 1797          (PF_STRING, "in_path", "Input file", ""),
+ 1798          (PF_STRING, "out_path", "Output file", "")
+ 1799      ],
+ 1800      [],
+ 1801      apply_contrast)
+ 1802  main()
+ 1803  EOF
+ 1804  chmod +x ~/.config/GIMP/2.10/plug-ins/apply_contrast.py
+ 1805  # Create test image in current directory
+ 1806  python3 -c "from PIL import Image; Image.new('RGB', (100,100), (128,128,128)).save('test_input.jpg')"
+ 1807  # Get absolute path
+ 1808  current_dir="$PWD"
+ 1809  # Run Script-Fu version
+ 1810  gimp -i   -b "(script-fu-apply-contrast \"$current_dir/test_input.jpg\" \"$current_dir/output_scheme.jpg\")"   -b '(gimp-quit 0)'
+ 1811  # Or run Python version
+ 1812  gimp -i   -b "(python-fu-apply-contrast \"$current_dir/test_input.jpg\" \"$current_dir/output_python.jpg\")"   -b '(gimp-quit 0)'
+ 1813  rm -f ~/.config/GIMP/2.10/scripts/apply_max_contrast.scm
+ 1814  rm -f ~/.config/GIMP/2.10/plug-ins/apply_contrast.py
+ 1815  cat > ~/.config/GIMP/2.10/scripts/apply_contrast.scm << 'EOF'
+ 1816  (define (script-fu-apply-contrast in out)
+ 1817    (let* ((img (car (gimp-file-load RUN-NONINTERACTIVE in in)))
+ 1818           (layer (car (gimp-image-get-active-layer img))))
+ 1819      (gimp-levels-stretch layer)
+ 1820      (gimp-file-save RUN-NONINTERACTIVE img layer out out)
+ 1821      (gimp-image-delete img)))
+ 1822  (script-fu-register
+ 1823    "script-fu-apply-contrast"
+ 1824    "Apply Contrast"
+ 1825    "Simple contrast adjustment"
+ 1826    "Your Name"
+ 1827    "2023"
+ 1828    ""
+ 1829    SF-STRING "Input" "Input file"
+ 1830    SF-STRING "Output" "Output file")
+ 1831  EOF
+ 1832  python3 -c "from PIL import Image; Image.new('RGB', (100,100), (128,128,128)).save('test_input.jpg')"
+ 1833  gimp -i   -b '(script-fu-apply-contrast "test_input.jpg" "output.jpg")'   -b '(gimp-quit 0)'
+ 1834  cat > ~/.config/GIMP/2.10/scripts/apply_contrast.scm << 'EOF'
+ 1835  (define (script-fu-apply-contrast in out)
+ 1836    (let* ((img (car (gimp-file-load RUN-NONINTERACTIVE in in)))
+ 1837           (layer (car (gimp-image-get-active-layer img))))
+ 1838      (gimp-levels-stretch layer)
+ 1839      (gimp-file-save RUN-NONINTERACTIVE img layer out out)
+ 1840      (gimp-image-delete img)))
+ 1841  (script-fu-register
+ 1842    "script-fu-apply-contrast"
+ 1843    "Apply Contrast"
+ 1844    "Simple contrast adjustment"
+ 1845    "Your Name"
+ 1846    "2023"
+ 1847    ""
+ 1848    SF-VALUE "Input" "\"test_input.jpg\""
+ 1849    SF-VALUE "Output" "\"output.jpg\"")
+ 1850  EOF
+ 1851  gimp -i   -b '(let* ((img (car (gimp-file-load RUN-NONINTERACTIVE "test_input.jpg" "test_input.jpg")))
+ 1852           (layer (car (gimp-image-get-active-layer img))))
+ 1853      (gimp-levels-stretch layer)
+ 1854      (gimp-file-save RUN-NONINTERACTIVE img layer "output.jpg" "output.jpg")
+ 1855      (gimp-image-delete img))'   -b '(gimp-quit 0)'
+ 1856  # Create a temporary Scheme script
+ 1857  cat > process_image.scm << 'EOF'
+ 1858  (let* ((img (car (gimp-file-load RUN-NONINTERACTIVE "test_input.jpg" "test_input.jpg")))
+ 1859         (layer (car (gimp-image-get-active-layer img))))
+ 1860    (gimp-levels-stretch layer)
+ 1861    (gimp-file-save RUN-NONINTERACTIVE img layer "output.jpg" "output.jpg")
+ 1862    (gimp-image-delete img))
+ 1863  EOF
+ 1864  # Execute it directly
+ 1865  gimp -i -b '(load "process_image.scm")' -b '(gimp-quit 0)'
+ 1866  # Clean up
+ 1867  rm process_image.scm
+ 1868  cat > apply_contrast.py << 'EOF'
+ 1869  #!/usr/bin/env python3
+ 1870  import subprocess
+ 1871  # Create temporary scheme script
+ 1872  with open('temp_script.scm', 'w') as f:
+ 1873      f.write('''(let* ((img (car (gimp-file-load RUN-NONINTERACTIVE "test_input.jpg" "test_input.jpg")))
+ 1874             (layer (car (gimp-image-get-active-layer img))))
+ 1875        (gimp-levels-stretch layer)
+ 1876        (gimp-file-save RUN-NONINTERACTIVE img layer "output.jpg" "output.jpg")
+ 1877        (gimp-image-delete img))''')
+ 1878  # Execute GIMP
+ 1879  subprocess.run(['gimp', '-i', '-b', '(load "temp_script.scm")', '-b', '(gimp-quit 0)'])
+ 1880  # Clean up
+ 1881  import os
+ 1882  os.remove('temp_script.scm')
+ 1883  EOF
+ 1884  # Make executable and run
+ 1885  chmod +x apply_contrast.py
+ 1886  ./apply_contrast.py
+ 1887  rm -f ~/.config/GIMP/2.10/scripts/*
+ 1888  rm -f ~/.config/GIMP/2.10/plug-ins/*
+ 1889  # Create test image (using Python since ImageMagick isn't installed)
+ 1890  python3 -c "from PIL import Image; Image.new('RGB', (100,100), (128,128,128)).save('test_input.jpg')"
+ 1891  # Process with GIMP using direct Scheme commands
+ 1892  gimp -i   -b '(let* ((img (car (gimp-file-load RUN-NONINTERACTIVE "test_input.jpg" "test_input.jpg")))) \
+ 1893         (gimp-levels-stretch (car (gimp-image-get-active-layer img))) \
+ 1894         (gimp-file-save RUN-NONINTERACTIVE img (car (gimp-image-get-active-layer img)) "output.jpg" "output.jpg") \
+ 1895         (gimp-image-delete img))'   -b '(gimp-quit 0)'
+ 1896  ls -lh output.jpg
+ 1897  file output.jpg
+ 1898  gimp -i -b '(let* ((img (car (gimp-file-load RUN-NONINTERACTIVE "test_input.jpg" "test_input.jpg"))) (gimp-levels-stretch (car (gimp-image-get-active-layer img))) (gimp-file-save RUN-NONINTERACTIVE img (car (gimp-image-get-active-layer img)) "output.jpg" "output.jpg") (gimp-image-delete img))' -b '(gimp-quit 0)'
+ 1899  nano apply_max_contrast_final.py
+ 1900  python3 apply_max_contrast_final.py
+ 1901  nano apply_max_contrast_final.py
+ 1902  python3 apply_max_contrast_final.py
+ 1903  nano apply_max_contrast_final.py
+ 1904  python3 apply_max_contrast_final.py
+ 1905  nano apply_max_contrast_final.py
+ 1906  python3 apply_max_contrast_final.py
+ 1907  nano apply_max_contrast_final.py
+ 1908  python3 apply_max_contrast_final.py
+ 1909  nano apply_max_contrast_final.py
+ 1910  pip install numpy pillow scipy
+ 1911  python3 apply_max_contrast_final.py
+ 1912  nano apply_max_contrast_final.py
+ 1913  python3 apply_max_contrast_final.py
+ 1914  nano apply_max_contrast_final.py
+ 1915  python3 apply_max_contrast_final.py
+ 1916  nano apply_max_contrast_final.py
+ 1917  python3 apply_max_contrast_final.py
+ 1918  nano apply_max_contrast_final.py
+ 1919  python3 apply_max_contrast_final.py
+ 1920  nano apply_max_contrast_final.py
+ 1921  python3 apply_max_contrast_final.py
+ 1922  nano apply_max_contrast_final.py
+ 1923  python3 apply_max_contrast_final.py
+ 1924  nano apply_max_contrast_final.py
+ 1925  python3 apply_max_contrast_final.py
+ 1926  nano apply_max_contrast_final.py
+ 1927  python3 apply_max_contrast_final.py
+ 1928  nano apply_max_contrast_final.py
+ 1929  python3 apply_max_contrast_final.py
+ 1930  nano rainbow_camouflage_seamless.py
+ 1931  python3 apply_max_contrast_final.py
+ 1932  nano rainbow_camouflage_seamless.py
+ 1933  python3 apply_max_contrast_final.py
+ 1934  nano rainbow_camouflage_seamless.py
+ 1935  python3 apply_max_contrast_final.py
+ 1936  nano rainbow_camouflage_seamless.py
+ 1937  python3 apply_max_contrast_final.py
+ 1938  nano rainbow_camouflage_seamless.py
+ 1939  nano rainbow_camouflage_seamless.py
+ 1940  python3 rainbow_camouflage_seamless.py
+ 1941  nano rainbow_camouflage_seamless.py
+ 1942  python3 rainbow_camouflage_seamless.py
+ 1943  nano apply_max_contrast_preserve_brightness.py
+ 1944  python3 apply_max_contrast_preserve_brightness.py
+ 1945  nano apply_max_contrast_preserve_brightness.py
+ 1946  python3 apply_max_contrast_preserve_brightness.py
+ 1947  nano apply_max_contrast_preserve_brightness.py
+ 1948  python3 apply_max_contrast_preserve_brightness.py
+ 1949  nano apply_max_contrast_preserve_brightness.py
+ 1950  nano apply_max_contrast_multiple_passes.py
+ 1951  nano apply_max_contrast_preserve_brightness.py
+ 1952  python3 apply_max_contrast_multiple_passes.py 
+ 1953  nano apply_max_contrast_multiple_passes.py
+ 1954  python3 apply_max_contrast_multiple_passes.py 
+ 1955  nano apply_max_contrast_multiple_passes.py
+ 1956  python3 apply_max_contrast_multiple_passes.py 
+ 1957  ls -lh
+ 1958  nano apply_strong_hardedge_contrast.py
+ 1959  python3 apply_strong_hardedge_contrast.py 
+ 1960  #!/usr/bin/env python3
+ 1961  import numpy as np
+ 1962  from PIL import Image
+ 1963  import time
+ 1964  import sys
+ 1965  def log(msg):
+ 1966  def main():
+ 1967  if __name__ == "__main__":;     main()
+ 1968  cd ~/kaleido_render_pipeline
+ 1969  git init
+ 1970  nano .gitignore
+ 1971  git add .
+ 1972  git rm --cached kaleido-video-generator
+ 1973  git submodule add https://github.com/YOUR_USERNAME/kaleido-video-generator.git kaleido-video-generator
+ 1974  git rm --cached -r kaleido-video-generator
+ 1975  tree ~/kaleido_render_pipeline
+ 1976  tree ~/kaleido_render_pipeline > ~/kaleido_render_pipeline/directory_tree.txt
+ 1977  echo "*.mp4" >> .gitignore
+ 1978  git reset HEAD *.mp4
+ 1979  git add .
+ 1980  git commit -m "Pipeline updates - $(date '+%Y-%m-%d %H:%M')"
+ 1981  git push origin main  # or use 'master' if your branch is named that
+ 1982  history > terminal_output.txt
