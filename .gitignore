@@ -3,3 +3,4 @@ Upscayl.AppImage
 *.mp4
 path/to/largefile1
 path/to/largefile2
+venv/
