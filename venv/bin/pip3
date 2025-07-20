@@ -1,4 +1,4 @@
-#!/home/onojk123/kaleido_render_pipeline/venv/bin/python3
+#!/home/onojk123/kaleido-video-generator/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

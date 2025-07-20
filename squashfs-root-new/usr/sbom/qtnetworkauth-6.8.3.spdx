@@ -1,0 +1,144 @@
+SPDXVersion: SPDX-2.3
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: qtnetworkauth-6.8.3
+DocumentNamespace: https://qt.io/spdxdocs/qtnetworkauth-6.8.3
+Creator: Organization: TheQtCompany
+Creator: Tool: Qt Build System
+CreatorComment: <text>This SPDX document was created from CMake 3.30.0, using the qt
+build system from https://code.qt.io/cgit/qt/qtbase.git/tree/cmake/QtPublicSbomHelpers.cmake</text>
+Created: 2025-04-13T20:00:27Z
+ExternalDocumentRef: DocumentRef-qtbase https://qt.io/spdxdocs/qtbase-6.8.3 SHA1: 35a7e81001a0353aa0e87d772f8191598fa51ea1
+
+PackageName: GNU
+SPDXID: SPDXRef-compiler
+PackageVersion: 12.3.0
+PackageDownloadLocation: NOASSERTION
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: NOASSERTION
+PackageCopyrightText: NOASSERTION
+PackageSupplier: Organization: Anonymous
+FilesAnalyzed: false
+PackageSummary: <text>The compiler as identified by CMake, running on Linux (x86_64)</text>
+PrimaryPackagePurpose: APPLICATION
+Relationship: SPDXRef-compiler BUILD_DEPENDENCY_OF SPDXRef-Package-qtnetworkauth
+RelationshipComment: <text>SPDXRef-Package-qtnetworkauth is built by compiler GNU version 12.3.0</text>
+
+PackageName: qtnetworkauth
+SPDXID: SPDXRef-Package-qtnetworkauth
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:qt:qt:6.8.3:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:generic/TheQtCompany/qtnetworkauth@6.8.3
+PackageVersion: 6.8.3
+PackageSupplier: Organization: TheQtCompany
+PackageDownloadLocation: git://code.qt.io/qt/qtnetworkauth.git
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: NOASSERTION
+PackageCopyrightText: Copyright (C) The Qt Company Ltd. and other contributors.
+PackageHomePage: https://qt.io
+PackageComment: <text>Built by CMake 3.30.0 with RelWithDebInfo configuration for Linux (x86_64)</text>
+PackageVerificationCode: 139060bc71e2eb467b64a21cb96e512863434c3a
+BuiltDate: 2025-04-13T20:00:27Z
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-qtnetworkauth
+
+PackageName: NetworkAuth
+SPDXID: SPDXRef-Package-qtnetworkauth-qt-module-NetworkAuth
+PackageDownloadLocation: git://code.qt.io/qt/qtnetworkauth.git
+PackageVersion: 6.8.3
+PackageSupplier: Organization: TheQtCompany
+PackageLicenseConcluded: LicenseRef-Qt-Commercial OR GPL-3.0-only
+PackageLicenseDeclared: LicenseRef-Qt-Commercial OR GPL-3.0-only
+ExternalRef: PACKAGE-MANAGER purl pkg:github/qt/qtnetworkauth?library_name=NetworkAuth#src/oauth
+ExternalRef: PACKAGE-MANAGER purl pkg:generic/TheQtCompany/qtnetworkauth-NetworkAuth?vcs_url=https://code.qt.io/qt/qtnetworkauth.git&library_name=NetworkAuth#src/oauth
+FilesAnalyzed: true
+PackageCopyrightText: <text>Copyright (C) The Qt Company Ltd. and other contributors.</text>
+PrimaryPackagePurpose: LIBRARY
+PackageComment: <text>
+CMake target name: NetworkAuth
+CMake exported target name: Qt6::NetworkAuth
+Contained in CMake package: Qt6NetworkAuth
+</text>
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:qt:qtnetworkauth:6.8.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:qt:qt:6.8.3:*:*:*:*:*:*:*
+Relationship: SPDXRef-Package-qtnetworkauth-qt-module-NetworkAuth DEPENDS_ON DocumentRef-qtbase:SPDXRef-Package-qtbase-qt-module-Core
+Relationship: SPDXRef-Package-qtnetworkauth-qt-module-NetworkAuth DEPENDS_ON DocumentRef-qtbase:SPDXRef-Package-qtbase-qt-module-PlatformModuleInternal
+Relationship: SPDXRef-Package-qtnetworkauth-qt-module-NetworkAuth DEPENDS_ON DocumentRef-qtbase:SPDXRef-Package-qtbase-qt-module-Gui
+Relationship: SPDXRef-Package-qtnetworkauth-qt-module-NetworkAuth DEPENDS_ON DocumentRef-qtbase:SPDXRef-Package-qtbase-qt-module-Network
+Relationship: SPDXRef-Package-qtnetworkauth CONTAINS SPDXRef-Package-qtnetworkauth-qt-module-NetworkAuth
+
+FileName: ./lib/libQt6NetworkAuth.so.6.8.3
+SPDXID: SPDXRef-PackagedFile-qt-module-NetworkAuth
+FileType: BINARY
+FileChecksum: SHA1: 02613ff53fd0ad50daab3ffc7e8c900a1c3e8eea
+LicenseConcluded: LicenseRef-Qt-Commercial OR GPL-3.0-only
+FileCopyrightText: <text>Copyright (C) The Qt Company Ltd. and other contributors.</text>
+LicenseInfoInFile: NOASSERTION
+Relationship: SPDXRef-Package-qtnetworkauth-qt-module-NetworkAuth CONTAINS SPDXRef-PackagedFile-qt-module-NetworkAuth
+Relationship: SPDXRef-PackagedFile-qt-module-NetworkAuth GENERATED_FROM NOASSERTION
+RelationshipComment: /src_dir/qtnetworkauth/src/oauth/qabstractoauth.cpp
+Relationship: SPDXRef-PackagedFile-qt-module-NetworkAuth GENERATED_FROM NOASSERTION
+RelationshipComment: /src_dir/qtnetworkauth/src/oauth/qabstractoauth.h
+Relationship: SPDXRef-PackagedFile-qt-module-NetworkAuth GENERATED_FROM NOASSERTION
+RelationshipComment: /src_dir/qtnetworkauth/src/oauth/qabstractoauth_p.h
+Relationship: SPDXRef-PackagedFile-qt-module-NetworkAuth GENERATED_FROM NOASSERTION
+RelationshipComment: /src_dir/qtnetworkauth/src/oauth/qabstractoauth2.cpp
+Relationship: SPDXRef-PackagedFile-qt-module-NetworkAuth GENERATED_FROM NOASSERTION
+RelationshipComment: /src_dir/qtnetworkauth/src/oauth/qabstractoauth2.h
+Relationship: SPDXRef-PackagedFile-qt-module-NetworkAuth GENERATED_FROM NOASSERTION
+RelationshipComment: /src_dir/qtnetworkauth/src/oauth/qabstractoauth2_p.h
+Relationship: SPDXRef-PackagedFile-qt-module-NetworkAuth GENERATED_FROM NOASSERTION
+RelationshipComment: /src_dir/qtnetworkauth/src/oauth/qabstractoauthreplyhandler.cpp
+Relationship: SPDXRef-PackagedFile-qt-module-NetworkAuth GENERATED_FROM NOASSERTION
+RelationshipComment: /src_dir/qtnetworkauth/src/oauth/qabstractoauthreplyhandler.h
+Relationship: SPDXRef-PackagedFile-qt-module-NetworkAuth GENERATED_FROM NOASSERTION
+RelationshipComment: /src_dir/qtnetworkauth/src/oauth/qabstractoauthreplyhandler_p.h
+Relationship: SPDXRef-PackagedFile-qt-module-NetworkAuth GENERATED_FROM NOASSERTION
+RelationshipComment: /src_dir/qtnetworkauth/src/oauth/qoauth1.cpp
+Relationship: SPDXRef-PackagedFile-qt-module-NetworkAuth GENERATED_FROM NOASSERTION
+RelationshipComment: /src_dir/qtnetworkauth/src/oauth/qoauth1.h
+Relationship: SPDXRef-PackagedFile-qt-module-NetworkAuth GENERATED_FROM NOASSERTION
+RelationshipComment: /src_dir/qtnetworkauth/src/oauth/qoauth1_p.h
+Relationship: SPDXRef-PackagedFile-qt-module-NetworkAuth GENERATED_FROM NOASSERTION
+RelationshipComment: /src_dir/qtnetworkauth/src/oauth/qoauth1signature.cpp
+Relationship: SPDXRef-PackagedFile-qt-module-NetworkAuth GENERATED_FROM NOASSERTION
+RelationshipComment: /src_dir/qtnetworkauth/src/oauth/qoauth1signature.h
+Relationship: SPDXRef-PackagedFile-qt-module-NetworkAuth GENERATED_FROM NOASSERTION
+RelationshipComment: /src_dir/qtnetworkauth/src/oauth/qoauth1signature_p.h
+Relationship: SPDXRef-PackagedFile-qt-module-NetworkAuth GENERATED_FROM NOASSERTION
+RelationshipComment: /src_dir/qtnetworkauth/src/oauth/qoauth2authorizationcodeflow.cpp
+Relationship: SPDXRef-PackagedFile-qt-module-NetworkAuth GENERATED_FROM NOASSERTION
+RelationshipComment: /src_dir/qtnetworkauth/src/oauth/qoauth2authorizationcodeflow.h
+Relationship: SPDXRef-PackagedFile-qt-module-NetworkAuth GENERATED_FROM NOASSERTION
+RelationshipComment: /src_dir/qtnetworkauth/src/oauth/qoauth2authorizationcodeflow_p.h
+Relationship: SPDXRef-PackagedFile-qt-module-NetworkAuth GENERATED_FROM NOASSERTION
+RelationshipComment: /src_dir/qtnetworkauth/src/oauth/qoauthglobal.h
+Relationship: SPDXRef-PackagedFile-qt-module-NetworkAuth GENERATED_FROM NOASSERTION
+RelationshipComment: /src_dir/qtnetworkauth/src/oauth/qoauthhttpserverreplyhandler.cpp
+Relationship: SPDXRef-PackagedFile-qt-module-NetworkAuth GENERATED_FROM NOASSERTION
+RelationshipComment: /src_dir/qtnetworkauth/src/oauth/qoauthhttpserverreplyhandler.h
+Relationship: SPDXRef-PackagedFile-qt-module-NetworkAuth GENERATED_FROM NOASSERTION
+RelationshipComment: /src_dir/qtnetworkauth/src/oauth/qoauthhttpserverreplyhandler_p.h
+Relationship: SPDXRef-PackagedFile-qt-module-NetworkAuth GENERATED_FROM NOASSERTION
+RelationshipComment: /src_dir/qtnetworkauth/src/oauth/qoauthoobreplyhandler.cpp
+Relationship: SPDXRef-PackagedFile-qt-module-NetworkAuth GENERATED_FROM NOASSERTION
+RelationshipComment: /src_dir/qtnetworkauth/src/oauth/qoauthoobreplyhandler.h
+Relationship: SPDXRef-PackagedFile-qt-module-NetworkAuth GENERATED_FROM NOASSERTION
+RelationshipComment: /src_dir/qtnetworkauth/src/oauth/qoauthoobreplyhandler_p.h
+Relationship: SPDXRef-PackagedFile-qt-module-NetworkAuth GENERATED_FROM NOASSERTION
+RelationshipComment: /build_dir/qtnetworkauth/src/oauth/qtnetworkauth-config.h
+Relationship: SPDXRef-PackagedFile-qt-module-NetworkAuth GENERATED_FROM NOASSERTION
+RelationshipComment: /build_dir/qtnetworkauth/src/oauth/qtnetworkauth-config_p.h
+Relationship: SPDXRef-PackagedFile-qt-module-NetworkAuth GENERATED_FROM NOASSERTION
+RelationshipComment: /src_dir/qtnetworkauth/src/oauth/qoauthurischemereplyhandler.cpp
+Relationship: SPDXRef-PackagedFile-qt-module-NetworkAuth GENERATED_FROM NOASSERTION
+RelationshipComment: /src_dir/qtnetworkauth/src/oauth/qoauthurischemereplyhandler.h
+
+LicenseID: LicenseRef-Qt-Commercial
+ExtractedText: <text>Licensees holding valid commercial Qt licenses may use this software in
+accordance with the the terms contained in a written agreement between
+you and The Qt Company. Alternatively, the terms and conditions that were
+accepted by the licensee when buying and/or downloading the
+software do apply.
+
+For the latest licensing terms and conditions, see https://www.qt.io/terms-conditions.
+For further information use the contact form at https://www.qt.io/contact-us.
+</text>

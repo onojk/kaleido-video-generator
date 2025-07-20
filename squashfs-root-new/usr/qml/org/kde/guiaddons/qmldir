@@ -1,0 +1,7 @@
+module org.kde.guiaddons
+linktarget KF6::kguiaddonsqml
+optional plugin kguiaddonsqml
+classname org_kde_guiaddonsPlugin
+typeinfo kguiaddonsqml.qmltypes
+prefer :/qt/qml/org/kde/guiaddons/
+

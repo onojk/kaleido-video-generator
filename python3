@@ -1,0 +1,22 @@
+import xml.etree.ElementTree as ET
+import os
+
+INPUT = "effects_template_fixed.kdenlive"
+OUTPUT = "effects_template_cleaned.kdenlive"
+
+tree = ET.parse(INPUT)
+root = tree.getroot()
+count = 0
+
+for prod in root.findall(".//producer"):
+    for prop in prod.findall("property"):
+        if prop.get("name") == "resource":
+            path = prop.text
+            if path and not os.path.exists(path):
+                root.remove(prod)
+                count += 1
+                break
+
+tree.write(OUTPUT)
+print(f"[✓] Removed {count} broken <producer> entries.")
+print(f"[✓] Saved cleaned template to: {OUTPUT}")

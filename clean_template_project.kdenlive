@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mlt LC_NUMERIC="C" producer="main_bin">
+  <profile description="HD 2160p 60 fps" width="3840" height="2160" progressive="1" sample_aspect_num="1" sample_aspect_den="1" display_aspect_num="16" display_aspect_den="9" frame_rate_num="60" frame_rate_den="1" colorspace="709"/>
+  <producer id="background">
+    <property name="resource">temp_image_2160p.jpg</property>
+    <property name="ttl">600</property>
+    <property name="mlt_service">qimage</property>
+  </producer>
+  <playlist id="main_playlist">
+    <entry producer="background">
+      <property name="in">0</property>
+      <property name="out">599</property>
+    </entry>
+  </playlist>
+  <tractor id="main_tractor" title="Main Tractor">
+    <track producer="background"/>
+    <transition id="transition0" mlt_service="composite">
+      <property name="a_track">0</property>
+      <property name="b_track">1</property>
+      <property name="distort">1</property>
+      <property name="transition.rect">0=0 0 100% 100%;599=0 0 300% 300%</property>
+    </transition>
+    <transition id="transition1" mlt_service="frei0r.rgbsplit0r">
+      <property name="0">0=0;599=0.4</property>
+    </transition>
+  </tractor>
+</mlt>

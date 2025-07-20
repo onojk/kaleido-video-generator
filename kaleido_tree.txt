@@ -1,0 +1,1985 @@
+/home/onojk123/kaleido-video-generator
+├── 48k_noise_contrast.jpg
+├── 48k_noise_contrast_resized.jpg
+├── 4k_noise_contrast.jpg
+├── 75b9e161-220e-4d73-befc-2b0b34f12226.png
+├── apply_contrast.py
+├── apply_max_contrast.scm
+├── apply_qbist_contrast.scm
+├── apply_strong_hardedge_contrast.py
+├── archive
+│   ├── apply_max_contrast_final.py
+│   ├── apply_max_contrast_multiple_passes.py
+│   ├── apply_max_contrast_preserve_brightness.py
+│   ├── resize_all_large_jpgs.py
+│   └── resize_large_image.py
+├── auto_patch_and_render_final.py
+├── auto_patch_render_and_export.py
+├── base_effects_project.kdenlive
+├── bfg-1.14.0.jar
+├── clean_all_missing_audio_from_kdenlive.py
+├── clean_all_wav_producers.py
+├── clean_and_render.sh
+├── clean_broken_media_kdenlive.py
+├── cleaned_fully_stripped_project.kdenlive
+├── cleaned_stripped_project.kdenlive
+├── clean_template_project.kdenlive
+├── cloud_camouflage.jpg
+├── cloud_camouflage_resized.jpg
+├── current_abstract_video_image.jpg
+├── deep_clean_kdenlive_project.py
+├── directory_tree.txt
+├── distort_rainbow.py
+├── effects_template_base.kdenlive
+├── effects_template_fixed.kdenlive
+├── final_clean_kdenlive_project.py
+├── final_output_10s_effects.mp4
+├── final_output_10s.mp4
+├── final_output_20250718_230937.mp4
+├── final_output_20250719_192442.mp4
+├── final_output_20250719_193321.mp4
+├── final_output_20250719_193430.mp4
+├── final_output_20250719_223355.mp4
+├── final_output_cleaned.mp4
+├── final_output_fixed.mp4
+├── final_output.mp4
+├── final_output_nuked.mp4
+├── final_output_render.mp4
+├── final_output_system_melt.mp4
+├── final_output_test.mp4
+├── fix_kdenlive_mlt_wrapper.py
+├── generate_dense_rainbow_grid.py
+├── generate_qbist_contrast_image.py
+├── generate_rainbow_camouflage_contrast_hardedges.py
+├── generate_rainbow.py
+├── .git
+│   ├── branches
+│   ├── config
+│   ├── description
+│   ├── HEAD
+│   ├── hooks
+│   │   ├── applypatch-msg.sample
+│   │   ├── commit-msg.sample
+│   │   ├── fsmonitor-watchman.sample
+│   │   ├── post-update.sample
+│   │   ├── pre-applypatch.sample
+│   │   ├── pre-commit.sample
+│   │   ├── pre-merge-commit.sample
+│   │   ├── prepare-commit-msg.sample
+│   │   ├── pre-push.sample
+│   │   ├── pre-rebase.sample
+│   │   ├── pre-receive.sample
+│   │   ├── push-to-checkout.sample
+│   │   ├── sendemail-validate.sample
+│   │   └── update.sample
+│   ├── index
+│   ├── info
+│   │   └── exclude
+│   ├── logs
+│   │   ├── HEAD
+│   │   └── refs
+│   │       ├── heads
+│   │       │   └── main
+│   │       └── remotes
+│   │           └── origin
+│   ├── objects
+│   │   ├── info
+│   │   └── pack
+│   │       ├── pack-3f3d0f544a7d573c38e9b890bfd1f4046a08370f.idx
+│   │       ├── pack-3f3d0f544a7d573c38e9b890bfd1f4046a08370f.pack
+│   │       └── pack-3f3d0f544a7d573c38e9b890bfd1f4046a08370f.rev
+│   ├── packed-refs
+│   └── refs
+│       ├── heads
+│       │   └── main
+│       ├── remotes
+│       │   └── origin
+│       │       └── HEAD
+│       └── tags
+├── .gitattributes
+├── .gitignore
+├── inject_image_track.py
+├── inject_video_effects.py
+├── insert_image_into_effects_template.py
+├── insert_image_into_kdenlive.py
+├── kaleido_tree.txt
+├── kaleido-video-generator
+├── kaleido_video_generator.py
+├── kdenlive.AppImage
+├── media
+│   ├── distorted_rainbow_grid.jpg
+│   ├── distorted_rainbow_grid_small.png
+│   ├── distorted_rainbow_grid_upscaled.png
+│   ├── qbist_colored_splotchy.png
+│   ├── qbist_distorted_grid.png
+│   └── rainbow_grid_48000x2160.jpg
+├── nuke_wav_chains_kdenlive.py
+├── output_1080p.mp4
+├── output_2160p.mp4
+├── output_270p.mp4
+├── output_360p.mp4
+├── output_720p.mp4
+├── output.jpg
+├── patch_all_fixed.py
+├── patch_duration_10s.py
+├── patched_9s.kdenlive
+├── patched_cleaned.kdenlive
+├── patched_project.kdenlive
+├── patched_render_10s.kdenlive
+├── patched_render_dynamic.kdenlive
+├── patched_render_final_cleaned.kdenlive
+├── patched_render_final_deepclean.kdenlive
+├── patched_render_final_effects.kdenlive
+├── patched_render_final_fixed.kdenlive
+├── patched_render_final.kdenlive
+├── patched_render_final.kdenlive.bak
+├── patched_render_final_noaudio.kdenlive
+├── patched_render_final_nowav.kdenlive
+├── patched_render_final_nowav_with_effects.kdenlive
+├── patched_render_final_nuked.kdenlive
+├── patched_render.kdenlive
+├── patched_with_image.kdenlive
+├── patch_effects.py
+├── patch_kaleido_bin_effects.py
+├── patch_kaleido_final.py
+├── patch_kdenlive_10s.py
+├── patch_kdenlive_effect_names.py
+├── patch_noaudio_9s.py
+├── patch_render_kdenlive_clean.py
+├── project_tree.txt
+├── python3
+├── rainbow_camouflage_contrast_boosted.jpg
+├── rainbow_camouflage_contrast_hardedges.jpg
+├── rainbow_camouflage_contrast.jpg
+├── rainbow_camouflage_final.jpg
+├── rainbow_camouflage.jpg
+├── rainbow_camouflage.py
+├── rainbow_camouflage_resized.jpg
+├── rainbow_camouflage_seamless.jpg
+├── rainbow_camouflage_seamless.py
+├── README.md
+├── rebuild_template.py
+├── remove_any_wav_references.py
+├── rendered_project.kdenlive
+├── render_flatpak_melt.sh
+├── render_full.log
+├── render_kdenlive_flatpak.sh
+├── render_next.py
+├── render_resolution_ladder.py
+├── render_stderr.log
+├── render_stdout.log
+├── render_this_2.kdenlive
+├── render_this_effects.kdenlive
+├── render_this.kdenlive
+├── render_with_appimage_melt.sh
+├── run_pipeline.py
+├── squashfs-root-new
+│   └── squashfs-root
+│       ├── AppRun
+│       ├── apprun-hooks
+│       │   ├── craft-runenv-hook.sh
+│       │   └── linuxdeploy-plugin-qt-hook.sh
+│       ├── AppRun.wrapped -> usr/bin/kdenlive
+│       ├── .DirIcon -> kdenlive.png
+│       ├── kdenlive.png -> usr/share/icons/hicolor/64x64/apps/kdenlive.png
+│       ├── org.kde.kdenlive.desktop
+│       └── usr
+│           ├── bin
+│           │   ├── ffmpeg
+│           │   ├── ffplay
+│           │   ├── ffprobe
+│           │   ├── kdenlive
+│           │   ├── kdenlive_render
+│           │   ├── melt -> melt-7
+│           │   ├── melt-7
+│           │   ├── qt.conf
+│           │   └── update-mime-database
+│           ├── lib
+│           │   ├── cairo
+│           │   ├── frei0r-1
+│           │   ├── ladspa
+│           │   ├── libabsl_bad_any_cast_impl.so -> libabsl_bad_any_cast_impl.so.2401.0.0
+│           │   ├── libabsl_bad_any_cast_impl.so.2401.0.0
+│           │   ├── libabsl_bad_optional_access.so -> libabsl_bad_optional_access.so.2401.0.0
+│           │   ├── libabsl_bad_optional_access.so.2401.0.0
+│           │   ├── libabsl_bad_variant_access.so -> libabsl_bad_variant_access.so.2401.0.0
+│           │   ├── libabsl_bad_variant_access.so.2401.0.0
+│           │   ├── libabsl_base.so -> libabsl_base.so.2401.0.0
+│           │   ├── libabsl_base.so.2401.0.0
+│           │   ├── libabsl_city.so -> libabsl_city.so.2401.0.0
+│           │   ├── libabsl_city.so.2401.0.0
+│           │   ├── libabsl_civil_time.so -> libabsl_civil_time.so.2401.0.0
+│           │   ├── libabsl_civil_time.so.2401.0.0
+│           │   ├── libabsl_cord_internal.so -> libabsl_cord_internal.so.2401.0.0
+│           │   ├── libabsl_cord_internal.so.2401.0.0
+│           │   ├── libabsl_cord.so -> libabsl_cord.so.2401.0.0
+│           │   ├── libabsl_cord.so.2401.0.0
+│           │   ├── libabsl_cordz_functions.so -> libabsl_cordz_functions.so.2401.0.0
+│           │   ├── libabsl_cordz_functions.so.2401.0.0
+│           │   ├── libabsl_cordz_handle.so -> libabsl_cordz_handle.so.2401.0.0
+│           │   ├── libabsl_cordz_handle.so.2401.0.0
+│           │   ├── libabsl_cordz_info.so -> libabsl_cordz_info.so.2401.0.0
+│           │   ├── libabsl_cordz_info.so.2401.0.0
+│           │   ├── libabsl_cordz_sample_token.so -> libabsl_cordz_sample_token.so.2401.0.0
+│           │   ├── libabsl_cordz_sample_token.so.2401.0.0
+│           │   ├── libabsl_crc32c.so -> libabsl_crc32c.so.2401.0.0
+│           │   ├── libabsl_crc32c.so.2401.0.0
+│           │   ├── libabsl_crc_cord_state.so -> libabsl_crc_cord_state.so.2401.0.0
+│           │   ├── libabsl_crc_cord_state.so.2401.0.0
+│           │   ├── libabsl_crc_cpu_detect.so -> libabsl_crc_cpu_detect.so.2401.0.0
+│           │   ├── libabsl_crc_cpu_detect.so.2401.0.0
+│           │   ├── libabsl_crc_internal.so -> libabsl_crc_internal.so.2401.0.0
+│           │   ├── libabsl_crc_internal.so.2401.0.0
+│           │   ├── libabsl_debugging_internal.so -> libabsl_debugging_internal.so.2401.0.0
+│           │   ├── libabsl_debugging_internal.so.2401.0.0
+│           │   ├── libabsl_demangle_internal.so -> libabsl_demangle_internal.so.2401.0.0
+│           │   ├── libabsl_demangle_internal.so.2401.0.0
+│           │   ├── libabsl_die_if_null.so -> libabsl_die_if_null.so.2401.0.0
+│           │   ├── libabsl_die_if_null.so.2401.0.0
+│           │   ├── libabsl_examine_stack.so -> libabsl_examine_stack.so.2401.0.0
+│           │   ├── libabsl_examine_stack.so.2401.0.0
+│           │   ├── libabsl_exponential_biased.so -> libabsl_exponential_biased.so.2401.0.0
+│           │   ├── libabsl_exponential_biased.so.2401.0.0
+│           │   ├── libabsl_failure_signal_handler.so -> libabsl_failure_signal_handler.so.2401.0.0
+│           │   ├── libabsl_failure_signal_handler.so.2401.0.0
+│           │   ├── libabsl_flags_commandlineflag_internal.so -> libabsl_flags_commandlineflag_internal.so.2401.0.0
+│           │   ├── libabsl_flags_commandlineflag_internal.so.2401.0.0
+│           │   ├── libabsl_flags_commandlineflag.so -> libabsl_flags_commandlineflag.so.2401.0.0
+│           │   ├── libabsl_flags_commandlineflag.so.2401.0.0
+│           │   ├── libabsl_flags_config.so -> libabsl_flags_config.so.2401.0.0
+│           │   ├── libabsl_flags_config.so.2401.0.0
+│           │   ├── libabsl_flags_internal.so -> libabsl_flags_internal.so.2401.0.0
+│           │   ├── libabsl_flags_internal.so.2401.0.0
+│           │   ├── libabsl_flags_marshalling.so -> libabsl_flags_marshalling.so.2401.0.0
+│           │   ├── libabsl_flags_marshalling.so.2401.0.0
+│           │   ├── libabsl_flags_parse.so -> libabsl_flags_parse.so.2401.0.0
+│           │   ├── libabsl_flags_parse.so.2401.0.0
+│           │   ├── libabsl_flags_private_handle_accessor.so -> libabsl_flags_private_handle_accessor.so.2401.0.0
+│           │   ├── libabsl_flags_private_handle_accessor.so.2401.0.0
+│           │   ├── libabsl_flags_program_name.so -> libabsl_flags_program_name.so.2401.0.0
+│           │   ├── libabsl_flags_program_name.so.2401.0.0
+│           │   ├── libabsl_flags_reflection.so -> libabsl_flags_reflection.so.2401.0.0
+│           │   ├── libabsl_flags_reflection.so.2401.0.0
+│           │   ├── libabsl_flags_usage_internal.so -> libabsl_flags_usage_internal.so.2401.0.0
+│           │   ├── libabsl_flags_usage_internal.so.2401.0.0
+│           │   ├── libabsl_flags_usage.so -> libabsl_flags_usage.so.2401.0.0
+│           │   ├── libabsl_flags_usage.so.2401.0.0
+│           │   ├── libabsl_graphcycles_internal.so -> libabsl_graphcycles_internal.so.2401.0.0
+│           │   ├── libabsl_graphcycles_internal.so.2401.0.0
+│           │   ├── libabsl_hash.so -> libabsl_hash.so.2401.0.0
+│           │   ├── libabsl_hash.so.2401.0.0
+│           │   ├── libabsl_hashtablez_sampler.so -> libabsl_hashtablez_sampler.so.2401.0.0
+│           │   ├── libabsl_hashtablez_sampler.so.2401.0.0
+│           │   ├── libabsl_int128.so -> libabsl_int128.so.2401.0.0
+│           │   ├── libabsl_int128.so.2401.0.0
+│           │   ├── libabsl_kernel_timeout_internal.so -> libabsl_kernel_timeout_internal.so.2401.0.0
+│           │   ├── libabsl_kernel_timeout_internal.so.2401.0.0
+│           │   ├── libabsl_leak_check.so -> libabsl_leak_check.so.2401.0.0
+│           │   ├── libabsl_leak_check.so.2401.0.0
+│           │   ├── libabsl_log_entry.so -> libabsl_log_entry.so.2401.0.0
+│           │   ├── libabsl_log_entry.so.2401.0.0
+│           │   ├── libabsl_log_flags.so -> libabsl_log_flags.so.2401.0.0
+│           │   ├── libabsl_log_flags.so.2401.0.0
+│           │   ├── libabsl_log_globals.so -> libabsl_log_globals.so.2401.0.0
+│           │   ├── libabsl_log_globals.so.2401.0.0
+│           │   ├── libabsl_log_initialize.so -> libabsl_log_initialize.so.2401.0.0
+│           │   ├── libabsl_log_initialize.so.2401.0.0
+│           │   ├── libabsl_log_internal_check_op.so -> libabsl_log_internal_check_op.so.2401.0.0
+│           │   ├── libabsl_log_internal_check_op.so.2401.0.0
+│           │   ├── libabsl_log_internal_conditions.so -> libabsl_log_internal_conditions.so.2401.0.0
+│           │   ├── libabsl_log_internal_conditions.so.2401.0.0
+│           │   ├── libabsl_log_internal_fnmatch.so -> libabsl_log_internal_fnmatch.so.2401.0.0
+│           │   ├── libabsl_log_internal_fnmatch.so.2401.0.0
+│           │   ├── libabsl_log_internal_format.so -> libabsl_log_internal_format.so.2401.0.0
+│           │   ├── libabsl_log_internal_format.so.2401.0.0
+│           │   ├── libabsl_log_internal_globals.so -> libabsl_log_internal_globals.so.2401.0.0
+│           │   ├── libabsl_log_internal_globals.so.2401.0.0
+│           │   ├── libabsl_log_internal_log_sink_set.so -> libabsl_log_internal_log_sink_set.so.2401.0.0
+│           │   ├── libabsl_log_internal_log_sink_set.so.2401.0.0
+│           │   ├── libabsl_log_internal_message.so -> libabsl_log_internal_message.so.2401.0.0
+│           │   ├── libabsl_log_internal_message.so.2401.0.0
+│           │   ├── libabsl_log_internal_nullguard.so -> libabsl_log_internal_nullguard.so.2401.0.0
+│           │   ├── libabsl_log_internal_nullguard.so.2401.0.0
+│           │   ├── libabsl_log_internal_proto.so -> libabsl_log_internal_proto.so.2401.0.0
+│           │   ├── libabsl_log_internal_proto.so.2401.0.0
+│           │   ├── libabsl_log_severity.so -> libabsl_log_severity.so.2401.0.0
+│           │   ├── libabsl_log_severity.so.2401.0.0
+│           │   ├── libabsl_log_sink.so -> libabsl_log_sink.so.2401.0.0
+│           │   ├── libabsl_log_sink.so.2401.0.0
+│           │   ├── libabsl_low_level_hash.so -> libabsl_low_level_hash.so.2401.0.0
+│           │   ├── libabsl_low_level_hash.so.2401.0.0
+│           │   ├── libabsl_malloc_internal.so -> libabsl_malloc_internal.so.2401.0.0
+│           │   ├── libabsl_malloc_internal.so.2401.0.0
+│           │   ├── libabsl_periodic_sampler.so -> libabsl_periodic_sampler.so.2401.0.0
+│           │   ├── libabsl_periodic_sampler.so.2401.0.0
+│           │   ├── libabsl_random_distributions.so -> libabsl_random_distributions.so.2401.0.0
+│           │   ├── libabsl_random_distributions.so.2401.0.0
+│           │   ├── libabsl_random_internal_distribution_test_util.so -> libabsl_random_internal_distribution_test_util.so.2401.0.0
+│           │   ├── libabsl_random_internal_distribution_test_util.so.2401.0.0
+│           │   ├── libabsl_random_internal_platform.so -> libabsl_random_internal_platform.so.2401.0.0
+│           │   ├── libabsl_random_internal_platform.so.2401.0.0
+│           │   ├── libabsl_random_internal_pool_urbg.so -> libabsl_random_internal_pool_urbg.so.2401.0.0
+│           │   ├── libabsl_random_internal_pool_urbg.so.2401.0.0
+│           │   ├── libabsl_random_internal_randen_hwaes_impl.so -> libabsl_random_internal_randen_hwaes_impl.so.2401.0.0
+│           │   ├── libabsl_random_internal_randen_hwaes_impl.so.2401.0.0
+│           │   ├── libabsl_random_internal_randen_hwaes.so -> libabsl_random_internal_randen_hwaes.so.2401.0.0
+│           │   ├── libabsl_random_internal_randen_hwaes.so.2401.0.0
+│           │   ├── libabsl_random_internal_randen_slow.so -> libabsl_random_internal_randen_slow.so.2401.0.0
+│           │   ├── libabsl_random_internal_randen_slow.so.2401.0.0
+│           │   ├── libabsl_random_internal_randen.so -> libabsl_random_internal_randen.so.2401.0.0
+│           │   ├── libabsl_random_internal_randen.so.2401.0.0
+│           │   ├── libabsl_random_internal_seed_material.so -> libabsl_random_internal_seed_material.so.2401.0.0
+│           │   ├── libabsl_random_internal_seed_material.so.2401.0.0
+│           │   ├── libabsl_random_seed_gen_exception.so -> libabsl_random_seed_gen_exception.so.2401.0.0
+│           │   ├── libabsl_random_seed_gen_exception.so.2401.0.0
+│           │   ├── libabsl_random_seed_sequences.so -> libabsl_random_seed_sequences.so.2401.0.0
+│           │   ├── libabsl_random_seed_sequences.so.2401.0.0
+│           │   ├── libabsl_raw_hash_set.so -> libabsl_raw_hash_set.so.2401.0.0
+│           │   ├── libabsl_raw_hash_set.so.2401.0.0
+│           │   ├── libabsl_raw_logging_internal.so -> libabsl_raw_logging_internal.so.2401.0.0
+│           │   ├── libabsl_raw_logging_internal.so.2401.0.0
+│           │   ├── libabsl_scoped_set_env.so -> libabsl_scoped_set_env.so.2401.0.0
+│           │   ├── libabsl_scoped_set_env.so.2401.0.0
+│           │   ├── libabsl_spinlock_wait.so -> libabsl_spinlock_wait.so.2401.0.0
+│           │   ├── libabsl_spinlock_wait.so.2401.0.0
+│           │   ├── libabsl_stacktrace.so -> libabsl_stacktrace.so.2401.0.0
+│           │   ├── libabsl_stacktrace.so.2401.0.0
+│           │   ├── libabsl_statusor.so -> libabsl_statusor.so.2401.0.0
+│           │   ├── libabsl_statusor.so.2401.0.0
+│           │   ├── libabsl_status.so -> libabsl_status.so.2401.0.0
+│           │   ├── libabsl_status.so.2401.0.0
+│           │   ├── libabsl_strerror.so -> libabsl_strerror.so.2401.0.0
+│           │   ├── libabsl_strerror.so.2401.0.0
+│           │   ├── libabsl_str_format_internal.so -> libabsl_str_format_internal.so.2401.0.0
+│           │   ├── libabsl_str_format_internal.so.2401.0.0
+│           │   ├── libabsl_strings_internal.so -> libabsl_strings_internal.so.2401.0.0
+│           │   ├── libabsl_strings_internal.so.2401.0.0
+│           │   ├── libabsl_strings.so -> libabsl_strings.so.2401.0.0
+│           │   ├── libabsl_strings.so.2401.0.0
+│           │   ├── libabsl_string_view.so -> libabsl_string_view.so.2401.0.0
+│           │   ├── libabsl_string_view.so.2401.0.0
+│           │   ├── libabsl_symbolize.so -> libabsl_symbolize.so.2401.0.0
+│           │   ├── libabsl_symbolize.so.2401.0.0
+│           │   ├── libabsl_synchronization.so -> libabsl_synchronization.so.2401.0.0
+│           │   ├── libabsl_synchronization.so.2401.0.0
+│           │   ├── libabsl_throw_delegate.so -> libabsl_throw_delegate.so.2401.0.0
+│           │   ├── libabsl_throw_delegate.so.2401.0.0
+│           │   ├── libabsl_time.so -> libabsl_time.so.2401.0.0
+│           │   ├── libabsl_time.so.2401.0.0
+│           │   ├── libabsl_time_zone.so -> libabsl_time_zone.so.2401.0.0
+│           │   ├── libabsl_time_zone.so.2401.0.0
+│           │   ├── libabsl_vlog_config_internal.so -> libabsl_vlog_config_internal.so.2401.0.0
+│           │   ├── libabsl_vlog_config_internal.so.2401.0.0
+│           │   ├── libalsa-util.so
+│           │   ├── libaom.so -> libaom.so.3
+│           │   ├── libaom.so.3 -> libaom.so.3.10.0
+│           │   ├── libaom.so.3.10.0
+│           │   ├── libarchive.so -> libarchive.so.13
+│           │   ├── libarchive.so.13 -> libarchive.so.13.7.9
+│           │   ├── libarchive.so.13.7.9
+│           │   ├── libasound.so -> libasound.so.2.0.0
+│           │   ├── libasound.so.2 -> libasound.so.2.0.0
+│           │   ├── libasound.so.2.0.0
+│           │   ├── libasprintf.so -> libasprintf.so.0.0.0
+│           │   ├── libasprintf.so.0 -> libasprintf.so.0.0.0
+│           │   ├── libasprintf.so.0.0.0
+│           │   ├── libass.so -> libass.so.9.3.1
+│           │   ├── libass.so.9 -> libass.so.9.3.1
+│           │   ├── libass.so.9.3.1
+│           │   ├── libassuan.so -> libassuan.so.9.0.1
+│           │   ├── libassuan.so.9 -> libassuan.so.9.0.1
+│           │   ├── libassuan.so.9.0.1
+│           │   ├── libatomic.so.1
+│           │   ├── libatopology.so -> libatopology.so.2.0.0
+│           │   ├── libatopology.so.2 -> libatopology.so.2.0.0
+│           │   ├── libatopology.so.2.0.0
+│           │   ├── libavcodec.so -> libavcodec.so.61.19.100
+│           │   ├── libavcodec.so.61 -> libavcodec.so.61.19.100
+│           │   ├── libavcodec.so.61.19.100
+│           │   ├── libavdevice.so -> libavdevice.so.61.3.100
+│           │   ├── libavdevice.so.61 -> libavdevice.so.61.3.100
+│           │   ├── libavdevice.so.61.3.100
+│           │   ├── libavfilter.so -> libavfilter.so.10.4.100
+│           │   ├── libavfilter.so.10 -> libavfilter.so.10.4.100
+│           │   ├── libavfilter.so.10.4.100
+│           │   ├── libavformat.so -> libavformat.so.61.7.100
+│           │   ├── libavformat.so.61 -> libavformat.so.61.7.100
+│           │   ├── libavformat.so.61.7.100
+│           │   ├── libavif.so -> libavif.so.16
+│           │   ├── libavif.so.16 -> libavif.so.16.3.0
+│           │   ├── libavif.so.16.3.0
+│           │   ├── libavutil.so -> libavutil.so.59.39.100
+│           │   ├── libavutil.so.59 -> libavutil.so.59.39.100
+│           │   ├── libavutil.so.59.39.100
+│           │   ├── libb2.so -> libb2.so.1.0.4
+│           │   ├── libb2.so.1 -> libb2.so.1.0.4
+│           │   ├── libb2.so.1.0.4
+│           │   ├── libblkid.so.1
+│           │   ├── libbrotlicommon.so -> libbrotlicommon.so.1
+│           │   ├── libbrotlicommon.so.1 -> libbrotlicommon.so.1.1.0
+│           │   ├── libbrotlicommon.so.1.1.0
+│           │   ├── libbrotlidec.so -> libbrotlidec.so.1
+│           │   ├── libbrotlidec.so.1 -> libbrotlidec.so.1.1.0
+│           │   ├── libbrotlidec.so.1.1.0
+│           │   ├── libbrotlienc.so -> libbrotlienc.so.1
+│           │   ├── libbrotlienc.so.1 -> libbrotlienc.so.1.1.0
+│           │   ├── libbrotlienc.so.1.1.0
+│           │   ├── libbz2.so
+│           │   ├── libbzip2.so
+│           │   ├── libcairo-gobject.so -> libcairo-gobject.so.2
+│           │   ├── libcairo-gobject.so.2 -> libcairo-gobject.so.2.11804.4
+│           │   ├── libcairo-gobject.so.2.11804.4
+│           │   ├── libcairo-script-interpreter.so -> libcairo-script-interpreter.so.2
+│           │   ├── libcairo-script-interpreter.so.2 -> libcairo-script-interpreter.so.2.11804.4
+│           │   ├── libcairo-script-interpreter.so.2.11804.4
+│           │   ├── libcairo.so -> libcairo.so.2
+│           │   ├── libcairo.so.2 -> libcairo.so.2.11804.4
+│           │   ├── libcairo.so.2.11804.4
+│           │   ├── libcanberra-0.30
+│           │   ├── libcanberra.so -> libcanberra.so.0.2.5
+│           │   ├── libcanberra.so.0 -> libcanberra.so.0.2.5
+│           │   ├── libcanberra.so.0.2.5
+│           │   ├── libcap.so.2
+│           │   ├── libcharset.so -> libcharset.so.1.0.0
+│           │   ├── libcharset.so.1 -> libcharset.so.1.0.0
+│           │   ├── libcharset.so.1.0.0
+│           │   ├── libcli.so
+│           │   ├── libcrypto.so -> libcrypto.so.3
+│           │   ├── libcrypto.so.3
+│           │   ├── libcrypt.so.1
+│           │   ├── libcupsimage.so -> libcupsimage.so.2
+│           │   ├── libcupsimage.so.2
+│           │   ├── libcups.so -> libcups.so.2
+│           │   ├── libcups.so.2
+│           │   ├── libcurl.so -> libcurl.so.4
+│           │   ├── libcurl.so.4 -> libcurl.so.4.8.0
+│           │   ├── libcurl.so.4.8.0
+│           │   ├── libdav1d.so -> libdav1d.so.7
+│           │   ├── libdav1d.so.7 -> libdav1d.so.7.0.0
+│           │   ├── libdav1d.so.7.0.0
+│           │   ├── libdbus-1.so -> libdbus-1.so.3.32.3
+│           │   ├── libdbus-1.so.3 -> libdbus-1.so.3.32.3
+│           │   ├── libdbus-1.so.3.32.3
+│           │   ├── libepoxy.so -> libepoxy.so.0
+│           │   ├── libepoxy.so.0 -> libepoxy.so.0.0.0
+│           │   ├── libepoxy.so.0.0.0
+│           │   ├── libepub.so -> libepub.so.0
+│           │   ├── libepub.so.0 -> libepub.so.0.2.1
+│           │   ├── libepub.so.0.2.1
+│           │   ├── libexec
+│           │   ├── libexif.so -> libexif.so.12.3.4
+│           │   ├── libexif.so.12 -> libexif.so.12.3.4
+│           │   ├── libexif.so.12.3.4
+│           │   ├── libexiv2.so -> libexiv2.so.28
+│           │   ├── libexiv2.so.0.28.5
+│           │   ├── libexiv2.so.28 -> libexiv2.so.0.28.5
+│           │   ├── libexpat.so -> libexpat.so.1
+│           │   ├── libexpat.so.1 -> libexpat.so.1.6.12
+│           │   ├── libexpat.so.1.6.12
+│           │   ├── libexslt.so -> libexslt.so.0
+│           │   ├── libexslt.so.0 -> libexslt.so.0.8.23
+│           │   ├── libexslt.so.0.8.23
+│           │   ├── libffi.so -> libffi.so.8.1.4
+│           │   ├── libffi.so.7
+│           │   ├── libffi.so.8 -> libffi.so.8.1.4
+│           │   ├── libffi.so.8.1.4
+│           │   ├── libfftw3.so -> libfftw3.so.3.5.7
+│           │   ├── libfftw3.so.3
+│           │   ├── libfftw3.so.3.5.7 -> libfftw3.so.3
+│           │   ├── libfontconfig.so -> libfontconfig.so.1.12.1
+│           │   ├── libfontconfig.so.1 -> libfontconfig.so.1.12.1
+│           │   ├── libfontconfig.so.1.12.1
+│           │   ├── libfreebl3.so
+│           │   ├── libfreebl3.so.TOC
+│           │   ├── libfreeblpriv3.so
+│           │   ├── libfreeblpriv3.so.TOC
+│           │   ├── libfreetype.so -> libfreetype.so.6.18.3
+│           │   ├── libfreetype.so.6 -> libfreetype.so.6.18.3
+│           │   ├── libfreetype.so.6.18.3
+│           │   ├── libfribidi.so -> libfribidi.so.0
+│           │   ├── libfribidi.so.0 -> libfribidi.so.0.4.0
+│           │   ├── libfribidi.so.0.4.0
+│           │   ├── libgavl.so -> libgavl.so.1.0.0
+│           │   ├── libgavl.so.1 -> libgavl.so.1.0.0
+│           │   ├── libgavl.so.1.0.0
+│           │   ├── libgcrypt.so -> libgcrypt.so.20.5.0
+│           │   ├── libgcrypt.so.20 -> libgcrypt.so.20.5.0
+│           │   ├── libgcrypt.so.20.5.0
+│           │   ├── libgettextlib-0.22.3.so
+│           │   ├── libgettextlib.so -> libgettextlib-0.22.3.so
+│           │   ├── libgettextpo.so -> libgettextpo.so.0.5.10
+│           │   ├── libgettextpo.so.0 -> libgettextpo.so.0.5.10
+│           │   ├── libgettextpo.so.0.5.10
+│           │   ├── libgettextsrc-0.22.3.so
+│           │   ├── libgettextsrc.so -> libgettextsrc-0.22.3.so
+│           │   ├── libgif.so
+│           │   ├── libgio-2.0.so -> libgio-2.0.so.0
+│           │   ├── libgio-2.0.so.0 -> libgio-2.0.so.0.8100.0
+│           │   ├── libgio-2.0.so.0.8100.0
+│           │   ├── libgirepository-2.0.so -> libgirepository-2.0.so.0
+│           │   ├── libgirepository-2.0.so.0 -> libgirepository-2.0.so.0.8100.0
+│           │   ├── libgirepository-2.0.so.0.8100.0
+│           │   ├── libglib-2.0.so -> libglib-2.0.so.0
+│           │   ├── libglib-2.0.so.0 -> libglib-2.0.so.0.8100.0
+│           │   ├── libglib-2.0.so.0.8100.0
+│           │   ├── libgmodule-2.0.so -> libgmodule-2.0.so.0
+│           │   ├── libgmodule-2.0.so.0 -> libgmodule-2.0.so.0.8100.0
+│           │   ├── libgmodule-2.0.so.0.8100.0
+│           │   ├── libgmp.so -> libgmp.so.10.5.0
+│           │   ├── libgmp.so.10 -> libgmp.so.10.5.0
+│           │   ├── libgmp.so.10.5.0
+│           │   ├── libgmpxx.so -> libgmpxx.so.4.7.0
+│           │   ├── libgmpxx.so.4 -> libgmpxx.so.4.7.0
+│           │   ├── libgmpxx.so.4.7.0
+│           │   ├── libgnutls-openssl.so -> libgnutls-openssl.so.27.0.2
+│           │   ├── libgnutls-openssl.so.27 -> libgnutls-openssl.so.27.0.2
+│           │   ├── libgnutls-openssl.so.27.0.2
+│           │   ├── libgnutls.so -> libgnutls.so.30.38.0
+│           │   ├── libgnutls.so.30 -> libgnutls.so.30.38.0
+│           │   ├── libgnutls.so.30.38.0
+│           │   ├── libgnutlsxx.so -> libgnutlsxx.so.30.0.0
+│           │   ├── libgnutlsxx.so.30 -> libgnutlsxx.so.30.0.0
+│           │   ├── libgnutlsxx.so.30.0.0
+│           │   ├── libgobject-2.0.so -> libgobject-2.0.so.0
+│           │   ├── libgobject-2.0.so.0 -> libgobject-2.0.so.0.8100.0
+│           │   ├── libgobject-2.0.so.0.8100.0
+│           │   ├── libgomp.so.1
+│           │   ├── libgpg-error.so -> libgpg-error.so.0.37.0
+│           │   ├── libgpg-error.so.0 -> libgpg-error.so.0.37.0
+│           │   ├── libgpg-error.so.0.37.0
+│           │   ├── libgpgmepp.so -> libgpgmepp.so.6
+│           │   ├── libgpgmepp.so.6 -> libgpgmepp.so.6.20.1
+│           │   ├── libgpgmepp.so.6.20.1
+│           │   ├── libgpgme.so -> libgpgme.so.11.32.1
+│           │   ├── libgpgme.so.11 -> libgpgme.so.11.32.1
+│           │   ├── libgpgme.so.11.32.1
+│           │   ├── libgthread-2.0.so -> libgthread-2.0.so.0
+│           │   ├── libgthread-2.0.so.0 -> libgthread-2.0.so.0.8100.0
+│           │   ├── libgthread-2.0.so.0.8100.0
+│           │   ├── libharfbuzz.so
+│           │   ├── libhogweed.so -> libhogweed.so.6.4
+│           │   ├── libhogweed.so.6 -> libhogweed.so.6.4
+│           │   ├── libhogweed.so.6.4
+│           │   ├── libhunspell-1.7.so -> libhunspell-1.7.so.0.0.1
+│           │   ├── libhunspell-1.7.so.0 -> libhunspell-1.7.so.0.0.1
+│           │   ├── libhunspell-1.7.so.0.0.1
+│           │   ├── libhwy.so -> libhwy.so.1
+│           │   ├── libhwy.so.1 -> libhwy.so.1.2.0
+│           │   ├── libhwy.so.1.2.0
+│           │   ├── libiconv.so -> libiconv.so.2.6.0
+│           │   ├── libiconv.so.2 -> libiconv.so.2.6.0
+│           │   ├── libiconv.so.2.6.0
+│           │   ├── libicudata.so -> libicudata.so.76.1
+│           │   ├── libicudata.so.76 -> libicudata.so.76.1
+│           │   ├── libicudata.so.76.1
+│           │   ├── libicui18n.so -> libicui18n.so.76.1
+│           │   ├── libicui18n.so.76 -> libicui18n.so.76.1
+│           │   ├── libicui18n.so.76.1
+│           │   ├── libicuio.so -> libicuio.so.76.1
+│           │   ├── libicuio.so.76 -> libicuio.so.76.1
+│           │   ├── libicuio.so.76.1
+│           │   ├── libicutest.so -> libicutest.so.76.1
+│           │   ├── libicutest.so.76 -> libicutest.so.76.1
+│           │   ├── libicutest.so.76.1
+│           │   ├── libicutu.so -> libicutu.so.76.1
+│           │   ├── libicutu.so.76 -> libicutu.so.76.1
+│           │   ├── libicutu.so.76.1
+│           │   ├── libicuuc.so -> libicuuc.so.76.1
+│           │   ├── libicuuc.so.76 -> libicuuc.so.76.1
+│           │   ├── libicuuc.so.76.1
+│           │   ├── libIex-3_2.so -> libIex-3_2.so.31
+│           │   ├── libIex-3_2.so.31 -> libIex-3_2.so.31.3.2.4
+│           │   ├── libIex-3_2.so.31.3.2.4
+│           │   ├── libIex.so -> libIex-3_2.so
+│           │   ├── libIlmThread-3_2.so -> libIlmThread-3_2.so.31
+│           │   ├── libIlmThread-3_2.so.31 -> libIlmThread-3_2.so.31.3.2.4
+│           │   ├── libIlmThread-3_2.so.31.3.2.4
+│           │   ├── libIlmThread.so -> libIlmThread-3_2.so
+│           │   ├── libImath-3_1.so -> libImath-3_1.so.29
+│           │   ├── libImath-3_1.so.29 -> libImath-3_1.so.29.10.0
+│           │   ├── libImath-3_1.so.29.10.0
+│           │   ├── libImath.so -> libImath-3_1.so
+│           │   ├── libinih.so -> libinih.so.0
+│           │   ├── libinih.so.0
+│           │   ├── libINIReader.so -> libINIReader.so.0
+│           │   ├── libINIReader.so.0
+│           │   ├── libintl.so -> libintl.so.8.4.0
+│           │   ├── libintl.so.8 -> libintl.so.8.4.0
+│           │   ├── libintl.so.8.4.0
+│           │   ├── libjpeg.so -> libjpeg.so.62
+│           │   ├── libjpeg.so.62 -> libjpeg.so.62.4.0
+│           │   ├── libjpeg.so.62.4.0
+│           │   ├── libjxl_cms.so -> libjxl_cms.so.0.11
+│           │   ├── libjxl_cms.so.0.11 -> libjxl_cms.so.0.11.1
+│           │   ├── libjxl_cms.so.0.11.1
+│           │   ├── libjxl.so -> libjxl.so.0.11
+│           │   ├── libjxl.so.0.11 -> libjxl.so.0.11.1
+│           │   ├── libjxl.so.0.11.1
+│           │   ├── libjxl_threads.so -> libjxl_threads.so.0.11
+│           │   ├── libjxl_threads.so.0.11 -> libjxl_threads.so.0.11.1
+│           │   ├── libjxl_threads.so.0.11.1
+│           │   ├── libkdecorations3private.so -> libkdecorations3private.so.2
+│           │   ├── libkdecorations3private.so.2 -> libkdecorations3private.so.6.4.0
+│           │   ├── libkdecorations3private.so.6.4.0
+│           │   ├── libkdecorations3.so -> libkdecorations3.so.6
+│           │   ├── libkdecorations3.so.6 -> libkdecorations3.so.6.4.0
+│           │   ├── libkdecorations3.so.6.4.0
+│           │   ├── libKExiv2Qt6.so -> libKExiv2Qt6.so.0
+│           │   ├── libKExiv2Qt6.so.0 -> libKExiv2Qt6.so.5.1.0
+│           │   ├── libKExiv2Qt6.so.5.1.0
+│           │   ├── libKF6Archive.so -> libKF6Archive.so.6
+│           │   ├── libKF6Archive.so.6 -> libKF6Archive.so.6.15.0
+│           │   ├── libKF6Archive.so.6.15.0
+│           │   ├── libKF6Attica.so -> libKF6Attica.so.6
+│           │   ├── libKF6Attica.so.6 -> libKF6Attica.so.6.15.0
+│           │   ├── libKF6Attica.so.6.15.0
+│           │   ├── libKF6AuthCore.so -> libKF6AuthCore.so.6
+│           │   ├── libKF6AuthCore.so.6 -> libKF6AuthCore.so.6.15.0
+│           │   ├── libKF6AuthCore.so.6.15.0
+│           │   ├── libKF6Bookmarks.so -> libKF6Bookmarks.so.6
+│           │   ├── libKF6Bookmarks.so.6 -> libKF6Bookmarks.so.6.15.0
+│           │   ├── libKF6Bookmarks.so.6.15.0
+│           │   ├── libKF6BookmarksWidgets.so -> libKF6BookmarksWidgets.so.6
+│           │   ├── libKF6BookmarksWidgets.so.6 -> libKF6BookmarksWidgets.so.6.15.0
+│           │   ├── libKF6BookmarksWidgets.so.6.15.0
+│           │   ├── libKF6BreezeIcons.so -> libKF6BreezeIcons.so.6
+│           │   ├── libKF6BreezeIcons.so.6 -> libKF6BreezeIcons.so.6.15.0
+│           │   ├── libKF6BreezeIcons.so.6.15.0
+│           │   ├── libKF6CalendarEvents.so -> libKF6CalendarEvents.so.6
+│           │   ├── libKF6CalendarEvents.so.6 -> libKF6CalendarEvents.so.6.15.0
+│           │   ├── libKF6CalendarEvents.so.6.15.0
+│           │   ├── libKF6Codecs.so -> libKF6Codecs.so.6
+│           │   ├── libKF6Codecs.so.6 -> libKF6Codecs.so.6.15.0
+│           │   ├── libKF6Codecs.so.6.15.0
+│           │   ├── libKF6ColorScheme.so -> libKF6ColorScheme.so.6
+│           │   ├── libKF6ColorScheme.so.6 -> libKF6ColorScheme.so.6.15.0
+│           │   ├── libKF6ColorScheme.so.6.15.0
+│           │   ├── libKF6Completion.so -> libKF6Completion.so.6
+│           │   ├── libKF6Completion.so.6 -> libKF6Completion.so.6.15.0
+│           │   ├── libKF6Completion.so.6.15.0
+│           │   ├── libKF6ConfigCore.so -> libKF6ConfigCore.so.6
+│           │   ├── libKF6ConfigCore.so.6 -> libKF6ConfigCore.so.6.15.0
+│           │   ├── libKF6ConfigCore.so.6.15.0
+│           │   ├── libKF6ConfigGui.so -> libKF6ConfigGui.so.6
+│           │   ├── libKF6ConfigGui.so.6 -> libKF6ConfigGui.so.6.15.0
+│           │   ├── libKF6ConfigGui.so.6.15.0
+│           │   ├── libKF6ConfigQml.so -> libKF6ConfigQml.so.6
+│           │   ├── libKF6ConfigQml.so.6 -> libKF6ConfigQml.so.6.15.0
+│           │   ├── libKF6ConfigQml.so.6.15.0
+│           │   ├── libKF6ConfigWidgets.so -> libKF6ConfigWidgets.so.6
+│           │   ├── libKF6ConfigWidgets.so.6 -> libKF6ConfigWidgets.so.6.15.0
+│           │   ├── libKF6ConfigWidgets.so.6.15.0
+│           │   ├── libKF6CoreAddons.so -> libKF6CoreAddons.so.6
+│           │   ├── libKF6CoreAddons.so.6 -> libKF6CoreAddons.so.6.15.0
+│           │   ├── libKF6CoreAddons.so.6.15.0
+│           │   ├── libKF6Crash.so -> libKF6Crash.so.6
+│           │   ├── libKF6Crash.so.6 -> libKF6Crash.so.6.15.0
+│           │   ├── libKF6Crash.so.6.15.0
+│           │   ├── libKF6DBusAddons.so -> libKF6DBusAddons.so.6
+│           │   ├── libKF6DBusAddons.so.6 -> libKF6DBusAddons.so.6.15.0
+│           │   ├── libKF6DBusAddons.so.6.15.0
+│           │   ├── libKF6DNSSD.so -> libKF6DNSSD.so.6
+│           │   ├── libKF6DNSSD.so.6 -> libKF6DNSSD.so.6.15.0
+│           │   ├── libKF6DNSSD.so.6.15.0
+│           │   ├── libKF6DocTools.so -> libKF6DocTools.so.6
+│           │   ├── libKF6DocTools.so.6 -> libKF6DocTools.so.6.15.0
+│           │   ├── libKF6DocTools.so.6.15.0
+│           │   ├── libKF6FileMetaData.so -> libKF6FileMetaData.so.3
+│           │   ├── libKF6FileMetaData.so.3 -> libKF6FileMetaData.so.6.15.0
+│           │   ├── libKF6FileMetaData.so.6.15.0
+│           │   ├── libKF6GlobalAccel.so -> libKF6GlobalAccel.so.6
+│           │   ├── libKF6GlobalAccel.so.6 -> libKF6GlobalAccel.so.6.15.0
+│           │   ├── libKF6GlobalAccel.so.6.15.0
+│           │   ├── libKF6GuiAddons.so -> libKF6GuiAddons.so.6
+│           │   ├── libKF6GuiAddons.so.6 -> libKF6GuiAddons.so.6.15.0
+│           │   ├── libKF6GuiAddons.so.6.15.0
+│           │   ├── libKF6I18nLocaleData.so -> libKF6I18nLocaleData.so.6
+│           │   ├── libKF6I18nLocaleData.so.6 -> libKF6I18nLocaleData.so.6.15.0
+│           │   ├── libKF6I18nLocaleData.so.6.15.0
+│           │   ├── libKF6I18nQml.so -> libKF6I18nQml.so.6
+│           │   ├── libKF6I18nQml.so.6 -> libKF6I18nQml.so.6.15.0
+│           │   ├── libKF6I18nQml.so.6.15.0
+│           │   ├── libKF6I18n.so -> libKF6I18n.so.6
+│           │   ├── libKF6I18n.so.6 -> libKF6I18n.so.6.15.0
+│           │   ├── libKF6I18n.so.6.15.0
+│           │   ├── libKF6IconThemes.so -> libKF6IconThemes.so.6
+│           │   ├── libKF6IconThemes.so.6 -> libKF6IconThemes.so.6.15.0
+│           │   ├── libKF6IconThemes.so.6.15.0
+│           │   ├── libKF6IconWidgets.so -> libKF6IconWidgets.so.6
+│           │   ├── libKF6IconWidgets.so.6 -> libKF6IconWidgets.so.6.15.0
+│           │   ├── libKF6IconWidgets.so.6.15.0
+│           │   ├── libKF6ItemViews.so -> libKF6ItemViews.so.6
+│           │   ├── libKF6ItemViews.so.6 -> libKF6ItemViews.so.6.15.0
+│           │   ├── libKF6ItemViews.so.6.15.0
+│           │   ├── libKF6JobWidgets.so -> libKF6JobWidgets.so.6
+│           │   ├── libKF6JobWidgets.so.6 -> libKF6JobWidgets.so.6.15.0
+│           │   ├── libKF6JobWidgets.so.6.15.0
+│           │   ├── libKF6KCMUtilsCore.so -> libKF6KCMUtilsCore.so.6
+│           │   ├── libKF6KCMUtilsCore.so.6 -> libKF6KCMUtilsCore.so.6.15.0
+│           │   ├── libKF6KCMUtilsCore.so.6.15.0
+│           │   ├── libKF6KCMUtilsQuick.so -> libKF6KCMUtilsQuick.so.6
+│           │   ├── libKF6KCMUtilsQuick.so.6 -> libKF6KCMUtilsQuick.so.6.15.0
+│           │   ├── libKF6KCMUtilsQuick.so.6.15.0
+│           │   ├── libKF6KCMUtils.so -> libKF6KCMUtils.so.6
+│           │   ├── libKF6KCMUtils.so.6 -> libKF6KCMUtils.so.6.15.0
+│           │   ├── libKF6KCMUtils.so.6.15.0
+│           │   ├── libKF6KIOCore.so -> libKF6KIOCore.so.6
+│           │   ├── libKF6KIOCore.so.6 -> libKF6KIOCore.so.6.15.0
+│           │   ├── libKF6KIOCore.so.6.15.0
+│           │   ├── libKF6KIOFileWidgets.so -> libKF6KIOFileWidgets.so.6
+│           │   ├── libKF6KIOFileWidgets.so.6 -> libKF6KIOFileWidgets.so.6.15.0
+│           │   ├── libKF6KIOFileWidgets.so.6.15.0
+│           │   ├── libKF6KIOGui.so -> libKF6KIOGui.so.6
+│           │   ├── libKF6KIOGui.so.6 -> libKF6KIOGui.so.6.15.0
+│           │   ├── libKF6KIOGui.so.6.15.0
+│           │   ├── libKF6KIOWidgets.so -> libKF6KIOWidgets.so.6
+│           │   ├── libKF6KIOWidgets.so.6 -> libKF6KIOWidgets.so.6.15.0
+│           │   ├── libKF6KIOWidgets.so.6.15.0
+│           │   ├── libKF6NewStuffCore.so -> libKF6NewStuffCore.so.6
+│           │   ├── libKF6NewStuffCore.so.6 -> libKF6NewStuffCore.so.6.15.0
+│           │   ├── libKF6NewStuffCore.so.6.15.0
+│           │   ├── libKF6NewStuffWidgets.so -> libKF6NewStuffWidgets.so.6
+│           │   ├── libKF6NewStuffWidgets.so.6 -> libKF6NewStuffWidgets.so.6.15.0
+│           │   ├── libKF6NewStuffWidgets.so.6.15.0
+│           │   ├── libKF6Notifications.so -> libKF6Notifications.so.6
+│           │   ├── libKF6Notifications.so.6 -> libKF6Notifications.so.6.15.0
+│           │   ├── libKF6Notifications.so.6.15.0
+│           │   ├── libKF6NotifyConfig.so -> libKF6NotifyConfig.so.6
+│           │   ├── libKF6NotifyConfig.so.6 -> libKF6NotifyConfig.so.6.15.0
+│           │   ├── libKF6NotifyConfig.so.6.15.0
+│           │   ├── libKF6Package.so -> libKF6Package.so.6
+│           │   ├── libKF6Package.so.6 -> libKF6Package.so.6.15.0
+│           │   ├── libKF6Package.so.6.15.0
+│           │   ├── libKF6Plotting.so -> libKF6Plotting.so.6
+│           │   ├── libKF6Plotting.so.6 -> libKF6Plotting.so.6.15.0
+│           │   ├── libKF6Plotting.so.6.15.0
+│           │   ├── libKF6Purpose.so -> libKF6Purpose.so.6
+│           │   ├── libKF6Purpose.so.6 -> libKF6Purpose.so.6.15.0
+│           │   ├── libKF6Purpose.so.6.15.0
+│           │   ├── libKF6PurposeWidgets.so -> libKF6PurposeWidgets.so.6
+│           │   ├── libKF6PurposeWidgets.so.6 -> libKF6PurposeWidgets.so.6.15.0
+│           │   ├── libKF6PurposeWidgets.so.6.15.0
+│           │   ├── libKF6Service.so -> libKF6Service.so.6
+│           │   ├── libKF6Service.so.6 -> libKF6Service.so.6.15.0
+│           │   ├── libKF6Service.so.6.15.0
+│           │   ├── libKF6Solid.so -> libKF6Solid.so.6
+│           │   ├── libKF6Solid.so.6 -> libKF6Solid.so.6.15.0
+│           │   ├── libKF6Solid.so.6.15.0
+│           │   ├── libKF6SonnetCore.so -> libKF6SonnetCore.so.6
+│           │   ├── libKF6SonnetCore.so.6 -> libKF6SonnetCore.so.6.15.0
+│           │   ├── libKF6SonnetCore.so.6.15.0
+│           │   ├── libKF6SonnetUi.so -> libKF6SonnetUi.so.6
+│           │   ├── libKF6SonnetUi.so.6 -> libKF6SonnetUi.so.6.15.0
+│           │   ├── libKF6SonnetUi.so.6.15.0
+│           │   ├── libKF6Style.so -> libKF6Style.so.6
+│           │   ├── libKF6Style.so.6 -> libKF6Style.so.6.15.0
+│           │   ├── libKF6Style.so.6.15.0
+│           │   ├── libKF6Syndication.so -> libKF6Syndication.so.6
+│           │   ├── libKF6Syndication.so.6 -> libKF6Syndication.so.6.15.0
+│           │   ├── libKF6Syndication.so.6.15.0
+│           │   ├── libKF6SyntaxHighlighting.so -> libKF6SyntaxHighlighting.so.6
+│           │   ├── libKF6SyntaxHighlighting.so.6 -> libKF6SyntaxHighlighting.so.6.15.0
+│           │   ├── libKF6SyntaxHighlighting.so.6.15.0
+│           │   ├── libKF6TextWidgets.so -> libKF6TextWidgets.so.6
+│           │   ├── libKF6TextWidgets.so.6 -> libKF6TextWidgets.so.6.15.0
+│           │   ├── libKF6TextWidgets.so.6.15.0
+│           │   ├── libKF6WalletBackend.so.6 -> libKF6WalletBackend.so.6.15.0
+│           │   ├── libKF6WalletBackend.so.6.15.0
+│           │   ├── libKF6Wallet.so -> libKF6Wallet.so.6
+│           │   ├── libKF6Wallet.so.6 -> libKF6Wallet.so.6.15.0
+│           │   ├── libKF6Wallet.so.6.15.0
+│           │   ├── libKF6WidgetsAddons.so -> libKF6WidgetsAddons.so.6
+│           │   ├── libKF6WidgetsAddons.so.6 -> libKF6WidgetsAddons.so.6.15.0
+│           │   ├── libKF6WidgetsAddons.so.6.15.0
+│           │   ├── libKF6WindowSystem.so -> libKF6WindowSystem.so.6
+│           │   ├── libKF6WindowSystem.so.6 -> libKF6WindowSystem.so.6.15.0
+│           │   ├── libKF6WindowSystem.so.6.15.0
+│           │   ├── libKF6XmlGui.so -> libKF6XmlGui.so.6
+│           │   ├── libKF6XmlGui.so.6 -> libKF6XmlGui.so.6.15.0
+│           │   ├── libKF6XmlGui.so.6.15.0
+│           │   ├── libkioarchive6.so.6 -> libkioarchive6.so.6.0.0
+│           │   ├── libkioarchive6.so.6.0.0
+│           │   ├── libKirigamiDelegates.so -> libKirigamiDelegates.so.6
+│           │   ├── libKirigamiDelegates.so.6 -> libKirigamiDelegates.so.6.15.0
+│           │   ├── libKirigamiDelegates.so.6.15.0
+│           │   ├── libKirigamiDialogs.so -> libKirigamiDialogs.so.6
+│           │   ├── libKirigamiDialogs.so.6 -> libKirigamiDialogs.so.6.15.0
+│           │   ├── libKirigamiDialogs.so.6.15.0
+│           │   ├── libKirigamiLayoutsPrivate.so -> libKirigamiLayoutsPrivate.so.6
+│           │   ├── libKirigamiLayoutsPrivate.so.6 -> libKirigamiLayoutsPrivate.so.6.15.0
+│           │   ├── libKirigamiLayoutsPrivate.so.6.15.0
+│           │   ├── libKirigamiLayouts.so -> libKirigamiLayouts.so.6
+│           │   ├── libKirigamiLayouts.so.6 -> libKirigamiLayouts.so.6.15.0
+│           │   ├── libKirigamiLayouts.so.6.15.0
+│           │   ├── libKirigamiPlatform.so -> libKirigamiPlatform.so.6
+│           │   ├── libKirigamiPlatform.so.6 -> libKirigamiPlatform.so.6.15.0
+│           │   ├── libKirigamiPlatform.so.6.15.0
+│           │   ├── libKirigamiPolyfill.so -> libKirigamiPolyfill.so.6
+│           │   ├── libKirigamiPolyfill.so.6 -> libKirigamiPolyfill.so.6.15.0
+│           │   ├── libKirigamiPolyfill.so.6.15.0
+│           │   ├── libKirigamiPrimitives.so -> libKirigamiPrimitives.so.6
+│           │   ├── libKirigamiPrimitives.so.6 -> libKirigamiPrimitives.so.6.15.0
+│           │   ├── libKirigamiPrimitives.so.6.15.0
+│           │   ├── libKirigamiPrivate.so -> libKirigamiPrivate.so.6
+│           │   ├── libKirigamiPrivate.so.6 -> libKirigamiPrivate.so.6.15.0
+│           │   ├── libKirigamiPrivate.so.6.15.0
+│           │   ├── libKirigami.so -> libKirigami.so.6
+│           │   ├── libKirigami.so.6 -> libKirigami.so.6.15.0
+│           │   ├── libKirigami.so.6.15.0
+│           │   ├── libkquickcontrolsprivate.so.0 -> libkquickcontrolsprivate.so.6.15.0
+│           │   ├── libkquickcontrolsprivate.so.6.15.0
+│           │   ├── libksba.so -> libksba.so.8.14.7
+│           │   ├── libksba.so.8 -> libksba.so.8.14.7
+│           │   ├── libksba.so.8.14.7
+│           │   ├── libkuriikwsfiltereng_private.so
+│           │   ├── liblber-2.4.so.2 -> liblber-2.4.so.2.10.8
+│           │   ├── liblber-2.4.so.2.10.8
+│           │   ├── liblber.so -> liblber-2.4.so.2.10.8
+│           │   ├── liblcms2.so -> liblcms2.so.2.0.7
+│           │   ├── liblcms2.so.2 -> liblcms2.so.2.0.7
+│           │   ├── liblcms2.so.2.0.7
+│           │   ├── libldap-2.4.so.2 -> libldap-2.4.so.2.10.8
+│           │   ├── libldap-2.4.so.2.10.8
+│           │   ├── libldap_r-2.4.so.2 -> libldap_r-2.4.so.2.10.8
+│           │   ├── libldap_r-2.4.so.2.10.8
+│           │   ├── libldap_r.so -> libldap_r-2.4.so.2.10.8
+│           │   ├── libldap.so -> libldap-2.4.so.2.10.8
+│           │   ├── liblilv-0.so -> liblilv-0.so.0
+│           │   ├── liblilv-0.so.0 -> liblilv-0.so.0.24.24
+│           │   ├── liblilv-0.so.0.24.24
+│           │   ├── libltdl.so -> libltdl.so.7.3.2
+│           │   ├── libltdl.so.7 -> libltdl.so.7.3.2
+│           │   ├── libltdl.so.7.3.2
+│           │   ├── liblz4.so.1
+│           │   ├── liblzma.so -> liblzma.so.5.2.3
+│           │   ├── liblzma.so.5 -> liblzma.so.5.2.3
+│           │   ├── liblzma.so.5.2.3
+│           │   ├── libmfx.so -> libmfx.so.1.0.0
+│           │   ├── libmfx.so.1 -> libmfx.so.1.0.0
+│           │   ├── libmfx.so.1.0.0
+│           │   ├── libmlt++-7.so -> libmlt++-7.so.7
+│           │   ├── libmlt-7.so -> libmlt-7.so.7
+│           │   ├── libmlt++-7.so.7 -> libmlt++-7.so.7.33.0
+│           │   ├── libmlt-7.so.7 -> libmlt-7.so.7.33.0
+│           │   ├── libmlt++-7.so.7.33.0
+│           │   ├── libmlt-7.so.7.33.0
+│           │   ├── libmount.so.1
+│           │   ├── libmovit.so -> libmovit.so.8.0.3
+│           │   ├── libmovit.so.8 -> libmovit.so.8.0.3
+│           │   ├── libmovit.so.8.0.3
+│           │   ├── libmp3lame.so -> libmp3lame.so.0.0.0
+│           │   ├── libmp3lame.so.0 -> libmp3lame.so.0.0.0
+│           │   ├── libmp3lame.so.0.0.0
+│           │   ├── libnettle.so -> libnettle.so.8.4
+│           │   ├── libnettle.so.8 -> libnettle.so.8.4
+│           │   ├── libnettle.so.8.4
+│           │   ├── libnpth.so -> libnpth.so.0.2.0
+│           │   ├── libnpth.so.0 -> libnpth.so.0.2.0
+│           │   ├── libnpth.so.0.2.0
+│           │   ├── libnspr4.so
+│           │   ├── libnss3.so
+│           │   ├── libnss3.so.TOC
+│           │   ├── libnssckbi.so
+│           │   ├── libnssckbi.so.TOC
+│           │   ├── libnsssysinit.so
+│           │   ├── libnsssysinit.so.TOC
+│           │   ├── libnssutil3.so
+│           │   ├── libnssutil3.so.TOC
+│           │   ├── libntbtls.so -> libntbtls.so.0.1.3
+│           │   ├── libntbtls.so.0 -> libntbtls.so.0.1.3
+│           │   ├── libntbtls.so.0.1.3
+│           │   ├── libogg.so -> libogg.so.0.8.3
+│           │   ├── libogg.so.0 -> libogg.so.0.8.3
+│           │   ├── libogg.so.0.8.3
+│           │   ├── libopencv_calib3d.so -> libopencv_calib3d.so.410
+│           │   ├── libopencv_calib3d.so.410 -> libopencv_calib3d.so.4.10.0
+│           │   ├── libopencv_calib3d.so.4.10.0
+│           │   ├── libopencv_core.so -> libopencv_core.so.410
+│           │   ├── libopencv_core.so.410 -> libopencv_core.so.4.10.0
+│           │   ├── libopencv_core.so.4.10.0
+│           │   ├── libopencv_dnn.so -> libopencv_dnn.so.410
+│           │   ├── libopencv_dnn.so.410 -> libopencv_dnn.so.4.10.0
+│           │   ├── libopencv_dnn.so.4.10.0
+│           │   ├── libopencv_features2d.so -> libopencv_features2d.so.410
+│           │   ├── libopencv_features2d.so.410 -> libopencv_features2d.so.4.10.0
+│           │   ├── libopencv_features2d.so.4.10.0
+│           │   ├── libopencv_flann.so -> libopencv_flann.so.410
+│           │   ├── libopencv_flann.so.410 -> libopencv_flann.so.4.10.0
+│           │   ├── libopencv_flann.so.4.10.0
+│           │   ├── libopencv_highgui.so -> libopencv_highgui.so.410
+│           │   ├── libopencv_highgui.so.410 -> libopencv_highgui.so.4.10.0
+│           │   ├── libopencv_highgui.so.4.10.0
+│           │   ├── libopencv_imgcodecs.so -> libopencv_imgcodecs.so.410
+│           │   ├── libopencv_imgcodecs.so.410 -> libopencv_imgcodecs.so.4.10.0
+│           │   ├── libopencv_imgcodecs.so.4.10.0
+│           │   ├── libopencv_imgproc.so -> libopencv_imgproc.so.410
+│           │   ├── libopencv_imgproc.so.410 -> libopencv_imgproc.so.4.10.0
+│           │   ├── libopencv_imgproc.so.4.10.0
+│           │   ├── libopencv_ml.so -> libopencv_ml.so.410
+│           │   ├── libopencv_ml.so.410 -> libopencv_ml.so.4.10.0
+│           │   ├── libopencv_ml.so.4.10.0
+│           │   ├── libopencv_objdetect.so -> libopencv_objdetect.so.410
+│           │   ├── libopencv_objdetect.so.410 -> libopencv_objdetect.so.4.10.0
+│           │   ├── libopencv_objdetect.so.4.10.0
+│           │   ├── libopencv_plot.so -> libopencv_plot.so.410
+│           │   ├── libopencv_plot.so.410 -> libopencv_plot.so.4.10.0
+│           │   ├── libopencv_plot.so.4.10.0
+│           │   ├── libopencv_tracking.so -> libopencv_tracking.so.410
+│           │   ├── libopencv_tracking.so.410 -> libopencv_tracking.so.4.10.0
+│           │   ├── libopencv_tracking.so.4.10.0
+│           │   ├── libopencv_videoio.so -> libopencv_videoio.so.410
+│           │   ├── libopencv_videoio.so.410 -> libopencv_videoio.so.4.10.0
+│           │   ├── libopencv_videoio.so.4.10.0
+│           │   ├── libopencv_video.so -> libopencv_video.so.410
+│           │   ├── libopencv_video.so.410 -> libopencv_video.so.4.10.0
+│           │   ├── libopencv_video.so.4.10.0
+│           │   ├── libOpenEXR-3_2.so -> libOpenEXR-3_2.so.31
+│           │   ├── libOpenEXR-3_2.so.31 -> libOpenEXR-3_2.so.31.3.2.4
+│           │   ├── libOpenEXR-3_2.so.31.3.2.4
+│           │   ├── libOpenEXRCore-3_2.so -> libOpenEXRCore-3_2.so.31
+│           │   ├── libOpenEXRCore-3_2.so.31 -> libOpenEXRCore-3_2.so.31.3.2.4
+│           │   ├── libOpenEXRCore-3_2.so.31.3.2.4
+│           │   ├── libOpenEXRCore.so -> libOpenEXRCore-3_2.so
+│           │   ├── libOpenEXR.so -> libOpenEXR-3_2.so
+│           │   ├── libOpenEXRUtil-3_2.so -> libOpenEXRUtil-3_2.so.31
+│           │   ├── libOpenEXRUtil-3_2.so.31 -> libOpenEXRUtil-3_2.so.31.3.2.4
+│           │   ├── libOpenEXRUtil-3_2.so.31.3.2.4
+│           │   ├── libOpenEXRUtil.so -> libOpenEXRUtil-3_2.so
+│           │   ├── libopenjp2.so -> libopenjp2.so.7
+│           │   ├── libopenjp2.so.2.5.3
+│           │   ├── libopenjp2.so.7 -> libopenjp2.so.2.5.3
+│           │   ├── libopentimelineio.so
+│           │   ├── libopentime.so
+│           │   ├── libopus.so -> libopus.so.0
+│           │   ├── libopus.so.0 -> libopus.so.0.9.0
+│           │   ├── libopus.so.0.9.0
+│           │   ├── liboss-util.so
+│           │   ├── libp11-kit.so -> libp11-kit.so.0.3.0
+│           │   ├── libp11-kit.so.0 -> libp11-kit.so.0.3.0
+│           │   ├── libp11-kit.so.0.3.0
+│           │   ├── libpcre2-16.so -> libpcre2-16.so.0
+│           │   ├── libpcre2-16.so.0 -> libpcre2-16.so.0.13.0
+│           │   ├── libpcre2-16.so.0.13.0
+│           │   ├── libpcre2-32.so -> libpcre2-32.so.0
+│           │   ├── libpcre2-32.so.0 -> libpcre2-32.so.0.13.0
+│           │   ├── libpcre2-32.so.0.13.0
+│           │   ├── libpcre2-8.so -> libpcre2-8.so.0
+│           │   ├── libpcre2-8.so.0 -> libpcre2-8.so.0.13.0
+│           │   ├── libpcre2-8.so.0.13.0
+│           │   ├── libpcre2-posix.so -> libpcre2-posix.so.3
+│           │   ├── libpcre2-posix.so.3 -> libpcre2-posix.so.3.0.5
+│           │   ├── libpcre2-posix.so.3.0.5
+│           │   ├── libpcrecpp.so
+│           │   ├── libpcreposix.so
+│           │   ├── libpcre.so
+│           │   ├── libpcre.so.1
+│           │   ├── libphonon4qt6experimental.so -> libphonon4qt6experimental.so.4
+│           │   ├── libphonon4qt6experimental.so.4 -> libphonon4qt6experimental.so.4.12.0
+│           │   ├── libphonon4qt6experimental.so.4.12.0
+│           │   ├── libphonon4qt6.so -> libphonon4qt6.so.4
+│           │   ├── libphonon4qt6.so.4 -> libphonon4qt6.so.4.12.0
+│           │   ├── libphonon4qt6.so.4.12.0
+│           │   ├── libpixman-1.so -> libpixman-1.so.0
+│           │   ├── libpixman-1.so.0 -> libpixman-1.so.0.42.2
+│           │   ├── libpixman-1.so.0.42.2
+│           │   ├── libPlasmaActivities.so -> libPlasmaActivities.so.6
+│           │   ├── libPlasmaActivities.so.6 -> libPlasmaActivities.so.6.4.0
+│           │   ├── libPlasmaActivities.so.6.4.0
+│           │   ├── libPlasmaActivitiesStats.so -> libPlasmaActivitiesStats.so.1
+│           │   ├── libPlasmaActivitiesStats.so.1 -> libPlasmaActivitiesStats.so.6.4.0
+│           │   ├── libPlasmaActivitiesStats.so.6.4.0
+│           │   ├── libplc4.so
+│           │   ├── libplds4.so
+│           │   ├── libpng16.so -> libpng16.so.16
+│           │   ├── libpng16.so.16 -> libpng16.so.16.45.0
+│           │   ├── libpng16.so.16.45.0
+│           │   ├── libpng.so -> libpng16.so
+│           │   ├── libpoppler-cpp.so -> libpoppler-cpp.so.2
+│           │   ├── libpoppler-cpp.so.2 -> libpoppler-cpp.so.2.1.0
+│           │   ├── libpoppler-cpp.so.2.1.0
+│           │   ├── libpoppler-qt6.so -> libpoppler-qt6.so.3
+│           │   ├── libpoppler-qt6.so.3 -> libpoppler-qt6.so.3.10.0
+│           │   ├── libpoppler-qt6.so.3.10.0
+│           │   ├── libpoppler.so -> libpoppler.so.150
+│           │   ├── libpoppler.so.150 -> libpoppler.so.150.0.0
+│           │   ├── libpoppler.so.150.0.0
+│           │   ├── libpostproc.so -> libpostproc.so.58.3.100
+│           │   ├── libpostproc.so.58 -> libpostproc.so.58.3.100
+│           │   ├── libpostproc.so.58.3.100
+│           │   ├── libprotobuf-lite.so -> libprotobuf-lite.so.26.1.0
+│           │   ├── libprotobuf-lite.so.26.1.0
+│           │   ├── libprotobuf.so -> libprotobuf.so.26.1.0
+│           │   ├── libprotobuf.so.26.1.0
+│           │   ├── libprotocol-cli.so
+│           │   ├── libprotocol-http.so
+│           │   ├── libprotocol-native.so
+│           │   ├── libprotocol-simple.so
+│           │   ├── libprotoc.so -> libprotoc.so.26.1.0
+│           │   ├── libprotoc.so.26.1.0
+│           │   ├── libpsl.so -> libpsl.so.5
+│           │   ├── libpsl.so.5 -> libpsl.so.5.3.5
+│           │   ├── libpsl.so.5.3.5
+│           │   ├── libpulsecommon-16.99.so
+│           │   ├── libpulsecore-16.99.so
+│           │   ├── libpulse-mainloop-glib.so -> libpulse-mainloop-glib.so.0
+│           │   ├── libpulse-mainloop-glib.so.0 -> libpulse-mainloop-glib.so.0.0.6
+│           │   ├── libpulse-mainloop-glib.so.0.0.6
+│           │   ├── libpulse-simple.so -> libpulse-simple.so.0
+│           │   ├── libpulse-simple.so.0 -> libpulse-simple.so.0.1.1
+│           │   ├── libpulse-simple.so.0.1.1
+│           │   ├── libpulse.so -> libpulse.so.0
+│           │   ├── libpulse.so.0 -> libpulse.so.0.24.3
+│           │   ├── libpulse.so.0.24.3
+│           │   ├── libqca-qt6.so -> libqca-qt6.so.2
+│           │   ├── libqca-qt6.so.2 -> libqca-qt6.so.2.3.7
+│           │   ├── libqca-qt6.so.2.3.7
+│           │   ├── libQCoro6Core.so -> libQCoro6Core.so.0
+│           │   ├── libQCoro6Core.so.0 -> libQCoro6Core.so.0.11.0
+│           │   ├── libQCoro6Core.so.0.11.0
+│           │   ├── libQCoro6DBus.so -> libQCoro6DBus.so.0
+│           │   ├── libQCoro6DBus.so.0 -> libQCoro6DBus.so.0.11.0
+│           │   ├── libQCoro6DBus.so.0.11.0
+│           │   ├── libQCoro6Network.so -> libQCoro6Network.so.0
+│           │   ├── libQCoro6Network.so.0 -> libQCoro6Network.so.0.11.0
+│           │   ├── libQCoro6Network.so.0.11.0
+│           │   ├── libQCoro6Qml.so -> libQCoro6Qml.so.0
+│           │   ├── libQCoro6Qml.so.0 -> libQCoro6Qml.so.0.11.0
+│           │   ├── libQCoro6Qml.so.0.11.0
+│           │   ├── libQCoro6Quick.so -> libQCoro6Quick.so.0
+│           │   ├── libQCoro6Quick.so.0 -> libQCoro6Quick.so.0.11.0
+│           │   ├── libQCoro6Quick.so.0.11.0
+│           │   ├── libQCoro6WebSockets.so -> libQCoro6WebSockets.so.0
+│           │   ├── libQCoro6WebSockets.so.0 -> libQCoro6WebSockets.so.0.11.0
+│           │   ├── libQCoro6WebSockets.so.0.11.0
+│           │   ├── libqgpgmeqt6.so -> libqgpgmeqt6.so.15
+│           │   ├── libqgpgmeqt6.so.15 -> libqgpgmeqt6.so.15.5.1
+│           │   ├── libqgpgmeqt6.so.15.5.1
+│           │   ├── libQMobipocket6.so -> libQMobipocket6.so.2
+│           │   ├── libQMobipocket6.so.2 -> libQMobipocket6.so.2.1.0
+│           │   ├── libQMobipocket6.so.2.1.0
+│           │   ├── libQt6Concurrent.so -> libQt6Concurrent.so.6
+│           │   ├── libQt6Concurrent.so.6 -> libQt6Concurrent.so.6.8.3
+│           │   ├── libQt6Concurrent.so.6.8.3
+│           │   ├── libQt6Core5Compat.so -> libQt6Core5Compat.so.6
+│           │   ├── libQt6Core5Compat.so.6 -> libQt6Core5Compat.so.6.8.3
+│           │   ├── libQt6Core5Compat.so.6.8.3
+│           │   ├── libQt6Core.so -> libQt6Core.so.6
+│           │   ├── libQt6Core.so.6 -> libQt6Core.so.6.8.3
+│           │   ├── libQt6Core.so.6.8.3
+│           │   ├── libQt6DBus.so -> libQt6DBus.so.6
+│           │   ├── libQt6DBus.so.6 -> libQt6DBus.so.6.8.3
+│           │   ├── libQt6DBus.so.6.8.3
+│           │   ├── libQt6EglFSDeviceIntegration.so -> libQt6EglFSDeviceIntegration.so.6
+│           │   ├── libQt6EglFSDeviceIntegration.so.6 -> libQt6EglFSDeviceIntegration.so.6.8.3
+│           │   ├── libQt6EglFSDeviceIntegration.so.6.8.3
+│           │   ├── libQt6EglFsKmsSupport.so -> libQt6EglFsKmsSupport.so.6
+│           │   ├── libQt6EglFsKmsSupport.so.6 -> libQt6EglFsKmsSupport.so.6.8.3
+│           │   ├── libQt6EglFsKmsSupport.so.6.8.3
+│           │   ├── libQt6Gui.so -> libQt6Gui.so.6
+│           │   ├── libQt6Gui.so.6 -> libQt6Gui.so.6.8.3
+│           │   ├── libQt6Gui.so.6.8.3
+│           │   ├── libQt6LabsAnimation.so -> libQt6LabsAnimation.so.6
+│           │   ├── libQt6LabsAnimation.so.6 -> libQt6LabsAnimation.so.6.8.3
+│           │   ├── libQt6LabsAnimation.so.6.8.3
+│           │   ├── libQt6LabsFolderListModel.so -> libQt6LabsFolderListModel.so.6
+│           │   ├── libQt6LabsFolderListModel.so.6 -> libQt6LabsFolderListModel.so.6.8.3
+│           │   ├── libQt6LabsFolderListModel.so.6.8.3
+│           │   ├── libQt6LabsPlatform.so -> libQt6LabsPlatform.so.6
+│           │   ├── libQt6LabsPlatform.so.6 -> libQt6LabsPlatform.so.6.8.3
+│           │   ├── libQt6LabsPlatform.so.6.8.3
+│           │   ├── libQt6LabsQmlModels.so -> libQt6LabsQmlModels.so.6
+│           │   ├── libQt6LabsQmlModels.so.6 -> libQt6LabsQmlModels.so.6.8.3
+│           │   ├── libQt6LabsQmlModels.so.6.8.3
+│           │   ├── libQt6LabsSettings.so -> libQt6LabsSettings.so.6
+│           │   ├── libQt6LabsSettings.so.6 -> libQt6LabsSettings.so.6.8.3
+│           │   ├── libQt6LabsSettings.so.6.8.3
+│           │   ├── libQt6LabsSharedImage.so -> libQt6LabsSharedImage.so.6
+│           │   ├── libQt6LabsSharedImage.so.6 -> libQt6LabsSharedImage.so.6.8.3
+│           │   ├── libQt6LabsSharedImage.so.6.8.3
+│           │   ├── libQt6LabsWavefrontMesh.so -> libQt6LabsWavefrontMesh.so.6
+│           │   ├── libQt6LabsWavefrontMesh.so.6 -> libQt6LabsWavefrontMesh.so.6.8.3
+│           │   ├── libQt6LabsWavefrontMesh.so.6.8.3
+│           │   ├── libQt6MultimediaQuick.so -> libQt6MultimediaQuick.so.6
+│           │   ├── libQt6MultimediaQuick.so.6 -> libQt6MultimediaQuick.so.6.8.3
+│           │   ├── libQt6MultimediaQuick.so.6.8.3
+│           │   ├── libQt6Multimedia.so -> libQt6Multimedia.so.6
+│           │   ├── libQt6Multimedia.so.6 -> libQt6Multimedia.so.6.8.3
+│           │   ├── libQt6Multimedia.so.6.8.3
+│           │   ├── libQt6MultimediaWidgets.so -> libQt6MultimediaWidgets.so.6
+│           │   ├── libQt6MultimediaWidgets.so.6 -> libQt6MultimediaWidgets.so.6.8.3
+│           │   ├── libQt6MultimediaWidgets.so.6.8.3
+│           │   ├── libQt6NetworkAuth.so -> libQt6NetworkAuth.so.6
+│           │   ├── libQt6NetworkAuth.so.6 -> libQt6NetworkAuth.so.6.8.3
+│           │   ├── libQt6NetworkAuth.so.6.8.3
+│           │   ├── libQt6Network.so -> libQt6Network.so.6
+│           │   ├── libQt6Network.so.6 -> libQt6Network.so.6.8.3
+│           │   ├── libQt6Network.so.6.8.3
+│           │   ├── libQt6OpenGL.so -> libQt6OpenGL.so.6
+│           │   ├── libQt6OpenGL.so.6 -> libQt6OpenGL.so.6.8.3
+│           │   ├── libQt6OpenGL.so.6.8.3
+│           │   ├── libQt6OpenGLWidgets.so -> libQt6OpenGLWidgets.so.6
+│           │   ├── libQt6OpenGLWidgets.so.6 -> libQt6OpenGLWidgets.so.6.8.3
+│           │   ├── libQt6OpenGLWidgets.so.6.8.3
+│           │   ├── libQt6PrintSupport.so -> libQt6PrintSupport.so.6
+│           │   ├── libQt6PrintSupport.so.6 -> libQt6PrintSupport.so.6.8.3
+│           │   ├── libQt6PrintSupport.so.6.8.3
+│           │   ├── libQt6QmlCompiler.so -> libQt6QmlCompiler.so.6
+│           │   ├── libQt6QmlCompiler.so.6 -> libQt6QmlCompiler.so.6.8.3
+│           │   ├── libQt6QmlCompiler.so.6.8.3
+│           │   ├── libQt6QmlCore.so -> libQt6QmlCore.so.6
+│           │   ├── libQt6QmlCore.so.6 -> libQt6QmlCore.so.6.8.3
+│           │   ├── libQt6QmlCore.so.6.8.3
+│           │   ├── libQt6QmlLocalStorage.so -> libQt6QmlLocalStorage.so.6
+│           │   ├── libQt6QmlLocalStorage.so.6 -> libQt6QmlLocalStorage.so.6.8.3
+│           │   ├── libQt6QmlLocalStorage.so.6.8.3
+│           │   ├── libQt6QmlMeta.so -> libQt6QmlMeta.so.6
+│           │   ├── libQt6QmlMeta.so.6 -> libQt6QmlMeta.so.6.8.3
+│           │   ├── libQt6QmlMeta.so.6.8.3
+│           │   ├── libQt6QmlModels.so -> libQt6QmlModels.so.6
+│           │   ├── libQt6QmlModels.so.6 -> libQt6QmlModels.so.6.8.3
+│           │   ├── libQt6QmlModels.so.6.8.3
+│           │   ├── libQt6QmlNetwork.so -> libQt6QmlNetwork.so.6
+│           │   ├── libQt6QmlNetwork.so.6 -> libQt6QmlNetwork.so.6.8.3
+│           │   ├── libQt6QmlNetwork.so.6.8.3
+│           │   ├── libQt6Qml.so -> libQt6Qml.so.6
+│           │   ├── libQt6Qml.so.6 -> libQt6Qml.so.6.8.3
+│           │   ├── libQt6Qml.so.6.8.3
+│           │   ├── libQt6QmlWorkerScript.so -> libQt6QmlWorkerScript.so.6
+│           │   ├── libQt6QmlWorkerScript.so.6 -> libQt6QmlWorkerScript.so.6.8.3
+│           │   ├── libQt6QmlWorkerScript.so.6.8.3
+│           │   ├── libQt6QmlXmlListModel.so -> libQt6QmlXmlListModel.so.6
+│           │   ├── libQt6QmlXmlListModel.so.6 -> libQt6QmlXmlListModel.so.6.8.3
+│           │   ├── libQt6QmlXmlListModel.so.6.8.3
+│           │   ├── libQt6QuickControls2Basic.so -> libQt6QuickControls2Basic.so.6
+│           │   ├── libQt6QuickControls2Basic.so.6 -> libQt6QuickControls2Basic.so.6.8.3
+│           │   ├── libQt6QuickControls2Basic.so.6.8.3
+│           │   ├── libQt6QuickControls2BasicStyleImpl.so -> libQt6QuickControls2BasicStyleImpl.so.6
+│           │   ├── libQt6QuickControls2BasicStyleImpl.so.6 -> libQt6QuickControls2BasicStyleImpl.so.6.8.3
+│           │   ├── libQt6QuickControls2BasicStyleImpl.so.6.8.3
+│           │   ├── libQt6QuickControls2FluentWinUI3StyleImpl.so -> libQt6QuickControls2FluentWinUI3StyleImpl.so.6
+│           │   ├── libQt6QuickControls2FluentWinUI3StyleImpl.so.6 -> libQt6QuickControls2FluentWinUI3StyleImpl.so.6.8.3
+│           │   ├── libQt6QuickControls2FluentWinUI3StyleImpl.so.6.8.3
+│           │   ├── libQt6QuickControls2Fusion.so -> libQt6QuickControls2Fusion.so.6
+│           │   ├── libQt6QuickControls2Fusion.so.6 -> libQt6QuickControls2Fusion.so.6.8.3
+│           │   ├── libQt6QuickControls2Fusion.so.6.8.3
+│           │   ├── libQt6QuickControls2FusionStyleImpl.so -> libQt6QuickControls2FusionStyleImpl.so.6
+│           │   ├── libQt6QuickControls2FusionStyleImpl.so.6 -> libQt6QuickControls2FusionStyleImpl.so.6.8.3
+│           │   ├── libQt6QuickControls2FusionStyleImpl.so.6.8.3
+│           │   ├── libQt6QuickControls2Imagine.so -> libQt6QuickControls2Imagine.so.6
+│           │   ├── libQt6QuickControls2Imagine.so.6 -> libQt6QuickControls2Imagine.so.6.8.3
+│           │   ├── libQt6QuickControls2Imagine.so.6.8.3
+│           │   ├── libQt6QuickControls2ImagineStyleImpl.so -> libQt6QuickControls2ImagineStyleImpl.so.6
+│           │   ├── libQt6QuickControls2ImagineStyleImpl.so.6 -> libQt6QuickControls2ImagineStyleImpl.so.6.8.3
+│           │   ├── libQt6QuickControls2ImagineStyleImpl.so.6.8.3
+│           │   ├── libQt6QuickControls2Impl.so -> libQt6QuickControls2Impl.so.6
+│           │   ├── libQt6QuickControls2Impl.so.6 -> libQt6QuickControls2Impl.so.6.8.3
+│           │   ├── libQt6QuickControls2Impl.so.6.8.3
+│           │   ├── libQt6QuickControls2Material.so -> libQt6QuickControls2Material.so.6
+│           │   ├── libQt6QuickControls2Material.so.6 -> libQt6QuickControls2Material.so.6.8.3
+│           │   ├── libQt6QuickControls2Material.so.6.8.3
+│           │   ├── libQt6QuickControls2MaterialStyleImpl.so -> libQt6QuickControls2MaterialStyleImpl.so.6
+│           │   ├── libQt6QuickControls2MaterialStyleImpl.so.6 -> libQt6QuickControls2MaterialStyleImpl.so.6.8.3
+│           │   ├── libQt6QuickControls2MaterialStyleImpl.so.6.8.3
+│           │   ├── libQt6QuickControls2.so -> libQt6QuickControls2.so.6
+│           │   ├── libQt6QuickControls2.so.6 -> libQt6QuickControls2.so.6.8.3
+│           │   ├── libQt6QuickControls2.so.6.8.3
+│           │   ├── libQt6QuickControls2Universal.so -> libQt6QuickControls2Universal.so.6
+│           │   ├── libQt6QuickControls2Universal.so.6 -> libQt6QuickControls2Universal.so.6.8.3
+│           │   ├── libQt6QuickControls2Universal.so.6.8.3
+│           │   ├── libQt6QuickControls2UniversalStyleImpl.so -> libQt6QuickControls2UniversalStyleImpl.so.6
+│           │   ├── libQt6QuickControls2UniversalStyleImpl.so.6 -> libQt6QuickControls2UniversalStyleImpl.so.6.8.3
+│           │   ├── libQt6QuickControls2UniversalStyleImpl.so.6.8.3
+│           │   ├── libQt6QuickDialogs2QuickImpl.so -> libQt6QuickDialogs2QuickImpl.so.6
+│           │   ├── libQt6QuickDialogs2QuickImpl.so.6 -> libQt6QuickDialogs2QuickImpl.so.6.8.3
+│           │   ├── libQt6QuickDialogs2QuickImpl.so.6.8.3
+│           │   ├── libQt6QuickDialogs2.so -> libQt6QuickDialogs2.so.6
+│           │   ├── libQt6QuickDialogs2.so.6 -> libQt6QuickDialogs2.so.6.8.3
+│           │   ├── libQt6QuickDialogs2.so.6.8.3
+│           │   ├── libQt6QuickDialogs2Utils.so -> libQt6QuickDialogs2Utils.so.6
+│           │   ├── libQt6QuickDialogs2Utils.so.6 -> libQt6QuickDialogs2Utils.so.6.8.3
+│           │   ├── libQt6QuickDialogs2Utils.so.6.8.3
+│           │   ├── libQt6QuickEffects.so -> libQt6QuickEffects.so.6
+│           │   ├── libQt6QuickEffects.so.6 -> libQt6QuickEffects.so.6.8.3
+│           │   ├── libQt6QuickEffects.so.6.8.3
+│           │   ├── libQt6QuickLayouts.so -> libQt6QuickLayouts.so.6
+│           │   ├── libQt6QuickLayouts.so.6 -> libQt6QuickLayouts.so.6.8.3
+│           │   ├── libQt6QuickLayouts.so.6.8.3
+│           │   ├── libQt6QuickParticles.so -> libQt6QuickParticles.so.6
+│           │   ├── libQt6QuickParticles.so.6 -> libQt6QuickParticles.so.6.8.3
+│           │   ├── libQt6QuickParticles.so.6.8.3
+│           │   ├── libQt6QuickShapes.so -> libQt6QuickShapes.so.6
+│           │   ├── libQt6QuickShapes.so.6 -> libQt6QuickShapes.so.6.8.3
+│           │   ├── libQt6QuickShapes.so.6.8.3
+│           │   ├── libQt6Quick.so -> libQt6Quick.so.6
+│           │   ├── libQt6Quick.so.6 -> libQt6Quick.so.6.8.3
+│           │   ├── libQt6Quick.so.6.8.3
+│           │   ├── libQt6QuickTemplates2.so -> libQt6QuickTemplates2.so.6
+│           │   ├── libQt6QuickTemplates2.so.6 -> libQt6QuickTemplates2.so.6.8.3
+│           │   ├── libQt6QuickTemplates2.so.6.8.3
+│           │   ├── libQt6QuickTest.so -> libQt6QuickTest.so.6
+│           │   ├── libQt6QuickTest.so.6 -> libQt6QuickTest.so.6.8.3
+│           │   ├── libQt6QuickTest.so.6.8.3
+│           │   ├── libQt6QuickVectorImageGenerator.so -> libQt6QuickVectorImageGenerator.so.6
+│           │   ├── libQt6QuickVectorImageGenerator.so.6 -> libQt6QuickVectorImageGenerator.so.6.8.3
+│           │   ├── libQt6QuickVectorImageGenerator.so.6.8.3
+│           │   ├── libQt6QuickVectorImage.so -> libQt6QuickVectorImage.so.6
+│           │   ├── libQt6QuickVectorImage.so.6 -> libQt6QuickVectorImage.so.6.8.3
+│           │   ├── libQt6QuickVectorImage.so.6.8.3
+│           │   ├── libQt6QuickWidgets.so -> libQt6QuickWidgets.so.6
+│           │   ├── libQt6QuickWidgets.so.6 -> libQt6QuickWidgets.so.6.8.3
+│           │   ├── libQt6QuickWidgets.so.6.8.3
+│           │   ├── libQt6ShaderTools.so -> libQt6ShaderTools.so.6
+│           │   ├── libQt6ShaderTools.so.6 -> libQt6ShaderTools.so.6.8.3
+│           │   ├── libQt6ShaderTools.so.6.8.3
+│           │   ├── libQt6SpatialAudio.so -> libQt6SpatialAudio.so.6
+│           │   ├── libQt6SpatialAudio.so.6 -> libQt6SpatialAudio.so.6.8.3
+│           │   ├── libQt6SpatialAudio.so.6.8.3
+│           │   ├── libQt6Sql.so -> libQt6Sql.so.6
+│           │   ├── libQt6Sql.so.6 -> libQt6Sql.so.6.8.3
+│           │   ├── libQt6Sql.so.6.8.3
+│           │   ├── libQt6Svg.so -> libQt6Svg.so.6
+│           │   ├── libQt6Svg.so.6 -> libQt6Svg.so.6.8.3
+│           │   ├── libQt6Svg.so.6.8.3
+│           │   ├── libQt6SvgWidgets.so -> libQt6SvgWidgets.so.6
+│           │   ├── libQt6SvgWidgets.so.6 -> libQt6SvgWidgets.so.6.8.3
+│           │   ├── libQt6SvgWidgets.so.6.8.3
+│           │   ├── libQt6Test.so -> libQt6Test.so.6
+│           │   ├── libQt6Test.so.6 -> libQt6Test.so.6.8.3
+│           │   ├── libQt6Test.so.6.8.3
+│           │   ├── libQt6TextToSpeech.so -> libQt6TextToSpeech.so.6
+│           │   ├── libQt6TextToSpeech.so.6 -> libQt6TextToSpeech.so.6.8.3
+│           │   ├── libQt6TextToSpeech.so.6.8.3
+│           │   ├── libQt6WaylandClient.so -> libQt6WaylandClient.so.6
+│           │   ├── libQt6WaylandClient.so.6 -> libQt6WaylandClient.so.6.8.3
+│           │   ├── libQt6WaylandClient.so.6.8.3
+│           │   ├── libQt6WaylandCompositorIviapplication.so -> libQt6WaylandCompositorIviapplication.so.6
+│           │   ├── libQt6WaylandCompositorIviapplication.so.6 -> libQt6WaylandCompositorIviapplication.so.6.8.3
+│           │   ├── libQt6WaylandCompositorIviapplication.so.6.8.3
+│           │   ├── libQt6WaylandCompositorPresentationTime.so -> libQt6WaylandCompositorPresentationTime.so.6
+│           │   ├── libQt6WaylandCompositorPresentationTime.so.6 -> libQt6WaylandCompositorPresentationTime.so.6.8.3
+│           │   ├── libQt6WaylandCompositorPresentationTime.so.6.8.3
+│           │   ├── libQt6WaylandCompositor.so -> libQt6WaylandCompositor.so.6
+│           │   ├── libQt6WaylandCompositor.so.6 -> libQt6WaylandCompositor.so.6.8.3
+│           │   ├── libQt6WaylandCompositor.so.6.8.3
+│           │   ├── libQt6WaylandCompositorWLShell.so -> libQt6WaylandCompositorWLShell.so.6
+│           │   ├── libQt6WaylandCompositorWLShell.so.6 -> libQt6WaylandCompositorWLShell.so.6.8.3
+│           │   ├── libQt6WaylandCompositorWLShell.so.6.8.3
+│           │   ├── libQt6WaylandCompositorXdgShell.so -> libQt6WaylandCompositorXdgShell.so.6
+│           │   ├── libQt6WaylandCompositorXdgShell.so.6 -> libQt6WaylandCompositorXdgShell.so.6.8.3
+│           │   ├── libQt6WaylandCompositorXdgShell.so.6.8.3
+│           │   ├── libQt6WaylandEglClientHwIntegration.so -> libQt6WaylandEglClientHwIntegration.so.6
+│           │   ├── libQt6WaylandEglClientHwIntegration.so.6 -> libQt6WaylandEglClientHwIntegration.so.6.8.3
+│           │   ├── libQt6WaylandEglClientHwIntegration.so.6.8.3
+│           │   ├── libQt6WaylandEglCompositorHwIntegration.so -> libQt6WaylandEglCompositorHwIntegration.so.6
+│           │   ├── libQt6WaylandEglCompositorHwIntegration.so.6 -> libQt6WaylandEglCompositorHwIntegration.so.6.8.3
+│           │   ├── libQt6WaylandEglCompositorHwIntegration.so.6.8.3
+│           │   ├── libQt6WebSockets.so -> libQt6WebSockets.so.6
+│           │   ├── libQt6WebSockets.so.6 -> libQt6WebSockets.so.6.8.3
+│           │   ├── libQt6WebSockets.so.6.8.3
+│           │   ├── libQt6Widgets.so -> libQt6Widgets.so.6
+│           │   ├── libQt6Widgets.so.6 -> libQt6Widgets.so.6.8.3
+│           │   ├── libQt6Widgets.so.6.8.3
+│           │   ├── libQt6WlShellIntegration.so -> libQt6WlShellIntegration.so.6
+│           │   ├── libQt6WlShellIntegration.so.6 -> libQt6WlShellIntegration.so.6.8.3
+│           │   ├── libQt6WlShellIntegration.so.6.8.3
+│           │   ├── libQt6XcbQpa.so -> libQt6XcbQpa.so.6
+│           │   ├── libQt6XcbQpa.so.6 -> libQt6XcbQpa.so.6.8.3
+│           │   ├── libQt6XcbQpa.so.6.8.3
+│           │   ├── libQt6Xml.so -> libQt6Xml.so.6
+│           │   ├── libQt6Xml.so.6 -> libQt6Xml.so.6.8.3
+│           │   ├── libQt6Xml.so.6.8.3
+│           │   ├── libraop.so
+│           │   ├── librtp.so
+│           │   ├── librubberband.so -> librubberband.so.2
+│           │   ├── librubberband.so.2 -> librubberband.so.2.2.2
+│           │   ├── librubberband.so.2.2.2
+│           │   ├── libsamplerate.so -> libsamplerate.so.0
+│           │   ├── libsamplerate.so.0 -> libsamplerate.so.0.2.2
+│           │   ├── libsamplerate.so.0.2.2
+│           │   ├── libsasl2.so -> libsasl2.so.3.0.0
+│           │   ├── libsasl2.so.3 -> libsasl2.so.3.0.0
+│           │   ├── libsasl2.so.3.0.0
+│           │   ├── libSDL2-2.0.so -> libSDL2-2.0.so.0
+│           │   ├── libSDL2-2.0.so.0 -> libSDL2-2.0.so.0.3000.10
+│           │   ├── libSDL2-2.0.so.0.3000.10
+│           │   ├── libSDL2.so -> libSDL2-2.0.so
+│           │   ├── libsecret-1.so -> libsecret-1.so.0
+│           │   ├── libsecret-1.so.0 -> libsecret-1.so.0.0.0
+│           │   ├── libsecret-1.so.0.0.0
+│           │   ├── libselinux.so.1
+│           │   ├── libserd-0.so -> libserd-0.so.0
+│           │   ├── libserd-0.so.0 -> libserd-0.so.0.32.2
+│           │   ├── libserd-0.so.0.32.2
+│           │   ├── libsharpyuv.so -> libsharpyuv.so.0
+│           │   ├── libsharpyuv.so.0 -> libsharpyuv.so.0.0.1
+│           │   ├── libsharpyuv.so.0.0.1
+│           │   ├── libsmime3.so
+│           │   ├── libsmime3.so.TOC
+│           │   ├── libsndfile.so -> libsndfile.so.1
+│           │   ├── libsndfile.so.1 -> libsndfile.so.1.0.31
+│           │   ├── libsndfile.so.1.0.31
+│           │   ├── libsoftokn3.so
+│           │   ├── libsoftokn3.so.TOC
+│           │   ├── libsord-0.so -> libsord-0.so.0
+│           │   ├── libsord-0.so.0 -> libsord-0.so.0.16.16
+│           │   ├── libsord-0.so.0.16.16
+│           │   ├── libsox.so -> libsox.so.3.0.0
+│           │   ├── libsox.so.3 -> libsox.so.3.0.0
+│           │   ├── libsox.so.3.0.0
+│           │   ├── libspatialaudio.so -> libspatialaudio.so.1
+│           │   ├── libspatialaudio.so.1 -> libspatialaudio.so.1.0.0
+│           │   ├── libspatialaudio.so.1.0.0
+│           │   ├── libsqlite3.so -> libsqlite3.so.3
+│           │   ├── libsqlite3.so.3 -> libsqlite3.so.3.42.0
+│           │   ├── libsqlite3.so.3.42.0
+│           │   ├── libsratom-0.so -> libsratom-0.so.0
+│           │   ├── libsratom-0.so.0 -> libsratom-0.so.0.6.16
+│           │   ├── libsratom-0.so.0.6.16
+│           │   ├── libssh2.so -> libssh2.so.1.0.1
+│           │   ├── libssh2.so.1 -> libssh2.so.1.0.1
+│           │   ├── libssh2.so.1.0.1
+│           │   ├── libssh.so -> libssh.so.4
+│           │   ├── libssh.so.4 -> libssh.so.4.8.6
+│           │   ├── libssh.so.4.8.6
+│           │   ├── libssl3.so
+│           │   ├── libssl3.so.TOC
+│           │   ├── libssl.so -> libssl.so.3
+│           │   ├── libssl.so.3
+│           │   ├── libSvtAv1Enc.so -> libSvtAv1Enc.so.2
+│           │   ├── libSvtAv1Enc.so.2 -> libSvtAv1Enc.so.2.1.2
+│           │   ├── libSvtAv1Enc.so.2.1.2
+│           │   ├── libswresample.so -> libswresample.so.5.3.100
+│           │   ├── libswresample.so.5 -> libswresample.so.5.3.100
+│           │   ├── libswresample.so.5.3.100
+│           │   ├── libswscale.so -> libswscale.so.8.3.100
+│           │   ├── libswscale.so.8 -> libswscale.so.8.3.100
+│           │   ├── libswscale.so.8.3.100
+│           │   ├── libsystemd.so.0
+│           │   ├── libtag_c.so -> libtag_c.so.0
+│           │   ├── libtag_c.so.0 -> libtag_c.so.0.0.0
+│           │   ├── libtag_c.so.0.0.0
+│           │   ├── libtag.so -> libtag.so.1
+│           │   ├── libtag.so.1 -> libtag.so.1.19.0
+│           │   ├── libtag.so.1.19.0
+│           │   ├── libtasn1.so -> libtasn1.so.6.6.0
+│           │   ├── libtasn1.so.6 -> libtasn1.so.6.6.0
+│           │   ├── libtasn1.so.6.6.0
+│           │   ├── libtiff.so -> libtiff.so.5
+│           │   ├── libtiff.so.5 -> libtiff.so.5.8.0
+│           │   ├── libtiff.so.5.8.0
+│           │   ├── libtiffxx.so -> libtiffxx.so.5
+│           │   ├── libtiffxx.so.5 -> libtiffxx.so.5.8.0
+│           │   ├── libtiffxx.so.5.8.0
+│           │   ├── libturbojpeg.so -> libturbojpeg.so.0
+│           │   ├── libturbojpeg.so.0 -> libturbojpeg.so.0.3.0
+│           │   ├── libturbojpeg.so.0.3.0
+│           │   ├── libudev.so.1
+│           │   ├── libunistring.so -> libunistring.so.5.1.0
+│           │   ├── libunistring.so.5 -> libunistring.so.5.1.0
+│           │   ├── libunistring.so.5.1.0
+│           │   ├── libuuid.so -> libuuid.so.1.3.0
+│           │   ├── libuuid.so.1 -> libuuid.so.1.3.0
+│           │   ├── libuuid.so.1.3.0
+│           │   ├── libva-drm.so -> libva-drm.so.2
+│           │   ├── libva-drm.so.2 -> libva-drm.so.2.2000.0
+│           │   ├── libva-drm.so.2.2000.0
+│           │   ├── libva-glx.so -> libva-glx.so.2
+│           │   ├── libva-glx.so.2 -> libva-glx.so.2.2000.0
+│           │   ├── libva-glx.so.2.2000.0
+│           │   ├── libva.so -> libva.so.2
+│           │   ├── libva.so.2 -> libva.so.2.2000.0
+│           │   ├── libva.so.2.2000.0
+│           │   ├── libva-wayland.so -> libva-wayland.so.2
+│           │   ├── libva-wayland.so.2 -> libva-wayland.so.2.2000.0
+│           │   ├── libva-wayland.so.2.2000.0
+│           │   ├── libva-x11.so -> libva-x11.so.2
+│           │   ├── libva-x11.so.2 -> libva-x11.so.2.2000.0
+│           │   ├── libva-x11.so.2.2000.0
+│           │   ├── libvdpau.so -> libvdpau.so.1
+│           │   ├── libvdpau.so.1 -> libvdpau.so.1.0.0
+│           │   ├── libvdpau.so.1.0.0
+│           │   ├── libvidstab.so -> libvidstab.so.1.2
+│           │   ├── libvidstab.so.1.2
+│           │   ├── libvorbisenc.so -> libvorbisenc.so.2.0.12
+│           │   ├── libvorbisenc.so.2.0.12
+│           │   ├── libvorbisfile.so -> libvorbisfile.so.3.3.8
+│           │   ├── libvorbisfile.so.3.3.8
+│           │   ├── libvorbis.so -> libvorbis.so.0.4.9
+│           │   ├── libvorbis.so.0.4.9
+│           │   ├── libvpl.so -> libvpl.so.2
+│           │   ├── libvpl.so.2 -> libvpl.so.2.14
+│           │   ├── libvpl.so.2.14
+│           │   ├── libvpx.so -> libvpx.so.9.1.0
+│           │   ├── libvpx.so.9 -> libvpx.so.9.1.0
+│           │   ├── libvpx.so.9.1 -> libvpx.so.9.1.0
+│           │   ├── libvpx.so.9.1.0
+│           │   ├── libwayland-cursor.so.0
+│           │   ├── libwayland-egl.so.1
+│           │   ├── libwayland-server.so.0
+│           │   ├── libwebpdecoder.so -> libwebpdecoder.so.3
+│           │   ├── libwebpdecoder.so.3 -> libwebpdecoder.so.3.1.8
+│           │   ├── libwebpdecoder.so.3.1.8
+│           │   ├── libwebpdemux.so -> libwebpdemux.so.2
+│           │   ├── libwebpdemux.so.2 -> libwebpdemux.so.2.0.14
+│           │   ├── libwebpdemux.so.2.0.14
+│           │   ├── libwebpmux.so -> libwebpmux.so.3
+│           │   ├── libwebpmux.so.3 -> libwebpmux.so.3.0.13
+│           │   ├── libwebpmux.so.3.0.13
+│           │   ├── libwebp.so -> libwebp.so.7
+│           │   ├── libwebp.so.7 -> libwebp.so.7.1.8
+│           │   ├── libwebp.so.7.1.8
+│           │   ├── libx264.so -> libx264.so.164
+│           │   ├── libx264.so.164
+│           │   ├── libx265.so -> libx265.so.208
+│           │   ├── libx265.so.208
+│           │   ├── libXau.so.6
+│           │   ├── libxcb-glx.so.0
+│           │   ├── libxcb-icccm.so.4
+│           │   ├── libxcb-image.so.0
+│           │   ├── libxcb-keysyms.so.1
+│           │   ├── libxcb-randr.so.0
+│           │   ├── libxcb-render.so.0
+│           │   ├── libxcb-render-util.so.0
+│           │   ├── libxcb-res.so.0
+│           │   ├── libxcb-shape.so.0
+│           │   ├── libxcb-shm.so.0
+│           │   ├── libxcb-sync.so.1
+│           │   ├── libxcb-util.so.1
+│           │   ├── libxcb-xfixes.so.0
+│           │   ├── libxcb-xkb.so.1
+│           │   ├── libXext.so.6
+│           │   ├── libXfixes.so.3
+│           │   ├── libxkbcommon.so.0
+│           │   ├── libxkbcommon-x11.so.0
+│           │   ├── libxml2.so -> libxml2.so.2
+│           │   ├── libxml2.so.2 -> libxml2.so.2.12.7
+│           │   ├── libxml2.so.2.12.7
+│           │   ├── libXrandr.so.2
+│           │   ├── libXrender.so.1
+│           │   ├── libxslt.so -> libxslt.so.1
+│           │   ├── libxslt.so.1 -> libxslt.so.1.1.42
+│           │   ├── libxslt.so.1.1.42
+│           │   ├── libzimg.so -> libzimg.so.2.0.0
+│           │   ├── libzimg.so.2 -> libzimg.so.2.0.0
+│           │   ├── libzimg.so.2.0.0
+│           │   ├── libzip.so -> libzip.so.5
+│           │   ├── libzip.so.5 -> libzip.so.5.5
+│           │   ├── libzip.so.5.5
+│           │   ├── libzix-0.so -> libzix-0.so.0
+│           │   ├── libzix-0.so.0 -> libzix-0.so.0.4.2
+│           │   ├── libzix-0.so.0.4.2
+│           │   ├── libz.so -> libz.so.1.3.1
+│           │   ├── libz.so.1 -> libz.so.1.3.1
+│           │   ├── libz.so.1.3.1
+│           │   ├── libzstd.so -> libzstd.so.1
+│           │   ├── libzstd.so.1 -> libzstd.so.1.5.6
+│           │   ├── libzstd.so.1.5.6
+│           │   ├── lv2
+│           │   ├── mlt-7
+│           │   ├── ossl-modules
+│           │   ├── p11-kit-proxy.so -> libp11-kit.so.0.3.0
+│           │   ├── pkcs11
+│           │   ├── preloadable_libiconv.so
+│           │   ├── pulseaudio
+│           │   ├── qca-qt6
+│           │   ├── sasl2
+│           │   ├── systemd
+│           │   ├── udev
+│           │   └── vdpau
+│           ├── plugins
+│           │   ├── egldeviceintegrations
+│           │   ├── generic
+│           │   ├── iconengines
+│           │   ├── imageformats
+│           │   ├── kcm_trash.so
+│           │   ├── kf6
+│           │   ├── kfileaudiopreview.so
+│           │   ├── kiconthemes6
+│           │   ├── kstyle_config
+│           │   ├── multimedia
+│           │   ├── networkinformation
+│           │   ├── org.kde.kdecoration3
+│           │   ├── org.kde.kdecoration3.kcm
+│           │   ├── plasma
+│           │   ├── platforminputcontexts
+│           │   ├── platforms
+│           │   ├── platformthemes
+│           │   ├── printsupport
+│           │   ├── qmlls
+│           │   ├── sqldrivers
+│           │   ├── styles
+│           │   ├── texttospeech
+│           │   ├── tls
+│           │   ├── wayland-decoration-client
+│           │   ├── wayland-graphics-integration-client
+│           │   ├── wayland-graphics-integration-server
+│           │   ├── wayland-shell-integration
+│           │   └── xcbglintegrations
+│           ├── qml
+│           │   ├── Assets
+│           │   ├── org
+│           │   ├── QML
+│           │   ├── QmlTime
+│           │   ├── Qt
+│           │   ├── Qt5Compat
+│           │   ├── QtCore
+│           │   ├── QtMultimedia
+│           │   ├── QtNetwork
+│           │   ├── QtQml
+│           │   ├── QtQuick
+│           │   ├── QtTest
+│           │   ├── QtTextToSpeech
+│           │   ├── QtWayland
+│           │   └── QtWebSockets
+│           ├── sbom
+│           │   ├── qt5compat-6.8.3.spdx
+│           │   ├── qtbase-6.8.3.spdx
+│           │   ├── qtdeclarative-6.8.3.spdx
+│           │   ├── qtimageformats-6.8.3.spdx
+│           │   ├── qtlanguageserver-6.8.3.spdx
+│           │   ├── qtmultimedia-6.8.3.spdx
+│           │   ├── qtnetworkauth-6.8.3.spdx
+│           │   ├── qtshadertools-6.8.3.spdx
+│           │   ├── qtspeech-6.8.3.spdx
+│           │   ├── qtsvg-6.8.3.spdx
+│           │   ├── qttranslations-6.8.3.spdx
+│           │   ├── qtwayland-6.8.3.spdx
+│           │   └── qtwebsockets-6.8.3.spdx
+│           ├── share
+│           │   ├── applications
+│           │   ├── color-schemes
+│           │   ├── config.kcfg
+│           │   ├── dbus-1
+│           │   ├── ffmpeg
+│           │   ├── icons
+│           │   ├── kdenlive
+│           │   ├── kdevappwizard
+│           │   ├── kf6
+│           │   ├── kio_filenamesearch
+│           │   ├── kio_info
+│           │   ├── knotifications6
+│           │   ├── knsrcfiles
+│           │   ├── kstyle
+│           │   ├── locale
+│           │   ├── metainfo
+│           │   ├── mime
+│           │   └── mlt-7
+│           └── translations
+│               ├── assistant_ar.qm
+│               ├── assistant_bg.qm
+│               ├── assistant_cs.qm
+│               ├── assistant_da.qm
+│               ├── assistant_de.qm
+│               ├── assistant_en.qm
+│               ├── assistant_es.qm
+│               ├── assistant_fr.qm
+│               ├── assistant_hr.qm
+│               ├── assistant_hu.qm
+│               ├── assistant_ja.qm
+│               ├── assistant_ka.qm
+│               ├── assistant_ko.qm
+│               ├── assistant_nl.qm
+│               ├── assistant_pl.qm
+│               ├── assistant_pt_BR.qm
+│               ├── assistant_ru.qm
+│               ├── assistant_sk.qm
+│               ├── assistant_sl.qm
+│               ├── assistant_tr.qm
+│               ├── assistant_uk.qm
+│               ├── assistant_zh_CN.qm
+│               ├── assistant_zh_TW.qm
+│               ├── catalogs.json
+│               ├── designer_ar.qm
+│               ├── designer_bg.qm
+│               ├── designer_cs.qm
+│               ├── designer_da.qm
+│               ├── designer_de.qm
+│               ├── designer_en.qm
+│               ├── designer_es.qm
+│               ├── designer_fr.qm
+│               ├── designer_hr.qm
+│               ├── designer_hu.qm
+│               ├── designer_ja.qm
+│               ├── designer_ka.qm
+│               ├── designer_ko.qm
+│               ├── designer_nl.qm
+│               ├── designer_pl.qm
+│               ├── designer_ru.qm
+│               ├── designer_sk.qm
+│               ├── designer_sl.qm
+│               ├── designer_tr.qm
+│               ├── designer_uk.qm
+│               ├── designer_zh_CN.qm
+│               ├── designer_zh_TW.qm
+│               ├── karchive6_qt.qm -> ../share/locale/pa/LC_MESSAGES/karchive6_qt.qm
+│               ├── kauth6_qt.qm -> ../share/locale/sr@latin/LC_MESSAGES/kauth6_qt.qm
+│               ├── kbookmarks6_qt.qm -> ../share/locale/sr@latin/LC_MESSAGES/kbookmarks6_qt.qm
+│               ├── kcodecs6_qt.qm -> ../share/locale/sr@latin/LC_MESSAGES/kcodecs6_qt.qm
+│               ├── kcompletion6_qt.qm -> ../share/locale/sr@latin/LC_MESSAGES/kcompletion6_qt.qm
+│               ├── kconfig6_qt.qm -> ../share/locale/sr@latin/LC_MESSAGES/kconfig6_qt.qm
+│               ├── kcoreaddons6_qt.qm -> ../share/locale/sr@latin/LC_MESSAGES/kcoreaddons6_qt.qm
+│               ├── kdbusaddons6_qt.qm -> ../share/locale/sr@latin/LC_MESSAGES/kdbusaddons6_qt.qm
+│               ├── kdnssd6_qt.qm -> ../share/locale/sr@latin/LC_MESSAGES/kdnssd6_qt.qm
+│               ├── kglobalaccel6_qt.qm -> ../share/locale/sr@latin/LC_MESSAGES/kglobalaccel6_qt.qm
+│               ├── kitemviews6_qt.qm -> ../share/locale/sr@latin/LC_MESSAGES/kitemviews6_qt.qm
+│               ├── kjobwidgets6_qt.qm -> ../share/locale/sr@latin/LC_MESSAGES/kjobwidgets6_qt.qm
+│               ├── knotifications6_qt.qm -> ../share/locale/sr@latin/LC_MESSAGES/knotifications6_qt.qm
+│               ├── kwidgetsaddons6_qt.qm -> ../share/locale/sr@latin/LC_MESSAGES/kwidgetsaddons6_qt.qm
+│               ├── kwindowsystem6_qt.qm -> ../share/locale/sr@latin/LC_MESSAGES/kwindowsystem6_qt.qm
+│               ├── libkirigami6_qt.qm -> ../share/locale/sr@latin/LC_MESSAGES/libkirigami6_qt.qm
+│               ├── libphonon_qt.qm -> ../share/locale/sr@latin/LC_MESSAGES/libphonon_qt.qm
+│               ├── linguist_ar.qm
+│               ├── linguist_bg.qm
+│               ├── linguist_cs.qm
+│               ├── linguist_da.qm
+│               ├── linguist_de.qm
+│               ├── linguist_en.qm
+│               ├── linguist_es.qm
+│               ├── linguist_fr.qm
+│               ├── linguist_hr.qm
+│               ├── linguist_hu.qm
+│               ├── linguist_it.qm
+│               ├── linguist_ja.qm
+│               ├── linguist_ka.qm
+│               ├── linguist_ko.qm
+│               ├── linguist_nl.qm
+│               ├── linguist_pl.qm
+│               ├── linguist_ru.qm
+│               ├── linguist_sk.qm
+│               ├── linguist_sl.qm
+│               ├── linguist_sv.qm
+│               ├── linguist_tr.qm
+│               ├── linguist_uk.qm
+│               ├── linguist_zh_CN.qm
+│               ├── linguist_zh_TW.qm
+│               ├── phononsettings_qt.qm -> ../share/locale/sr@latin/LC_MESSAGES/phononsettings_qt.qm
+│               ├── qqc2desktopstyle_qt.qm -> ../share/locale/sk/LC_MESSAGES/qqc2desktopstyle_qt.qm
+│               ├── qt_ar.qm
+│               ├── qtbase_ar.qm
+│               ├── qtbase_bg.qm
+│               ├── qtbase_ca.qm
+│               ├── qtbase_cs.qm
+│               ├── qtbase_da.qm
+│               ├── qtbase_de.qm
+│               ├── qtbase_en.qm
+│               ├── qtbase_es.qm
+│               ├── qtbase_fa.qm
+│               ├── qtbase_fi.qm
+│               ├── qtbase_fr.qm
+│               ├── qtbase_gd.qm
+│               ├── qtbase_he.qm
+│               ├── qtbase_hr.qm
+│               ├── qtbase_hu.qm
+│               ├── qtbase_it.qm
+│               ├── qtbase_ja.qm
+│               ├── qtbase_ka.qm
+│               ├── qtbase_ko.qm
+│               ├── qtbase_lg.qm
+│               ├── qtbase_lv.qm
+│               ├── qtbase_nl.qm
+│               ├── qtbase_nn.qm
+│               ├── qtbase_pl.qm
+│               ├── qtbase_pt_BR.qm
+│               ├── qtbase_ru.qm
+│               ├── qtbase_sk.qm
+│               ├── qtbase_tr.qm
+│               ├── qtbase_uk.qm
+│               ├── qtbase_zh_CN.qm
+│               ├── qtbase_zh_TW.qm
+│               ├── qt_bg.qm
+│               ├── qt_ca.qm
+│               ├── qtconnectivity_bg.qm
+│               ├── qtconnectivity_ca.qm
+│               ├── qtconnectivity_da.qm
+│               ├── qtconnectivity_de.qm
+│               ├── qtconnectivity_en.qm
+│               ├── qtconnectivity_es.qm
+│               ├── qtconnectivity_hr.qm
+│               ├── qtconnectivity_hu.qm
+│               ├── qtconnectivity_ka.qm
+│               ├── qtconnectivity_ko.qm
+│               ├── qtconnectivity_nl.qm
+│               ├── qtconnectivity_pl.qm
+│               ├── qtconnectivity_pt_BR.qm
+│               ├── qtconnectivity_ru.qm
+│               ├── qtconnectivity_tr.qm
+│               ├── qtconnectivity_uk.qm
+│               ├── qtconnectivity_zh_CN.qm
+│               ├── qt_cs.qm
+│               ├── qt_da.qm
+│               ├── qtdeclarative_ar.qm
+│               ├── qtdeclarative_bg.qm
+│               ├── qtdeclarative_ca.qm
+│               ├── qtdeclarative_da.qm
+│               ├── qtdeclarative_de.qm
+│               ├── qtdeclarative_en.qm
+│               ├── qtdeclarative_es.qm
+│               ├── qtdeclarative_fa.qm
+│               ├── qtdeclarative_fi.qm
+│               ├── qtdeclarative_fr.qm
+│               ├── qtdeclarative_hr.qm
+│               ├── qtdeclarative_hu.qm
+│               ├── qtdeclarative_ja.qm
+│               ├── qtdeclarative_ka.qm
+│               ├── qtdeclarative_ko.qm
+│               ├── qtdeclarative_lv.qm
+│               ├── qtdeclarative_nl.qm
+│               ├── qtdeclarative_nn.qm
+│               ├── qtdeclarative_pl.qm
+│               ├── qtdeclarative_pt_BR.qm
+│               ├── qtdeclarative_ru.qm
+│               ├── qtdeclarative_sk.qm
+│               ├── qtdeclarative_tr.qm
+│               ├── qtdeclarative_uk.qm
+│               ├── qtdeclarative_zh_CN.qm
+│               ├── qtdeclarative_zh_TW.qm
+│               ├── qt_de.qm
+│               ├── qt_en.qm
+│               ├── qt_es.qm
+│               ├── qt_fa.qm
+│               ├── qt_fi.qm
+│               ├── qt_fr.qm
+│               ├── qt_gd.qm
+│               ├── qt_gl.qm
+│               ├── qt_help_ar.qm
+│               ├── qt_help_bg.qm
+│               ├── qt_help_ca.qm
+│               ├── qt_help_cs.qm
+│               ├── qt_help_da.qm
+│               ├── qt_help_de.qm
+│               ├── qt_help_en.qm
+│               ├── qt_help_es.qm
+│               ├── qt_help_fr.qm
+│               ├── qt_help_gl.qm
+│               ├── qt_help_hr.qm
+│               ├── qt_help_hu.qm
+│               ├── qt_help_it.qm
+│               ├── qt_help_ja.qm
+│               ├── qt_help_ka.qm
+│               ├── qt_help_ko.qm
+│               ├── qt_help_nl.qm
+│               ├── qt_help_nn.qm
+│               ├── qt_help_pl.qm
+│               ├── qt_help_pt_BR.qm
+│               ├── qt_help_ru.qm
+│               ├── qt_help_sk.qm
+│               ├── qt_help_sl.qm
+│               ├── qt_help_tr.qm
+│               ├── qt_help_uk.qm
+│               ├── qt_help_zh_CN.qm
+│               ├── qt_help_zh_TW.qm
+│               ├── qt_he.qm
+│               ├── qt_hr.qm
+│               ├── qt_hu.qm
+│               ├── qt_it.qm
+│               ├── qt_ja.qm
+│               ├── qt_ka.qm
+│               ├── qt_ko.qm
+│               ├── qt_lg.qm
+│               ├── qtlocation_bg.qm
+│               ├── qtlocation_ca.qm
+│               ├── qtlocation_da.qm
+│               ├── qtlocation_de.qm
+│               ├── qtlocation_en.qm
+│               ├── qtlocation_es.qm
+│               ├── qtlocation_fi.qm
+│               ├── qtlocation_fr.qm
+│               ├── qtlocation_hr.qm
+│               ├── qtlocation_hu.qm
+│               ├── qtlocation_ka.qm
+│               ├── qtlocation_ko.qm
+│               ├── qtlocation_nl.qm
+│               ├── qtlocation_pl.qm
+│               ├── qtlocation_pt_BR.qm
+│               ├── qtlocation_ru.qm
+│               ├── qtlocation_tr.qm
+│               ├── qtlocation_uk.qm
+│               ├── qtlocation_zh_CN.qm
+│               ├── qt_lt.qm
+│               ├── qt_lv.qm
+│               ├── qtmultimedia_ar.qm
+│               ├── qtmultimedia_bg.qm
+│               ├── qtmultimedia_ca.qm
+│               ├── qtmultimedia_cs.qm
+│               ├── qtmultimedia_da.qm
+│               ├── qtmultimedia_de.qm
+│               ├── qtmultimedia_en.qm
+│               ├── qtmultimedia_es.qm
+│               ├── qtmultimedia_fa.qm
+│               ├── qtmultimedia_fi.qm
+│               ├── qtmultimedia_fr.qm
+│               ├── qtmultimedia_hr.qm
+│               ├── qtmultimedia_hu.qm
+│               ├── qtmultimedia_it.qm
+│               ├── qtmultimedia_ja.qm
+│               ├── qtmultimedia_ka.qm
+│               ├── qtmultimedia_ko.qm
+│               ├── qtmultimedia_nl.qm
+│               ├── qtmultimedia_nn.qm
+│               ├── qtmultimedia_pl.qm
+│               ├── qtmultimedia_pt_BR.qm
+│               ├── qtmultimedia_ru.qm
+│               ├── qtmultimedia_sk.qm
+│               ├── qtmultimedia_tr.qm
+│               ├── qtmultimedia_uk.qm
+│               ├── qtmultimedia_zh_CN.qm
+│               ├── qtmultimedia_zh_TW.qm
+│               ├── qt_nl.qm
+│               ├── qt_nn.qm
+│               ├── qt_pl.qm
+│               ├── qt_pt_BR.qm
+│               ├── qt_pt_PT.qm
+│               ├── qt_ru.qm
+│               ├── qtserialport_de.qm
+│               ├── qtserialport_en.qm
+│               ├── qtserialport_es.qm
+│               ├── qtserialport_ja.qm
+│               ├── qtserialport_ka.qm
+│               ├── qtserialport_ko.qm
+│               ├── qtserialport_pl.qm
+│               ├── qtserialport_ru.qm
+│               ├── qtserialport_uk.qm
+│               ├── qtserialport_zh_CN.qm
+│               ├── qt_sk.qm
+│               ├── qt_sl.qm
+│               ├── qt_sv.qm
+│               ├── qt_tr.qm
+│               ├── qt_uk.qm
+│               ├── qtwebengine_ca.qm
+│               ├── qtwebengine_de.qm
+│               ├── qtwebengine_en.qm
+│               ├── qtwebengine_es.qm
+│               ├── qtwebengine_ka.qm
+│               ├── qtwebengine_ko.qm
+│               ├── qtwebengine_pl.qm
+│               ├── qtwebengine_ru.qm
+│               ├── qtwebengine_uk.qm
+│               ├── qtwebengine_zh_CN.qm
+│               ├── qtwebsockets_ca.qm
+│               ├── qtwebsockets_de.qm
+│               ├── qtwebsockets_en.qm
+│               ├── qtwebsockets_es.qm
+│               ├── qtwebsockets_fr.qm
+│               ├── qtwebsockets_ja.qm
+│               ├── qtwebsockets_ka.qm
+│               ├── qtwebsockets_ko.qm
+│               ├── qtwebsockets_pl.qm
+│               ├── qtwebsockets_ru.qm
+│               ├── qtwebsockets_uk.qm
+│               ├── qtwebsockets_zh_CN.qm
+│               ├── qt_zh_CN.qm
+│               ├── qt_zh_TW.qm
+│               ├── solid6_qt.qm -> ../share/locale/sr@latin/LC_MESSAGES/solid6_qt.qm
+│               ├── sonnet6_qt.qm -> ../share/locale/sr@latin/LC_MESSAGES/sonnet6_qt.qm
+│               └── syntaxhighlighting6_qt.qm -> ../share/locale/sr@latin/LC_MESSAGES/syntaxhighlighting6_qt.qm
+├── start_render_pipeline.py
+├── strip_all_missing_producers.py
+├── strip_broken_producers_and_entries.py
+├── strip_broken_producers.py
+├── strip_invalid_references.py
+├── strip_music_tracks_from_kdenlive.py
+├── strip_orphan_and_audio_producers.py
+├── strip_orphan_producers.py
+├── temp_image_1080p.jpg
+├── temp_image_1440p.jpg
+├── temp_image_2160p.jpg
+├── temp_image_270p.jpg
+├── temp_image_360p.jpg
+├── temp_image_480p.jpg
+├── temp_image_720p.jpg
+├── template_project.kdenlive
+├── terminal_output.txt
+├── test_input.jpg
+├── tmp_chunks
+│   ├── chunk_000000.jpg
+│   ├── chunk_002048.jpg
+│   ├── chunk_004096.jpg
+│   ├── chunk_006144.jpg
+│   ├── chunk_008192.jpg
+│   ├── chunk_010240.jpg
+│   ├── chunk_012288.jpg
+│   ├── chunk_014336.jpg
+│   ├── chunk_016384.jpg
+│   ├── chunk_018432.jpg
+│   ├── chunk_020480.jpg
+│   ├── chunk_022528.jpg
+│   ├── chunk_024576.jpg
+│   ├── chunk_026624.jpg
+│   ├── chunk_028672.jpg
+│   ├── chunk_030720.jpg
+│   ├── chunk_032768.jpg
+│   ├── chunk_034816.jpg
+│   ├── chunk_036864.jpg
+│   ├── chunk_038912.jpg
+│   ├── chunk_040960.jpg
+│   ├── chunk_043008.jpg
+│   ├── chunk_045056.jpg
+│   └── chunk_047104.jpg
+├── tmp_seamless_chunks
+│   ├── chunk_000000.jpg
+│   ├── chunk_002048.jpg
+│   ├── chunk_004096.jpg
+│   ├── chunk_006144.jpg
+│   ├── chunk_008192.jpg
+│   ├── chunk_010240.jpg
+│   ├── chunk_012288.jpg
+│   ├── chunk_014336.jpg
+│   ├── chunk_016384.jpg
+│   ├── chunk_018432.jpg
+│   ├── chunk_020480.jpg
+│   ├── chunk_022528.jpg
+│   ├── chunk_024576.jpg
+│   ├── chunk_026624.jpg
+│   ├── chunk_028672.jpg
+│   ├── chunk_030720.jpg
+│   ├── chunk_032768.jpg
+│   ├── chunk_034816.jpg
+│   ├── chunk_036864.jpg
+│   ├── chunk_038912.jpg
+│   ├── chunk_040960.jpg
+│   ├── chunk_043008.jpg
+│   ├── chunk_045056.jpg
+│   └── chunk_047104.jpg
+├── upscale_and_convert.py
+├── venv
+│   ├── bin
+│   │   ├── activate
+│   │   ├── activate.csh
+│   │   ├── activate.fish
+│   │   ├── Activate.ps1
+│   │   ├── f2py
+│   │   ├── numpy-config
+│   │   ├── pip
+│   │   ├── pip3
+│   │   ├── pip3.12
+│   │   ├── python -> python3
+│   │   ├── python3 -> /usr/bin/python3
+│   │   ├── python3.12 -> python3
+│   │   └── wheel
+│   ├── include
+│   │   └── python3.12
+│   ├── lib
+│   │   └── python3.12
+│   │       └── site-packages
+│   │           ├── _distutils_hack
+│   │           ├── distutils-precedence.pth
+│   │           ├── lxml
+│   │           ├── lxml-6.0.0.dist-info
+│   │           ├── numpy
+│   │           ├── numpy-2.3.1.dist-info
+│   │           ├── numpy.libs
+│   │           ├── PIL
+│   │           ├── pillow-11.3.0.dist-info
+│   │           ├── pillow.libs
+│   │           ├── pip
+│   │           ├── pip-25.1.1.dist-info
+│   │           ├── pkg_resources
+│   │           ├── setuptools
+│   │           ├── setuptools-80.9.0.dist-info
+│   │           ├── wheel
+│   │           └── wheel-0.45.1.dist-info
+│   ├── lib64 -> lib
+│   └── pyvenv.cfg
+└── watch_render.sh
+
+132 directories, 1851 files

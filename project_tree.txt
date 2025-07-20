@@ -1,0 +1,72 @@
+.
+├── apply_contrast.py
+├── apply_max_contrast.scm
+├── apply_qbist_contrast.scm
+├── apply_strong_hardedge_contrast.py
+├── archive
+│   ├── apply_max_contrast_final.py
+│   ├── apply_max_contrast_multiple_passes.py
+│   ├── apply_max_contrast_preserve_brightness.py
+│   ├── resize_all_large_jpgs.py
+│   └── resize_large_image.py
+├── bfg-1.14.0.jar
+├── clean_template_project.kdenlive
+├── directory_tree.txt
+├── distort_rainbow.py
+├── generate_dense_rainbow_grid.py
+├── generate_qbist_contrast_image.py
+├── generate_rainbow.py
+├── .gitattributes
+├── .gitignore
+├── kaleido_tree.txt
+├── kaleido-video-generator
+├── kaleido_video_generator.py
+├── media
+├── patched_9s.kdenlive
+├── patched_project.kdenlive
+├── patched_render_10s.kdenlive
+├── patched_render_dynamic.kdenlive
+├── patched_render.kdenlive
+├── patch_kdenlive_10s.py
+├── patch_noaudio_9s.py
+├── project_tree.txt
+├── rainbow_camouflage.py
+├── rainbow_camouflage_seamless.py
+├── README.md
+├── rendered_project.kdenlive
+├── render_flatpak_melt.sh
+├── render_resolution_ladder.py
+├── render_this_2.kdenlive
+├── render_this.kdenlive
+├── run_pipeline.py
+├── squashfs-root
+│   ├── AppRun
+│   ├── chrome_100_percent.pak
+│   ├── chrome_200_percent.pak
+│   ├── chrome_crashpad_handler
+│   ├── chrome-sandbox
+│   ├── .DirIcon -> usr/share/icons/hicolor/512x512/apps/upscayl.png
+│   ├── icudtl.dat
+│   ├── libEGL.so
+│   ├── libffmpeg.so
+│   ├── libGLESv2.so
+│   ├── libvk_swiftshader.so
+│   ├── libvulkan.so.1
+│   ├── LICENSE.electron.txt
+│   ├── LICENSES.chromium.html
+│   ├── locales
+│   ├── resources
+│   ├── resources.pak
+│   ├── snapshot_blob.bin
+│   ├── upscayl.desktop
+│   ├── usr
+│   ├── v8_context_snapshot.bin
+│   └── vk_swiftshader_icd.json
+├── template_project.kdenlive
+├── terminal_output.txt
+├── tmp_chunks
+├── tmp_seamless_chunks
+├── upscale_and_convert.py
+└── watch_render.sh
+
+10 directories, 60 files

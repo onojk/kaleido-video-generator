@@ -1,0 +1,1467 @@
+<mlt LC_NUMERIC="C" producer="main_bin" root="/home/onojk123/Videos" version="7.30.0">
+ <profile colorspace="709" description="4K UHD 2160p 60 fps" display_aspect_den="9" display_aspect_num="16" frame_rate_den="1" frame_rate_num="60" height="720" progressive="1" sample_aspect_den="1" sample_aspect_num="1" width="1280" />
+ <chain id="chain0" out="00:00:09.983">
+  <property name="length">15732</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number01.wav</property>
+  <property name="mlt_service">avformat-novalidate</property>
+  <property name="seekable">1</property>
+  <property name="audio_index">0</property>
+  <property name="video_index">-1</property>
+  <property name="astream">0</property>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">5</property>
+  <property name="kdenlive:control_uuid">{c49c476d-b873-4531-b16d-e16387950d3f}</property>
+  <property name="kdenlive:clip_type">1</property>
+  <property name="kdenlive:file_size">50342440</property>
+  <property name="kdenlive:file_hash">5cc40594b43446e5f0cfe2e2843b243f</property>
+  <property name="kdenlive:audio_max0">210</property>
+  <property name="kdenlive:monitorPosition">0</property>
+  <property name="meta.media.nb_streams">1</property>
+  <property name="meta.media.0.stream.type">audio</property>
+  <property name="meta.media.0.codec.sample_fmt">s16</property>
+  <property name="meta.media.0.codec.sample_rate">48000</property>
+  <property name="meta.media.0.codec.channels">2</property>
+  <property name="meta.media.0.codec.layout">independent</property>
+  <property name="meta.media.0.codec.name">pcm_s16le</property>
+  <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
+  <property name="meta.media.0.codec.bit_rate">1536000</property>
+  <property name="xml">was here</property>
+  <property name="mute_on_pause">0</property>
+  <property name="set.test_audio">0</property>
+  <property name="set.test_image">1</property>
+ </chain>
+ <chain id="chain1" out="00:00:09.983">
+  <property name="length">9890</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number02.wav</property>
+  <property name="mlt_service">avformat-novalidate</property>
+  <property name="seekable">1</property>
+  <property name="audio_index">0</property>
+  <property name="video_index">-1</property>
+  <property name="astream">0</property>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">6</property>
+  <property name="kdenlive:control_uuid">{26dedd01-ef1e-4db3-a328-3155c2d4b113}</property>
+  <property name="kdenlive:clip_type">1</property>
+  <property name="kdenlive:file_size">31649320</property>
+  <property name="kdenlive:file_hash">95b2a485f330c2ad511cf11a8119845d</property>
+  <property name="kdenlive:audio_max0">226</property>
+  <property name="meta.media.nb_streams">1</property>
+  <property name="meta.media.0.stream.type">audio</property>
+  <property name="meta.media.0.codec.sample_fmt">s16</property>
+  <property name="meta.media.0.codec.sample_rate">48000</property>
+  <property name="meta.media.0.codec.channels">2</property>
+  <property name="meta.media.0.codec.layout">independent</property>
+  <property name="meta.media.0.codec.name">pcm_s16le</property>
+  <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
+  <property name="meta.media.0.codec.bit_rate">1536000</property>
+  <property name="xml">was here</property>
+  <property name="mute_on_pause">0</property>
+  <property name="set.test_audio">0</property>
+  <property name="set.test_image">1</property>
+ </chain>
+ <chain id="chain2" out="00:00:09.983">
+  <property name="length">10490</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number03.wav</property>
+  <property name="mlt_service">avformat-novalidate</property>
+  <property name="seekable">1</property>
+  <property name="audio_index">0</property>
+  <property name="video_index">-1</property>
+  <property name="astream">0</property>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">7</property>
+  <property name="kdenlive:control_uuid">{af3079ac-090a-454c-b726-e891c4d93f41}</property>
+  <property name="kdenlive:clip_type">1</property>
+  <property name="kdenlive:file_size">33569320</property>
+  <property name="kdenlive:file_hash">641c018ffa3d07695e501aeddbe4dcaf</property>
+  <property name="kdenlive:audio_max0">219</property>
+  <property name="meta.media.nb_streams">1</property>
+  <property name="meta.media.0.stream.type">audio</property>
+  <property name="meta.media.0.codec.sample_fmt">s16</property>
+  <property name="meta.media.0.codec.sample_rate">48000</property>
+  <property name="meta.media.0.codec.channels">2</property>
+  <property name="meta.media.0.codec.layout">independent</property>
+  <property name="meta.media.0.codec.name">pcm_s16le</property>
+  <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
+  <property name="meta.media.0.codec.bit_rate">1536000</property>
+  <property name="xml">was here</property>
+  <property name="mute_on_pause">0</property>
+  <property name="set.test_audio">0</property>
+  <property name="set.test_image">1</property>
+ </chain>
+ <chain id="chain3" out="00:00:09.983">
+  <property name="length">9233</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number04.wav</property>
+  <property name="mlt_service">avformat-novalidate</property>
+  <property name="seekable">1</property>
+  <property name="audio_index">0</property>
+  <property name="video_index">-1</property>
+  <property name="astream">0</property>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">8</property>
+  <property name="kdenlive:control_uuid">{dacdcda9-d333-4738-a09f-7be780ec573c}</property>
+  <property name="kdenlive:clip_type">1</property>
+  <property name="kdenlive:file_size">29545000</property>
+  <property name="kdenlive:file_hash">fa23ac9915ef9cc701bd49b2be78404b</property>
+  <property name="kdenlive:audio_max0">210</property>
+  <property name="meta.media.nb_streams">1</property>
+  <property name="meta.media.0.stream.type">audio</property>
+  <property name="meta.media.0.codec.sample_fmt">s16</property>
+  <property name="meta.media.0.codec.sample_rate">48000</property>
+  <property name="meta.media.0.codec.channels">2</property>
+  <property name="meta.media.0.codec.layout">independent</property>
+  <property name="meta.media.0.codec.name">pcm_s16le</property>
+  <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
+  <property name="meta.media.0.codec.bit_rate">1536000</property>
+  <property name="xml">was here</property>
+  <property name="mute_on_pause">0</property>
+  <property name="set.test_audio">0</property>
+  <property name="set.test_image">1</property>
+ </chain>
+ <chain id="chain4" out="00:00:09.983">
+  <property name="length">13198</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number05.wav</property>
+  <property name="mlt_service">avformat-novalidate</property>
+  <property name="seekable">1</property>
+  <property name="audio_index">0</property>
+  <property name="video_index">-1</property>
+  <property name="astream">0</property>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">9</property>
+  <property name="kdenlive:control_uuid">{64be2a3e-286f-4967-9b86-5f9484f42b2e}</property>
+  <property name="kdenlive:clip_type">1</property>
+  <property name="kdenlive:file_size">42232360</property>
+  <property name="kdenlive:file_hash">2afd08f246144b90ef9f45ab2e1bfe62</property>
+  <property name="kdenlive:audio_max0">225</property>
+  <property name="meta.media.nb_streams">1</property>
+  <property name="meta.media.0.stream.type">audio</property>
+  <property name="meta.media.0.codec.sample_fmt">s16</property>
+  <property name="meta.media.0.codec.sample_rate">48000</property>
+  <property name="meta.media.0.codec.channels">2</property>
+  <property name="meta.media.0.codec.layout">independent</property>
+  <property name="meta.media.0.codec.name">pcm_s16le</property>
+  <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
+  <property name="meta.media.0.codec.bit_rate">1536000</property>
+  <property name="xml">was here</property>
+  <property name="mute_on_pause">0</property>
+  <property name="set.test_audio">0</property>
+  <property name="set.test_image">1</property>
+ </chain>
+ <chain id="chain5" out="00:00:09.983">
+  <property name="length">21187</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number06.wav</property>
+  <property name="mlt_service">avformat-novalidate</property>
+  <property name="seekable">1</property>
+  <property name="audio_index">0</property>
+  <property name="video_index">-1</property>
+  <property name="astream">0</property>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">10</property>
+  <property name="kdenlive:control_uuid">{7a9765eb-0f82-449d-b7b3-9eab2395ac0e}</property>
+  <property name="kdenlive:clip_type">1</property>
+  <property name="kdenlive:file_size">67799080</property>
+  <property name="kdenlive:file_hash">3e147418c1fbcb90dcc10348dc4e99b8</property>
+  <property name="kdenlive:audio_max0">208</property>
+  <property name="meta.media.nb_streams">1</property>
+  <property name="meta.media.0.stream.type">audio</property>
+  <property name="meta.media.0.codec.sample_fmt">s16</property>
+  <property name="meta.media.0.codec.sample_rate">48000</property>
+  <property name="meta.media.0.codec.channels">2</property>
+  <property name="meta.media.0.codec.layout">independent</property>
+  <property name="meta.media.0.codec.name">pcm_s16le</property>
+  <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
+  <property name="meta.media.0.codec.bit_rate">1536000</property>
+  <property name="xml">was here</property>
+  <property name="mute_on_pause">0</property>
+  <property name="set.test_audio">0</property>
+  <property name="set.test_image">1</property>
+ </chain>
+ <chain id="chain6" out="00:00:09.983">
+  <property name="length">10735</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number07.wav</property>
+  <property name="mlt_service">avformat-novalidate</property>
+  <property name="seekable">1</property>
+  <property name="audio_index">0</property>
+  <property name="video_index">-1</property>
+  <property name="astream">0</property>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">11</property>
+  <property name="kdenlive:control_uuid">{01a6ec8c-980c-4162-b50c-71f4e5640866}</property>
+  <property name="kdenlive:clip_type">1</property>
+  <property name="kdenlive:file_size">34352680</property>
+  <property name="kdenlive:file_hash">587f7ee7d6f85f70665fcc46b793ef93</property>
+  <property name="kdenlive:audio_max0">212</property>
+  <property name="meta.media.nb_streams">1</property>
+  <property name="meta.media.0.stream.type">audio</property>
+  <property name="meta.media.0.codec.sample_fmt">s16</property>
+  <property name="meta.media.0.codec.sample_rate">48000</property>
+  <property name="meta.media.0.codec.channels">2</property>
+  <property name="meta.media.0.codec.layout">independent</property>
+  <property name="meta.media.0.codec.name">pcm_s16le</property>
+  <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
+  <property name="meta.media.0.codec.bit_rate">1536000</property>
+  <property name="xml">was here</property>
+  <property name="mute_on_pause">0</property>
+  <property name="set.test_audio">0</property>
+  <property name="set.test_image">1</property>
+ </chain>
+ <chain id="chain7" out="00:00:09.983">
+  <property name="length">10282</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number08.wav</property>
+  <property name="mlt_service">avformat-novalidate</property>
+  <property name="seekable">1</property>
+  <property name="audio_index">0</property>
+  <property name="video_index">-1</property>
+  <property name="astream">0</property>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">12</property>
+  <property name="kdenlive:control_uuid">{6d5882cf-df67-40fe-99a9-01118fa9527c}</property>
+  <property name="kdenlive:clip_type">1</property>
+  <property name="kdenlive:file_size">32901160</property>
+  <property name="kdenlive:file_hash">4c0491fa2fbf26e6ccc0a74eea44f7c6</property>
+  <property name="kdenlive:audio_max0">216</property>
+  <property name="meta.media.nb_streams">1</property>
+  <property name="meta.media.0.stream.type">audio</property>
+  <property name="meta.media.0.codec.sample_fmt">s16</property>
+  <property name="meta.media.0.codec.sample_rate">48000</property>
+  <property name="meta.media.0.codec.channels">2</property>
+  <property name="meta.media.0.codec.layout">independent</property>
+  <property name="meta.media.0.codec.name">pcm_s16le</property>
+  <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
+  <property name="meta.media.0.codec.bit_rate">1536000</property>
+  <property name="xml">was here</property>
+  <property name="mute_on_pause">0</property>
+  <property name="set.test_audio">0</property>
+  <property name="set.test_image">1</property>
+ </chain>
+ <chain id="chain8" out="00:00:09.983">
+  <property name="length">10867</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number09.wav</property>
+  <property name="mlt_service">avformat-novalidate</property>
+  <property name="seekable">1</property>
+  <property name="audio_index">0</property>
+  <property name="video_index">-1</property>
+  <property name="astream">0</property>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">13</property>
+  <property name="kdenlive:control_uuid">{7ac94b5c-28a9-4e65-ab7b-209dca3e2ba0}</property>
+  <property name="kdenlive:clip_type">1</property>
+  <property name="kdenlive:file_size">34775080</property>
+  <property name="kdenlive:file_hash">039a0d94ce89e9d7261fd3bb3874744f</property>
+  <property name="kdenlive:audio_max0">210</property>
+  <property name="meta.media.nb_streams">1</property>
+  <property name="meta.media.0.stream.type">audio</property>
+  <property name="meta.media.0.codec.sample_fmt">s16</property>
+  <property name="meta.media.0.codec.sample_rate">48000</property>
+  <property name="meta.media.0.codec.channels">2</property>
+  <property name="meta.media.0.codec.layout">independent</property>
+  <property name="meta.media.0.codec.name">pcm_s16le</property>
+  <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
+  <property name="meta.media.0.codec.bit_rate">1536000</property>
+  <property name="xml">was here</property>
+  <property name="mute_on_pause">0</property>
+  <property name="set.test_audio">0</property>
+  <property name="set.test_image">1</property>
+ </chain>
+ <chain id="chain9" out="00:00:09.983">
+  <property name="length">11369</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number10.wav</property>
+  <property name="mlt_service">avformat-novalidate</property>
+  <property name="seekable">1</property>
+  <property name="audio_index">0</property>
+  <property name="video_index">-1</property>
+  <property name="astream">0</property>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">14</property>
+  <property name="kdenlive:control_uuid">{4f2d3169-ca9a-4412-a434-6c9840845c7b}</property>
+  <property name="kdenlive:clip_type">1</property>
+  <property name="kdenlive:file_size">36380200</property>
+  <property name="kdenlive:file_hash">b251fc0314c72fb84db097ff51a7aa56</property>
+  <property name="kdenlive:audio_max0">209</property>
+  <property name="meta.media.nb_streams">1</property>
+  <property name="meta.media.0.stream.type">audio</property>
+  <property name="meta.media.0.codec.sample_fmt">s16</property>
+  <property name="meta.media.0.codec.sample_rate">48000</property>
+  <property name="meta.media.0.codec.channels">2</property>
+  <property name="meta.media.0.codec.layout">independent</property>
+  <property name="meta.media.0.codec.name">pcm_s16le</property>
+  <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
+  <property name="meta.media.0.codec.bit_rate">1536000</property>
+  <property name="xml">was here</property>
+  <property name="mute_on_pause">0</property>
+  <property name="set.test_audio">0</property>
+  <property name="set.test_image">1</property>
+ </chain>
+ <chain id="chain10" out="00:00:09.983">
+  <property name="length">12214</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number11.wav</property>
+  <property name="mlt_service">avformat-novalidate</property>
+  <property name="seekable">1</property>
+  <property name="audio_index">0</property>
+  <property name="video_index">-1</property>
+  <property name="astream">0</property>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">15</property>
+  <property name="kdenlive:control_uuid">{1cecf74b-9596-4d1c-9c3b-bad48af53bfe}</property>
+  <property name="kdenlive:clip_type">1</property>
+  <property name="kdenlive:file_size">39083560</property>
+  <property name="kdenlive:file_hash">4b25e0235ba4396e0bbb7fa2e6139558</property>
+  <property name="kdenlive:audio_max0">208</property>
+  <property name="meta.media.nb_streams">1</property>
+  <property name="meta.media.0.stream.type">audio</property>
+  <property name="meta.media.0.codec.sample_fmt">s16</property>
+  <property name="meta.media.0.codec.sample_rate">48000</property>
+  <property name="meta.media.0.codec.channels">2</property>
+  <property name="meta.media.0.codec.layout">independent</property>
+  <property name="meta.media.0.codec.name">pcm_s16le</property>
+  <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
+  <property name="meta.media.0.codec.bit_rate">1536000</property>
+  <property name="xml">was here</property>
+  <property name="mute_on_pause">0</property>
+  <property name="set.test_audio">0</property>
+  <property name="set.test_image">1</property>
+ </chain>
+ <chain id="chain11" out="00:00:09.983">
+  <property name="length">12293</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number12.wav</property>
+  <property name="mlt_service">avformat-novalidate</property>
+  <property name="seekable">1</property>
+  <property name="audio_index">0</property>
+  <property name="video_index">-1</property>
+  <property name="astream">0</property>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">16</property>
+  <property name="kdenlive:control_uuid">{b9bfaf15-a45a-4b9b-bdea-e2863d0b1c3d}</property>
+  <property name="kdenlive:clip_type">1</property>
+  <property name="kdenlive:file_size">39337000</property>
+  <property name="kdenlive:file_hash">97c0cf9410d846f2e8ca4ba9f80d8d19</property>
+  <property name="kdenlive:audio_max0">221</property>
+  <property name="meta.media.nb_streams">1</property>
+  <property name="meta.media.0.stream.type">audio</property>
+  <property name="meta.media.0.codec.sample_fmt">s16</property>
+  <property name="meta.media.0.codec.sample_rate">48000</property>
+  <property name="meta.media.0.codec.channels">2</property>
+  <property name="meta.media.0.codec.layout">independent</property>
+  <property name="meta.media.0.codec.name">pcm_s16le</property>
+  <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
+  <property name="meta.media.0.codec.bit_rate">1536000</property>
+  <property name="xml">was here</property>
+  <property name="mute_on_pause">0</property>
+  <property name="set.test_audio">0</property>
+  <property name="set.test_image">1</property>
+ </chain>
+ <chain id="chain12" out="00:00:09.983">
+  <property name="length">10198</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number13.wav</property>
+  <property name="mlt_service">avformat-novalidate</property>
+  <property name="seekable">1</property>
+  <property name="audio_index">0</property>
+  <property name="video_index">-1</property>
+  <property name="astream">0</property>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">17</property>
+  <property name="kdenlive:control_uuid">{1ba8c51d-23cb-4155-acf8-6bf3099a65b6}</property>
+  <property name="kdenlive:clip_type">1</property>
+  <property name="kdenlive:file_size">32632360</property>
+  <property name="kdenlive:file_hash">1d2ec381d02a94ac703a1bfe7d53c2b2</property>
+  <property name="kdenlive:audio_max0">195</property>
+  <property name="meta.media.nb_streams">1</property>
+  <property name="meta.media.0.stream.type">audio</property>
+  <property name="meta.media.0.codec.sample_fmt">s16</property>
+  <property name="meta.media.0.codec.sample_rate">48000</property>
+  <property name="meta.media.0.codec.channels">2</property>
+  <property name="meta.media.0.codec.layout">independent</property>
+  <property name="meta.media.0.codec.name">pcm_s16le</property>
+  <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
+  <property name="meta.media.0.codec.bit_rate">1536000</property>
+  <property name="xml">was here</property>
+  <property name="mute_on_pause">0</property>
+  <property name="set.test_audio">0</property>
+  <property name="set.test_image">1</property>
+ </chain>
+ <chain id="chain13" out="00:00:09.983">
+  <property name="length">10294</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number14.wav</property>
+  <property name="mlt_service">avformat-novalidate</property>
+  <property name="seekable">1</property>
+  <property name="audio_index">0</property>
+  <property name="video_index">-1</property>
+  <property name="astream">0</property>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">18</property>
+  <property name="kdenlive:control_uuid">{972fca03-ed9a-4341-80d9-e099cc881dd6}</property>
+  <property name="kdenlive:clip_type">1</property>
+  <property name="kdenlive:file_size">32939560</property>
+  <property name="kdenlive:file_hash">dbc0d4447fe1e93c6af998e82f6e4d83</property>
+  <property name="kdenlive:audio_max0">221</property>
+  <property name="meta.media.nb_streams">1</property>
+  <property name="meta.media.0.stream.type">audio</property>
+  <property name="meta.media.0.codec.sample_fmt">s16</property>
+  <property name="meta.media.0.codec.sample_rate">48000</property>
+  <property name="meta.media.0.codec.channels">2</property>
+  <property name="meta.media.0.codec.layout">independent</property>
+  <property name="meta.media.0.codec.name">pcm_s16le</property>
+  <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
+  <property name="meta.media.0.codec.bit_rate">1536000</property>
+  <property name="xml">was here</property>
+  <property name="mute_on_pause">0</property>
+  <property name="set.test_audio">0</property>
+  <property name="set.test_image">1</property>
+ </chain>
+ <chain id="chain14" out="00:00:09.983">
+  <property name="length">12737</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number15.wav</property>
+  <property name="mlt_service">avformat-novalidate</property>
+  <property name="seekable">1</property>
+  <property name="audio_index">0</property>
+  <property name="video_index">-1</property>
+  <property name="astream">0</property>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">19</property>
+  <property name="kdenlive:control_uuid">{fc2e3570-a6ef-4b41-ac2f-78471eccd989}</property>
+  <property name="kdenlive:clip_type">1</property>
+  <property name="kdenlive:file_size">40757800</property>
+  <property name="kdenlive:file_hash">9eea1ed3600e1b8b5b699397aaeab78d</property>
+  <property name="kdenlive:audio_max0">202</property>
+  <property name="meta.media.nb_streams">1</property>
+  <property name="meta.media.0.stream.type">audio</property>
+  <property name="meta.media.0.codec.sample_fmt">s16</property>
+  <property name="meta.media.0.codec.sample_rate">48000</property>
+  <property name="meta.media.0.codec.channels">2</property>
+  <property name="meta.media.0.codec.layout">independent</property>
+  <property name="meta.media.0.codec.name">pcm_s16le</property>
+  <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
+  <property name="meta.media.0.codec.bit_rate">1536000</property>
+  <property name="xml">was here</property>
+  <property name="mute_on_pause">0</property>
+  <property name="set.test_audio">0</property>
+  <property name="set.test_image">1</property>
+ </chain>
+ <chain id="chain15" out="00:00:09.983">
+  <property name="length">12773</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number16.wav</property>
+  <property name="mlt_service">avformat-novalidate</property>
+  <property name="seekable">1</property>
+  <property name="audio_index">0</property>
+  <property name="video_index">-1</property>
+  <property name="astream">0</property>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">20</property>
+  <property name="kdenlive:control_uuid">{797bf9dd-0428-4d58-a5c0-60e9069bbea9}</property>
+  <property name="kdenlive:clip_type">1</property>
+  <property name="kdenlive:file_size">40873000</property>
+  <property name="kdenlive:file_hash">56d224a54198d2048ed92f9ad2e66ce5</property>
+  <property name="kdenlive:audio_max0">213</property>
+  <property name="meta.media.nb_streams">1</property>
+  <property name="meta.media.0.stream.type">audio</property>
+  <property name="meta.media.0.codec.sample_fmt">s16</property>
+  <property name="meta.media.0.codec.sample_rate">48000</property>
+  <property name="meta.media.0.codec.channels">2</property>
+  <property name="meta.media.0.codec.layout">independent</property>
+  <property name="meta.media.0.codec.name">pcm_s16le</property>
+  <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
+  <property name="meta.media.0.codec.bit_rate">1536000</property>
+  <property name="xml">was here</property>
+  <property name="mute_on_pause">0</property>
+  <property name="set.test_audio">0</property>
+  <property name="set.test_image">1</property>
+ </chain>
+ <chain id="chain16" out="00:00:09.983">
+  <property name="length">12953</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number17.wav</property>
+  <property name="mlt_service">avformat-novalidate</property>
+  <property name="seekable">1</property>
+  <property name="audio_index">0</property>
+  <property name="video_index">-1</property>
+  <property name="astream">0</property>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">21</property>
+  <property name="kdenlive:control_uuid">{967d510c-8833-4d10-a47f-3715f7cf4c0f}</property>
+  <property name="kdenlive:clip_type">1</property>
+  <property name="kdenlive:file_size">41449000</property>
+  <property name="kdenlive:file_hash">39255cac8093da07a79d91657cc4fd5a</property>
+  <property name="kdenlive:audio_max0">208</property>
+  <property name="meta.media.nb_streams">1</property>
+  <property name="meta.media.0.stream.type">audio</property>
+  <property name="meta.media.0.codec.sample_fmt">s16</property>
+  <property name="meta.media.0.codec.sample_rate">48000</property>
+  <property name="meta.media.0.codec.channels">2</property>
+  <property name="meta.media.0.codec.layout">independent</property>
+  <property name="meta.media.0.codec.name">pcm_s16le</property>
+  <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
+  <property name="meta.media.0.codec.bit_rate">1536000</property>
+  <property name="xml">was here</property>
+  <property name="mute_on_pause">0</property>
+  <property name="set.test_audio">0</property>
+  <property name="set.test_image">1</property>
+ </chain>
+ <chain id="chain17" out="00:00:09.983">
+  <property name="length">12442</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number18.wav</property>
+  <property name="mlt_service">avformat-novalidate</property>
+  <property name="seekable">1</property>
+  <property name="audio_index">0</property>
+  <property name="video_index">-1</property>
+  <property name="astream">0</property>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">22</property>
+  <property name="kdenlive:control_uuid">{a046b1d1-2469-494f-87cf-61c0829a165c}</property>
+  <property name="kdenlive:clip_type">1</property>
+  <property name="kdenlive:file_size">39813160</property>
+  <property name="kdenlive:file_hash">f9f47783047c97ffac81616c49f627b7</property>
+  <property name="kdenlive:audio_max0">200</property>
+  <property name="meta.media.nb_streams">1</property>
+  <property name="meta.media.0.stream.type">audio</property>
+  <property name="meta.media.0.codec.sample_fmt">s16</property>
+  <property name="meta.media.0.codec.sample_rate">48000</property>
+  <property name="meta.media.0.codec.channels">2</property>
+  <property name="meta.media.0.codec.layout">independent</property>
+  <property name="meta.media.0.codec.name">pcm_s16le</property>
+  <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
+  <property name="meta.media.0.codec.bit_rate">1536000</property>
+  <property name="xml">was here</property>
+  <property name="mute_on_pause">0</property>
+  <property name="set.test_audio">0</property>
+  <property name="set.test_image">1</property>
+ </chain>
+ <chain id="chain18" out="00:00:09.983">
+  <property name="length">15398</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number19.wav</property>
+  <property name="mlt_service">avformat-novalidate</property>
+  <property name="seekable">1</property>
+  <property name="audio_index">0</property>
+  <property name="video_index">-1</property>
+  <property name="astream">0</property>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">23</property>
+  <property name="kdenlive:control_uuid">{0a524eef-fe36-440f-ba51-550b4c1fbf4c}</property>
+  <property name="kdenlive:clip_type">1</property>
+  <property name="kdenlive:file_size">49274920</property>
+  <property name="kdenlive:file_hash">c39ceba498440858e0843d764fddd1ec</property>
+  <property name="kdenlive:audio_max0">216</property>
+  <property name="meta.media.nb_streams">1</property>
+  <property name="meta.media.0.stream.type">audio</property>
+  <property name="meta.media.0.codec.sample_fmt">s16</property>
+  <property name="meta.media.0.codec.sample_rate">48000</property>
+  <property name="meta.media.0.codec.channels">2</property>
+  <property name="meta.media.0.codec.layout">independent</property>
+  <property name="meta.media.0.codec.name">pcm_s16le</property>
+  <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
+  <property name="meta.media.0.codec.bit_rate">1536000</property>
+  <property name="xml">was here</property>
+  <property name="mute_on_pause">0</property>
+  <property name="set.test_audio">0</property>
+  <property name="set.test_image">1</property>
+ </chain>
+ <chain id="chain19" out="00:00:09.983">
+  <property name="length">11306</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number20.wav</property>
+  <property name="mlt_service">avformat-novalidate</property>
+  <property name="seekable">1</property>
+  <property name="audio_index">0</property>
+  <property name="video_index">-1</property>
+  <property name="astream">0</property>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">24</property>
+  <property name="kdenlive:control_uuid">{305f9969-fa09-44e3-9b91-a5c1816f9507}</property>
+  <property name="kdenlive:clip_type">1</property>
+  <property name="kdenlive:file_size">36180520</property>
+  <property name="kdenlive:file_hash">eb062fbb7fbfcb4bc20f8fc3448f103d</property>
+  <property name="kdenlive:audio_max0">201</property>
+  <property name="meta.media.nb_streams">1</property>
+  <property name="meta.media.0.stream.type">audio</property>
+  <property name="meta.media.0.codec.sample_fmt">s16</property>
+  <property name="meta.media.0.codec.sample_rate">48000</property>
+  <property name="meta.media.0.codec.channels">2</property>
+  <property name="meta.media.0.codec.layout">independent</property>
+  <property name="meta.media.0.codec.name">pcm_s16le</property>
+  <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
+  <property name="meta.media.0.codec.bit_rate">1536000</property>
+  <property name="xml">was here</property>
+  <property name="mute_on_pause">0</property>
+  <property name="set.test_audio">0</property>
+  <property name="set.test_image">1</property>
+ </chain>
+ <playlist id="playlist0">
+  <property name="kdenlive:audio_track">1</property>
+  <entry in="00:00:00.000" out="00:00:09.983" producer="chain0">
+   <property name="kdenlive:id">5</property>
+  </entry>
+  <blank length="00:00:09.983" />
+  <entry in="00:00:00.000" out="00:00:09.983" producer="chain1">
+   <property name="kdenlive:id">6</property>
+  </entry>
+  <entry in="00:00:00.000" out="00:00:09.983" producer="chain2">
+   <property name="kdenlive:id">7</property>
+  </entry>
+  <entry in="00:00:00.000" out="00:00:09.983" producer="chain3">
+   <property name="kdenlive:id">8</property>
+  </entry>
+  <entry in="00:00:00.000" out="00:00:09.983" producer="chain4">
+   <property name="kdenlive:id">9</property>
+  </entry>
+  <entry in="00:00:00.000" out="00:00:09.983" producer="chain5">
+   <property name="kdenlive:id">10</property>
+  </entry>
+  <entry in="00:00:00.000" out="00:00:09.983" producer="chain6">
+   <property name="kdenlive:id">11</property>
+  </entry>
+  <entry in="00:00:00.000" out="00:00:09.983" producer="chain7">
+   <property name="kdenlive:id">12</property>
+  </entry>
+  <entry in="00:00:00.000" out="00:00:09.983" producer="chain8">
+   <property name="kdenlive:id">13</property>
+  </entry>
+  <entry in="00:00:00.000" out="00:00:09.983" producer="chain9">
+   <property name="kdenlive:id">14</property>
+  </entry>
+  <entry in="00:00:00.000" out="00:00:09.983" producer="chain10">
+   <property name="kdenlive:id">15</property>
+  </entry>
+  <entry in="00:00:00.000" out="00:00:09.983" producer="chain11">
+   <property name="kdenlive:id">16</property>
+  </entry>
+  <entry in="00:00:00.000" out="00:00:09.983" producer="chain12">
+   <property name="kdenlive:id">17</property>
+  </entry>
+  <entry in="00:00:00.000" out="00:00:09.983" producer="chain13">
+   <property name="kdenlive:id">18</property>
+  </entry>
+  <entry in="00:00:00.000" out="00:00:09.983" producer="chain14">
+   <property name="kdenlive:id">19</property>
+  </entry>
+  <entry in="00:00:00.000" out="00:00:09.983" producer="chain15">
+   <property name="kdenlive:id">20</property>
+  </entry>
+  <entry in="00:00:00.000" out="00:00:09.983" producer="chain16">
+   <property name="kdenlive:id">21</property>
+  </entry>
+  <entry in="00:00:00.000" out="00:00:09.983" producer="chain17">
+   <property name="kdenlive:id">22</property>
+  </entry>
+  <entry in="00:00:00.000" out="00:00:09.983" producer="chain18">
+   <property name="kdenlive:id">23</property>
+  </entry>
+  <entry in="00:00:00.000" out="00:00:09.983" producer="chain19">
+   <property name="kdenlive:id">24</property>
+  </entry>
+ </playlist>
+ <playlist id="playlist1">
+  <property name="kdenlive:audio_track">1</property>
+ </playlist>
+ <tractor id="tractor0" in="00:00:00.000" out="00:00:09.983">
+  <property name="kdenlive:audio_track">1</property>
+  <property name="kdenlive:trackheight">62</property>
+  <property name="kdenlive:timeline_active">1</property>
+  <property name="kdenlive:collapsed">0</property>
+  <property name="kdenlive:thumbs_format" />
+  <property name="kdenlive:audio_rec" />
+  <track hide="video" producer="playlist0" />
+  <track hide="video" producer="playlist1" />
+  <filter id="filter0">
+   <property name="iec_scale">0</property>
+   <property name="mlt_service">audiolevel</property>
+   <property name="dbpeak">1</property>
+   <property name="disable">1</property>
+  </filter>
+ </tractor>
+ <playlist id="playlist2">
+  <entry in="00:00:00.000" out="00:00:09.983" producer="producer1">
+   <property name="kdenlive:id">4</property>
+   <property name="kdenlive:activeeffect">4</property>
+   <filter id="filter1">
+    <property name="background">colour:0</property>
+    <property name="mlt_service">affine</property>
+    <property name="kdenlive_id">pan_zoom</property>
+    <property name="transition.rect">00:00:00.000=-23040 -12960 49920 28080;00:08:56.067=0 -12960 49920 28080;00:18:42.950=-23040 -12960 49920 28080;00:24:22.017=0 -12960 49920 28080;00:30:11.317=-23040 -12960 49920 28080;00:35:12.700=0 -12960 49920 28080;00:41:33.667=-23040 -12960 49920 28080;00:47:34.167=0 -12960 49920 28080;00:54:41.867=-23040 -12960 49920 28080;01:01:20.583=0 -12960 49920 28080;01:08:13.183=-23040 -12960 49920 28080</property>
+    <property name="transition.distort">0</property>
+    <property name="use_normalised">0</property>
+    <property name="producer.resource">0x00000000</property>
+    <property name="transition.repeat_off">1</property>
+    <property name="transition.mirror_off">1</property>
+    <property name="kdenlive:collapsed">0</property>
+   </filter>
+   <filter id="filter2">
+    <property name="version">2.6</property>
+    <property name="mlt_service">frei0r.bigsh0t_transform_360</property>
+    <property name="kdenlive_id">frei0r.bigsh0t_transform_360</property>
+    <property name="yaw">00:00:00.000=-360;00:10:00.300=360;00:22:31.033=-360;00:35:42.233=360;00:46:44.683=-360;00:57:34.783=360;01:08:13.183=-360</property>
+    <property name="pitch">00:00:00.000=-89;00:10:00.300=82;00:22:31.033=-80;00:35:42.233=68;00:46:44.683=-92;00:57:34.783=86;01:08:13.183=-78</property>
+    <property name="roll">00:00:00.000=0;00:10:00.300=0;00:22:31.033=0;00:35:42.233=0;00:46:44.683=0;00:57:34.783=0;01:08:13.183=0</property>
+    <property name="interpolation">0</property>
+    <property name="kdenlive:collapsed">0</property>
+   </filter>
+   <filter id="filter3">
+    <property name="version">0.1</property>
+    <property name="mlt_service">frei0r.distort0r</property>
+    <property name="kdenlive_id">frei0r.distort0r</property>
+    <property name="Amplitude">00:00:00.000=-1;00:12:42.567=1;00:25:06.683=-1;00:39:30.233=1;00:54:52.933=-1;01:08:13.183=1</property>
+    <property name="Frequency">00:00:00.000=-0.05;00:12:42.567=0.068;00:25:06.683=-0.089;00:39:30.233=0.088;00:54:52.933=-0.089;01:08:13.183=0.068</property>
+    <property name="kdenlive:collapsed">0</property>
+   </filter>
+   <filter id="filter4">
+    <property name="version">0.2</property>
+    <property name="mlt_service">frei0r.contrast0r</property>
+    <property name="kdenlive_id">frei0r.contrast0r</property>
+    <property name="Contrast">00:00:00.000=0.448;01:08:13.183=0.448</property>
+    <property name="kdenlive:collapsed">0</property>
+   </filter>
+   <filter id="filter5">
+    <property name="version">1.1</property>
+    <property name="mlt_service">frei0r.kaleid0sc0pe</property>
+    <property name="kdenlive_id">frei0r.kaleid0sc0pe</property>
+    <property name="origin_x">00:00:00.000=0.5</property>
+    <property name="origin_y">00:00:00.000=0.5</property>
+    <property name="segmentation">00:00:00.000=0.125</property>
+    <property name="specify_source">0</property>
+    <property name="source_segment">00:00:00.000=0</property>
+    <property name="segmentation_direction">1</property>
+    <property name="reflect_edges">1</property>
+    <property name="edge_threshold">00:00:00.000=0</property>
+    <property name="preferred_corner">0</property>
+    <property name="corner_search">1</property>
+    <property name="bg_color">#ff00ff</property>
+    <property name="bg_alpha">1</property>
+    <property name="kdenlive:collapsed">0</property>
+   </filter>
+  </entry>
+ </playlist>
+ <playlist id="playlist3" />
+ <tractor id="tractor1" in="00:00:00.000" out="00:00:09.983">
+  <property name="kdenlive:trackheight">62</property>
+  <property name="kdenlive:timeline_active">1</property>
+  <property name="kdenlive:collapsed">0</property>
+  <property name="kdenlive:thumbs_format" />
+  <property name="kdenlive:audio_rec" />
+  <track hide="audio" producer="playlist2" />
+  <track hide="audio" producer="playlist3" />
+ </tractor>
+ <tractor id="tractor2" in="00:00:00.000" out="00:00:09.983">
+  <property name="kdenlive:duration">01:08:13.200</property>
+  <property name="kdenlive:maxduration">245592</property>
+  <property name="kdenlive:clipname">Sequence 1</property>
+  <property name="kdenlive:description" />
+  <property name="kdenlive:uuid">{bd135539-5eb5-46ca-9020-1f0bed75c704}</property>
+  <property name="kdenlive:producer_type">17</property>
+  <property name="kdenlive:control_uuid">{bd135539-5eb5-46ca-9020-1f0bed75c704}</property>
+  <property name="kdenlive:id">3</property>
+  <property name="kdenlive:clip_type">0</property>
+  <property name="kdenlive:file_hash">f83f832c3f3e08ca24cb767b488affe9</property>
+  <property name="kdenlive:folderid">2</property>
+  <property name="kdenlive:sequenceproperties.activeTrack">1</property>
+  <property name="kdenlive:sequenceproperties.audioTarget">1</property>
+  <property name="kdenlive:sequenceproperties.disablepreview">0</property>
+  <property name="kdenlive:sequenceproperties.documentuuid">{bd135539-5eb5-46ca-9020-1f0bed75c704}</property>
+  <property name="kdenlive:sequenceproperties.hasAudio">0</property>
+  <property name="kdenlive:sequenceproperties.hasVideo">1</property>
+  <property name="kdenlive:sequenceproperties.lastUsedFrame">0</property>
+  <property name="kdenlive:sequenceproperties.position">1797</property>
+  <property name="kdenlive:sequenceproperties.scrollPos">0</property>
+  <property name="kdenlive:sequenceproperties.tracks">4</property>
+  <property name="kdenlive:sequenceproperties.tracksCount">2</property>
+  <property name="kdenlive:sequenceproperties.verticalzoom">1</property>
+  <property name="kdenlive:sequenceproperties.videoTarget">2</property>
+  <property name="kdenlive:sequenceproperties.zonein">0</property>
+  <property name="kdenlive:sequenceproperties.zoneout">75</property>
+  <property name="kdenlive:sequenceproperties.zoom">20</property>
+  <property name="kdenlive:sequenceproperties.groups">[
+]
+</property>
+  <property name="kdenlive:sequenceproperties.guides">[
+]
+</property>
+  <track producer="producer0" />
+  <track producer="tractor0" />
+  <track producer="tractor1" />
+  <transition id="transition0">
+   <property name="a_track">0</property>
+   <property name="b_track">1</property>
+   <property name="mlt_service">mix</property>
+   <property name="kdenlive_id">mix</property>
+   <property name="internal_added">237</property>
+   <property name="always_active">1</property>
+   <property name="accepts_blanks">1</property>
+   <property name="sum">1</property>
+  </transition>
+  <transition id="transition1">
+   <property name="a_track">0</property>
+   <property name="b_track">2</property>
+   <property name="compositing">0</property>
+   <property name="distort">0</property>
+   <property name="rotate_center">0</property>
+   <property name="mlt_service">qtblend</property>
+   <property name="kdenlive_id">qtblend</property>
+   <property name="internal_added">237</property>
+   <property name="always_active">1</property>
+  </transition>
+  </tractor>
+ <chain id="chain20" out="00:00:09.983">
+  <property name="length">9890</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number02.wav</property>
+  <property name="mlt_service">avformat</property>
+  <property name="meta.media.nb_streams">1</property>
+  <property name="meta.media.0.stream.type">audio</property>
+  <property name="meta.media.0.codec.sample_fmt">s16</property>
+  <property name="meta.media.0.codec.sample_rate">48000</property>
+  <property name="meta.media.0.codec.channels">2</property>
+  <property name="meta.media.0.codec.layout">independent</property>
+  <property name="meta.media.0.codec.name">pcm_s16le</property>
+  <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
+  <property name="meta.media.0.codec.bit_rate">1536000</property>
+  <property name="seekable">1</property>
+  <property name="audio_index">0</property>
+  <property name="video_index">-1</property>
+  <property name="astream">0</property>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">6</property>
+  <property name="kdenlive:control_uuid">{26dedd01-ef1e-4db3-a328-3155c2d4b113}</property>
+  <property name="kdenlive:clip_type">1</property>
+  <property name="kdenlive:file_size">31649320</property>
+  <property name="kdenlive:file_hash">95b2a485f330c2ad511cf11a8119845d</property>
+  <property name="kdenlive:audio_max0">226</property>
+ </chain>
+ <chain id="chain21" out="00:00:09.983">
+  <property name="length">15732</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number01.wav</property>
+  <property name="mlt_service">avformat</property>
+  <property name="meta.media.nb_streams">1</property>
+  <property name="meta.media.0.stream.type">audio</property>
+  <property name="meta.media.0.codec.sample_fmt">s16</property>
+  <property name="meta.media.0.codec.sample_rate">48000</property>
+  <property name="meta.media.0.codec.channels">2</property>
+  <property name="meta.media.0.codec.layout">independent</property>
+  <property name="meta.media.0.codec.name">pcm_s16le</property>
+  <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
+  <property name="meta.media.0.codec.bit_rate">1536000</property>
+  <property name="seekable">1</property>
+  <property name="audio_index">0</property>
+  <property name="video_index">-1</property>
+  <property name="astream">0</property>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">5</property>
+  <property name="kdenlive:control_uuid">{c49c476d-b873-4531-b16d-e16387950d3f}</property>
+  <property name="kdenlive:clip_type">1</property>
+  <property name="kdenlive:file_size">50342440</property>
+  <property name="kdenlive:file_hash">5cc40594b43446e5f0cfe2e2843b243f</property>
+  <property name="kdenlive:audio_max0">210</property>
+  <property name="kdenlive:monitorPosition">0</property>
+ </chain>
+ <chain id="chain22" out="00:00:09.983">
+  <property name="length">10490</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number03.wav</property>
+  <property name="mlt_service">avformat</property>
+  <property name="meta.media.nb_streams">1</property>
+  <property name="meta.media.0.stream.type">audio</property>
+  <property name="meta.media.0.codec.sample_fmt">s16</property>
+  <property name="meta.media.0.codec.sample_rate">48000</property>
+  <property name="meta.media.0.codec.channels">2</property>
+  <property name="meta.media.0.codec.layout">independent</property>
+  <property name="meta.media.0.codec.name">pcm_s16le</property>
+  <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
+  <property name="meta.media.0.codec.bit_rate">1536000</property>
+  <property name="seekable">1</property>
+  <property name="audio_index">0</property>
+  <property name="video_index">-1</property>
+  <property name="astream">0</property>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">7</property>
+  <property name="kdenlive:control_uuid">{af3079ac-090a-454c-b726-e891c4d93f41}</property>
+  <property name="kdenlive:clip_type">1</property>
+  <property name="kdenlive:file_size">33569320</property>
+  <property name="kdenlive:file_hash">641c018ffa3d07695e501aeddbe4dcaf</property>
+  <property name="kdenlive:audio_max0">219</property>
+ </chain>
+ <chain id="chain23" out="00:00:09.983">
+  <property name="length">9233</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number04.wav</property>
+  <property name="mlt_service">avformat</property>
+  <property name="meta.media.nb_streams">1</property>
+  <property name="meta.media.0.stream.type">audio</property>
+  <property name="meta.media.0.codec.sample_fmt">s16</property>
+  <property name="meta.media.0.codec.sample_rate">48000</property>
+  <property name="meta.media.0.codec.channels">2</property>
+  <property name="meta.media.0.codec.layout">independent</property>
+  <property name="meta.media.0.codec.name">pcm_s16le</property>
+  <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
+  <property name="meta.media.0.codec.bit_rate">1536000</property>
+  <property name="seekable">1</property>
+  <property name="audio_index">0</property>
+  <property name="video_index">-1</property>
+  <property name="astream">0</property>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">8</property>
+  <property name="kdenlive:control_uuid">{dacdcda9-d333-4738-a09f-7be780ec573c}</property>
+  <property name="kdenlive:clip_type">1</property>
+  <property name="kdenlive:file_size">29545000</property>
+  <property name="kdenlive:file_hash">fa23ac9915ef9cc701bd49b2be78404b</property>
+  <property name="kdenlive:audio_max0">210</property>
+ </chain>
+ <chain id="chain24" out="00:00:09.983">
+  <property name="length">13198</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number05.wav</property>
+  <property name="mlt_service">avformat</property>
+  <property name="meta.media.nb_streams">1</property>
+  <property name="meta.media.0.stream.type">audio</property>
+  <property name="meta.media.0.codec.sample_fmt">s16</property>
+  <property name="meta.media.0.codec.sample_rate">48000</property>
+  <property name="meta.media.0.codec.channels">2</property>
+  <property name="meta.media.0.codec.layout">independent</property>
+  <property name="meta.media.0.codec.name">pcm_s16le</property>
+  <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
+  <property name="meta.media.0.codec.bit_rate">1536000</property>
+  <property name="seekable">1</property>
+  <property name="audio_index">0</property>
+  <property name="video_index">-1</property>
+  <property name="astream">0</property>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">9</property>
+  <property name="kdenlive:control_uuid">{64be2a3e-286f-4967-9b86-5f9484f42b2e}</property>
+  <property name="kdenlive:clip_type">1</property>
+  <property name="kdenlive:file_size">42232360</property>
+  <property name="kdenlive:file_hash">2afd08f246144b90ef9f45ab2e1bfe62</property>
+  <property name="kdenlive:audio_max0">225</property>
+ </chain>
+ <chain id="chain25" out="00:00:09.983">
+  <property name="length">21187</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number06.wav</property>
+  <property name="mlt_service">avformat</property>
+  <property name="meta.media.nb_streams">1</property>
+  <property name="meta.media.0.stream.type">audio</property>
+  <property name="meta.media.0.codec.sample_fmt">s16</property>
+  <property name="meta.media.0.codec.sample_rate">48000</property>
+  <property name="meta.media.0.codec.channels">2</property>
+  <property name="meta.media.0.codec.layout">independent</property>
+  <property name="meta.media.0.codec.name">pcm_s16le</property>
+  <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
+  <property name="meta.media.0.codec.bit_rate">1536000</property>
+  <property name="seekable">1</property>
+  <property name="audio_index">0</property>
+  <property name="video_index">-1</property>
+  <property name="astream">0</property>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">10</property>
+  <property name="kdenlive:control_uuid">{7a9765eb-0f82-449d-b7b3-9eab2395ac0e}</property>
+  <property name="kdenlive:clip_type">1</property>
+  <property name="kdenlive:file_size">67799080</property>
+  <property name="kdenlive:file_hash">3e147418c1fbcb90dcc10348dc4e99b8</property>
+  <property name="kdenlive:audio_max0">208</property>
+ </chain>
+ <chain id="chain26" out="00:00:09.983">
+  <property name="length">10735</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number07.wav</property>
+  <property name="mlt_service">avformat</property>
+  <property name="meta.media.nb_streams">1</property>
+  <property name="meta.media.0.stream.type">audio</property>
+  <property name="meta.media.0.codec.sample_fmt">s16</property>
+  <property name="meta.media.0.codec.sample_rate">48000</property>
+  <property name="meta.media.0.codec.channels">2</property>
+  <property name="meta.media.0.codec.layout">independent</property>
+  <property name="meta.media.0.codec.name">pcm_s16le</property>
+  <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
+  <property name="meta.media.0.codec.bit_rate">1536000</property>
+  <property name="seekable">1</property>
+  <property name="audio_index">0</property>
+  <property name="video_index">-1</property>
+  <property name="astream">0</property>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">11</property>
+  <property name="kdenlive:control_uuid">{01a6ec8c-980c-4162-b50c-71f4e5640866}</property>
+  <property name="kdenlive:clip_type">1</property>
+  <property name="kdenlive:file_size">34352680</property>
+  <property name="kdenlive:file_hash">587f7ee7d6f85f70665fcc46b793ef93</property>
+  <property name="kdenlive:audio_max0">212</property>
+ </chain>
+ <chain id="chain27" out="00:00:09.983">
+  <property name="length">10282</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number08.wav</property>
+  <property name="mlt_service">avformat</property>
+  <property name="meta.media.nb_streams">1</property>
+  <property name="meta.media.0.stream.type">audio</property>
+  <property name="meta.media.0.codec.sample_fmt">s16</property>
+  <property name="meta.media.0.codec.sample_rate">48000</property>
+  <property name="meta.media.0.codec.channels">2</property>
+  <property name="meta.media.0.codec.layout">independent</property>
+  <property name="meta.media.0.codec.name">pcm_s16le</property>
+  <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
+  <property name="meta.media.0.codec.bit_rate">1536000</property>
+  <property name="seekable">1</property>
+  <property name="audio_index">0</property>
+  <property name="video_index">-1</property>
+  <property name="astream">0</property>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">12</property>
+  <property name="kdenlive:control_uuid">{6d5882cf-df67-40fe-99a9-01118fa9527c}</property>
+  <property name="kdenlive:clip_type">1</property>
+  <property name="kdenlive:file_size">32901160</property>
+  <property name="kdenlive:file_hash">4c0491fa2fbf26e6ccc0a74eea44f7c6</property>
+  <property name="kdenlive:audio_max0">216</property>
+ </chain>
+ <chain id="chain28" out="00:00:09.983">
+  <property name="length">10867</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number09.wav</property>
+  <property name="mlt_service">avformat</property>
+  <property name="meta.media.nb_streams">1</property>
+  <property name="meta.media.0.stream.type">audio</property>
+  <property name="meta.media.0.codec.sample_fmt">s16</property>
+  <property name="meta.media.0.codec.sample_rate">48000</property>
+  <property name="meta.media.0.codec.channels">2</property>
+  <property name="meta.media.0.codec.layout">independent</property>
+  <property name="meta.media.0.codec.name">pcm_s16le</property>
+  <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
+  <property name="meta.media.0.codec.bit_rate">1536000</property>
+  <property name="seekable">1</property>
+  <property name="audio_index">0</property>
+  <property name="video_index">-1</property>
+  <property name="astream">0</property>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">13</property>
+  <property name="kdenlive:control_uuid">{7ac94b5c-28a9-4e65-ab7b-209dca3e2ba0}</property>
+  <property name="kdenlive:clip_type">1</property>
+  <property name="kdenlive:file_size">34775080</property>
+  <property name="kdenlive:file_hash">039a0d94ce89e9d7261fd3bb3874744f</property>
+  <property name="kdenlive:audio_max0">210</property>
+ </chain>
+ <chain id="chain29" out="00:00:09.983">
+  <property name="length">11369</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number10.wav</property>
+  <property name="mlt_service">avformat</property>
+  <property name="meta.media.nb_streams">1</property>
+  <property name="meta.media.0.stream.type">audio</property>
+  <property name="meta.media.0.codec.sample_fmt">s16</property>
+  <property name="meta.media.0.codec.sample_rate">48000</property>
+  <property name="meta.media.0.codec.channels">2</property>
+  <property name="meta.media.0.codec.layout">independent</property>
+  <property name="meta.media.0.codec.name">pcm_s16le</property>
+  <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
+  <property name="meta.media.0.codec.bit_rate">1536000</property>
+  <property name="seekable">1</property>
+  <property name="audio_index">0</property>
+  <property name="video_index">-1</property>
+  <property name="astream">0</property>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">14</property>
+  <property name="kdenlive:control_uuid">{4f2d3169-ca9a-4412-a434-6c9840845c7b}</property>
+  <property name="kdenlive:clip_type">1</property>
+  <property name="kdenlive:file_size">36380200</property>
+  <property name="kdenlive:file_hash">b251fc0314c72fb84db097ff51a7aa56</property>
+  <property name="kdenlive:audio_max0">209</property>
+ </chain>
+ <chain id="chain30" out="00:00:09.983">
+  <property name="length">12214</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number11.wav</property>
+  <property name="mlt_service">avformat</property>
+  <property name="meta.media.nb_streams">1</property>
+  <property name="meta.media.0.stream.type">audio</property>
+  <property name="meta.media.0.codec.sample_fmt">s16</property>
+  <property name="meta.media.0.codec.sample_rate">48000</property>
+  <property name="meta.media.0.codec.channels">2</property>
+  <property name="meta.media.0.codec.layout">independent</property>
+  <property name="meta.media.0.codec.name">pcm_s16le</property>
+  <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
+  <property name="meta.media.0.codec.bit_rate">1536000</property>
+  <property name="seekable">1</property>
+  <property name="audio_index">0</property>
+  <property name="video_index">-1</property>
+  <property name="astream">0</property>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">15</property>
+  <property name="kdenlive:control_uuid">{1cecf74b-9596-4d1c-9c3b-bad48af53bfe}</property>
+  <property name="kdenlive:clip_type">1</property>
+  <property name="kdenlive:file_size">39083560</property>
+  <property name="kdenlive:file_hash">4b25e0235ba4396e0bbb7fa2e6139558</property>
+  <property name="kdenlive:audio_max0">208</property>
+ </chain>
+ <chain id="chain31" out="00:00:09.983">
+  <property name="length">10198</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number13.wav</property>
+  <property name="mlt_service">avformat</property>
+  <property name="meta.media.nb_streams">1</property>
+  <property name="meta.media.0.stream.type">audio</property>
+  <property name="meta.media.0.codec.sample_fmt">s16</property>
+  <property name="meta.media.0.codec.sample_rate">48000</property>
+  <property name="meta.media.0.codec.channels">2</property>
+  <property name="meta.media.0.codec.layout">independent</property>
+  <property name="meta.media.0.codec.name">pcm_s16le</property>
+  <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
+  <property name="meta.media.0.codec.bit_rate">1536000</property>
+  <property name="seekable">1</property>
+  <property name="audio_index">0</property>
+  <property name="video_index">-1</property>
+  <property name="astream">0</property>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">17</property>
+  <property name="kdenlive:control_uuid">{1ba8c51d-23cb-4155-acf8-6bf3099a65b6}</property>
+  <property name="kdenlive:clip_type">1</property>
+  <property name="kdenlive:file_size">32632360</property>
+  <property name="kdenlive:file_hash">1d2ec381d02a94ac703a1bfe7d53c2b2</property>
+  <property name="kdenlive:audio_max0">195</property>
+ </chain>
+ <chain id="chain32" out="00:00:09.983">
+  <property name="length">12293</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number12.wav</property>
+  <property name="mlt_service">avformat</property>
+  <property name="meta.media.nb_streams">1</property>
+  <property name="meta.media.0.stream.type">audio</property>
+  <property name="meta.media.0.codec.sample_fmt">s16</property>
+  <property name="meta.media.0.codec.sample_rate">48000</property>
+  <property name="meta.media.0.codec.channels">2</property>
+  <property name="meta.media.0.codec.layout">independent</property>
+  <property name="meta.media.0.codec.name">pcm_s16le</property>
+  <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
+  <property name="meta.media.0.codec.bit_rate">1536000</property>
+  <property name="seekable">1</property>
+  <property name="audio_index">0</property>
+  <property name="video_index">-1</property>
+  <property name="astream">0</property>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">16</property>
+  <property name="kdenlive:control_uuid">{b9bfaf15-a45a-4b9b-bdea-e2863d0b1c3d}</property>
+  <property name="kdenlive:clip_type">1</property>
+  <property name="kdenlive:file_size">39337000</property>
+  <property name="kdenlive:file_hash">97c0cf9410d846f2e8ca4ba9f80d8d19</property>
+  <property name="kdenlive:audio_max0">221</property>
+ </chain>
+ <chain id="chain33" out="00:00:09.983">
+  <property name="length">10294</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number14.wav</property>
+  <property name="mlt_service">avformat</property>
+  <property name="meta.media.nb_streams">1</property>
+  <property name="meta.media.0.stream.type">audio</property>
+  <property name="meta.media.0.codec.sample_fmt">s16</property>
+  <property name="meta.media.0.codec.sample_rate">48000</property>
+  <property name="meta.media.0.codec.channels">2</property>
+  <property name="meta.media.0.codec.layout">independent</property>
+  <property name="meta.media.0.codec.name">pcm_s16le</property>
+  <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
+  <property name="meta.media.0.codec.bit_rate">1536000</property>
+  <property name="seekable">1</property>
+  <property name="audio_index">0</property>
+  <property name="video_index">-1</property>
+  <property name="astream">0</property>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">18</property>
+  <property name="kdenlive:control_uuid">{972fca03-ed9a-4341-80d9-e099cc881dd6}</property>
+  <property name="kdenlive:clip_type">1</property>
+  <property name="kdenlive:file_size">32939560</property>
+  <property name="kdenlive:file_hash">dbc0d4447fe1e93c6af998e82f6e4d83</property>
+  <property name="kdenlive:audio_max0">221</property>
+ </chain>
+ <chain id="chain34" out="00:00:09.983">
+  <property name="length">12737</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number15.wav</property>
+  <property name="mlt_service">avformat</property>
+  <property name="meta.media.nb_streams">1</property>
+  <property name="meta.media.0.stream.type">audio</property>
+  <property name="meta.media.0.codec.sample_fmt">s16</property>
+  <property name="meta.media.0.codec.sample_rate">48000</property>
+  <property name="meta.media.0.codec.channels">2</property>
+  <property name="meta.media.0.codec.layout">independent</property>
+  <property name="meta.media.0.codec.name">pcm_s16le</property>
+  <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
+  <property name="meta.media.0.codec.bit_rate">1536000</property>
+  <property name="seekable">1</property>
+  <property name="audio_index">0</property>
+  <property name="video_index">-1</property>
+  <property name="astream">0</property>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">19</property>
+  <property name="kdenlive:control_uuid">{fc2e3570-a6ef-4b41-ac2f-78471eccd989}</property>
+  <property name="kdenlive:clip_type">1</property>
+  <property name="kdenlive:file_size">40757800</property>
+  <property name="kdenlive:file_hash">9eea1ed3600e1b8b5b699397aaeab78d</property>
+  <property name="kdenlive:audio_max0">202</property>
+ </chain>
+ <chain id="chain35" out="00:00:09.983">
+  <property name="length">12773</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number16.wav</property>
+  <property name="mlt_service">avformat</property>
+  <property name="meta.media.nb_streams">1</property>
+  <property name="meta.media.0.stream.type">audio</property>
+  <property name="meta.media.0.codec.sample_fmt">s16</property>
+  <property name="meta.media.0.codec.sample_rate">48000</property>
+  <property name="meta.media.0.codec.channels">2</property>
+  <property name="meta.media.0.codec.layout">independent</property>
+  <property name="meta.media.0.codec.name">pcm_s16le</property>
+  <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
+  <property name="meta.media.0.codec.bit_rate">1536000</property>
+  <property name="seekable">1</property>
+  <property name="audio_index">0</property>
+  <property name="video_index">-1</property>
+  <property name="astream">0</property>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">20</property>
+  <property name="kdenlive:control_uuid">{797bf9dd-0428-4d58-a5c0-60e9069bbea9}</property>
+  <property name="kdenlive:clip_type">1</property>
+  <property name="kdenlive:file_size">40873000</property>
+  <property name="kdenlive:file_hash">56d224a54198d2048ed92f9ad2e66ce5</property>
+  <property name="kdenlive:audio_max0">213</property>
+ </chain>
+ <chain id="chain36" out="00:00:09.983">
+  <property name="length">12953</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number17.wav</property>
+  <property name="mlt_service">avformat</property>
+  <property name="meta.media.nb_streams">1</property>
+  <property name="meta.media.0.stream.type">audio</property>
+  <property name="meta.media.0.codec.sample_fmt">s16</property>
+  <property name="meta.media.0.codec.sample_rate">48000</property>
+  <property name="meta.media.0.codec.channels">2</property>
+  <property name="meta.media.0.codec.layout">independent</property>
+  <property name="meta.media.0.codec.name">pcm_s16le</property>
+  <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
+  <property name="meta.media.0.codec.bit_rate">1536000</property>
+  <property name="seekable">1</property>
+  <property name="audio_index">0</property>
+  <property name="video_index">-1</property>
+  <property name="astream">0</property>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">21</property>
+  <property name="kdenlive:control_uuid">{967d510c-8833-4d10-a47f-3715f7cf4c0f}</property>
+  <property name="kdenlive:clip_type">1</property>
+  <property name="kdenlive:file_size">41449000</property>
+  <property name="kdenlive:file_hash">39255cac8093da07a79d91657cc4fd5a</property>
+  <property name="kdenlive:audio_max0">208</property>
+ </chain>
+ <chain id="chain37" out="00:00:09.983">
+  <property name="length">12442</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number18.wav</property>
+  <property name="mlt_service">avformat</property>
+  <property name="meta.media.nb_streams">1</property>
+  <property name="meta.media.0.stream.type">audio</property>
+  <property name="meta.media.0.codec.sample_fmt">s16</property>
+  <property name="meta.media.0.codec.sample_rate">48000</property>
+  <property name="meta.media.0.codec.channels">2</property>
+  <property name="meta.media.0.codec.layout">independent</property>
+  <property name="meta.media.0.codec.name">pcm_s16le</property>
+  <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
+  <property name="meta.media.0.codec.bit_rate">1536000</property>
+  <property name="seekable">1</property>
+  <property name="audio_index">0</property>
+  <property name="video_index">-1</property>
+  <property name="astream">0</property>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">22</property>
+  <property name="kdenlive:control_uuid">{a046b1d1-2469-494f-87cf-61c0829a165c}</property>
+  <property name="kdenlive:clip_type">1</property>
+  <property name="kdenlive:file_size">39813160</property>
+  <property name="kdenlive:file_hash">f9f47783047c97ffac81616c49f627b7</property>
+  <property name="kdenlive:audio_max0">200</property>
+ </chain>
+ <chain id="chain38" out="00:00:09.983">
+  <property name="length">15398</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number19.wav</property>
+  <property name="mlt_service">avformat</property>
+  <property name="meta.media.nb_streams">1</property>
+  <property name="meta.media.0.stream.type">audio</property>
+  <property name="meta.media.0.codec.sample_fmt">s16</property>
+  <property name="meta.media.0.codec.sample_rate">48000</property>
+  <property name="meta.media.0.codec.channels">2</property>
+  <property name="meta.media.0.codec.layout">independent</property>
+  <property name="meta.media.0.codec.name">pcm_s16le</property>
+  <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
+  <property name="meta.media.0.codec.bit_rate">1536000</property>
+  <property name="seekable">1</property>
+  <property name="audio_index">0</property>
+  <property name="video_index">-1</property>
+  <property name="astream">0</property>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">23</property>
+  <property name="kdenlive:control_uuid">{0a524eef-fe36-440f-ba51-550b4c1fbf4c}</property>
+  <property name="kdenlive:clip_type">1</property>
+  <property name="kdenlive:file_size">49274920</property>
+  <property name="kdenlive:file_hash">c39ceba498440858e0843d764fddd1ec</property>
+  <property name="kdenlive:audio_max0">216</property>
+ </chain>
+ <chain id="chain39" out="00:00:09.983">
+  <property name="length">11306</property>
+  <property name="eof">pause</property>
+  <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number20.wav</property>
+  <property name="mlt_service">avformat</property>
+  <property name="meta.media.nb_streams">1</property>
+  <property name="meta.media.0.stream.type">audio</property>
+  <property name="meta.media.0.codec.sample_fmt">s16</property>
+  <property name="meta.media.0.codec.sample_rate">48000</property>
+  <property name="meta.media.0.codec.channels">2</property>
+  <property name="meta.media.0.codec.layout">independent</property>
+  <property name="meta.media.0.codec.name">pcm_s16le</property>
+  <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
+  <property name="meta.media.0.codec.bit_rate">1536000</property>
+  <property name="seekable">1</property>
+  <property name="audio_index">0</property>
+  <property name="video_index">-1</property>
+  <property name="astream">0</property>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">24</property>
+  <property name="kdenlive:control_uuid">{305f9969-fa09-44e3-9b91-a5c1816f9507}</property>
+  <property name="kdenlive:clip_type">1</property>
+  <property name="kdenlive:file_size">36180520</property>
+  <property name="kdenlive:file_hash">eb062fbb7fbfcb4bc20f8fc3448f103d</property>
+  <property name="kdenlive:audio_max0">201</property>
+  <property name="kdenlive:monitorPosition">0</property>
+ </chain>
+ <playlist id="main_bin">
+  <property name="kdenlive:folder.-1.2">Sequences</property>
+  <property name="kdenlive:sequenceFolder">2</property>
+  <property name="kdenlive:docproperties.activetimeline">{bd135539-5eb5-46ca-9020-1f0bed75c704}</property>
+  <property name="kdenlive:docproperties.audioChannels">2</property>
+  <property name="kdenlive:docproperties.binsort">0</property>
+  <property name="kdenlive:docproperties.browserurl" />
+  <property name="kdenlive:docproperties.documentid">1752169429198</property>
+  <property name="kdenlive:docproperties.enableTimelineZone">0</property>
+  <property name="kdenlive:docproperties.enableexternalproxy">0</property>
+  <property name="kdenlive:docproperties.enableproxy">0</property>
+  <property name="kdenlive:docproperties.externalproxyparams" />
+  <property name="kdenlive:docproperties.generateimageproxy">0</property>
+  <property name="kdenlive:docproperties.generateproxy">0</property>
+  <property name="kdenlive:docproperties.guidesCategories">[
+    {
+        "color": "#9b59b6",
+        "comment": "Category 1",
+        "index": 0
+    },
+    {
+        "color": "#3daee9",
+        "comment": "Category 2",
+        "index": 1
+    },
+    {
+        "color": "#1abc9c",
+        "comment": "Category 3",
+        "index": 2
+    },
+    {
+        "color": "#1cdc9a",
+        "comment": "Category 4",
+        "index": 3
+    },
+    {
+        "color": "#c9ce3b",
+        "comment": "Category 5",
+        "index": 4
+    },
+    {
+        "color": "#fdbc4b",
+        "comment": "Category 6",
+        "index": 5
+    },
+    {
+        "color": "#f39c1f",
+        "comment": "Category 7",
+        "index": 6
+    },
+    {
+        "color": "#f47750",
+        "comment": "Category 8",
+        "index": 7
+    },
+    {
+        "color": "#da4453",
+        "comment": "Category 9",
+        "index": 8
+    }
+]
+</property>
+  <property name="kdenlive:docproperties.kdenliveversion">24.12.1</property>
+  <property name="kdenlive:docproperties.opensequences">{bd135539-5eb5-46ca-9020-1f0bed75c704}</property>
+  <property name="kdenlive:docproperties.previewextension" />
+  <property name="kdenlive:docproperties.previewparameters" />
+  <property name="kdenlive:docproperties.profile">uhd_2160p_60</property>
+  <property name="kdenlive:docproperties.proxyextension" />
+  <property name="kdenlive:docproperties.proxyimageminsize">2000</property>
+  <property name="kdenlive:docproperties.proxyimagesize">800</property>
+  <property name="kdenlive:docproperties.proxyminsize">1000</property>
+  <property name="kdenlive:docproperties.proxyparams" />
+  <property name="kdenlive:docproperties.proxyresize">640</property>
+  <property name="kdenlive:docproperties.seekOffset">30000</property>
+  <property name="kdenlive:docproperties.sessionid">{cea8c178-a050-4b25-b091-d5fbd8043fc5}</property>
+  <property name="kdenlive:docproperties.uuid">{bd135539-5eb5-46ca-9020-1f0bed75c704}</property>
+  <property name="kdenlive:docproperties.version">1.1</property>
+  <property name="kdenlive:expandedFolders" />
+  <property name="kdenlive:binZoom">4</property>
+  <property name="kdenlive:extraBins">project_bin:-1:0</property>
+  <property name="kdenlive:documentnotes" />
+  <property name="kdenlive:documentnotesversion">2</property>
+  <property name="kdenlive:docproperties.rendercategory">Ultra-High Definition (4K)</property>
+  <property name="kdenlive:docproperties.rendercustomquality">-1</property>
+  <property name="kdenlive:docproperties.renderendguide">-1</property>
+  <property name="kdenlive:docproperties.renderexportaudio">0</property>
+  <property name="kdenlive:docproperties.renderfullcolorrange">0</property>
+  <property name="kdenlive:docproperties.rendermode">0</property>
+  <property name="kdenlive:docproperties.renderplay">0</property>
+  <property name="kdenlive:docproperties.renderpreview">0</property>
+  <property name="kdenlive:docproperties.renderprofile">MP4-H265 (HEVC)</property>
+  <property name="kdenlive:docproperties.renderrescale">0</property>
+  <property name="kdenlive:docproperties.renderrescaleheight">1080</property>
+  <property name="kdenlive:docproperties.renderrescalewidth">1920</property>
+  <property name="kdenlive:docproperties.renderspeed">6</property>
+  <property name="kdenlive:docproperties.renderstartguide">-1</property>
+  <property name="kdenlive:docproperties.rendertcoverlay">0</property>
+  <property name="kdenlive:docproperties.rendertctype">-1</property>
+  <property name="kdenlive:docproperties.rendertwopass">0</property>
+  <property name="kdenlive:docproperties.renderurl">dsffffffffffdfd-6000.mp4</property>
+  <property name="xml_retain">1</property>
+  <entry in="00:00:00.000" out="00:00:09.983" producer="tractor2" />
+  <entry in="00:00:00.000" out="00:00:09.983" producer="chain20" />
+  <entry in="00:00:00.000" out="00:00:09.983" producer="chain21" />
+  <entry in="00:00:00.000" out="00:00:09.983" producer="chain22" />
+  <entry in="00:00:00.000" out="00:00:09.983" producer="chain23" />
+  <entry in="00:00:00.000" out="00:00:09.983" producer="chain24" />
+  <entry in="00:00:00.000" out="00:00:09.983" producer="chain25" />
+  <entry in="00:00:00.000" out="00:00:09.983" producer="chain26" />
+  <entry in="00:00:00.000" out="00:00:09.983" producer="chain27" />
+  <entry in="00:00:00.000" out="00:00:09.983" producer="chain28" />
+  <entry in="00:00:00.000" out="00:00:09.983" producer="chain29" />
+  <entry in="00:00:00.000" out="00:00:09.983" producer="chain30" />
+  <entry in="00:00:00.000" out="00:00:09.983" producer="chain31" />
+  <entry in="00:00:00.000" out="00:00:09.983" producer="chain32" />
+  <entry in="00:00:00.000" out="00:00:09.983" producer="chain33" />
+  <entry in="00:00:00.000" out="00:00:09.983" producer="chain34" />
+  <entry in="00:00:00.000" out="00:00:09.983" producer="chain35" />
+  <entry in="00:00:00.000" out="00:00:09.983" producer="chain36" />
+  <entry in="00:00:00.000" out="00:00:09.983" producer="chain37" />
+  <entry in="00:00:00.000" out="00:00:09.983" producer="chain38" />
+  <entry in="00:00:00.000" out="00:00:09.983" producer="chain39" />
+  <entry in="00:00:00.000" out="00:00:09.983" producer="producer1" />
+ </playlist>
+ <tractor id="tractor3" in="00:00:00.000" out="00:00:09.983">
+  <property name="kdenlive:projectTractor">1</property>
+  <track in="00:00:00.000" out="00:00:09.983" producer="tractor2" />
+ </tractor>
+</mlt>

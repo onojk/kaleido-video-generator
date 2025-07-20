@@ -1,0 +1,7 @@
+module org.kde.syntaxhighlighting
+linktarget kquicksyntaxhighlightingplugin
+optional plugin kquicksyntaxhighlightingplugin
+classname org_kde_syntaxhighlightingPlugin
+typeinfo kquicksyntaxhighlightingplugin.qmltypes
+prefer :/qt/qml/org/kde/syntaxhighlighting/
+

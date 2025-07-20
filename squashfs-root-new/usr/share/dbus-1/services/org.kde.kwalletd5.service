@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=org.kde.kwalletd5
+Exec=/builds/multimedia/kdenlive/linux-64-gcc/bin/kwalletd6

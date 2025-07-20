@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mlt LC_NUMERIC="C" version="7.12.0" title="Kdenlive Project" producer="main_bin">
+  <profile description="4K UHD 60fps" width="3840" height="2160" progressive="1" sample_aspect_num="1" sample_aspect_den="1" display_aspect_num="16" display_aspect_den="9" frame_rate_num="60" frame_rate_den="1" colorspace="709"/>
+
+  <playlist id="main_bin"/>
+
+  <tractor id="main" title="Main Track">
+    <track producer="image_track"/>
+  </tractor>
+
+  <producer id="image_track">
+    <property name="resource">current_abstract_video_image.jpg</property>
+    <property name="mlt_service">qimage</property>
+    <property name="length">600</property> <!-- 10 seconds @ 60 fps -->
+    <property name="ttl">600</property>
+
+    <!-- Filters (e.g., contrast boost) -->
+    <filter id="brightness">
+      <property name="brightness">0</property>
+      <property name="contrast">1.4</property>
+      <property name="saturation">1.2</property>
+    </filter>
+
+    <filter id="frei0r.c0rners">
+      <property name="0">0.0</property> <!-- Top-left X -->
+      <property name="1">0.0</property> <!-- Top-left Y -->
+      <property name="2">1.0</property> <!-- Top-right X -->
+      <property name="3">0.0</property>
+      <property name="4">1.0</property> <!-- Bottom-right X -->
+      <property name="5">1.0</property>
+      <property name="6">0.0</property> <!-- Bottom-left X -->
+      <property name="7">1.0</property>
+    </filter>
+  </producer>
+
+</mlt>

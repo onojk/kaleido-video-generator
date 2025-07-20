@@ -1,0 +1,523 @@
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+|1=-10| |2= -5| |3= -2| |4= -1| |5=  0| |6=  1| |7=  2| |8=  5| |9= 10|
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
++---------------------------------------------------------------------+
+|               H = back 1 minute,  L = forward 1 minute              |
+|                 h = previous frame,  l = next frame                 |
+|           g = start of clip, j = next clip, k = previous clip       |
+|                0 = restart, q = quit, space = play                  |
++---------------------------------------------------------------------+
+[libx264 @ 0x742a20201b80] interlace + weightp is not implemented
+Current Position:          0Current Position:          0[filter avcolor_space] Invalid format glsl
+Current Position:          0[filter avcolor_space] Invalid format glsl
+Current Position:          0Current Position:          0[filter avcolor_space] Invalid format glsl
+Current Position:          0[filter avcolor_space] Invalid format glsl
+Current Position:          0[filter avcolor_space] Invalid format glsl
+Current Position:          1[filter avcolor_space] Invalid format glsl
+Current Position:          1Current Position:          2[filter avcolor_space] Invalid format glsl
+[filter avcolor_space] Invalid format glsl
+Current Position:          2Current Position:          2[filter avcolor_space] Invalid format glsl
+Current Position:          3[filter avcolor_space] Invalid format glsl
+Current Position:          3[filter avcolor_space] Invalid format glsl
+Current Position:          4[filter avcolor_space] Invalid format glsl
+Current Position:          4[filter avcolor_space] Invalid format glsl
+Current Position:          5[filter avcolor_space] Invalid format glsl
+Current Position:          5Current Position:          5[filter avcolor_space] Invalid format glsl
+Current Position:          6[filter avcolor_space] Invalid format glsl
+Current Position:          6[filter avcolor_space] Invalid format glsl
+Current Position:          7[filter avcolor_space] Invalid format glsl
+Current Position:          7[filter avcolor_space] Invalid format glsl
+Current Position:          8[filter avcolor_space] Invalid format glsl
+Current Position:          8Current Position:          8[filter avcolor_space] Invalid format glsl
+Current Position:          9[filter avcolor_space] Invalid format glsl
+Current Position:          9[filter avcolor_space] Invalid format glsl
+Current Position:         10[filter avcolor_space] Invalid format glsl
+Current Position:         10[filter avcolor_space] Invalid format glsl
+Current Position:         11[filter avcolor_space] Invalid format glsl
+Current Position:         11Current Position:         11[filter avcolor_space] Invalid format glsl
+Current Position:         12[filter avcolor_space] Invalid format glsl
+Current Position:         12[filter avcolor_space] Invalid format glsl
+Current Position:         13[filter avcolor_space] Invalid format glsl
+Current Position:         13[filter avcolor_space] Invalid format glsl
+Current Position:         14[filter avcolor_space] Invalid format glsl
+Current Position:         14[filter avcolor_space] Invalid format glsl
+Current Position:         15[filter avcolor_space] Invalid format glsl
+Current Position:         15Current Position:         15[filter avcolor_space] Invalid format glsl
+Current Position:         16[filter avcolor_space] Invalid format glsl
+Current Position:         16[filter avcolor_space] Invalid format glsl
+Current Position:         17[filter avcolor_space] Invalid format glsl
+Current Position:         17[filter avcolor_space] Invalid format glsl
+Current Position:         18[filter avcolor_space] Invalid format glsl
+Current Position:         18Current Position:         18[filter avcolor_space] Invalid format glsl
+Current Position:         19[filter avcolor_space] Invalid format glsl
+Current Position:         19[filter avcolor_space] Invalid format glsl
+Current Position:         20[filter avcolor_space] Invalid format glsl
+Current Position:         20[filter avcolor_space] Invalid format glsl
+Current Position:         21[filter avcolor_space] Invalid format glsl
+Current Position:         21[filter avcolor_space] Invalid format glsl
+Current Position:         22[filter avcolor_space] Invalid format glsl
+Current Position:         22Current Position:         22[filter avcolor_space] Invalid format glsl
+Current Position:         23[filter avcolor_space] Invalid format glsl
+Current Position:         23[filter avcolor_space] Invalid format glsl
+Current Position:         24[filter avcolor_space] Invalid format glsl
+Current Position:         24[filter avcolor_space] Invalid format glsl
+Current Position:         25[filter avcolor_space] Invalid format glsl
+Current Position:         25[filter avcolor_space] Invalid format glsl
+Current Position:         26[filter avcolor_space] Invalid format glsl
+Current Position:         26Current Position:         26[filter avcolor_space] Invalid format glsl
+Current Position:         27[filter avcolor_space] Invalid format glsl
+Current Position:         27[filter avcolor_space] Invalid format glsl
+Current Position:         28[filter avcolor_space] Invalid format glsl
+Current Position:         28[filter avcolor_space] Invalid format glsl
+Current Position:         29[filter avcolor_space] Invalid format glsl
+Current Position:         29Current Position:         30[filter avcolor_space] Invalid format glsl
+[filter avcolor_space] Invalid format glsl
+Current Position:         30Current Position:         30[filter avcolor_space] Invalid format glsl
+Current Position:         31[filter avcolor_space] Invalid format glsl
+Current Position:         31[filter avcolor_space] Invalid format glsl
+Current Position:         32[filter avcolor_space] Invalid format glsl
+Current Position:         32[filter avcolor_space] Invalid format glsl
+Current Position:         33[filter avcolor_space] Invalid format glsl
+Current Position:         33Current Position:         33[filter avcolor_space] Invalid format glsl
+Current Position:         34[filter avcolor_space] Invalid format glsl
+Current Position:         34[filter avcolor_space] Invalid format glsl
+Current Position:         35[filter avcolor_space] Invalid format glsl
+Current Position:         35[filter avcolor_space] Invalid format glsl
+Current Position:         36[filter avcolor_space] Invalid format glsl
+Current Position:         36[filter avcolor_space] Invalid format glsl
+Current Position:         37[filter avcolor_space] Invalid format glsl
+Current Position:         37Current Position:         37[filter avcolor_space] Invalid format glsl
+Current Position:         38[filter avcolor_space] Invalid format glsl
+Current Position:         38[filter avcolor_space] Invalid format glsl
+Current Position:         39[filter avcolor_space] Invalid format glsl
+Current Position:         39[filter avcolor_space] Invalid format glsl
+Current Position:         40[filter avcolor_space] Invalid format glsl
+Current Position:         40[filter avcolor_space] Invalid format glsl
+Current Position:         41[filter avcolor_space] Invalid format glsl
+Current Position:         41[filter avcolor_space] Invalid format glsl
+Current Position:         42[filter avcolor_space] Invalid format glsl
+Current Position:         42Current Position:         43[filter avcolor_space] Invalid format glsl
+[filter avcolor_space] Invalid format glsl
+Current Position:         43Current Position:         43[filter avcolor_space] Invalid format glsl
+Current Position:         44[filter avcolor_space] Invalid format glsl
+Current Position:         44[filter avcolor_space] Invalid format glsl
+Current Position:         45[filter avcolor_space] Invalid format glsl
+Current Position:         45[filter avcolor_space] Invalid format glsl
+Current Position:         46[filter avcolor_space] Invalid format glsl
+Current Position:         46[filter avcolor_space] Invalid format glsl
+Current Position:         47[filter avcolor_space] Invalid format glsl
+Current Position:         47Current Position:         47[filter avcolor_space] Invalid format glsl
+Current Position:         48[filter avcolor_space] Invalid format glsl
+Current Position:         48[filter avcolor_space] Invalid format glsl
+Current Position:         49[filter avcolor_space] Invalid format glsl
+Current Position:         49[filter avcolor_space] Invalid format glsl
+Current Position:         50[filter avcolor_space] Invalid format glsl
+Current Position:         50Current Position:         50[filter avcolor_space] Invalid format glsl
+Current Position:         51[filter avcolor_space] Invalid format glsl
+Current Position:         51[filter avcolor_space] Invalid format glsl
+Current Position:         52[filter avcolor_space] Invalid format glsl
+Current Position:         52[filter avcolor_space] Invalid format glsl
+Current Position:         53[filter avcolor_space] Invalid format glsl
+Current Position:         53Current Position:         54[filter avcolor_space] Invalid format glsl
+[filter avcolor_space] Invalid format glsl
+Current Position:         54Current Position:         54[filter avcolor_space] Invalid format glsl
+Current Position:         55[filter avcolor_space] Invalid format glsl
+Current Position:         55[filter avcolor_space] Invalid format glsl
+Current Position:         56[filter avcolor_space] Invalid format glsl
+Current Position:         56[filter avcolor_space] Invalid format glsl
+Current Position:         57[filter avcolor_space] Invalid format glsl
+Current Position:         57Current Position:         57[filter avcolor_space] Invalid format glsl
+[filter avcolor_space] Invalid format glsl
+Current Position:         58Current Position:         58[filter avcolor_space] Invalid format glsl
+Current Position:         59[filter avcolor_space] Invalid format glsl
+Current Position:         59[filter avcolor_space] Invalid format glsl
+Current Position:         60[filter avcolor_space] Invalid format glsl
+Current Position:         60[filter avcolor_space] Invalid format glsl
+Current Position:         61[filter avcolor_space] Invalid format glsl
+Current Position:         61[filter avcolor_space] Invalid format glsl
+Current Position:         62[filter avcolor_space] Invalid format glsl
+Current Position:         62Current Position:         62[filter avcolor_space] Invalid format glsl
+Current Position:         63[filter avcolor_space] Invalid format glsl
+Current Position:         63[filter avcolor_space] Invalid format glsl
+Current Position:         64[filter avcolor_space] Invalid format glsl
+Current Position:         64[filter avcolor_space] Invalid format glsl
+Current Position:         65[filter avcolor_space] Invalid format glsl
+Current Position:         65Current Position:         66[filter avcolor_space] Invalid format glsl
+[filter avcolor_space] Invalid format glsl
+Current Position:         66Current Position:         66[filter avcolor_space] Invalid format glsl
+Current Position:         67[filter avcolor_space] Invalid format glsl
+Current Position:         67[filter avcolor_space] Invalid format glsl
+Current Position:         68[filter avcolor_space] Invalid format glsl
+Current Position:         68[filter avcolor_space] Invalid format glsl
+Current Position:         69[filter avcolor_space] Invalid format glsl
+Current Position:         69Current Position:         69[filter avcolor_space] Invalid format glsl
+Current Position:         70[filter avcolor_space] Invalid format glsl
+Current Position:         70[filter avcolor_space] Invalid format glsl
+Current Position:         71[filter avcolor_space] Invalid format glsl
+Current Position:         71[filter avcolor_space] Invalid format glsl
+Current Position:         72[filter avcolor_space] Invalid format glsl
+Current Position:         72[filter avcolor_space] Invalid format glsl
+Current Position:         73[filter avcolor_space] Invalid format glsl
+Current Position:         73Current Position:         74[filter avcolor_space] Invalid format glsl
+[filter avcolor_space] Invalid format glsl
+Current Position:         74Current Position:         74[filter avcolor_space] Invalid format glsl
+Current Position:         75[filter avcolor_space] Invalid format glsl
+Current Position:         75[filter avcolor_space] Invalid format glsl
+Current Position:         76[filter avcolor_space] Invalid format glsl
+Current Position:         76[filter avcolor_space] Invalid format glsl
+Current Position:         77[filter avcolor_space] Invalid format glsl
+Current Position:         77[filter avcolor_space] Invalid format glsl
+Current Position:         78[filter avcolor_space] Invalid format glsl
+Current Position:         78Current Position:         79[filter avcolor_space] Invalid format glsl
+[filter avcolor_space] Invalid format glsl
+Current Position:         79Current Position:         79[filter avcolor_space] Invalid format glsl
+Current Position:         80[filter avcolor_space] Invalid format glsl
+Current Position:         80[filter avcolor_space] Invalid format glsl
+Current Position:         81[filter avcolor_space] Invalid format glsl
+Current Position:         81[filter avcolor_space] Invalid format glsl
+Current Position:         82[filter avcolor_space] Invalid format glsl
+Current Position:         82[filter avcolor_space] Invalid format glsl
+Current Position:         83[filter avcolor_space] Invalid format glsl
+Current Position:         83[filter avcolor_space] Invalid format glsl
+Current Position:         84[filter avcolor_space] Invalid format glsl
+Current Position:         84Current Position:         84[filter avcolor_space] Invalid format glsl
+[filter avcolor_space] Invalid format glsl
+Current Position:         85Current Position:         85[filter avcolor_space] Invalid format glsl
+Current Position:         86[filter avcolor_space] Invalid format glsl
+Current Position:         86[filter avcolor_space] Invalid format glsl
+Current Position:         87[filter avcolor_space] Invalid format glsl
+Current Position:         87[filter avcolor_space] Invalid format glsl
+Current Position:         88[filter avcolor_space] Invalid format glsl
+Current Position:         88[filter avcolor_space] Invalid format glsl
+Current Position:         89[filter avcolor_space] Invalid format glsl
+Current Position:         89Current Position:         90[filter avcolor_space] Invalid format glsl
+[filter avcolor_space] Invalid format glsl
+Current Position:         90Current Position:         90[filter avcolor_space] Invalid format glsl
+Current Position:         91[filter avcolor_space] Invalid format glsl
+Current Position:         91[filter avcolor_space] Invalid format glsl
+Current Position:         92[filter avcolor_space] Invalid format glsl
+Current Position:         92[filter avcolor_space] Invalid format glsl
+Current Position:         93[filter avcolor_space] Invalid format glsl
+Current Position:         93[filter avcolor_space] Invalid format glsl
+Current Position:         94[filter avcolor_space] Invalid format glsl
+Current Position:         94[filter avcolor_space] Invalid format glsl
+Current Position:         95[filter avcolor_space] Invalid format glsl
+Current Position:         95Current Position:         95[filter avcolor_space] Invalid format glsl
+[filter avcolor_space] Invalid format glsl
+Current Position:         96Current Position:         96[filter avcolor_space] Invalid format glsl
+Current Position:         97[filter avcolor_space] Invalid format glsl
+Current Position:         97[filter avcolor_space] Invalid format glsl
+Current Position:         98[filter avcolor_space] Invalid format glsl
+Current Position:         98[filter avcolor_space] Invalid format glsl
+Current Position:         99[filter avcolor_space] Invalid format glsl
+Current Position:         99[filter avcolor_space] Invalid format glsl
+Current Position:        100[filter avcolor_space] Invalid format glsl
+Current Position:        100Current Position:        100[filter avcolor_space] Invalid format glsl
+[filter avcolor_space] Invalid format glsl
+Current Position:        101Current Position:        101[filter avcolor_space] Invalid format glsl
+Current Position:        102[filter avcolor_space] Invalid format glsl
+Current Position:        102[filter avcolor_space] Invalid format glsl
+Current Position:        103[filter avcolor_space] Invalid format glsl
+Current Position:        103[filter avcolor_space] Invalid format glsl
+Current Position:        104[filter avcolor_space] Invalid format glsl
+Current Position:        104[filter avcolor_space] Invalid format glsl
+Current Position:        105[filter avcolor_space] Invalid format glsl
+Current Position:        105Current Position:        105[filter avcolor_space] Invalid format glsl
+Current Position:        106[filter avcolor_space] Invalid format glsl
+Current Position:        106[filter avcolor_space] Invalid format glsl
+Current Position:        107[filter avcolor_space] Invalid format glsl
+Current Position:        107[filter avcolor_space] Invalid format glsl
+Current Position:        108[filter avcolor_space] Invalid format glsl
+Current Position:        108[filter avcolor_space] Invalid format glsl
+Current Position:        109[filter avcolor_space] Invalid format glsl
+Current Position:        109[filter avcolor_space] Invalid format glsl
+Current Position:        110[filter avcolor_space] Invalid format glsl
+Current Position:        110Current Position:        111[filter avcolor_space] Invalid format glsl
+[filter avcolor_space] Invalid format glsl
+Current Position:        111Current Position:        111[filter avcolor_space] Invalid format glsl
+Current Position:        112[filter avcolor_space] Invalid format glsl
+Current Position:        112[filter avcolor_space] Invalid format glsl
+Current Position:        113[filter avcolor_space] Invalid format glsl
+Current Position:        113[filter avcolor_space] Invalid format glsl
+Current Position:        114[filter avcolor_space] Invalid format glsl
+Current Position:        114Current Position:        114[filter avcolor_space] Invalid format glsl
+Current Position:        115[filter avcolor_space] Invalid format glsl
+Current Position:        115[filter avcolor_space] Invalid format glsl
+Current Position:        116[filter avcolor_space] Invalid format glsl
+Current Position:        116Current Position:        117[filter avcolor_space] Invalid format glsl
+[filter avcolor_space] Invalid format glsl
+Current Position:        117Current Position:        117[filter avcolor_space] Invalid format glsl
+Current Position:        118[filter avcolor_space] Invalid format glsl
+Current Position:        118[filter avcolor_space] Invalid format glsl
+Current Position:        119[filter avcolor_space] Invalid format glsl
+Current Position:        119Current Position:        119[filter avcolor_space] Invalid format glsl
+[filter avcolor_space] Invalid format glsl
+Current Position:        120Current Position:        120[filter avcolor_space] Invalid format glsl
+Current Position:        121[filter avcolor_space] Invalid format glsl
+Current Position:        121[filter avcolor_space] Invalid format glsl
+Current Position:        122[filter avcolor_space] Invalid format glsl
+Current Position:        122Current Position:        122[filter avcolor_space] Invalid format glsl
+Current Position:        123[filter avcolor_space] Invalid format glsl
+Current Position:        123[filter avcolor_space] Invalid format glsl
+Current Position:        124[filter avcolor_space] Invalid format glsl
+Current Position:        124Current Position:        125[filter avcolor_space] Invalid format glsl
+[filter avcolor_space] Invalid format glsl
+Current Position:        125Current Position:        125[filter avcolor_space] Invalid format glsl
+Current Position:        126[filter avcolor_space] Invalid format glsl
+Current Position:        126[filter avcolor_space] Invalid format glsl
+Current Position:        127[filter avcolor_space] Invalid format glsl
+Current Position:        127[filter avcolor_space] Invalid format glsl
+Current Position:        128[filter avcolor_space] Invalid format glsl
+Current Position:        128Current Position:        128[filter avcolor_space] Invalid format glsl
+[filter avcolor_space] Invalid format glsl
+Current Position:        129Current Position:        129[filter avcolor_space] Invalid format glsl
+Current Position:        130[filter avcolor_space] Invalid format glsl
+Current Position:        130Current Position:        130[filter avcolor_space] Invalid format glsl
+Current Position:        131[filter avcolor_space] Invalid format glsl
+Current Position:        131[filter avcolor_space] Invalid format glsl
+Current Position:        132[filter avcolor_space] Invalid format glsl
+Current Position:        132Current Position:        133[filter avcolor_space] Invalid format glsl
+[filter avcolor_space] Invalid format glsl
+Current Position:        133Current Position:        133[filter avcolor_space] Invalid format glsl
+Current Position:        134[filter avcolor_space] Invalid format glsl
+Current Position:        134[filter avcolor_space] Invalid format glsl
+Current Position:        135[filter avcolor_space] Invalid format glsl
+Current Position:        135[filter avcolor_space] Invalid format glsl
+Current Position:        136[filter avcolor_space] Invalid format glsl
+Current Position:        136[filter avcolor_space] Invalid format glsl
+Current Position:        137[filter avcolor_space] Invalid format glsl
+Current Position:        137[filter avcolor_space] Invalid format glsl
+Current Position:        138[filter avcolor_space] Invalid format glsl
+Current Position:        138[filter avcolor_space] Invalid format glsl
+Current Position:        139[filter avcolor_space] Invalid format glsl
+Current Position:        139Current Position:        139[filter avcolor_space] Invalid format glsl
+[filter avcolor_space] Invalid format glsl
+Current Position:        140Current Position:        140[filter avcolor_space] Invalid format glsl
+[filter avcolor_space] Invalid format glsl
+Current Position:        141Current Position:        141[filter avcolor_space] Invalid format glsl
+Current Position:        142[filter avcolor_space] Invalid format glsl
+Current Position:        142[filter avcolor_space] Invalid format glsl
+Current Position:        143[filter avcolor_space] Invalid format glsl
+Current Position:        143[filter avcolor_space] Invalid format glsl
+Current Position:        144[filter avcolor_space] Invalid format glsl
+Current Position:        144[filter avcolor_space] Invalid format glsl
+Current Position:        145[filter avcolor_space] Invalid format glsl
+Current Position:        145Current Position:        146[filter avcolor_space] Invalid format glsl
+[filter avcolor_space] Invalid format glsl
+Current Position:        146Current Position:        146[filter avcolor_space] Invalid format glsl
+Current Position:        147[filter avcolor_space] Invalid format glsl
+Current Position:        147[filter avcolor_space] Invalid format glsl
+Current Position:        148[filter avcolor_space] Invalid format glsl
+Current Position:        148[filter avcolor_space] Invalid format glsl
+Current Position:        149[filter avcolor_space] Invalid format glsl
+Current Position:        149[filter avcolor_space] Invalid format glsl
+Current Position:        150[filter avcolor_space] Invalid format glsl
+Current Position:        150Current Position:        150[filter avcolor_space] Invalid format glsl
+Current Position:        151[filter avcolor_space] Invalid format glsl
+Current Position:        151[filter avcolor_space] Invalid format glsl
+Current Position:        152[filter avcolor_space] Invalid format glsl
+Current Position:        152Current Position:        153[filter avcolor_space] Invalid format glsl
+[filter avcolor_space] Invalid format glsl
+Current Position:        153Current Position:        153[filter avcolor_space] Invalid format glsl
+Current Position:        154[filter avcolor_space] Invalid format glsl
+Current Position:        154[filter avcolor_space] Invalid format glsl
+Current Position:        155[filter avcolor_space] Invalid format glsl
+Current Position:        155[filter avcolor_space] Invalid format glsl
+Current Position:        156[filter avcolor_space] Invalid format glsl
+Current Position:        156[filter avcolor_space] Invalid format glsl
+Current Position:        157[filter avcolor_space] Invalid format glsl
+Current Position:        157[filter avcolor_space] Invalid format glsl
+Current Position:        158[filter avcolor_space] Invalid format glsl
+Current Position:        158Current Position:        158[filter avcolor_space] Invalid format glsl
+Current Position:        159[filter avcolor_space] Invalid format glsl
+Current Position:        159[filter avcolor_space] Invalid format glsl
+Current Position:        160[filter avcolor_space] Invalid format glsl
+Current Position:        160[filter avcolor_space] Invalid format glsl
+Current Position:        161[filter avcolor_space] Invalid format glsl
+Current Position:        161[filter avcolor_space] Invalid format glsl
+Current Position:        162[filter avcolor_space] Invalid format glsl
+Current Position:        162Current Position:        163[filter avcolor_space] Invalid format glsl
+Current Position:        163[filter avcolor_space] Invalid format glsl
+Current Position:        163[filter avcolor_space] Invalid format glsl
+Current Position:        164[filter avcolor_space] Invalid format glsl
+Current Position:        164[filter avcolor_space] Invalid format glsl
+Current Position:        165[filter avcolor_space] Invalid format glsl
+Current Position:        165Current Position:        165[filter avcolor_space] Invalid format glsl
+Current Position:        166[filter avcolor_space] Invalid format glsl
+Current Position:        166[filter avcolor_space] Invalid format glsl
+Current Position:        167[filter avcolor_space] Invalid format glsl
+Current Position:        167Current Position:        167[filter avcolor_space] Invalid format glsl
+Current Position:        168[filter avcolor_space] Invalid format glsl
+Current Position:        168[filter avcolor_space] Invalid format glsl
+Current Position:        169[filter avcolor_space] Invalid format glsl
+Current Position:        169Current Position:        169[filter avcolor_space] Invalid format glsl
+Current Position:        170[filter avcolor_space] Invalid format glsl
+Current Position:        170[filter avcolor_space] Invalid format glsl
+Current Position:        171[filter avcolor_space] Invalid format glsl
+Current Position:        171[filter avcolor_space] Invalid format glsl
+Current Position:        172[filter avcolor_space] Invalid format glsl
+Current Position:        172[filter avcolor_space] Invalid format glsl
+Current Position:        173[filter avcolor_space] Invalid format glsl
+Current Position:        173Current Position:        173[filter avcolor_space] Invalid format glsl
+[filter avcolor_space] Invalid format glsl
+Current Position:        174Current Position:        174[filter avcolor_space] Invalid format glsl
+Current Position:        175[filter avcolor_space] Invalid format glsl
+Current Position:        175[filter avcolor_space] Invalid format glsl
+Current Position:        176[filter avcolor_space] Invalid format glsl
+Current Position:        176Current Position:        176[filter avcolor_space] Invalid format glsl
+Current Position:        177[filter avcolor_space] Invalid format glsl
+Current Position:        177[filter avcolor_space] Invalid format glsl
+Current Position:        178[filter avcolor_space] Invalid format glsl
+Current Position:        178Current Position:        179[filter avcolor_space] Invalid format glsl
+[filter avcolor_space] Invalid format glsl
+Current Position:        179Current Position:        179[filter avcolor_space] Invalid format glsl
+Current Position:        180[filter avcolor_space] Invalid format glsl
+Current Position:        180[filter avcolor_space] Invalid format glsl
+Current Position:        181[filter avcolor_space] Invalid format glsl
+Current Position:        181Current Position:        182[filter avcolor_space] Invalid format glsl
+[filter avcolor_space] Invalid format glsl
+Current Position:        182Current Position:        182[filter avcolor_space] Invalid format glsl
+Current Position:        183[filter avcolor_space] Invalid format glsl
+Current Position:        183[filter avcolor_space] Invalid format glsl
+Current Position:        184[filter avcolor_space] Invalid format glsl
+Current Position:        184Current Position:        184[filter avcolor_space] Invalid format glsl
+Current Position:        185[filter avcolor_space] Invalid format glsl
+Current Position:        185[filter avcolor_space] Invalid format glsl
+Current Position:        186[filter avcolor_space] Invalid format glsl
+Current Position:        186Current Position:        187[filter avcolor_space] Invalid format glsl
+[filter avcolor_space] Invalid format glsl
+Current Position:        187Current Position:        187[filter avcolor_space] Invalid format glsl
+Current Position:        188[filter avcolor_space] Invalid format glsl
+Current Position:        188Current Position:        188[filter avcolor_space] Invalid format glsl
+Current Position:        189[filter avcolor_space] Invalid format glsl
+Current Position:        189[filter avcolor_space] Invalid format glsl
+Current Position:        190[filter avcolor_space] Invalid format glsl
+Current Position:        190Current Position:        190[filter avcolor_space] Invalid format glsl
+[filter avcolor_space] Invalid format glsl
+Current Position:        191Current Position:        191[filter avcolor_space] Invalid format glsl
+Current Position:        192[filter avcolor_space] Invalid format glsl
+Current Position:        192[filter avcolor_space] Invalid format glsl
+Current Position:        193[filter avcolor_space] Invalid format glsl
+Current Position:        193[filter avcolor_space] Invalid format glsl
+Current Position:        194[filter avcolor_space] Invalid format glsl
+Current Position:        194[filter avcolor_space] Invalid format glsl
+Current Position:        195[filter avcolor_space] Invalid format glsl
+Current Position:        195[filter avcolor_space] Invalid format glsl
+Current Position:        196[filter avcolor_space] Invalid format glsl
+Current Position:        196Current Position:        197[filter avcolor_space] Invalid format glsl
+[filter avcolor_space] Invalid format glsl
+Current Position:        197Current Position:        197[filter avcolor_space] Invalid format glsl
+[filter avcolor_space] Invalid format glsl
+Current Position:        198Current Position:        198[filter avcolor_space] Invalid format glsl
+Current Position:        199[filter avcolor_space] Invalid format glsl
+Current Position:        199[filter avcolor_space] Invalid format glsl
+Current Position:        200[filter avcolor_space] Invalid format glsl
+Current Position:        200[filter avcolor_space] Invalid format glsl
+Current Position:        201[filter avcolor_space] Invalid format glsl
+Current Position:        201[filter avcolor_space] Invalid format glsl
+Current Position:        202[filter avcolor_space] Invalid format glsl
+Current Position:        202[filter avcolor_space] Invalid format glsl
+Current Position:        203[filter avcolor_space] Invalid format glsl
+Current Position:        203[filter avcolor_space] Invalid format glsl
+Current Position:        204[filter avcolor_space] Invalid format glsl
+Current Position:        204[filter avcolor_space] Invalid format glsl
+Current Position:        205[filter avcolor_space] Invalid format glsl
+Current Position:        205[filter avcolor_space] Invalid format glsl
+Current Position:        206[filter avcolor_space] Invalid format glsl
+Current Position:        206Current Position:        206[filter avcolor_space] Invalid format glsl
+Current Position:        207[filter avcolor_space] Invalid format glsl
+Current Position:        207[filter avcolor_space] Invalid format glsl
+Current Position:        208[filter avcolor_space] Invalid format glsl
+Current Position:        208[filter avcolor_space] Invalid format glsl
+Current Position:        209[filter avcolor_space] Invalid format glsl
+Current Position:        209Current Position:        210[filter avcolor_space] Invalid format glsl
+Current Position:        210[filter avcolor_space] Invalid format glsl
+Current Position:        210[filter avcolor_space] Invalid format glsl
+Current Position:        211[filter avcolor_space] Invalid format glsl
+Current Position:        211Current Position:        211[filter avcolor_space] Invalid format glsl
+Current Position:        212[filter avcolor_space] Invalid format glsl
+Current Position:        212[filter avcolor_space] Invalid format glsl
+Current Position:        213[filter avcolor_space] Invalid format glsl
+Current Position:        213[filter avcolor_space] Invalid format glsl
+Current Position:        214[filter avcolor_space] Invalid format glsl
+Current Position:        214[filter avcolor_space] Invalid format glsl
+Current Position:        215[filter avcolor_space] Invalid format glsl
+Current Position:        215Current Position:        215[filter avcolor_space] Invalid format glsl
+Current Position:        216[filter avcolor_space] Invalid format glsl
+Current Position:        216[filter avcolor_space] Invalid format glsl
+Current Position:        217[filter avcolor_space] Invalid format glsl
+Current Position:        217[filter avcolor_space] Invalid format glsl
+Current Position:        218[filter avcolor_space] Invalid format glsl
+Current Position:        218[filter avcolor_space] Invalid format glsl
+Current Position:        219[filter avcolor_space] Invalid format glsl
+Current Position:        219[filter avcolor_space] Invalid format glsl
+Current Position:        220[filter avcolor_space] Invalid format glsl
+Current Position:        220[filter avcolor_space] Invalid format glsl
+Current Position:        221[filter avcolor_space] Invalid format glsl
+Current Position:        221[filter avcolor_space] Invalid format glsl
+Current Position:        222[filter avcolor_space] Invalid format glsl
+Current Position:        222[filter avcolor_space] Invalid format glsl
+Current Position:        223[filter avcolor_space] Invalid format glsl
+Current Position:        223[filter avcolor_space] Invalid format glsl
+Current Position:        224[filter avcolor_space] Invalid format glsl
+Current Position:        224Current Position:        224[filter avcolor_space] Invalid format glsl
+[filter avcolor_space] Invalid format glsl
+Current Position:        225Current Position:        225[filter avcolor_space] Invalid format glsl
+[filter avcolor_space] Invalid format glsl
+Current Position:        226Current Position:        226[filter avcolor_space] Invalid format glsl
+Current Position:        227[filter avcolor_space] Invalid format glsl
+Current Position:        227[filter avcolor_space] Invalid format glsl
+Current Position:        228[filter avcolor_space] Invalid format glsl
+Current Position:        228[filter avcolor_space] Invalid format glsl
+Current Position:        229[filter avcolor_space] Invalid format glsl
+Current Position:        229[filter avcolor_space] Invalid format glsl
+Current Position:        230[filter avcolor_space] Invalid format glsl
+Current Position:        230[filter avcolor_space] Invalid format glsl
+Current Position:        231[filter avcolor_space] Invalid format glsl
+Current Position:        231[filter avcolor_space] Invalid format glsl
+Current Position:        232[filter avcolor_space] Invalid format glsl
+Current Position:        232Current Position:        232[filter avcolor_space] Invalid format glsl
+Current Position:        233[filter avcolor_space] Invalid format glsl
+Current Position:        233Current Position:        233[filter avcolor_space] Invalid format glsl
+Current Position:        234[filter avcolor_space] Invalid format glsl
+Current Position:        234[filter avcolor_space] Invalid format glsl
+Current Position:        235[filter avcolor_space] Invalid format glsl
+Current Position:        235Current Position:        236[filter avcolor_space] Invalid format glsl
+Current Position:        236[filter avcolor_space] Invalid format glsl
+Current Position:        236[filter avcolor_space] Invalid format glsl
+Current Position:        237[filter avcolor_space] Invalid format glsl
+Current Position:        237[filter avcolor_space] Invalid format glsl
+Current Position:        238[filter avcolor_space] Invalid format glsl
+Current Position:        238Current Position:        238[filter avcolor_space] Invalid format glsl
+Current Position:        239[filter avcolor_space] Invalid format glsl
+Current Position:        239[filter avcolor_space] Invalid format glsl
+Current Position:        240[filter avcolor_space] Invalid format glsl
+Current Position:        240Current Position:        241[filter avcolor_space] Invalid format glsl
+[filter avcolor_space] Invalid format glsl
+Current Position:        241Current Position:        241[filter avcolor_space] Invalid format glsl
+Current Position:        242[filter avcolor_space] Invalid format glsl
+Current Position:        242[filter avcolor_space] Invalid format glsl
+Current Position:        243[filter avcolor_space] Invalid format glsl
+Current Position:        243[filter avcolor_space] Invalid format glsl
+Current Position:        244[filter avcolor_space] Invalid format glsl
+Current Position:        244Current Position:        244[filter avcolor_space] Invalid format glsl
+Current Position:        245[filter avcolor_space] Invalid format glsl
+Current Position:        245[filter avcolor_space] Invalid format glsl
+Current Position:        246[filter avcolor_space] Invalid format glsl
+Current Position:        246[filter avcolor_space] Invalid format glsl
+Current Position:        247[filter avcolor_space] Invalid format glsl
+Current Position:        247[filter avcolor_space] Invalid format glsl
+Current Position:        248[filter avcolor_space] Invalid format glsl
+Current Position:        248Current Position:        248[filter avcolor_space] Invalid format glsl
+Current Position:        249[filter avcolor_space] Invalid format glsl
+Current Position:        249[filter avcolor_space] Invalid format glsl
+Current Position:        250[filter avcolor_space] Invalid format glsl
+Current Position:        250[filter avcolor_space] Invalid format glsl
+Current Position:        251[filter avcolor_space] Invalid format glsl
+Current Position:        251Current Position:        251
+[mp4 @ 0x742a20200f80] Timestamps are unset in a packet for stream 1. This is deprecated and will stop working in the future. Fix your code to set the timestamps properly
+[mp4 @ 0x742a20200f80] Encoder did not produce proper pts, making some up.
+[filter avcolor_space] Invalid format glsl
+[filter avcolor_space] Invalid format glsl
+[filter avcolor_space] Invalid format glsl
+[filter avcolor_space] Invalid format glsl
