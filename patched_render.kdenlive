@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <mlt LC_NUMERIC="C" producer="main_bin" root="/home/onojk123/Videos" version="7.30.0">
-  <profile colorspace="709" description="4K UHD 2160p 60 fps" display_aspect_den="9" display_aspect_num="16" frame_rate_den="1" frame_rate_num="60" height="272" progressive="1" sample_aspect_den="1" sample_aspect_num="1" width="480"/>
+  <profile colorspace="709" description="4K UHD 2160p 60 fps" display_aspect_den="9" display_aspect_num="16" frame_rate_den="1" frame_rate_num="60" height="2160" progressive="1" sample_aspect_den="1" sample_aspect_num="1" width="3840"/>
   <producer id="producer0" in="00:00:00.000" out="01:13:13.200">
-    <property name="length">2147483647</property>
+    <property name="length">600</property>
     <property name="eof">continue</property>
-    <property name="resource">/home/onojk123/kaleido-video-generator/current_abstract_video_image.jpg</property>
+    <property name="resource">black</property>
     <property name="aspect_ratio">1</property>
     <property name="mlt_service">color</property>
     <property name="kdenlive:playlistid">black_track</property>
@@ -14,7 +14,7 @@
   <chain id="chain0" out="00:04:22.183">
     <property name="length">15732</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/onojk123/kaleido-video-generator/current_abstract_video_image.jpg</property>
+    <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number01.wav</property>
     <property name="mlt_service">avformat-novalidate</property>
     <property name="seekable">1</property>
     <property name="audio_index">0</property>
@@ -45,7 +45,7 @@
   <chain id="chain1" out="00:02:44.817">
     <property name="length">9890</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/onojk123/kaleido-video-generator/current_abstract_video_image.jpg</property>
+    <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number02.wav</property>
     <property name="mlt_service">avformat-novalidate</property>
     <property name="seekable">1</property>
     <property name="audio_index">0</property>
@@ -75,7 +75,7 @@
   <chain id="chain2" out="00:02:54.817">
     <property name="length">10490</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/onojk123/kaleido-video-generator/current_abstract_video_image.jpg</property>
+    <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number03.wav</property>
     <property name="mlt_service">avformat-novalidate</property>
     <property name="seekable">1</property>
     <property name="audio_index">0</property>
@@ -105,7 +105,7 @@
   <chain id="chain3" out="00:02:33.867">
     <property name="length">9233</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/onojk123/kaleido-video-generator/current_abstract_video_image.jpg</property>
+    <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number04.wav</property>
     <property name="mlt_service">avformat-novalidate</property>
     <property name="seekable">1</property>
     <property name="audio_index">0</property>
@@ -135,7 +135,7 @@
   <chain id="chain4" out="00:03:39.950">
     <property name="length">13198</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/onojk123/kaleido-video-generator/current_abstract_video_image.jpg</property>
+    <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number05.wav</property>
     <property name="mlt_service">avformat-novalidate</property>
     <property name="seekable">1</property>
     <property name="audio_index">0</property>
@@ -165,7 +165,7 @@
   <chain id="chain5" out="00:05:53.100">
     <property name="length">21187</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/onojk123/kaleido-video-generator/current_abstract_video_image.jpg</property>
+    <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number06.wav</property>
     <property name="mlt_service">avformat-novalidate</property>
     <property name="seekable">1</property>
     <property name="audio_index">0</property>
@@ -195,7 +195,7 @@
   <chain id="chain6" out="00:02:58.900">
     <property name="length">10735</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/onojk123/kaleido-video-generator/current_abstract_video_image.jpg</property>
+    <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number07.wav</property>
     <property name="mlt_service">avformat-novalidate</property>
     <property name="seekable">1</property>
     <property name="audio_index">0</property>
@@ -225,7 +225,7 @@
   <chain id="chain7" out="00:02:51.350">
     <property name="length">10282</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/onojk123/kaleido-video-generator/current_abstract_video_image.jpg</property>
+    <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number08.wav</property>
     <property name="mlt_service">avformat-novalidate</property>
     <property name="seekable">1</property>
     <property name="audio_index">0</property>
@@ -255,7 +255,7 @@
   <chain id="chain8" out="00:03:01.100">
     <property name="length">10867</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/onojk123/kaleido-video-generator/current_abstract_video_image.jpg</property>
+    <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number09.wav</property>
     <property name="mlt_service">avformat-novalidate</property>
     <property name="seekable">1</property>
     <property name="audio_index">0</property>
@@ -285,7 +285,7 @@
   <chain id="chain9" out="00:03:09.467">
     <property name="length">11369</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/onojk123/kaleido-video-generator/current_abstract_video_image.jpg</property>
+    <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number10.wav</property>
     <property name="mlt_service">avformat-novalidate</property>
     <property name="seekable">1</property>
     <property name="audio_index">0</property>
@@ -315,7 +315,7 @@
   <chain id="chain10" out="00:03:23.550">
     <property name="length">12214</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/onojk123/kaleido-video-generator/current_abstract_video_image.jpg</property>
+    <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number11.wav</property>
     <property name="mlt_service">avformat-novalidate</property>
     <property name="seekable">1</property>
     <property name="audio_index">0</property>
@@ -345,7 +345,7 @@
   <chain id="chain11" out="00:03:24.867">
     <property name="length">12293</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/onojk123/kaleido-video-generator/current_abstract_video_image.jpg</property>
+    <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number12.wav</property>
     <property name="mlt_service">avformat-novalidate</property>
     <property name="seekable">1</property>
     <property name="audio_index">0</property>
@@ -375,7 +375,7 @@
   <chain id="chain12" out="00:02:49.950">
     <property name="length">10198</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/onojk123/kaleido-video-generator/current_abstract_video_image.jpg</property>
+    <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number13.wav</property>
     <property name="mlt_service">avformat-novalidate</property>
     <property name="seekable">1</property>
     <property name="audio_index">0</property>
@@ -405,7 +405,7 @@
   <chain id="chain13" out="00:02:51.550">
     <property name="length">10294</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/onojk123/kaleido-video-generator/current_abstract_video_image.jpg</property>
+    <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number14.wav</property>
     <property name="mlt_service">avformat-novalidate</property>
     <property name="seekable">1</property>
     <property name="audio_index">0</property>
@@ -435,7 +435,7 @@
   <chain id="chain14" out="00:03:32.267">
     <property name="length">12737</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/onojk123/kaleido-video-generator/current_abstract_video_image.jpg</property>
+    <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number15.wav</property>
     <property name="mlt_service">avformat-novalidate</property>
     <property name="seekable">1</property>
     <property name="audio_index">0</property>
@@ -465,7 +465,7 @@
   <chain id="chain15" out="00:03:32.867">
     <property name="length">12773</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/onojk123/kaleido-video-generator/current_abstract_video_image.jpg</property>
+    <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number16.wav</property>
     <property name="mlt_service">avformat-novalidate</property>
     <property name="seekable">1</property>
     <property name="audio_index">0</property>
@@ -495,7 +495,7 @@
   <chain id="chain16" out="00:03:35.867">
     <property name="length">12953</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/onojk123/kaleido-video-generator/current_abstract_video_image.jpg</property>
+    <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number17.wav</property>
     <property name="mlt_service">avformat-novalidate</property>
     <property name="seekable">1</property>
     <property name="audio_index">0</property>
@@ -525,7 +525,7 @@
   <chain id="chain17" out="00:03:27.350">
     <property name="length">12442</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/onojk123/kaleido-video-generator/current_abstract_video_image.jpg</property>
+    <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number18.wav</property>
     <property name="mlt_service">avformat-novalidate</property>
     <property name="seekable">1</property>
     <property name="audio_index">0</property>
@@ -555,7 +555,7 @@
   <chain id="chain18" out="00:04:16.617">
     <property name="length">15398</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/onojk123/kaleido-video-generator/current_abstract_video_image.jpg</property>
+    <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number19.wav</property>
     <property name="mlt_service">avformat-novalidate</property>
     <property name="seekable">1</property>
     <property name="audio_index">0</property>
@@ -585,7 +585,7 @@
   <chain id="chain19" out="00:03:08.417">
     <property name="length">11306</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/onojk123/kaleido-video-generator/current_abstract_video_image.jpg</property>
+    <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number20.wav</property>
     <property name="mlt_service">avformat-novalidate</property>
     <property name="seekable">1</property>
     <property name="audio_index">0</property>
@@ -710,9 +710,9 @@
     </filter>
   </tractor>
   <producer id="producer1" in="00:00:00.000" out="01:49:59.983">
-    <property name="length">01:50:00.000</property>
+    <property name="length">600</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/onojk123/kaleido-video-generator/current_abstract_video_image.jpg</property>
+    <property name="resource">/home/onojk123/Documents/Untitdfgfdgsrtgedrtrled.jpg</property>
     <property name="ttl">25</property>
     <property name="aspect_ratio">1</property>
     <property name="meta.media.progressive">1</property>
@@ -879,7 +879,7 @@
   <chain id="chain20" out="00:02:44.817">
     <property name="length">9890</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/onojk123/kaleido-video-generator/current_abstract_video_image.jpg</property>
+    <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number02.wav</property>
     <property name="mlt_service">avformat</property>
     <property name="meta.media.nb_streams">1</property>
     <property name="meta.media.0.stream.type">audio</property>
@@ -905,7 +905,7 @@
   <chain id="chain21" out="00:04:22.183">
     <property name="length">15732</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/onojk123/kaleido-video-generator/current_abstract_video_image.jpg</property>
+    <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number01.wav</property>
     <property name="mlt_service">avformat</property>
     <property name="meta.media.nb_streams">1</property>
     <property name="meta.media.0.stream.type">audio</property>
@@ -932,7 +932,7 @@
   <chain id="chain22" out="00:02:54.817">
     <property name="length">10490</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/onojk123/kaleido-video-generator/current_abstract_video_image.jpg</property>
+    <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number03.wav</property>
     <property name="mlt_service">avformat</property>
     <property name="meta.media.nb_streams">1</property>
     <property name="meta.media.0.stream.type">audio</property>
@@ -958,7 +958,7 @@
   <chain id="chain23" out="00:02:33.867">
     <property name="length">9233</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/onojk123/kaleido-video-generator/current_abstract_video_image.jpg</property>
+    <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number04.wav</property>
     <property name="mlt_service">avformat</property>
     <property name="meta.media.nb_streams">1</property>
     <property name="meta.media.0.stream.type">audio</property>
@@ -984,7 +984,7 @@
   <chain id="chain24" out="00:03:39.950">
     <property name="length">13198</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/onojk123/kaleido-video-generator/current_abstract_video_image.jpg</property>
+    <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number05.wav</property>
     <property name="mlt_service">avformat</property>
     <property name="meta.media.nb_streams">1</property>
     <property name="meta.media.0.stream.type">audio</property>
@@ -1010,7 +1010,7 @@
   <chain id="chain25" out="00:05:53.100">
     <property name="length">21187</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/onojk123/kaleido-video-generator/current_abstract_video_image.jpg</property>
+    <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number06.wav</property>
     <property name="mlt_service">avformat</property>
     <property name="meta.media.nb_streams">1</property>
     <property name="meta.media.0.stream.type">audio</property>
@@ -1036,7 +1036,7 @@
   <chain id="chain26" out="00:02:58.900">
     <property name="length">10735</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/onojk123/kaleido-video-generator/current_abstract_video_image.jpg</property>
+    <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number07.wav</property>
     <property name="mlt_service">avformat</property>
     <property name="meta.media.nb_streams">1</property>
     <property name="meta.media.0.stream.type">audio</property>
@@ -1062,7 +1062,7 @@
   <chain id="chain27" out="00:02:51.350">
     <property name="length">10282</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/onojk123/kaleido-video-generator/current_abstract_video_image.jpg</property>
+    <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number08.wav</property>
     <property name="mlt_service">avformat</property>
     <property name="meta.media.nb_streams">1</property>
     <property name="meta.media.0.stream.type">audio</property>
@@ -1088,7 +1088,7 @@
   <chain id="chain28" out="00:03:01.100">
     <property name="length">10867</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/onojk123/kaleido-video-generator/current_abstract_video_image.jpg</property>
+    <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number09.wav</property>
     <property name="mlt_service">avformat</property>
     <property name="meta.media.nb_streams">1</property>
     <property name="meta.media.0.stream.type">audio</property>
@@ -1114,7 +1114,7 @@
   <chain id="chain29" out="00:03:09.467">
     <property name="length">11369</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/onojk123/kaleido-video-generator/current_abstract_video_image.jpg</property>
+    <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number10.wav</property>
     <property name="mlt_service">avformat</property>
     <property name="meta.media.nb_streams">1</property>
     <property name="meta.media.0.stream.type">audio</property>
@@ -1140,7 +1140,7 @@
   <chain id="chain30" out="00:03:23.550">
     <property name="length">12214</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/onojk123/kaleido-video-generator/current_abstract_video_image.jpg</property>
+    <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number11.wav</property>
     <property name="mlt_service">avformat</property>
     <property name="meta.media.nb_streams">1</property>
     <property name="meta.media.0.stream.type">audio</property>
@@ -1166,7 +1166,7 @@
   <chain id="chain31" out="00:02:49.950">
     <property name="length">10198</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/onojk123/kaleido-video-generator/current_abstract_video_image.jpg</property>
+    <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number13.wav</property>
     <property name="mlt_service">avformat</property>
     <property name="meta.media.nb_streams">1</property>
     <property name="meta.media.0.stream.type">audio</property>
@@ -1192,7 +1192,7 @@
   <chain id="chain32" out="00:03:24.867">
     <property name="length">12293</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/onojk123/kaleido-video-generator/current_abstract_video_image.jpg</property>
+    <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number12.wav</property>
     <property name="mlt_service">avformat</property>
     <property name="meta.media.nb_streams">1</property>
     <property name="meta.media.0.stream.type">audio</property>
@@ -1218,7 +1218,7 @@
   <chain id="chain33" out="00:02:51.550">
     <property name="length">10294</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/onojk123/kaleido-video-generator/current_abstract_video_image.jpg</property>
+    <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number14.wav</property>
     <property name="mlt_service">avformat</property>
     <property name="meta.media.nb_streams">1</property>
     <property name="meta.media.0.stream.type">audio</property>
@@ -1244,7 +1244,7 @@
   <chain id="chain34" out="00:03:32.267">
     <property name="length">12737</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/onojk123/kaleido-video-generator/current_abstract_video_image.jpg</property>
+    <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number15.wav</property>
     <property name="mlt_service">avformat</property>
     <property name="meta.media.nb_streams">1</property>
     <property name="meta.media.0.stream.type">audio</property>
@@ -1270,7 +1270,7 @@
   <chain id="chain35" out="00:03:32.867">
     <property name="length">12773</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/onojk123/kaleido-video-generator/current_abstract_video_image.jpg</property>
+    <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number16.wav</property>
     <property name="mlt_service">avformat</property>
     <property name="meta.media.nb_streams">1</property>
     <property name="meta.media.0.stream.type">audio</property>
@@ -1296,7 +1296,7 @@
   <chain id="chain36" out="00:03:35.867">
     <property name="length">12953</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/onojk123/kaleido-video-generator/current_abstract_video_image.jpg</property>
+    <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number17.wav</property>
     <property name="mlt_service">avformat</property>
     <property name="meta.media.nb_streams">1</property>
     <property name="meta.media.0.stream.type">audio</property>
@@ -1322,7 +1322,7 @@
   <chain id="chain37" out="00:03:27.350">
     <property name="length">12442</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/onojk123/kaleido-video-generator/current_abstract_video_image.jpg</property>
+    <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number18.wav</property>
     <property name="mlt_service">avformat</property>
     <property name="meta.media.nb_streams">1</property>
     <property name="meta.media.0.stream.type">audio</property>
@@ -1348,7 +1348,7 @@
   <chain id="chain38" out="00:04:16.617">
     <property name="length">15398</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/onojk123/kaleido-video-generator/current_abstract_video_image.jpg</property>
+    <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number19.wav</property>
     <property name="mlt_service">avformat</property>
     <property name="meta.media.nb_streams">1</property>
     <property name="meta.media.0.stream.type">audio</property>
@@ -1374,7 +1374,7 @@
   <chain id="chain39" out="00:03:08.417">
     <property name="length">11306</property>
     <property name="eof">pause</property>
-    <property name="resource">/home/onojk123/kaleido-video-generator/current_abstract_video_image.jpg</property>
+    <property name="resource">/home/onojk123/Downloads/8000000005505504111/Number20.wav</property>
     <property name="mlt_service">avformat</property>
     <property name="meta.media.nb_streams">1</property>
     <property name="meta.media.0.stream.type">audio</property>

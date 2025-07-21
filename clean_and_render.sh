@@ -1,81 +1,67 @@
 #!/bin/bash
-set -e
+set -euo pipefail
 
 echo "[🚨] Starting clean_and_render.sh pipeline..."
 
-# Constants
-APPIMAGE_PATH="$HOME/Downloads/kdenlive-25.04.3-x86_64.AppImage"
-EXTRACT_DIR="$HOME/kaleido-video-generator/squashfs-root-new"
-PROJECT_TEMPLATE="render_this.kdenlive"
-PATCHED_PROJECT="patched_render.kdenlive"
-FINAL_IMAGE="current_abstract_video_image.jpg"
+# --- Config ---
+APPIMAGE_MELT_PATH="./squashfs-root-new/usr/bin/melt"
+REQUIRED_PLUGINS_DIR="./squashfs-root-new/usr/lib/frei0r-1"
+RENDER_TEMPLATE="render_this.kdenlive"
+PATCHED_RENDER="patched_render.kdenlive"
 OUTPUT_FILE="final_output_cleaned.mp4"
-PLUGIN_DIR="$EXTRACT_DIR/usr/lib/frei0r-1"
-FALLBACK_PLUGIN_DIR="$HOME/kaleido-video-generator/frei0r_plugins_bundle"
-RENDER_DURATION_SECONDS=10
-RENDER_WIDTH=480
-RENDER_HEIGHT=272
+FPS=60
 
-# Ensure xmlstarlet is installed
-if ! command -v xmlstarlet &>/dev/null; then
-  echo "[!] Missing 'xmlstarlet'. Please run: sudo apt install xmlstarlet"
-  exit 1
+# Check melt binary exists
+if [[ ! -x "$APPIMAGE_MELT_PATH" ]]; then
+    echo "[❌] Melt binary not found or not executable at $APPIMAGE_MELT_PATH"
+    exit 1
 fi
 
-# Use existing extracted AppImage directory
-if [ -d "$EXTRACT_DIR" ]; then
-  echo "[📂] Using existing squashfs-root-new — skipping extraction."
-else
-  echo "[📦] Extracting AppImage..."
-  chmod +x "$APPIMAGE_PATH"
-  "$APPIMAGE_PATH" --appimage-extract
-  mv squashfs-root "$EXTRACT_DIR"
-fi
+# Prompt for video duration in seconds
+read -rp "⏱️  Enter desired video duration (in seconds): " DURATION_SEC
 
-# Check plugin dependencies
-echo "[🔍] Verifying required plugins in $PLUGIN_DIR..."
+# Calculate frame count
+FRAME_COUNT=$(( DURATION_SEC * FPS ))
+
+# Verify required plugins
+echo "[🔍] Verifying required plugins in $REQUIRED_PLUGINS_DIR..."
+PLUGIN_MISSING=0
 for plugin in kaleidoscope.so rgbshift0r.so; do
-  if [ ! -f "$PLUGIN_DIR/$plugin" ]; then
-    echo "[🩹] Attempting to copy missing plugin: $plugin"
-    sudo cp "$FALLBACK_PLUGIN_DIR/$plugin" "$PLUGIN_DIR/$plugin"
-    echo "[✓] Recovered: $plugin"
-  else
-    echo "[✓] Found: $plugin"
-  fi
+    if [[ ! -f "${REQUIRED_PLUGINS_DIR}/${plugin}" ]]; then
+        echo "[❌] Missing plugin: $plugin"
+        PLUGIN_MISSING=1
+    else
+        echo "[✓] Found: $plugin"
+    fi
 done
-
-# Patch .kdenlive project
-echo "[🧩] Patching $PROJECT_TEMPLATE → $PATCHED_PROJECT..."
-cp "$PROJECT_TEMPLATE" "$PATCHED_PROJECT"
-
-# Replace image path
-xmlstarlet ed -L \
-  -u "//property[@name='resource']" -v "$HOME/kaleido-video-generator/$FINAL_IMAGE" \
-  "$PATCHED_PROJECT"
-
-# Replace resolution
-xmlstarlet ed -L \
-  -u "//profile/@width" -v "$RENDER_WIDTH" \
-  -u "//profile/@height" -v "$RENDER_HEIGHT" \
-  "$PATCHED_PROJECT"
-
-# Replace duration
-DURATION_FRAMES=$((RENDER_DURATION_SECONDS * 60))
-xmlstarlet ed -L \
-  -u "//property[@name='duration']" -v "00:00:10.000" \
-  "$PATCHED_PROJECT"
-
-# Render
-echo "[🎬] Rendering to $OUTPUT_FILE at ${RENDER_WIDTH}x${RENDER_HEIGHT} for ${RENDER_DURATION_SECONDS}s..."
-"$EXTRACT_DIR/usr/bin/melt" "$PATCHED_PROJECT" \
-  -profile atsc_480p_60 \
-  -consumer avformat:"$OUTPUT_FILE" rescale=bilinear width=$RENDER_WIDTH height=$RENDER_HEIGHT threads=2 real_time=-1
-
-# Done
-if [ -f "$OUTPUT_FILE" ]; then
-  FILESIZE=$(du -h "$OUTPUT_FILE" | cut -f1)
-  echo "[✅] Render complete — $OUTPUT_FILE size: $FILESIZE"
-else
-  echo "[❌] Render failed."
-  exit 1
+if (( PLUGIN_MISSING )); then
+    echo "[❌] One or more required plugins missing. Aborting."
+    exit 1
 fi
+
+# Patch Kdenlive project duration
+if [[ ! -f "$RENDER_TEMPLATE" ]]; then
+    echo "[❌] Kdenlive project template '$RENDER_TEMPLATE' not found!"
+    exit 1
+fi
+
+echo "[🧩] Patching $RENDER_TEMPLATE → $PATCHED_RENDER with duration $FRAME_COUNT frames..."
+cp "$RENDER_TEMPLATE" "$PATCHED_RENDER"
+
+# Use xmlstarlet or sed to update the duration in patched_render.kdenlive
+# Example using xmlstarlet to update 'length' property under 'playlist' element:
+if command -v xmlstarlet >/dev/null 2>&1; then
+    xmlstarlet ed -L \
+        -u "//playlist/property[@name='length']" -v "$FRAME_COUNT" \
+        "$PATCHED_RENDER"
+else
+    # Fallback: simple sed replacement (may not be robust)
+    sed -i -E "s/(<property name=\"length\">)[0-9]+(<\/property>)/\1${FRAME_COUNT}\2/" "$PATCHED_RENDER"
+fi
+
+echo "[🎬] Starting melt render to $OUTPUT_FILE for ${DURATION_SEC} seconds..."
+
+# Run melt with full path
+"$APPIMAGE_MELT_PATH" "$PATCHED_RENDER" -consumer avformat:"$OUTPUT_FILE" rescale=bilinear width=480 height=272 threads=2 real_time=-1
+
+echo "[✅] Render complete — output saved to $OUTPUT_FILE"
