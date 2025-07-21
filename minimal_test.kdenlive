@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mlt>
+  <profile width="1920" height="1080" frame_rate_num="30"/>
+  <producer id="producer0">
+    <property name="resource">rainbow_camouflage_resized.jpg</property>
+    <property name="mlt_service">qimage</property>
+    <filter mlt_service="frei0r.kaleid0sc0pe">
+      <property name="segments">6</property>
+    </filter>
+  </producer>
+  <playlist id="playlist0">
+    <entry producer="producer0" in="0" out="100"/>
+  </playlist>
+  <consumer mlt_service="avformat" target="kaleido_test.mp4">
+    <property name="vcodec">libx264</property>
+  </consumer>
+</mlt>

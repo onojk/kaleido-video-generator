@@ -4,3 +4,12 @@ Upscayl.AppImage
 path/to/largefile1
 path/to/largefile2
 venv/
+
+# Temporary/generated files
+melt.log
+render_pipeline.log
+render_frames/
+recent_files.txt
+full_tree_with_files.txt
+*.kdenlive~
+bfg.jar

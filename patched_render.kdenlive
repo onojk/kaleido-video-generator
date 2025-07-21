@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <mlt LC_NUMERIC="C" producer="main_bin" root="/home/onojk123/Videos" version="7.30.0">
-  <profile colorspace="709" description="4K UHD 2160p 60 fps" display_aspect_den="9" display_aspect_num="16" frame_rate_den="1" frame_rate_num="60" height="2160" progressive="1" sample_aspect_den="1" sample_aspect_num="1" width="3840"/>
+  <profile colorspace="rgb" description="4K UHD 2160p 60 fps" display_aspect_den="9" display_aspect_num="16" frame_rate_den="1" frame_rate_num="60" height="2160" progressive="1" sample_aspect_den="1" sample_aspect_num="1" width="3840"/>
   <producer id="producer0" in="00:00:00.000" out="01:13:13.200">
-    <property name="length">600</property>
+    <property name="length">2147483647</property>
     <property name="eof">continue</property>
     <property name="resource">black</property>
     <property name="aspect_ratio">1</property>
@@ -710,7 +710,7 @@
     </filter>
   </tractor>
   <producer id="producer1" in="00:00:00.000" out="01:49:59.983">
-    <property name="length">600</property>
+    <property name="length">01:50:00.000</property>
     <property name="eof">pause</property>
     <property name="resource">/home/onojk123/Documents/Untitdfgfdgsrtgedrtrled.jpg</property>
     <property name="ttl">25</property>
