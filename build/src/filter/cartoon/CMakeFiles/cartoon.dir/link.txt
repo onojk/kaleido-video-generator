@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O2 -g -DNDEBUG -shared  -o cartoon.so CMakeFiles/cartoon.dir/cartoon.cpp.o  -lm 

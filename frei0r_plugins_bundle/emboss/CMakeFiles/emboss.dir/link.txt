@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O2 -g -DNDEBUG -shared  -o emboss.so CMakeFiles/emboss.dir/emboss.c.o  -lm 

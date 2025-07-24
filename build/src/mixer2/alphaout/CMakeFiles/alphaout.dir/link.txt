@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O2 -g -DNDEBUG -shared  -o alphaout.so CMakeFiles/alphaout.dir/alphaout.cpp.o  -lm 

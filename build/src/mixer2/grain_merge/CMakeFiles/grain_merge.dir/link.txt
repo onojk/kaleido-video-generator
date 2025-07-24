@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O2 -g -DNDEBUG -shared  -o grain_merge.so CMakeFiles/grain_merge.dir/grain_merge.cpp.o  -lm 

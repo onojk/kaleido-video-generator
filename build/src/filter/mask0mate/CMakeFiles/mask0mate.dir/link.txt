@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O2 -g -DNDEBUG -shared  -o mask0mate.so CMakeFiles/mask0mate.dir/mask0mate.c.o  -lm 

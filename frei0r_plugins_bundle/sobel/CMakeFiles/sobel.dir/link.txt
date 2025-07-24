@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O2 -g -DNDEBUG -shared  -o sobel.so CMakeFiles/sobel.dir/sobel.cpp.o  -lm 

@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mlt LC_NUMERIC="C" producer="main_bin">
+  <playlist id="playlist0">
+    <entry producer="image_producer" in="0" out="599">
+      <filter id="frei0r.kaleid0sc0pe" in="0" out="599">
+        <property name="0">7</property>
+      </filter>
+      <filter id="frei0r.rgbnoise" in="0" out="599">
+        <property name="0">0.3</property>
+      </filter>
+    </entry>
+  </playlist>
+  <tractor id="tractor0" title="Main Tractor">
+    <track producer="playlist0" />
+    <property name="length">600</property>
+    <property name="global_feed">1</property>
+  </tractor>
+  <producer id="image_producer">
+    <property name="resource">/home/ubuntu/kaleido_render_pipeline/current_abstract_video_image.jpg</property>
+    <property name="mlt_service">qimage</property>
+    <property name="length">600</property>
+    <property name="loop">0</property>
+  </producer>
+</mlt>

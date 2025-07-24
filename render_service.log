@@ -1,0 +1,132 @@
+2025-07-23 19:23:27,379 - INFO - Job 56c07d13-0ceb-40f5-9e74-3381de967808: Generating rainbow contrast image
+2025-07-23 19:23:27,540 - INFO - Job 56c07d13-0ceb-40f5-9e74-3381de967808: Preparing project template
+2025-07-23 19:23:27,541 - INFO - Job 56c07d13-0ceb-40f5-9e74-3381de967808: Attempting render with melt
+2025-07-23 19:23:28,042 - INFO - Job 56c07d13-0ceb-40f5-9e74-3381de967808: Falling back to ffmpeg render
+2025-07-23 19:23:28,329 - INFO - Job 56c07d13-0ceb-40f5-9e74-3381de967808: Render failed: Both melt and ffmpeg renders failed
+2025-07-23 20:25:41,460 - INFO - Job 903ae879-a792-47e9-ad0a-7a4ee1d6a145: Generating rainbow contrast image
+2025-07-23 20:25:41,624 - INFO - Job 903ae879-a792-47e9-ad0a-7a4ee1d6a145: Preparing project template
+2025-07-23 20:25:41,624 - INFO - Job 903ae879-a792-47e9-ad0a-7a4ee1d6a145: Attempting render with melt
+2025-07-23 20:25:42,125 - INFO - Job 903ae879-a792-47e9-ad0a-7a4ee1d6a145: Falling back to ffmpeg render
+2025-07-23 20:25:42,412 - INFO - Job 903ae879-a792-47e9-ad0a-7a4ee1d6a145: Render failed: Both melt and ffmpeg renders failed
+2025-07-23 20:30:38,289 - INFO - Job 8a19365e-e4e6-40e1-9715-81d8022ca1bd: Generating rainbow contrast image
+2025-07-23 20:30:38,453 - INFO - Job 8a19365e-e4e6-40e1-9715-81d8022ca1bd: Preparing project template
+2025-07-23 20:30:38,453 - INFO - Job 8a19365e-e4e6-40e1-9715-81d8022ca1bd: Attempting render with melt
+2025-07-23 20:30:38,955 - INFO - Job 8a19365e-e4e6-40e1-9715-81d8022ca1bd: Falling back to ffmpeg render
+2025-07-23 20:30:39,242 - INFO - Job 8a19365e-e4e6-40e1-9715-81d8022ca1bd: Render failed: Both melt and ffmpeg renders failed
+2025-07-23 20:33:17,910 - INFO - Job 30d3f8e8-f91f-4807-9a02-90cd7f6fe802: Generating rainbow contrast image
+2025-07-23 20:33:18,069 - DEBUG - Image generation stdout: [!] Generating guaranteed-color rainbow...
+[✓] Saved verified RGB image
+
+2025-07-23 20:33:18,070 - DEBUG - Image generation stderr: 
+2025-07-23 20:33:18,070 - INFO - Job 30d3f8e8-f91f-4807-9a02-90cd7f6fe802: Render failed: Generated image not found at outputs/30d3f8e8-f91f-4807-9a02-90cd7f6fe802.jpg
+2025-07-23 20:33:18,070 - ERROR - Render task failed for job 30d3f8e8-f91f-4807-9a02-90cd7f6fe802
+Traceback (most recent call last):
+  File "/home/ubuntu/kaleido-video-generator/app.py", line 140, in render_task
+    raise FileNotFoundError(f"Generated image not found at {img_path}")
+FileNotFoundError: Generated image not found at outputs/30d3f8e8-f91f-4807-9a02-90cd7f6fe802.jpg
+2025-07-23 20:41:47,883 - DEBUG - Output directory: /home/ubuntu/kaleido-video-generator/outputs
+2025-07-23 20:41:47,883 - DEBUG - Directory exists: True
+2025-07-23 20:41:55,807 - DEBUG - Python path: ['/home/ubuntu/kaleido-video-generator', '/home/ubuntu/kaleido-video-generator/venv/bin', '/usr/lib/python310.zip', '/usr/lib/python3.10', '/usr/lib/python3.10/lib-dynload', '/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages']
+2025-07-23 20:41:55,807 - DEBUG - Current working directory: /home/ubuntu/kaleido-video-generator
+2025-07-23 20:41:55,807 - INFO - Job ccacacb4-5f82-49cd-b1f2-82afe34150ee: Generating rainbow contrast image
+2025-07-23 20:41:55,808 - DEBUG - About to run image generation
+2025-07-23 20:41:55,977 - DEBUG - Image generation stdout: [!] Generating guaranteed-color rainbow to /home/ubuntu/kaleido-video-generator/outputs/ccacacb4-5f82-49cd-b1f2-82afe34150ee.jpg...
+[✓] Saved verified RGB image
+
+2025-07-23 20:41:55,977 - DEBUG - Image generation stderr: 
+2025-07-23 20:41:55,977 - INFO - Job ccacacb4-5f82-49cd-b1f2-82afe34150ee: Preparing project template
+2025-07-23 20:41:55,978 - INFO - Job ccacacb4-5f82-49cd-b1f2-82afe34150ee: Attempting render with melt
+2025-07-23 20:41:55,978 - INFO - Executing melt command: ./squashfs-root-new/usr/bin/melt -verbose /home/ubuntu/kaleido-video-generator/outputs/ccacacb4-5f82-49cd-b1f2-82afe34150ee.kdenlive -consumer avformat:/home/ubuntu/kaleido-video-generator/outputs/ccacacb4-5f82-49cd-b1f2-82afe34150ee.mp4 vcodec=libx264 acodec=aac threads=2 b=15000k
+2025-07-23 20:41:56,479 - INFO - Job ccacacb4-5f82-49cd-b1f2-82afe34150ee: Melt render failed with code -11
+2025-07-23 20:41:56,479 - INFO - Job ccacacb4-5f82-49cd-b1f2-82afe34150ee: Attempting render with ffmpeg
+2025-07-23 20:41:56,479 - INFO - Executing ffmpeg command: ffmpeg -loop 1 -i /home/ubuntu/kaleido-video-generator/outputs/ccacacb4-5f82-49cd-b1f2-82afe34150ee.jpg -t 10 -c:v libx264 -pix_fmt yuv420p -vf fps=30,scale=1920:1080 -y /home/ubuntu/kaleido-video-generator/outputs/ccacacb4-5f82-49cd-b1f2-82afe34150ee.mp4
+2025-07-23 20:42:13,573 - INFO - Job ccacacb4-5f82-49cd-b1f2-82afe34150ee: FFmpeg render completed
+2025-07-23 20:42:13,573 - INFO - Job ccacacb4-5f82-49cd-b1f2-82afe34150ee: Render job completed successfully
+2025-07-23 20:57:16,965 - DEBUG - Output directory: /home/ubuntu/kaleido-video-generator/outputs
+2025-07-23 20:57:16,965 - DEBUG - Directory exists: True
+2025-07-23 20:57:24,302 - DEBUG - Python path: ['/home/ubuntu/kaleido-video-generator', '/home/ubuntu/kaleido-video-generator/venv/bin', '/usr/lib/python310.zip', '/usr/lib/python3.10', '/usr/lib/python3.10/lib-dynload', '/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages']
+2025-07-23 20:57:24,303 - DEBUG - Current working directory: /home/ubuntu/kaleido-video-generator
+2025-07-23 20:57:24,303 - INFO - Job 46343cb6-a71a-4a24-903a-7cadbb20b306: Generating rainbow contrast image
+2025-07-23 20:57:24,303 - DEBUG - About to run image generation
+2025-07-23 20:57:24,472 - DEBUG - Image generation stdout: [!] Generating guaranteed-color rainbow to /home/ubuntu/kaleido-video-generator/outputs/46343cb6-a71a-4a24-903a-7cadbb20b306.jpg...
+[✓] Saved verified RGB image
+
+2025-07-23 20:57:24,472 - DEBUG - Image generation stderr: 
+2025-07-23 20:57:24,472 - INFO - Job 46343cb6-a71a-4a24-903a-7cadbb20b306: Preparing project template
+2025-07-23 20:57:24,473 - INFO - Job 46343cb6-a71a-4a24-903a-7cadbb20b306: Rendering with melt effects
+2025-07-23 20:57:24,473 - INFO - Executing: ./squashfs-root-new/usr/bin/melt -verbose /home/ubuntu/kaleido-video-generator/outputs/46343cb6-a71a-4a24-903a-7cadbb20b306.jpg length=240 -filter avfilter.hue='h=2*PI*t:s=1' -filter avfilter.zoompan='z=1.05:d=240' -filter frei0r.bigsh0t_eq -filter glsl.manager -consumer avformat:/home/ubuntu/kaleido-video-generator/outputs/46343cb6-a71a-4a24-903a-7cadbb20b306.mp4 vcodec=libx264 preset=fast crf=18 pix_fmt=yuv420p threads=4
+2025-07-23 20:57:24,974 - INFO - Job 46343cb6-a71a-4a24-903a-7cadbb20b306: Melt failed (code -11)
+2025-07-23 20:57:24,974 - INFO - Executing ffmpeg command: ffmpeg -loop 1 -i /home/ubuntu/kaleido-video-generator/outputs/46343cb6-a71a-4a24-903a-7cadbb20b306.jpg -t 10 -c:v libx264 -pix_fmt yuv420p -vf fps=30,scale=1920:1080 -y /home/ubuntu/kaleido-video-generator/outputs/46343cb6-a71a-4a24-903a-7cadbb20b306.mp4
+2025-07-23 20:57:41,485 - INFO - Job 46343cb6-a71a-4a24-903a-7cadbb20b306: FFmpeg render completed
+2025-07-23 20:57:41,485 - INFO - Job 46343cb6-a71a-4a24-903a-7cadbb20b306: Render job completed successfully
+2025-07-23 21:09:42,332 - DEBUG - Output directory: /home/ubuntu/kaleido-video-generator/outputs
+2025-07-23 21:09:42,332 - DEBUG - Directory exists: True
+2025-07-23 21:09:47,605 - DEBUG - Python path: ['/home/ubuntu/kaleido-video-generator', '/home/ubuntu/kaleido-video-generator/venv/bin', '/usr/lib/python310.zip', '/usr/lib/python3.10', '/usr/lib/python3.10/lib-dynload', '/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages']
+2025-07-23 21:09:47,605 - DEBUG - Current working directory: /home/ubuntu/kaleido-video-generator
+2025-07-23 21:09:47,605 - INFO - Job 2df8ef03-bd80-494d-87ff-a17d36b92b1b: Generating rainbow contrast image
+2025-07-23 21:09:47,605 - DEBUG - About to run image generation
+2025-07-23 21:09:47,775 - DEBUG - Image generation stdout: [!] Generating guaranteed-color rainbow to /home/ubuntu/kaleido-video-generator/outputs/2df8ef03-bd80-494d-87ff-a17d36b92b1b.jpg...
+[✓] Saved verified RGB image
+
+2025-07-23 21:09:47,775 - DEBUG - Image generation stderr: 
+2025-07-23 21:09:47,775 - INFO - Job 2df8ef03-bd80-494d-87ff-a17d36b92b1b: Preparing project template
+2025-07-23 21:09:47,775 - INFO - Executing ffmpeg command: ffmpeg -loop 1 -i /home/ubuntu/kaleido-video-generator/outputs/2df8ef03-bd80-494d-87ff-a17d36b92b1b.jpg -t 10 -c:v libx264 -pix_fmt yuv420p -vf fps=30,scale=1920:1080 -y /home/ubuntu/kaleido-video-generator/outputs/2df8ef03-bd80-494d-87ff-a17d36b92b1b.mp4
+2025-07-23 21:10:04,633 - INFO - Job 2df8ef03-bd80-494d-87ff-a17d36b92b1b: FFmpeg render completed
+2025-07-23 21:10:04,633 - INFO - Job 2df8ef03-bd80-494d-87ff-a17d36b92b1b: Render job completed successfully
+2025-07-24 02:20:20,777 - INFO - Job fa9135a8-0ba0-4cdf-8afa-d26a7d17a006: Generating rainbow contrast image
+2025-07-24 02:20:20,944 - INFO - Job fa9135a8-0ba0-4cdf-8afa-d26a7d17a006: Preparing project template
+2025-07-24 02:20:20,944 - INFO - Job fa9135a8-0ba0-4cdf-8afa-d26a7d17a006: Rendering with melt effects
+2025-07-24 02:20:20,944 - INFO - Executing: /usr/bin/melt -verbose /home/ubuntu/kaleido-video-generator/outputs/fa9135a8-0ba0-4cdf-8afa-d26a7d17a006.jpg length=300 -filter avfilter.hue='h=2*PI*t:s=1' -filter frei0r.bigsh0t_eq -consumer avformat:/home/ubuntu/kaleido-video-generator/outputs/fa9135a8-0ba0-4cdf-8afa-d26a7d17a006.mp4 properties=x264-medium f=mp4 vcodec=libx264 acodec=aac threads=4
+2025-07-24 02:20:21,446 - INFO - Job fa9135a8-0ba0-4cdf-8afa-d26a7d17a006: Melt render completed successfully
+2025-07-24 02:20:21,446 - INFO - Job fa9135a8-0ba0-4cdf-8afa-d26a7d17a006: Render job completed successfully
+2025-07-24 02:42:00,109 - INFO - Job 9b2e9e05-b92e-4c21-95d9-1e3947a1a93f: Generating rainbow contrast image
+2025-07-24 02:42:00,181 - INFO - Job 9b2e9e05-b92e-4c21-95d9-1e3947a1a93f: Render failed: Image generation failed: Traceback (most recent call last):
+  File "/home/ubuntu/kaleido-video-generator/generate_rainbow_contrast.py", line 2, in <module>
+    from PIL import Image, ImageDraw
+ModuleNotFoundError: No module named 'PIL'
+
+2025-07-24 02:42:00,181 - ERROR - Render task failed for job 9b2e9e05-b92e-4c21-95d9-1e3947a1a93f
+Traceback (most recent call last):
+  File "/home/ubuntu/kaleido-video-generator/app.py", line 136, in render_task
+    raise RuntimeError(f"Image generation failed: {img_result.stderr}")
+RuntimeError: Image generation failed: Traceback (most recent call last):
+  File "/home/ubuntu/kaleido-video-generator/generate_rainbow_contrast.py", line 2, in <module>
+    from PIL import Image, ImageDraw
+ModuleNotFoundError: No module named 'PIL'
+
+2025-07-24 02:42:55,307 - INFO - Job a4ee4f6b-63fa-4d6f-a945-497a57f7c1d9: Generating rainbow contrast image
+2025-07-24 02:42:55,476 - INFO - Job a4ee4f6b-63fa-4d6f-a945-497a57f7c1d9: Preparing project template
+2025-07-24 02:42:55,476 - INFO - Job a4ee4f6b-63fa-4d6f-a945-497a57f7c1d9: Rendering with melt effects
+2025-07-24 02:42:55,476 - INFO - Executing: /usr/bin/melt -verbose /home/ubuntu/kaleido-video-generator/outputs/a4ee4f6b-63fa-4d6f-a945-497a57f7c1d9.jpg length=300 -filter avfilter.hue='h=2*PI*t:s=1' -filter frei0r.bigsh0t_eq -consumer avformat:/home/ubuntu/kaleido-video-generator/outputs/a4ee4f6b-63fa-4d6f-a945-497a57f7c1d9.mp4 properties=x264-medium f=mp4 vcodec=libx264 acodec=aac threads=4
+2025-07-24 02:42:55,977 - INFO - Job a4ee4f6b-63fa-4d6f-a945-497a57f7c1d9: Melt render completed successfully
+2025-07-24 02:42:55,977 - INFO - Job a4ee4f6b-63fa-4d6f-a945-497a57f7c1d9: Render job completed successfully
+2025-07-24 02:52:48,163 - INFO - Job 1b9dc951-5c03-41c8-b8b3-e8354c112efa: Generating rainbow contrast image
+2025-07-24 02:52:48,332 - INFO - Job 1b9dc951-5c03-41c8-b8b3-e8354c112efa: Preparing project template
+2025-07-24 02:52:48,332 - INFO - Job 1b9dc951-5c03-41c8-b8b3-e8354c112efa: Rendering with melt effects
+2025-07-24 02:52:48,332 - INFO - Executing: /usr/bin/melt -verbose /home/ubuntu/kaleido-video-generator/outputs/1b9dc951-5c03-41c8-b8b3-e8354c112efa.jpg length=300 -filter avfilter.hue='h=2*PI*t:s=1' -filter frei0r.bigsh0t_eq -consumer avformat:/home/ubuntu/kaleido-video-generator/outputs/1b9dc951-5c03-41c8-b8b3-e8354c112efa.mp4 properties=x264-medium f=mp4 vcodec=libx264 acodec=aac threads=4
+2025-07-24 02:52:48,833 - INFO - Job 1b9dc951-5c03-41c8-b8b3-e8354c112efa: Melt render completed successfully
+2025-07-24 02:52:48,834 - INFO - Job 1b9dc951-5c03-41c8-b8b3-e8354c112efa: Render job completed successfully
+2025-07-24 02:55:27,859 - INFO - Job 410918ad-22cb-4429-b1cd-d31cce2350c7: Generating rainbow contrast image
+2025-07-24 02:55:28,030 - INFO - Job 410918ad-22cb-4429-b1cd-d31cce2350c7: Preparing project template
+2025-07-24 02:55:28,031 - INFO - Job 410918ad-22cb-4429-b1cd-d31cce2350c7: Rendering with melt effects
+2025-07-24 02:55:28,031 - INFO - Executing: /usr/bin/melt -verbose /home/ubuntu/kaleido-video-generator/outputs/410918ad-22cb-4429-b1cd-d31cce2350c7.jpg length=300 -filter avfilter.hue='h=2*PI*t:s=1' -filter frei0r.bigsh0t_eq -consumer avformat:/home/ubuntu/kaleido-video-generator/outputs/410918ad-22cb-4429-b1cd-d31cce2350c7.mp4 properties=x264-medium f=mp4 vcodec=libx264 acodec=aac threads=4
+2025-07-24 02:55:28,532 - INFO - Job 410918ad-22cb-4429-b1cd-d31cce2350c7: Melt render completed successfully
+2025-07-24 02:55:28,532 - INFO - Job 410918ad-22cb-4429-b1cd-d31cce2350c7: Render job completed successfully
+2025-07-24 02:59:12,095 - INFO - Job 6eca7dc0-dae5-4bfb-b769-584ab8392ea2: Generating rainbow contrast image
+2025-07-24 02:59:12,267 - INFO - Job 6eca7dc0-dae5-4bfb-b769-584ab8392ea2: Preparing project template
+2025-07-24 02:59:12,267 - INFO - Job 6eca7dc0-dae5-4bfb-b769-584ab8392ea2: Rendering with melt effects
+2025-07-24 02:59:12,267 - INFO - Executing: /usr/bin/melt -verbose /home/ubuntu/kaleido-video-generator/outputs/6eca7dc0-dae5-4bfb-b769-584ab8392ea2.jpg length=300 -filter avfilter.hue='h=2*PI*t:s=1' -filter frei0r.bigsh0t_eq -consumer avformat:/home/ubuntu/kaleido-video-generator/outputs/6eca7dc0-dae5-4bfb-b769-584ab8392ea2.mp4 properties=x264-medium f=mp4 vcodec=libx264 acodec=aac threads=4
+2025-07-24 02:59:12,768 - INFO - Job 6eca7dc0-dae5-4bfb-b769-584ab8392ea2: Melt render completed successfully
+2025-07-24 02:59:12,769 - INFO - Job 6eca7dc0-dae5-4bfb-b769-584ab8392ea2: Render job completed successfully
+2025-07-24 03:04:15,216 - INFO - Job 95510f4e-4d89-4240-a6af-725b5313ba52: Generating rainbow contrast image
+2025-07-24 03:04:15,385 - INFO - Job 95510f4e-4d89-4240-a6af-725b5313ba52: Preparing project template
+2025-07-24 03:04:15,385 - INFO - Job 95510f4e-4d89-4240-a6af-725b5313ba52: Rendering with melt effects
+2025-07-24 03:04:15,386 - INFO - Executing: /usr/bin/melt -verbose /home/ubuntu/kaleido-video-generator/outputs/95510f4e-4d89-4240-a6af-725b5313ba52.jpg length=300 -filter avfilter.hue='h=2*PI*t:s=1' -filter frei0r.bigsh0t_eq -consumer avformat:/home/ubuntu/kaleido-video-generator/outputs/95510f4e-4d89-4240-a6af-725b5313ba52.mp4 properties=x264-medium f=mp4 vcodec=libx264 acodec=aac threads=4
+2025-07-24 03:04:15,887 - INFO - Job 95510f4e-4d89-4240-a6af-725b5313ba52: Melt render completed successfully
+2025-07-24 03:04:15,887 - INFO - Job 95510f4e-4d89-4240-a6af-725b5313ba52: Render job completed successfully
+2025-07-24 03:09:09,004 - INFO - Job 754393af-143f-4c77-8fc4-d52ec334ecba: Generating rainbow contrast image
+2025-07-24 03:09:09,178 - INFO - Job 754393af-143f-4c77-8fc4-d52ec334ecba: Preparing project template
+2025-07-24 03:09:09,179 - INFO - Job 754393af-143f-4c77-8fc4-d52ec334ecba: Rendering with melt effects
+2025-07-24 03:09:09,179 - INFO - Executing: /usr/bin/melt -verbose /home/ubuntu/kaleido-video-generator/outputs/754393af-143f-4c77-8fc4-d52ec334ecba.jpg length=300 -filter avfilter.hue='h=2*PI*t:s=1' -filter frei0r.bigsh0t_eq -consumer avformat:/home/ubuntu/kaleido-video-generator/outputs/754393af-143f-4c77-8fc4-d52ec334ecba.mp4 properties=x264-medium f=mp4 vcodec=libx264 acodec=aac threads=4
+2025-07-24 03:09:09,680 - INFO - Job 754393af-143f-4c77-8fc4-d52ec334ecba: Melt render completed successfully
+2025-07-24 03:09:09,680 - INFO - Job 754393af-143f-4c77-8fc4-d52ec334ecba: Render job completed successfully

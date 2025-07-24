@@ -1,0 +1,338 @@
+[2025-07-23 05:42:08 +0000] [2936] [INFO] Starting gunicorn 23.0.0
+[2025-07-23 05:42:08 +0000] [2936] [INFO] Listening at: http://0.0.0.0:5000 (2936)
+[2025-07-23 05:42:08 +0000] [2936] [INFO] Using worker: sync
+[2025-07-23 05:42:08 +0000] [2937] [INFO] Booting worker with pid: 2937
+[2025-07-23 05:47:05 +0000] [2936] [INFO] Handling signal: term
+[2025-07-23 05:47:17 +0000] [2937] [INFO] Worker exiting (pid: 2937)
+[2025-07-23 05:47:17 +0000] [2936] [INFO] Shutting down: Master
+[2025-07-23 05:47:34 +0000] [3165] [INFO] Starting gunicorn 23.0.0
+[2025-07-23 05:47:34 +0000] [3165] [INFO] Listening at: http://0.0.0.0:5000 (3165)
+[2025-07-23 05:47:34 +0000] [3165] [INFO] Using worker: sync
+[2025-07-23 05:47:34 +0000] [3166] [INFO] Booting worker with pid: 3166
+[2025-07-23 05:52:21 +0000] [3165] [INFO] Handling signal: term
+[2025-07-23 05:52:51 +0000] [3165] [INFO] Shutting down: Master
+[2025-07-23 05:53:00 +0000] [3437] [INFO] Starting gunicorn 23.0.0
+[2025-07-23 05:53:00 +0000] [3437] [INFO] Listening at: http://0.0.0.0:5000 (3437)
+[2025-07-23 05:53:00 +0000] [3437] [INFO] Using worker: sync
+[2025-07-23 05:53:00 +0000] [3438] [INFO] Booting worker with pid: 3438
+[2025-07-23 05:57:13 +0000] [3437] [INFO] Handling signal: term
+[2025-07-23 05:57:43 +0000] [3437] [INFO] Shutting down: Master
+[2025-07-23 05:57:43 +0000] [3585] [INFO] Starting gunicorn 23.0.0
+[2025-07-23 05:57:43 +0000] [3585] [INFO] Listening at: http://0.0.0.0:5000 (3585)
+[2025-07-23 05:57:43 +0000] [3585] [INFO] Using worker: sync
+[2025-07-23 05:57:43 +0000] [3586] [INFO] Booting worker with pid: 3586
+[2025-07-23 05:57:45 +0000] [3585] [INFO] Handling signal: term
+[2025-07-23 05:57:45 +0000] [3586] [INFO] Worker exiting (pid: 3586)
+[2025-07-23 05:57:45 +0000] [3585] [ERROR] Worker (pid:3586) was sent SIGTERM!
+[2025-07-23 05:57:46 +0000] [3585] [INFO] Shutting down: Master
+[2025-07-23 05:57:59 +0000] [3593] [INFO] Starting gunicorn 23.0.0
+[2025-07-23 05:57:59 +0000] [3593] [INFO] Listening at: http://0.0.0.0:5000 (3593)
+[2025-07-23 05:57:59 +0000] [3593] [INFO] Using worker: sync
+[2025-07-23 05:57:59 +0000] [3594] [INFO] Booting worker with pid: 3594
+[2025-07-23 06:03:22 +0000] [3594] [INFO] Worker exiting (pid: 3594)
+[2025-07-23 06:03:22 +0000] [3593] [INFO] Handling signal: term
+[2025-07-23 06:03:22 +0000] [3593] [INFO] Shutting down: Master
+[2025-07-23 06:03:36 +0000] [3642] [INFO] Starting gunicorn 23.0.0
+[2025-07-23 06:03:36 +0000] [3642] [INFO] Listening at: http://0.0.0.0:5000 (3642)
+[2025-07-23 06:03:36 +0000] [3642] [INFO] Using worker: sync
+[2025-07-23 06:03:36 +0000] [3643] [INFO] Booting worker with pid: 3643
+[2025-07-23 06:03:36 +0000] [3643] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/ubuntu/kaleido-video-generator/app.py", line 5, in <module>
+    import psutil
+ModuleNotFoundError: No module named 'psutil'
+[2025-07-23 06:03:36 +0000] [3643] [INFO] Worker exiting (pid: 3643)
+[2025-07-23 06:03:36 +0000] [3642] [ERROR] Worker (pid:3643) exited with code 3
+[2025-07-23 06:03:36 +0000] [3642] [ERROR] Shutting down: Master
+[2025-07-23 06:03:36 +0000] [3642] [ERROR] Reason: Worker failed to boot.
+[2025-07-23 06:03:50 +0000] [3646] [INFO] Starting gunicorn 23.0.0
+[2025-07-23 06:03:50 +0000] [3646] [INFO] Listening at: http://0.0.0.0:5000 (3646)
+[2025-07-23 06:03:50 +0000] [3646] [INFO] Using worker: sync
+[2025-07-23 06:03:50 +0000] [3647] [INFO] Booting worker with pid: 3647
+[2025-07-23 06:03:50 +0000] [3647] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/ubuntu/kaleido-video-generator/app.py", line 5, in <module>
+    import psutil
+ModuleNotFoundError: No module named 'psutil'
+[2025-07-23 06:03:50 +0000] [3647] [INFO] Worker exiting (pid: 3647)
+[2025-07-23 06:03:50 +0000] [3646] [ERROR] Worker (pid:3647) exited with code 3
+[2025-07-23 06:03:50 +0000] [3646] [ERROR] Shutting down: Master
+[2025-07-23 06:03:50 +0000] [3646] [ERROR] Reason: Worker failed to boot.
+[2025-07-23 06:04:24 +0000] [3652] [INFO] Starting gunicorn 23.0.0
+[2025-07-23 06:04:24 +0000] [3652] [INFO] Listening at: http://0.0.0.0:5000 (3652)
+[2025-07-23 06:04:24 +0000] [3652] [INFO] Using worker: sync
+[2025-07-23 06:04:24 +0000] [3653] [INFO] Booting worker with pid: 3653
+[2025-07-23 06:04:24 +0000] [3653] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/ubuntu/kaleido-video-generator/app.py", line 5, in <module>
+    import psutil
+ModuleNotFoundError: No module named 'psutil'
+[2025-07-23 06:04:24 +0000] [3653] [INFO] Worker exiting (pid: 3653)
+[2025-07-23 06:04:24 +0000] [3652] [ERROR] Worker (pid:3653) exited with code 3
+[2025-07-23 06:04:24 +0000] [3652] [ERROR] Shutting down: Master
+[2025-07-23 06:04:24 +0000] [3652] [ERROR] Reason: Worker failed to boot.
+[2025-07-23 06:05:45 +0000] [3667] [INFO] Starting gunicorn 23.0.0
+[2025-07-23 06:05:45 +0000] [3667] [INFO] Listening at: http://0.0.0.0:5000 (3667)
+[2025-07-23 06:05:45 +0000] [3667] [INFO] Using worker: sync
+[2025-07-23 06:05:45 +0000] [3668] [INFO] Booting worker with pid: 3668
+[2025-07-23 06:05:45 +0000] [3668] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/ubuntu/kaleido-video-generator/app.py", line 5, in <module>
+    import psutil
+ModuleNotFoundError: No module named 'psutil'
+[2025-07-23 06:05:45 +0000] [3668] [INFO] Worker exiting (pid: 3668)
+[2025-07-23 06:05:45 +0000] [3667] [ERROR] Worker (pid:3668) exited with code 3
+[2025-07-23 06:05:45 +0000] [3667] [ERROR] Shutting down: Master
+[2025-07-23 06:05:45 +0000] [3667] [ERROR] Reason: Worker failed to boot.
+[2025-07-23 06:07:14 +0000] [3711] [INFO] Starting gunicorn 23.0.0
+[2025-07-23 06:07:14 +0000] [3711] [INFO] Listening at: http://0.0.0.0:5000 (3711)
+[2025-07-23 06:07:14 +0000] [3711] [INFO] Using worker: sync
+[2025-07-23 06:07:14 +0000] [3741] [INFO] Booting worker with pid: 3741
+[2025-07-23 06:07:14 +0000] [3741] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/ubuntu/kaleido-video-generator/app.py", line 5, in <module>
+    import psutil
+ModuleNotFoundError: No module named 'psutil'
+[2025-07-23 06:07:14 +0000] [3741] [INFO] Worker exiting (pid: 3741)
+[2025-07-23 06:07:14 +0000] [3744] [INFO] Booting worker with pid: 3744
+[2025-07-23 06:07:14 +0000] [3745] [INFO] Booting worker with pid: 3745
+[2025-07-23 06:07:14 +0000] [3711] [ERROR] Worker (pid:3741) exited with code 3
+[2025-07-23 06:07:14 +0000] [3744] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/ubuntu/kaleido-video-generator/app.py", line 5, in <module>
+    import psutil
+ModuleNotFoundError: No module named 'psutil'
+[2025-07-23 06:07:14 +0000] [3744] [INFO] Worker exiting (pid: 3744)
+[2025-07-23 06:07:14 +0000] [3745] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/ubuntu/kaleido-video-generator/app.py", line 5, in <module>
+    import psutil
+ModuleNotFoundError: No module named 'psutil'
+[2025-07-23 06:07:14 +0000] [3745] [INFO] Worker exiting (pid: 3745)
+[2025-07-23 06:07:14 +0000] [3711] [ERROR] Worker (pid:3744) exited with code 3
+[2025-07-23 06:10:51 +0000] [3804] [INFO] Starting gunicorn 23.0.0
+[2025-07-23 06:10:51 +0000] [3804] [INFO] Listening at: http://0.0.0.0:5000 (3804)
+[2025-07-23 06:10:51 +0000] [3804] [INFO] Using worker: sync
+[2025-07-23 06:10:51 +0000] [3833] [INFO] Booting worker with pid: 3833
+[2025-07-23 06:10:51 +0000] [3837] [INFO] Booting worker with pid: 3837
+[2025-07-23 06:10:51 +0000] [3838] [INFO] Booting worker with pid: 3838
+[2025-07-23 06:11:26 +0000] [3804] [INFO] Handling signal: term
+[2025-07-23 06:11:26 +0000] [3833] [INFO] Worker exiting (pid: 3833)
+[2025-07-23 06:11:26 +0000] [3838] [INFO] Worker exiting (pid: 3838)
+[2025-07-23 06:11:26 +0000] [3837] [INFO] Worker exiting (pid: 3837)
+[2025-07-23 06:11:26 +0000] [3804] [INFO] Shutting down: Master
+[2025-07-23 06:11:34 +0000] [3848] [INFO] Starting gunicorn 23.0.0
+[2025-07-23 06:11:34 +0000] [3848] [INFO] Listening at: http://0.0.0.0:5000 (3848)
+[2025-07-23 06:11:34 +0000] [3848] [INFO] Using worker: sync
+[2025-07-23 06:11:34 +0000] [3849] [INFO] Booting worker with pid: 3849
+[2025-07-23 06:14:31 +0000] [3849] [INFO] Worker exiting (pid: 3849)
+[2025-07-23 06:14:31 +0000] [3848] [INFO] Handling signal: term
+[2025-07-23 06:14:31 +0000] [3848] [INFO] Shutting down: Master
+[2025-07-23 06:14:47 +0000] [3861] [INFO] Starting gunicorn 23.0.0
+[2025-07-23 06:14:47 +0000] [3861] [INFO] Listening at: http://0.0.0.0:5000 (3861)
+[2025-07-23 06:14:47 +0000] [3861] [INFO] Using worker: sync
+[2025-07-23 06:14:47 +0000] [3862] [INFO] Booting worker with pid: 3862
+[2025-07-23 06:33:14 +0000] [3862] [INFO] Worker exiting (pid: 3862)
+[2025-07-23 06:33:14 +0000] [3861] [INFO] Handling signal: term
+[2025-07-23 06:33:15 +0000] [3861] [INFO] Shutting down: Master
+[2025-07-23 06:33:28 +0000] [3889] [INFO] Starting gunicorn 23.0.0
+[2025-07-23 06:33:28 +0000] [3889] [INFO] Listening at: http://0.0.0.0:5000 (3889)
+[2025-07-23 06:33:28 +0000] [3889] [INFO] Using worker: sync
+[2025-07-23 06:33:28 +0000] [3890] [INFO] Booting worker with pid: 3890
+[2025-07-23 06:36:13 +0000] [3890] [INFO] Worker exiting (pid: 3890)
+[2025-07-23 06:36:13 +0000] [3889] [INFO] Handling signal: term
+[2025-07-23 06:36:13 +0000] [3889] [INFO] Shutting down: Master
+[2025-07-23 06:36:24 +0000] [3893] [INFO] Starting gunicorn 23.0.0
+[2025-07-23 06:36:24 +0000] [3893] [INFO] Listening at: http://0.0.0.0:5000 (3893)
+[2025-07-23 06:36:24 +0000] [3893] [INFO] Using worker: sync
+[2025-07-23 06:36:24 +0000] [3894] [INFO] Booting worker with pid: 3894
+[2025-07-23 06:49:54 +0000] [3894] [INFO] Worker exiting (pid: 3894)
+[2025-07-23 06:49:54 +0000] [3893] [INFO] Handling signal: term
+[2025-07-23 06:49:54 +0000] [3893] [INFO] Shutting down: Master
+[2025-07-23 06:50:00 +0000] [4273] [INFO] Starting gunicorn 23.0.0
+[2025-07-23 06:50:00 +0000] [4273] [INFO] Listening at: http://0.0.0.0:5000 (4273)
+[2025-07-23 06:50:00 +0000] [4273] [INFO] Using worker: sync
+[2025-07-23 06:50:00 +0000] [4274] [INFO] Booting worker with pid: 4274
+[2025-07-23 06:55:49 +0000] [4273] [INFO] Handling signal: term
+[2025-07-23 06:55:49 +0000] [4274] [INFO] Worker exiting (pid: 4274)
+[2025-07-23 06:55:49 +0000] [4273] [INFO] Shutting down: Master
+[2025-07-23 06:56:04 +0000] [4281] [INFO] Starting gunicorn 23.0.0
+[2025-07-23 06:56:04 +0000] [4281] [INFO] Listening at: http://0.0.0.0:5000 (4281)
+[2025-07-23 06:56:04 +0000] [4281] [INFO] Using worker: sync
+[2025-07-23 06:56:04 +0000] [4282] [INFO] Booting worker with pid: 4282
+[2025-07-23 07:15:17 +0000] [4281] [INFO] Handling signal: term
+[2025-07-23 07:15:17 +0000] [4282] [INFO] Worker exiting (pid: 4282)
+[2025-07-23 07:15:17 +0000] [4281] [INFO] Shutting down: Master
+[2025-07-23 07:15:43 +0000] [5875] [INFO] Starting gunicorn 23.0.0
+[2025-07-23 07:15:43 +0000] [5875] [INFO] Listening at: http://0.0.0.0:5000 (5875)
+[2025-07-23 07:15:43 +0000] [5875] [INFO] Using worker: sync
+[2025-07-23 07:15:43 +0000] [5876] [INFO] Booting worker with pid: 5876
+[2025-07-23 07:33:53 +0000] [5876] [INFO] Worker exiting (pid: 5876)
+[2025-07-23 07:33:53 +0000] [5875] [INFO] Handling signal: term
+[2025-07-23 07:33:53 +0000] [5875] [ERROR] Worker (pid:5876) was sent SIGTERM!
+[2025-07-23 07:33:53 +0000] [5875] [INFO] Shutting down: Master
+[2025-07-23 07:34:06 +0000] [6104] [INFO] Starting gunicorn 23.0.0
+[2025-07-23 07:34:06 +0000] [6104] [INFO] Listening at: http://0.0.0.0:5000 (6104)
+[2025-07-23 07:34:06 +0000] [6104] [INFO] Using worker: sync
+[2025-07-23 07:34:06 +0000] [6105] [INFO] Booting worker with pid: 6105
+[2025-07-23 08:57:40 +0000] [6104] [INFO] Handling signal: hup
+[2025-07-23 08:57:40 +0000] [6104] [INFO] Hang up: Master
+[2025-07-23 08:57:40 +0000] [6104] [ERROR] Worker (pid:6105) was sent SIGHUP!
+[2025-07-23 08:57:40 +0000] [18964] [INFO] Booting worker with pid: 18964
+[2025-07-23 14:53:54 +0000] [18964] [INFO] Worker exiting (pid: 18964)
+[2025-07-23 14:53:54 +0000] [6104] [INFO] Handling signal: term
+[2025-07-23 14:53:55 +0000] [6104] [INFO] Shutting down: Master

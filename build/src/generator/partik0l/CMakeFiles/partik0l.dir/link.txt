@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O2 -g -DNDEBUG -shared  -o partik0l.so CMakeFiles/partik0l.dir/partik0l.cpp.o  -lm 

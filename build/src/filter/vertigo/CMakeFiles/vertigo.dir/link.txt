@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O2 -g -DNDEBUG -shared  -o vertigo.so CMakeFiles/vertigo.dir/vertigo.c.o  -lm 

@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O2 -g -DNDEBUG -shared  -o aech0r.so CMakeFiles/aech0r.dir/aech0r.cpp.o  -lm 

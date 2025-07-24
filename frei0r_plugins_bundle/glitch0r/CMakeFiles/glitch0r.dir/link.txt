@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O2 -g -DNDEBUG -shared  -o glitch0r.so CMakeFiles/glitch0r.dir/glitch0r.c.o  -lm 

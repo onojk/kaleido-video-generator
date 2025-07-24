@@ -688,6 +688,7 @@
   <track hide="video" producer="playlist0" />
   <track hide="video" producer="playlist1" />
   <filter id="filter3">
+  <property name="pollInterval">100</property>
    <property name="window">75</property>
    <property name="max_gain">20dB</property>
    <property name="mlt_service">volume</property>
@@ -695,6 +696,7 @@
    <property name="disable">1</property>
   </filter>
   <filter id="filter4">
+  <property name="pollInterval">100</property>
    <property name="channel">-1</property>
    <property name="mlt_service">panner</property>
    <property name="internal_added">237</property>
@@ -702,6 +704,7 @@
    <property name="disable">1</property>
   </filter>
   <filter id="filter0">
+  <property name="pollInterval">100</property>
    <property name="iec_scale">0</property>
    <property name="mlt_service">audiolevel</property>
    <property name="dbpeak">1</property>
@@ -736,6 +739,7 @@
    <property name="kdenlive:id">4</property>
    <property name="kdenlive:activeeffect">4</property>
    <filter id="filter1">
+  <property name="pollInterval">100</property>
     <property name="background">colour:0</property>
     <property name="mlt_service">affine</property>
     <property name="kdenlive_id">pan_zoom</property>
@@ -748,6 +752,7 @@
     <property name="kdenlive:collapsed">0</property>
    </filter>
    <filter id="filter2">
+  <property name="pollInterval">100</property>
     <property name="version">2.6</property>
     <property name="mlt_service">frei0r.bigsh0t_transform_360</property>
     <property name="kdenlive_id">frei0r.bigsh0t_transform_360</property>
@@ -758,6 +763,7 @@
     <property name="kdenlive:collapsed">0</property>
    </filter>
    <filter id="filter5">
+  <property name="pollInterval">100</property>
     <property name="version">0.1</property>
     <property name="mlt_service">frei0r.distort0r</property>
     <property name="kdenlive_id">frei0r.distort0r</property>
@@ -766,6 +772,7 @@
     <property name="kdenlive:collapsed">0</property>
    </filter>
    <filter id="filter6">
+  <property name="pollInterval">100</property>
     <property name="version">0.2</property>
     <property name="mlt_service">frei0r.contrast0r</property>
     <property name="kdenlive_id">frei0r.contrast0r</property>
@@ -773,6 +780,7 @@
     <property name="kdenlive:collapsed">0</property>
    </filter>
    <filter id="filter7">
+  <property name="pollInterval">100</property>
     <property name="version">1.1</property>
     <property name="mlt_service">frei0r.kaleid0sc0pe</property>
     <property name="kdenlive_id">frei0r.kaleid0sc0pe</property>
@@ -861,6 +869,7 @@
    <property name="always_active">1</property>
   </transition>
   <filter id="filter8">
+  <property name="pollInterval">100</property>
    <property name="window">75</property>
    <property name="max_gain">20dB</property>
    <property name="mlt_service">volume</property>
@@ -868,6 +877,7 @@
    <property name="disable">1</property>
   </filter>
   <filter id="filter9">
+  <property name="pollInterval">100</property>
    <property name="channel">-1</property>
    <property name="mlt_service">panner</property>
    <property name="internal_added">237</property>

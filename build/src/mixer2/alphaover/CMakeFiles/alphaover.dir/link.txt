@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O2 -g -DNDEBUG -shared  -o alphaover.so CMakeFiles/alphaover.dir/alphaover.cpp.o  -lm 

@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O2 -g -DNDEBUG -shared  -o composition.so CMakeFiles/composition.dir/composition.c.o  -lm 

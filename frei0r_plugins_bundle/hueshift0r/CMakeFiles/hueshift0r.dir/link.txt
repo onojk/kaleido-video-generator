@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O2 -g -DNDEBUG -shared  -o hueshift0r.so CMakeFiles/hueshift0r.dir/hueshift0r.c.o  -lm -lm 

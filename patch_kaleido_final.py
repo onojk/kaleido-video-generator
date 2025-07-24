@@ -41,7 +41,7 @@ def patch_kdenlive():
 
             # Add kaleidoscope filter
             kal = ET.SubElement(playlist, "filter")
-            ET.SubElement(kal, "property", name="mlt_service").text = "frei0r.kaleidoscope"
+            ET.SubElement(kal, "property", name="mlt_service").text = "frei0r.kaleid0sc0pe"
             ET.SubElement(kal, "property", name="symmetry").text = "8"
 
             # Add lift/gain filter

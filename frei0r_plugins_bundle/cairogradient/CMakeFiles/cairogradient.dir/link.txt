@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O2 -g -DNDEBUG -shared  -o cairogradient.so CMakeFiles/cairogradient.dir/cairogradient.c.o  -lm /usr/lib/x86_64-linux-gnu/libcairo.so 

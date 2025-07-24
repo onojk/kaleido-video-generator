@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O2 -g -DNDEBUG -shared  -o sleid0r_wipe-barn-door-h.so CMakeFiles/sleid0r_wipe-barn-door-h.dir/sleid0r_wipe-barn-door-h.c.o  -lm 

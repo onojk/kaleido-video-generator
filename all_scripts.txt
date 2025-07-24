@@ -1,0 +1,3179 @@
+from flask import Flask, render_template, request, redirect, url_for
+import subprocess
+import threading
+import os
+import time
+
+app = Flask(__name__)
+
+# Paths
+output_path = "static/final_output_cleaned.mp4"
+log_path = "static/render.log"
+
+# Background rendering logic
+def run_pipeline():
+    log_path = "static/render.log"
+    with open(log_path, "w") as log:
+        process = subprocess.Popen(
+            ["bash", "clean_and_render.sh"],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            universal_newlines=True,
+            bufsize=1
+        )
+        for line in process.stdout:
+            print(line, end="")
+            log.write(line)
+            log.flush()
+        process.wait()
+    try:
+        with open(log_path, "w") as log:
+            process = subprocess.Popen(
+                ["./clean_and_render.sh"],
+                stdout=log,
+                stderr=subprocess.STDOUT,
+            )
+            process.wait()
+    except Exception as e:
+        with open(log_path, "a") as log:
+            log.write(f"[!] Pipeline error: {str(e)}\n")
+
+# Routes
+@app.route("/", methods=["GET"])
+def index():
+    return render_template("index.html")
+
+@app.route("/generate", methods=["POST"])
+def generate():
+    # Clear previous output
+    if os.path.exists(output_path):
+        os.remove(output_path)
+    if os.path.exists(log_path):
+        os.remove(log_path)
+
+    # Start pipeline in a background thread
+    thread = threading.Thread(target=run_pipeline)
+    thread.start()
+
+    return redirect(url_for("progress"))
+
+@app.route("/progress", methods=["GET"])
+def progress():
+    video_ready = os.path.exists(output_path)
+    log_exists = os.path.exists(log_path)
+
+    # Simple status flags
+    status = {
+        "in_progress": log_exists and not video_ready,
+        "log_ready": log_exists
+    }
+
+    return render_template("progress.html", video_ready=video_ready, status=status)
+
+@app.route("/log")
+def view_log():
+    if os.path.exists(log_path):
+        with open(log_path, "r") as f:
+            return "<pre>" + f.read() + "</pre>"
+    return "No log found."
+
+# Entrypoint for debugging with Flask directly (optional)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
+#!/usr/bin/env python3
+import subprocess
+
+# Create temporary scheme script
+with open('temp_script.scm', 'w') as f:
+    f.write('''(let* ((img (car (gimp-file-load RUN-NONINTERACTIVE "test_input.jpg" "test_input.jpg")))
+           (layer (car (gimp-image-get-active-layer img))))
+      (gimp-levels-stretch layer)
+      (gimp-file-save RUN-NONINTERACTIVE img layer "output.jpg" "output.jpg")
+      (gimp-image-delete img))''')
+
+# Execute GIMP
+subprocess.run(['gimp', '-i', '-b', '(load "temp_script.scm")', '-b', '(gimp-quit 0)'])
+
+# Clean up
+import os
+os.remove('temp_script.scm')
+#!/usr/bin/env python3
+import numpy as np
+from PIL import Image
+import time
+import sys
+
+def log(msg):
+    print(f"[{time.strftime('%H:%M:%S')}] {msg}")
+    sys.stdout.flush()
+
+def hard_edge_contrast(img_array, passes=5, levels=8):
+    """Posterizes image to fewer levels repeatedly to sharpen contrast edges."""
+    arr = img_array / 255.0
+    for _ in range(passes):
+        arr = np.round(arr * (levels - 1)) / (levels - 1)
+    return (arr * 255).clip(0, 255).astype(np.uint8)
+
+def main():
+    input_path = "rainbow_camouflage_seamless.jpg"
+    output_path = "rainbow_camouflage_contrast_hardedges.jpg"
+
+    log(f"📂 Opening {input_path}")
+    img = Image.open(input_path).convert("RGB")
+    arr = np.array(img)
+
+    log("🎚️ Applying strong hard-edged contrast (multi-pass posterization)...")
+    processed = hard_edge_contrast(arr, passes=5, levels=8)
+
+    log(f"💾 Saving to {output_path}")
+    Image.fromarray(processed).save(output_path, quality=95)
+    log("✅ Done!")
+
+if __name__ == "__main__":
+    main()
+#!/usr/bin/env python3
+import os
+import xml.etree.ElementTree as ET
+import shutil
+import subprocess
+
+INPUT_FILE = "patched_render_final.kdenlive"
+CLEANED_FILE = "patched_render_final_cleaned.kdenlive"
+FINAL_OUTPUT = "final_output_cleaned.mp4"
+MELT_CMD = [
+    "flatpak", "run", "--command=melt", "org.kde.kdenlive",
+    CLEANED_FILE, "-profile", "hd1080",
+    "-consumer", f"avformat:{FINAL_OUTPUT}", "acodec=aac", "vcodec=libx264"
+]
+
+def log(msg):
+    print(f"[+] {msg}")
+
+def patch_effect_ids(tree):
+    root = tree.getroot()
+    changed = False
+    ids = []
+
+    for idx, filt in enumerate(root.findall(".//filter")):
+        if 'id' in filt.attrib:
+            old_id = filt.attrib['id']
+            new_id = f"filter{idx}"
+            filt.attrib['id'] = new_id
+            ids.append(new_id)
+            changed = True
+
+    if changed:
+        log(f"Patched effect IDs: {ids}")
+    else:
+        log("No effect IDs needed patching.")
+
+def clean_broken_media(tree):
+    root = tree.getroot()
+    removed = 0
+
+    for producer in root.findall(".//producer"):
+        resource = producer.find("property[@name='resource']")
+        if resource is not None and not os.path.exists(resource.text.strip()):
+            log(f"Removing broken media: {resource.text.strip()}")
+            parent = producer.getparent() if hasattr(producer, 'getparent') else root
+            try:
+                root.remove(producer)
+            except:
+                pass
+            removed += 1
+
+    return removed
+
+def process_project():
+    if not os.path.exists(INPUT_FILE):
+        log(f"[!] Missing project file: {INPUT_FILE}")
+        exit(1)
+
+    shutil.copy(INPUT_FILE, CLEANED_FILE)
+    tree = ET.parse(CLEANED_FILE)
+
+    patch_effect_ids(tree)
+    removed = clean_broken_media(tree)
+
+    tree.write(CLEANED_FILE)
+    log(f"Saved cleaned project to: {CLEANED_FILE}")
+    log(f"Total broken media entries removed: {removed}")
+
+def run_render():
+    log("Rendering with melt...")
+    subprocess.run(MELT_CMD, check=True)
+
+if __name__ == "__main__":
+    process_project()
+    run_render()
+#!/usr/bin/env python3
+import os
+import sys
+import shutil
+import xml.etree.ElementTree as ET
+
+TEMPLATE_PROJECT = "template_project.kdenlive"
+PATCHED_PROJECT = "patched_render_final_nowav.kdenlive"
+
+def log(msg):
+    print(f"[+] {msg}")
+
+def get_wav_producer_ids(root):
+    """Find IDs of all <producer> elements with .wav resources."""
+    wav_ids = set()
+    for producer in root.findall(".//producer"):
+        for prop in producer.findall("property"):
+            if prop.get("name") == "resource" and ".wav" in (prop.text or ""):
+                wav_ids.add(producer.attrib.get("id"))
+    return wav_ids
+
+def remove_wav_producers_and_entries(root, wav_ids):
+    """Remove <producer> and <entry> elements referencing .wav IDs."""
+    count_removed = 0
+
+    # Remove wav producers
+    for producer in list(root.findall(".//producer")):
+        if producer.attrib.get("id") in wav_ids:
+            root.remove(producer)
+            count_removed += 1
+
+    # Remove entries referencing those producers
+    for playlist in root.findall(".//playlist"):
+        for entry in list(playlist.findall("entry")):
+            if entry.attrib.get("producer") in wav_ids:
+                playlist.remove(entry)
+                count_removed += 1
+
+    return count_removed
+
+def update_image_path(root, new_path):
+    """Update any existing image resource path to the given path."""
+    count_updated = 0
+    for prop in root.findall(".//property"):
+        if prop.get("name") == "resource" and prop.text and prop.text.endswith((".jpg", ".png")):
+            prop.text = new_path
+            count_updated += 1
+    return count_updated
+
+def patch_kdenlive_project(image_path):
+    if not os.path.exists(TEMPLATE_PROJECT):
+        print(f"[!] Missing template: {TEMPLATE_PROJECT}")
+        sys.exit(1)
+
+    shutil.copy(TEMPLATE_PROJECT, PATCHED_PROJECT)
+    tree = ET.parse(PATCHED_PROJECT)
+    root = tree.getroot()
+
+    wav_ids = get_wav_producer_ids(root)
+    removed = remove_wav_producers_and_entries(root, wav_ids)
+    updated = update_image_path(root, image_path)
+
+    tree.write(PATCHED_PROJECT, encoding="utf-8", xml_declaration=True)
+    log(f"Saved patched file: {PATCHED_PROJECT}")
+    log(f"Removed {removed} .wav producers and related entries")
+    log(f"Updated {updated} image paths to: {image_path}")
+
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print("Usage: python3 auto_patch_render_and_export.py /path/to/image.jpg")
+        sys.exit(1)
+
+    image_path = os.path.abspath(sys.argv[1])
+    patch_kdenlive_project(image_path)
+#!/usr/bin/env python3
+import os
+import xml.etree.ElementTree as ET
+import shutil
+
+INPUT = "patched_render_final.kdenlive"
+OUTPUT = "patched_render_final_noaudio.kdenlive"
+BACKUP = INPUT + ".bak"
+
+def log(msg):
+    print(f"[+] {msg}")
+
+def remove_missing_audio_producers(tree):
+    root = tree.getroot()
+    removed_ids = set()
+
+    for prod in root.findall(".//producer"):
+        resource = prod.find("property[@name='resource']")
+        if resource is not None:
+            path = resource.text.strip()
+            if path.endswith(".wav") and not os.path.exists(path):
+                removed_ids.add(prod.attrib.get("id"))
+                root.remove(prod)
+                log(f"Removed missing audio producer: {path}")
+
+    return removed_ids
+
+def remove_playlist_entries(tree, removed_ids):
+    root = tree.getroot()
+    count = 0
+    for playlist in root.findall(".//playlist"):
+        entries = playlist.findall("entry")
+        for entry in entries:
+            if 'producer' in entry.attrib and entry.attrib['producer'] in removed_ids:
+                playlist.remove(entry)
+                count += 1
+    return count
+
+def main():
+    if not os.path.exists(INPUT):
+        log(f"Missing file: {INPUT}")
+        return
+
+    shutil.copy(INPUT, BACKUP)
+    tree = ET.parse(INPUT)
+
+    removed_ids = remove_missing_audio_producers(tree)
+    count = remove_playlist_entries(tree, removed_ids)
+
+    tree.write(OUTPUT)
+    log(f"Saved cleaned file: {OUTPUT}")
+    log(f"Removed {len(removed_ids)} producers and {count} playlist entries")
+
+if __name__ == "__main__":
+    main()
+#!/usr/bin/env python3
+import os
+import xml.etree.ElementTree as ET
+import shutil
+
+INPUT = "patched_render_final.kdenlive"
+OUTPUT = "patched_render_final_noaudio.kdenlive"
+BACKUP = INPUT + ".bak"
+
+def log(msg):
+    print(f"[+] {msg}")
+
+def get_all_wav_producer_ids(tree):
+    root = tree.getroot()
+    wav_producers = set()
+
+    for prod in root.findall(".//producer"):
+        for prop in prod.findall("property"):
+            if ".wav" in (prop.text or "").lower():
+                wav_producers.add(prod.attrib.get("id"))
+                break
+
+    return wav_producers
+
+def remove_producers(tree, ids):
+    root = tree.getroot()
+    count = 0
+    for prod in root.findall(".//producer"):
+        if prod.attrib.get("id") in ids:
+            root.remove(prod)
+            count += 1
+    return count
+
+def remove_entries(tree, ids):
+    root = tree.getroot()
+    count = 0
+    for playlist in root.findall(".//playlist"):
+        for entry in playlist.findall("entry"):
+            if entry.attrib.get("producer") in ids:
+                playlist.remove(entry)
+                count += 1
+    return count
+
+def main():
+    if not os.path.exists(INPUT):
+        log(f"[!] Missing file: {INPUT}")
+        return
+
+    shutil.copy(INPUT, BACKUP)
+    tree = ET.parse(INPUT)
+
+    wav_ids = get_all_wav_producer_ids(tree)
+    log(f"Found {len(wav_ids)} .wav producer IDs to remove")
+
+    removed_prods = remove_producers(tree, wav_ids)
+    removed_entries = remove_entries(tree, wav_ids)
+
+    tree.write(OUTPUT)
+    log(f"Saved cleaned file: {OUTPUT}")
+    log(f"Removed {removed_prods} producers and {removed_entries} entries")
+
+if __name__ == "__main__":
+    main()
+#!/usr/bin/env python3
+import os
+import xml.etree.ElementTree as ET
+
+SOURCE_PROJECT = "patched_render_final.kdenlive"
+OUTPUT_PROJECT = "patched_render_final_cleaned.kdenlive"
+
+def log(msg): print(f"[+] {msg}")
+
+if not os.path.exists(SOURCE_PROJECT):
+    print(f"[!] File not found: {SOURCE_PROJECT}")
+    exit(1)
+
+tree = ET.parse(SOURCE_PROJECT)
+root = tree.getroot()
+
+# Find all producers with a file path
+producers = root.findall(".//producer")
+removed = 0
+
+for producer in producers:
+    for prop in producer.findall("property"):
+        if prop.get("name") == "resource":
+            path = prop.text
+            if path and not os.path.exists(path):
+                log(f"Removing broken file reference: {path}")
+                root.remove(producer)
+                removed += 1
+                break
+
+# Remove broken playlist entries
+playlists = root.findall(".//playlist")
+for playlist in playlists:
+    entries = playlist.findall("entry")
+    for entry in entries:
+        if "producer" in entry.attrib:
+            prod_id = entry.attrib["producer"]
+            if not any(p.get("id") == prod_id for p in root.findall(".//producer")):
+                playlist.remove(entry)
+                removed += 1
+
+tree.write(OUTPUT_PROJECT)
+log(f"Saved cleaned project to: {OUTPUT_PROJECT}")
+log(f"Total broken references removed: {removed}")
+#!/usr/bin/env python3
+import xml.etree.ElementTree as ET
+import os
+import sys
+
+INPUT_FILE = "patched_render_final.kdenlive"
+OUTPUT_FILE = "patched_render_final_deepclean.kdenlive"
+BROKEN_KEYWORDS = [".wav", "Untit", "black", "missing", "invalid", ".mp3", ".m4a"]
+REMOVED = {"producers": 0, "playlist_entries": 0, "audio_tracks": 0}
+
+def is_broken(elem):
+    """Return True if this element likely references a broken file."""
+    for kw in BROKEN_KEYWORDS:
+        if kw in ET.tostring(elem, encoding='unicode'):
+            return True
+    return False
+
+def deep_clean_project():
+    if not os.path.exists(INPUT_FILE):
+        print(f"[!] File not found: {INPUT_FILE}")
+        sys.exit(1)
+
+    tree = ET.parse(INPUT_FILE)
+    root = tree.getroot()
+
+    # Remove broken producers
+    for prod in root.findall(".//producer"):
+        if is_broken(prod):
+            root.remove(prod)
+            REMOVED["producers"] += 1
+
+    # Remove broken playlist entries
+    for playlist in root.findall(".//playlist"):
+        for entry in list(playlist):
+            if is_broken(entry):
+                playlist.remove(entry)
+                REMOVED["playlist_entries"] += 1
+
+    # Remove entire audio tracks (if empty or invalid)
+    for track in root.findall(".//track"):
+        props = track.findall("property")
+        for p in props:
+            if p.get("name") == "track_type" and p.text == "audio":
+                root.remove(track)
+                REMOVED["audio_tracks"] += 1
+                break
+
+    tree.write(OUTPUT_FILE)
+    print(f"[✓] Saved cleaned project to: {OUTPUT_FILE}")
+    print(f"[−] Removed {REMOVED['producers']} producers, {REMOVED['playlist_entries']} entries, {REMOVED['audio_tracks']} audio tracks.")
+
+if __name__ == "__main__":
+    deep_clean_project()
+import os
+import math
+import random
+import numpy as np
+from PIL import Image
+
+# === Config ===
+INPUT_PATH = "media/rainbow_grid_48000x2160.jpg"
+OUTPUT_JPG = "media/distorted_rainbow_grid.jpg"
+OUTPUT_SMALL_PNG = "media/distorted_rainbow_grid_small.png"
+MAX_ANGLE = random.uniform(0.5, 2.5)
+CENTER_JITTER = 0.2
+DOWNSCALE_FACTOR = 4
+
+Image.MAX_IMAGE_PIXELS = None  # Disable decompression bomb warning
+
+def apply_radial_swirl_fast(img, angle_strength):
+    width, height = img.size
+    cx = width * (0.5 + random.uniform(-CENTER_JITTER, CENTER_JITTER))
+    cy = height * (0.5 + random.uniform(-CENTER_JITTER, CENTER_JITTER))
+    max_radius = math.hypot(cx, cy)
+
+    # Prepare coordinate grids
+    x = np.arange(width)
+    y = np.arange(height)
+    X, Y = np.meshgrid(x, y, indexing="xy")
+
+    dx = X - cx
+    dy = Y - cy
+    radius = np.hypot(dx, dy)
+    theta = np.where(radius == 0, 0, angle_strength * (radius / max_radius))
+    angle = np.arctan2(dy, dx) + theta
+
+    src_x = (cx + radius * np.cos(angle)).astype(np.int32)
+    src_y = (cy + radius * np.sin(angle)).astype(np.int32)
+
+    # Bound check
+    mask = (src_x >= 0) & (src_x < width) & (src_y >= 0) & (src_y < height)
+
+    src_pixels = np.array(img)
+    dst_pixels = np.zeros_like(src_pixels)
+    dst_pixels[mask] = src_pixels[src_y[mask], src_x[mask]]
+
+    return Image.fromarray(dst_pixels)
+
+def main():
+    print(f"Loading input image: {INPUT_PATH}")
+    img = Image.open(INPUT_PATH).convert("RGB")
+
+    # Step 1: Downscale
+    small_size = (img.width // DOWNSCALE_FACTOR, img.height // DOWNSCALE_FACTOR)
+    img_small = img.resize(small_size, Image.LANCZOS)
+    print(f"Downscaled to {small_size}, applying swirl distortion with angle ~{MAX_ANGLE:.2f}...")
+
+    # Step 2: Swirl distortion
+    distorted_small = apply_radial_swirl_fast(img_small, MAX_ANGLE)
+
+    # Step 3: Save PNG for Upscayl
+    distorted_small.save(OUTPUT_SMALL_PNG, "PNG")
+    print(f"Saved: {OUTPUT_SMALL_PNG}")
+
+    # Step 4: Optional preview full-size JPG
+    distorted = distorted_small.resize(img.size, Image.BICUBIC)
+    distorted.save(OUTPUT_JPG, "JPEG", quality=95, dpi=(72, 72))
+    print(f"Saved preview JPG: {OUTPUT_JPG}")
+
+if __name__ == "__main__":
+    main()
+#!/usr/bin/env python3
+from PIL import Image, ImageEnhance
+import numpy as np
+import os
+
+input_path = "assets/rainbow_camouflage.tif"
+output_path = "assets/rainbow_camouflage_contrast.jpg"
+
+# Load image
+img = Image.open(input_path)
+
+# Advanced contrast stretching using percentiles
+arr = np.array(img)
+p2, p98 = np.percentile(arr, (2, 98))
+arr = np.clip((arr - p2) * (255.0 / (p98 - p2)), 0, 255).astype(np.uint8)
+
+# Save result
+Image.fromarray(arr).save(output_path, quality=95)
+print(f"Contrast enhanced image saved to {output_path}")
+#!/usr/bin/env python3
+import xml.etree.ElementTree as ET
+import os
+
+INPUT_FILE = "patched_render_final_nowav.kdenlive"
+OUTPUT_FILE = "patched_render_final_cleaned.kdenlive"
+
+# Valid parent tags that can contain <property>
+VALID_PROPERTY_PARENTS = {"producer", "filter", "tractor", "playlist", "transition", "profile"}
+
+# Keywords for broken resources to purge
+BROKEN_PATH_KEYWORDS = ["Untitdfgfdgsrtgedrtrled.jpg"]
+
+def clean_kdenlive_xml():
+    if not os.path.exists(INPUT_FILE):
+        print(f"[!] Missing: {INPUT_FILE}")
+        return
+
+    tree = ET.parse(INPUT_FILE)
+    root = tree.getroot()
+    removed_properties = 0
+    removed_broken_paths = 0
+
+    def recursive_clean(parent):
+        nonlocal removed_properties, removed_broken_paths
+        for child in list(parent):
+            tag = child.tag.lower()
+            parent_tag = parent.tag.lower()
+
+            if tag == "property" and parent_tag not in VALID_PROPERTY_PARENTS:
+                parent.remove(child)
+                removed_properties += 1
+            elif any(bad in ET.tostring(child, encoding="unicode") for bad in BROKEN_PATH_KEYWORDS):
+                parent.remove(child)
+                removed_broken_paths += 1
+            else:
+                recursive_clean(child)
+
+    recursive_clean(root)
+    tree.write(OUTPUT_FILE)
+    print(f"[✓] Cleaned: {OUTPUT_FILE}")
+    print(f"[🧼] Removed {removed_properties} orphan <property> nodes")
+    print(f"[🖼️ ] Removed {removed_broken_paths} broken path references")
+
+if __name__ == "__main__":
+    clean_kdenlive_xml()
+#!/usr/bin/env python3
+import xml.etree.ElementTree as ET
+import os
+
+INPUT = "effects_template_cleaned.kdenlive"
+OUTPUT = "effects_template_base.kdenlive"
+
+def main():
+    if not os.path.exists(INPUT):
+        print(f"[!] Missing file: {INPUT}")
+        return
+
+    tree = ET.parse(INPUT)
+    root = tree.getroot()
+
+    if root.tag == "mlt":
+        print("[✓] Already wrapped with <mlt>")
+        os.rename(INPUT, OUTPUT)
+        print(f"[✓] Fixed project saved to: {OUTPUT}")
+        return
+
+    # Wrap current root with <mlt>
+    mlt = ET.Element("mlt")
+    mlt.append(root)
+    tree._setroot(mlt)
+
+    tree.write(OUTPUT)
+    print(f"[✓] Wrapped with <mlt> and saved to: {OUTPUT}")
+
+if __name__ == "__main__":
+    main()
+#!/usr/bin/env python3
+import numpy as np
+from PIL import Image
+import os
+from tqdm import tqdm
+
+# 4K-compatible dimensions
+WIDTH = 48000  # Ultra-wide panorama
+HEIGHT = 2160   # 4K UHD height
+TILE_SIZE = 2000  # Memory-friendly chunks
+OCTAVES = 6
+OUTPUT_DIR = "assets"
+
+def generate_camouflage():
+    print(f"Generating {WIDTH}x{HEIGHT} camouflage (4K height)...")
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    
+    # Initialize empty image
+    final_img = Image.new('RGB', (WIDTH, HEIGHT))
+    
+    # Process in vertical strips
+    for x_start in tqdm(range(0, WIDTH, TILE_SIZE), desc="Generating"):
+        x_end = min(x_start + TILE_SIZE, WIDTH)
+        strip_width = x_end - x_start
+        
+        # Generate noise for current strip
+        x, y = np.meshgrid(
+            np.linspace(0, 1, strip_width),
+            np.linspace(0, 1, HEIGHT))
+        noise = np.zeros((HEIGHT, strip_width, 3))
+        
+        # Multi-octave noise (FIXED PARENTHESES)
+        for octave in range(OCTAVES):
+            freq = 2 ** octave
+            amp = 0.5 ** octave
+            for c in range(3):
+                phase = c * 2 * np.pi / 3
+                noise[:,:,c] += amp * np.sin(2 * np.pi * freq * 
+                          (x * np.cos(phase) + y * np.sin(phase) + np.random.random()))
+        
+        # Normalize and paste
+        noise = (255 * (noise - noise.min()) / (noise.max() - noise.min())).astype(np.uint8)
+        strip = Image.fromarray(noise)
+        final_img.paste(strip, (x_start, 0))
+    
+    # Save final image
+    output_path = os.path.join(OUTPUT_DIR, "rainbow_camouflage.tif")
+    final_img.save(output_path, compression='tiff_lzw')
+    print(f"\nSaved to {output_path}")
+
+if __name__ == "__main__":
+    generate_camouflage()
+import os
+import math
+import random
+import numpy as np
+from PIL import Image, ImageDraw, ImageFilter
+
+# === Settings ===
+IMAGE_SIZE = (3500, 3500)
+TILE_SIZE = 64  # smaller tiles = more distortions
+OUTPUT_PATH = "media/distorted_rainbow_grid_small.png"
+os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
+
+
+def hsv_to_rgb(h, s, v):
+    """Convert HSV color to RGB (Pillow doesn't support HSV drawing natively)."""
+    import colorsys
+    return tuple(int(c * 255) for c in colorsys.hsv_to_rgb(h, s, v))
+
+
+def generate_rainbow_tile(size):
+    """Generate a rainbow tile."""
+    img = Image.new("RGB", (size, size))
+    draw = ImageDraw.Draw(img)
+
+    for x in range(size):
+        for y in range(size):
+            h = (x + y) / (2 * size)
+            color = hsv_to_rgb(h % 1.0, 1, 1)
+            draw.point((x, y), fill=color)
+    return img
+
+
+def distort_tile(tile):
+    """Apply a local swirl-like distortion to a tile."""
+    tile_np = np.array(tile)
+    h, w = tile_np.shape[:2]
+    cx, cy = w // 2, h // 2
+
+    result = np.zeros_like(tile_np)
+    for y in range(h):
+        for x in range(w):
+            dx = x - cx
+            dy = y - cy
+            r = math.sqrt(dx * dx + dy * dy)
+            angle = 0.03 * r  # Swirl strength
+
+            src_x = int(cx + dx * math.cos(angle) - dy * math.sin(angle))
+            src_y = int(cy + dx * math.sin(angle) + dy * math.cos(angle))
+
+            if 0 <= src_x < w and 0 <= src_y < h:
+                result[y, x] = tile_np[src_y, src_x]
+            else:
+                result[y, x] = tile_np[y, x]
+
+    return Image.fromarray(result)
+
+
+def build_distorted_grid():
+    cols = IMAGE_SIZE[0] // TILE_SIZE
+    rows = IMAGE_SIZE[1] // TILE_SIZE
+
+    final = Image.new("RGB", IMAGE_SIZE)
+
+    for i in range(cols):
+        for j in range(rows):
+            rainbow = generate_rainbow_tile(TILE_SIZE)
+            distorted = distort_tile(rainbow)
+            final.paste(distorted, (i * TILE_SIZE, j * TILE_SIZE))
+
+    return final
+
+
+if __name__ == "__main__":
+    print("🎨 Generating dense rainbow distortion grid...")
+    result = build_distorted_grid()
+    result.save(OUTPUT_PATH, "PNG")
+    print(f"✅ Saved: {OUTPUT_PATH}")
+import numpy as np
+from PIL import Image
+import time
+from datetime import timedelta
+import os
+import gc
+
+def safe_fast_max_contrast_chunk(rgb_chunk):
+    """Max contrast for a chunk with divide-by-zero safety"""
+    r, g, b = rgb_chunk[..., 0], rgb_chunk[..., 1], rgb_chunk[..., 2]
+    max_val = np.maximum.reduce([r, g, b])
+    min_val = np.minimum.reduce([r, g, b])
+    delta = max_val - min_val
+    
+    # Avoid division by zero
+    delta = np.where(delta == 0, 1, delta)
+    
+    # Calculate Hue
+    h = np.zeros_like(max_val)
+    mask = delta != 0
+    max_r = (max_val == r) & mask
+    max_g = (max_val == g) & mask
+    max_b = (max_val == b) & mask
+    
+    h = np.where(max_r, (60 * ((g - b)/delta)) % 360, h)  # Fixed parenthesis
+    h = np.where(max_g, (60 * ((b - r)/delta) + 120) % 360, h)
+    h = np.where(max_b, (60 * ((r - g)/delta) + 240) % 360, h)
+    h = (h * 255 / 360).astype(np.uint8)
+    
+    s = np.where(delta == 0, 0, 255).astype(np.uint8)
+    v = max_val.astype(np.uint8)
+    
+    hsv = np.dstack((h, s, v))
+    return Image.fromarray(hsv, 'HSV').convert('RGB')
+
+def generate_smooth_huge_noise_image():
+    width, height = 48000, 27000
+    dpi = 72
+    chunk_size = 1024
+    output_path = "48k_max_contrast_noise_smooth.jpg"
+    
+    print(f"⚡ Generating {width}x{height}px image (Chunk Size: {chunk_size}px)")
+    start_time = time.time()
+    
+    final_img = Image.new('RGB', (width, height))
+    
+    for i in range(0, width, chunk_size):
+        chunk_width = min(chunk_size, width - i)
+        print(f"🔧 Chunk {i//chunk_size + 1}/{(width//chunk_size)+1}: {i}-{i+chunk_width}px", end='\r')
+        
+        noise = np.random.randint(0, 256, (height, chunk_width, 3), dtype=np.uint8)
+        contrast_chunk = safe_fast_max_contrast_chunk(noise)
+        final_img.paste(contrast_chunk, (i, 0))
+        
+        del noise, contrast_chunk
+        gc.collect()
+        time.sleep(0.1)
+    
+    print("\n✅ Contrast applied smoothly!")
+    
+    final_img.save(
+        output_path,
+        'JPEG',
+        quality=90,
+        progressive=True,
+        dpi=(dpi, dpi)
+    )
+    
+    total_time = time.time() - start_time
+    print(f"""
+    🎉 Completed in {timedelta(seconds=int(total_time))}
+    📐 Dimensions: {width}x{height}px
+    📊 File size: {os.path.getsize(output_path)/1024/1024:.1f}MB
+    """)
+
+if __name__ == "__main__":
+    generate_smooth_huge_noise_image()
+#!/usr/bin/env python3
+from PIL import Image
+import numpy as np
+
+width, height = 3840, 2160  # 4K UHD
+x = np.linspace(0, 4 * np.pi, width)
+y = np.linspace(0, 4 * np.pi, height)
+X, Y = np.meshgrid(x, y)
+R = (np.sin(X + Y) + 1) * 127.5
+G = (np.sin(X - Y) + 1) * 127.5
+B = (np.sin(X * 0.5 + Y * 1.5) + 1) * 127.5
+img = np.stack([R, G, B], axis=-1).astype(np.uint8)
+Image.fromarray(img).save("rainbow_camouflage.jpg")
+#!/usr/bin/env python3
+import numpy as np
+from PIL import Image, ImageOps
+import os
+
+# === Output Path ===
+OUTPUT_PATH = os.path.expanduser("~/kaleido_render_pipeline/current_abstract_video_image.jpg")
+
+# === Image Size ===
+WIDTH, HEIGHT = 3840, 2160  # 4K UHD
+
+# === Generate RGB Stripes ===
+def generate_rainbow_image(width, height):
+    gradient = np.linspace(0, 255, width, dtype=np.uint8)
+    stripes = np.tile(gradient, (height, 1))
+    r = np.roll(stripes, 0, axis=1)
+    g = np.roll(stripes, width // 3, axis=1)
+    b = np.roll(stripes, 2 * width // 3, axis=1)
+    return np.stack((r, g, b), axis=2)
+
+# === Apply Max Contrast ===
+def apply_max_contrast(image):
+    return ImageOps.autocontrast(image, cutoff=0)
+
+# === Generate, Save Image ===
+def main():
+    print("[*] Generating rainbow stripes...")
+    rgb_data = generate_rainbow_image(WIDTH, HEIGHT)
+    img = Image.fromarray(rgb_data, mode='RGB')
+    img = apply_max_contrast(img)
+
+    # Ensure output folder exists
+    os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
+
+    img.save(OUTPUT_PATH, quality=95)
+    print(f"[✓] Saved: {OUTPUT_PATH}")
+
+if __name__ == "__main__":
+    main()
+#!/usr/bin/env python3
+from PIL import Image, ImageDraw
+import colorsys
+import sys
+
+def generate_rainbow(width, height):
+    """Generate rainbow with guaranteed RGB output"""
+    img = Image.new('RGB', (width, height))
+    draw = ImageDraw.Draw(img)
+    
+    for x in range(width):
+        hue = x / width  # 0.0 (red) to 1.0 (red)
+        r, g, b = [int(255 * c) for c in colorsys.hsv_to_rgb(hue, 1.0, 1.0)]
+        draw.line([(x, 0), (x, height)], fill=(r, g, b))
+    
+    # Explicit RGB conversion and verification
+    if img.mode != 'RGB':
+        img = img.convert('RGB')
+    return img
+
+if __name__ == "__main__":
+    print("[!] Generating guaranteed-color rainbow...")
+    try:
+        img = generate_rainbow(3840, 2160)
+        img.save("rainbow_gradient_heavy_contrast.jpg", 
+               quality=100,
+               subsampling=0)
+        print("[✓] Saved verified RGB image")
+    except Exception as e:
+        print(f"[X] Error: {e}", file=sys.stderr)
+        sys.exit(1)
+#!/usr/bin/env python3
+import xml.etree.ElementTree as ET
+
+INPUT = "patched_render_final.kdenlive"
+OUTPUT = "patched_render_final_fixed.kdenlive"
+
+tree = ET.parse(INPUT)
+root = tree.getroot()
+
+# Check if playlist already exists
+existing = root.find(".//playlist[@id='playlist0']")
+if existing is None:
+    # Insert new playlist
+    playlist = ET.Element("playlist", id="playlist0")
+    entry = ET.SubElement(playlist, "entry", producer="image_track")
+    root.insert(0, playlist)
+
+# Patch tractor0 to use playlist0
+for tractor in root.findall(".//tractor[@id='tractor0']"):
+    if tractor.find("track[@producer='playlist0']") is None:
+        ET.SubElement(tractor, "track", producer="playlist0")
+
+tree.write(OUTPUT, encoding="utf-8", xml_declaration=True)
+print(f"[✓] Injected 'image_track' into playlist0 and tractor0 → {OUTPUT}")
+#!/usr/bin/env python3
+import xml.etree.ElementTree as ET
+
+# === Configuration ===
+input_path = "patched_render_final_fixed.kdenlive"
+output_path = "patched_render_final_effects.kdenlive"
+effects = [
+    "frei0r.kaleid0sc0pe",
+    "frei0r.rgbsplit0r",
+    "frei0r.bigsh0t_transform_360",
+    "frei0r.distort0r"
+]
+start_frame = 0
+end_frame = 599  # 10s at 60fps
+
+# === Load XML ===
+tree = ET.parse(input_path)
+root = tree.getroot()
+
+# === Find tractor0 ===
+tractor0 = None
+for tractor in root.findall(".//tractor"):
+    if tractor.get("id") == "tractor0":
+        tractor0 = tractor
+        break
+
+if not tractor0:
+    print("[!] Could not find <tractor id='tractor0'>")
+    exit(1)
+
+# === Inject <filter> blocks ===
+for effect_name in effects:
+    filter_elem = ET.Element("filter")
+    
+    service = ET.SubElement(filter_elem, "property", name="mlt_service")
+    service.text = effect_name
+
+    start = ET.SubElement(filter_elem, "property", name="start")
+    start.text = str(start_frame)
+
+    end = ET.SubElement(filter_elem, "property", name="end")
+    end.text = str(end_frame)
+
+    # Optionally add kdenlive_id to match what Kdenlive GUI expects
+    kid = ET.SubElement(filter_elem, "property", name="kdenlive_id")
+    kid.text = effect_name
+
+    tractor0.append(filter_elem)
+
+# === Save updated XML ===
+tree.write(output_path, encoding="utf-8", xml_declaration=True)
+print(f"[✓] Injected {len(effects)} effects into tractor0 → {output_path}")
+#!/usr/bin/env python3
+import sys
+import xml.etree.ElementTree as ET
+import shutil
+
+if len(sys.argv) != 3:
+    print("Usage: python3 insert_image_into_effects_template.py render_this_effects.kdenlive your_image.jpg")
+    sys.exit(1)
+
+template_path = sys.argv[1]
+image_path = sys.argv[2]
+output_path = "patched_with_image.kdenlive"
+
+shutil.copy(template_path, output_path)
+tree = ET.parse(output_path)
+root = tree.getroot()
+
+patched = False
+for prod in root.findall(".//producer"):
+    for prop in prod.findall("property"):
+        if prop.get("name") == "resource":
+            prop.text = image_path
+            patched = True
+
+if patched:
+    tree.write(output_path)
+    print(f"[🎨] Image inserted → {output_path}")
+else:
+    print("[!] No <resource> tag found. Could not patch.")
+#!/usr/bin/env python3
+import os
+import xml.etree.ElementTree as ET
+from datetime import datetime
+
+# === Config ===
+KDENLIVE_INPUT = "cleaned_fully_stripped_project.kdenlive"
+KDENLIVE_OUTPUT = "patched_with_image.kdenlive"
+IMAGE_PATH = "/home/onojk123/kaleido-video-generator/temp_image_270p.jpg"  # ✅ Updated path
+IMAGE_PRODUCER_ID = "new_image"
+FPS = 60
+DURATION_FRAMES = 600  # 10 seconds
+
+def log(msg):
+    print(f"[{datetime.now().strftime('%H:%M:%S')}] {msg}")
+
+def insert_image(tree):
+    root = tree.getroot()
+
+    # Add <producer> for the image
+    prod = ET.SubElement(root, "producer", id=IMAGE_PRODUCER_ID)
+    ET.SubElement(prod, "property", name="resource").text = IMAGE_PATH
+    ET.SubElement(prod, "property", name="mlt_service").text = "qimage"
+    ET.SubElement(prod, "property", name="length").text = str(DURATION_FRAMES)
+    ET.SubElement(prod, "property", name="eof").text = "pause"
+    ET.SubElement(prod, "property", name="aspect_ratio").text = "1"
+    ET.SubElement(prod, "property", name="seekable").text = "1"
+    ET.SubElement(prod, "property", name="progressive").text = "1"
+
+    # Find the first <playlist> and add an <entry>
+    playlist = root.find(".//playlist")
+    if playlist is None:
+        log("[!] No <playlist> found — aborting.")
+        return tree
+
+    entry = ET.SubElement(playlist, "entry", {
+        "producer": IMAGE_PRODUCER_ID,
+        "in": "0",
+        "out": str(DURATION_FRAMES - 1)
+    })
+    ET.SubElement(entry, "property", name="kdenlive:id").text = "999"
+
+    return tree
+
+def main():
+    if not os.path.exists(IMAGE_PATH):
+        log(f"[!] Image not found: {IMAGE_PATH}")
+        return
+
+    if not os.path.exists(KDENLIVE_INPUT):
+        log(f"[!] Kdenlive project missing: {KDENLIVE_INPUT}")
+        return
+
+    tree = ET.parse(KDENLIVE_INPUT)
+    tree = insert_image(tree)
+    tree.write(KDENLIVE_OUTPUT)
+
+    log(f"[✓] New image inserted into: {KDENLIVE_OUTPUT}")
+    log("[🎬] You can now render it with melt.")
+
+if __name__ == "__main__":
+    main()
+import argparse
+import subprocess
+
+def generate_video(length, output):
+    # Example of how the kaleidoscope video is generated
+    command = [
+        'python3', 'kaleido_video_generator.py',  # Main video generation script
+        '--length', str(length),
+        '--output', output  # Path to save the generated video
+    ]
+    
+    subprocess.run(command)
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Generate kaleidoscopic video.")
+    parser.add_argument('--length', type=int, required=True, help="Length of the video in seconds.")
+    parser.add_argument('--output', type=str, required=True, help="Path to save the generated video.")
+    
+    args = parser.parse_args()
+    generate_video(args.length, args.output)
+#!/usr/bin/env python3
+import os
+import subprocess
+import time
+
+# === CONFIGURATION ===
+BASE_DIR = "/home/ubuntu/kaleido-video-generator"
+GENERATE_SCRIPT = os.path.join(BASE_DIR, "generate_rainbow_camouflage_contrast_hardedges.py")
+OUTPUT_IMAGE = os.path.join(BASE_DIR, "current_abstract_video_image.jpg")
+TEMPLATE_KDENLIVE_FILE = os.path.join(BASE_DIR, "template_project.kdenlive")
+RENDERED_KDENLIVE_FILE = os.path.join(BASE_DIR, "patched_project.kdenlive")
+OUTPUT_VIDEO_FILE = os.path.join(BASE_DIR, "final_output_4k60.mp4")
+
+# === STEP 1: Generate New Camouflage ===
+def generate_camouflage():
+    print("[+] Generating new camouflage image...")
+    result = subprocess.run(["python3", GENERATE_SCRIPT])
+    if result.returncode != 0 or not os.path.exists(OUTPUT_IMAGE):
+        raise RuntimeError("Camouflage image generation failed")
+    print(f"[+] Saved hard-edged camouflage: {OUTPUT_IMAGE}")
+
+# === STEP 2: Patch Kdenlive Project File ===
+def update_kdenlive_image_path():
+    print("[+] Updating Kdenlive project file image path...")
+
+    with open(TEMPLATE_KDENLIVE_FILE, "r") as infile:
+        content = infile.read()
+
+    # Replace any old path with the new one
+    patched_content = content.replace(
+        "/home/onojk123/kaleido_render_pipeline/current_abstract_video_image.jpg",
+        OUTPUT_IMAGE
+    )
+
+    with open(RENDERED_KDENLIVE_FILE, "w") as outfile:
+        outfile.write(patched_content)
+
+    print("[+] Kdenlive file patched.")
+
+# === STEP 3: Render Using Flatpak's melt ===
+def render_video():
+    print("[+] Rendering video headlessly with Flatpak melt...")
+
+    render_cmd = [
+        "flatpak", "run", "--command=melt", "org.kde.kdenlive",
+        RENDERED_KDENLIVE_FILE,
+        "-profile", "atsc_2160p_60",  # 4K UHD 60fps
+        "-consumer", f"avformat:{OUTPUT_VIDEO_FILE}",
+        "vcodec=libx264", "acodec=aac", "b=20000k", "progressive=1"
+    ]
+
+    result = subprocess.run(render_cmd)
+
+    if result.returncode != 0:
+        raise RuntimeError("Video rendering failed")
+    else:
+        print(f"[+] Render complete: {OUTPUT_VIDEO_FILE}")
+
+# === MAIN PIPELINE ===
+def main():
+    generate_camouflage()
+    update_kdenlive_image_path()
+    render_video()
+
+if __name__ == "__main__":
+    main()
+#!/usr/bin/env python3
+import xml.etree.ElementTree as ET
+import os
+
+INPUT_FILE = "patched_render_final.kdenlive"
+OUTPUT_FILE = "patched_render_final_nowav.kdenlive"
+WAV_KEYWORDS = [f"Number{str(i).zfill(2)}.wav" for i in range(1, 21)]
+
+def nuke_wav_references():
+    if not os.path.exists(INPUT_FILE):
+        print(f"[!] File not found: {INPUT_FILE}")
+        return
+
+    tree = ET.parse(INPUT_FILE)
+    root = tree.getroot()
+    removed = 0
+
+    def recursive_clean(parent):
+        nonlocal removed
+        for child in list(parent):
+            if any(wav in ET.tostring(child, encoding="unicode") for wav in WAV_KEYWORDS):
+                parent.remove(child)
+                removed += 1
+            else:
+                recursive_clean(child)
+
+    recursive_clean(root)
+    tree.write(OUTPUT_FILE)
+    print(f"[✓] Saved cleaned file: {OUTPUT_FILE}")
+    print(f"[🧨] Nuked {removed} .wav-related XML nodes")
+
+if __name__ == "__main__":
+    nuke_wav_references()
+#!/usr/bin/env python3
+import xml.etree.ElementTree as ET
+import shutil
+import sys
+import os
+
+SOURCE = "patched_render.kdenlive"
+OUTPUT = "patched_render_final_effects.kdenlive"
+IMAGE_PATH = "/home/onojk123/kaleido_render_pipeline/current_abstract_video_image.jpg"
+FRAME_LENGTH = 600  # 10s at 60fps
+
+def main():
+    if not os.path.exists(SOURCE):
+        print(f"[!] Missing: {SOURCE}")
+        return
+
+    shutil.copyfile(SOURCE, OUTPUT)
+    tree = ET.parse(OUTPUT)
+    root = tree.getroot()
+
+    # === Add image producer ===
+    image_producer = ET.SubElement(root, "producer", id="image_track")
+    ET.SubElement(image_producer, "property", name="resource").text = IMAGE_PATH
+    ET.SubElement(image_producer, "property", name="mlt_service").text = "qimage"
+    ET.SubElement(image_producer, "property", name="length").text = str(FRAME_LENGTH)
+    ET.SubElement(image_producer, "property", name="eof").text = "pause"
+
+    # === Add effects (filters) directly to tractor0 (overlay) ===
+    tractor0 = root.find(".//tractor[@id='tractor0']")
+    if tractor0 is None:
+        print("[!] tractor0 not found")
+        return
+
+    # Trim tractor
+    tractor0.set("out", "00:00:10.000")
+
+    # Inject image_track
+    ET.SubElement(tractor0, "track", {"producer": "image_track"})
+
+    # Add example filters
+    filters = [
+        ("frei0r.kaleidoscope", {"number_of_arms": "6", "angle": "0.5"}),
+        ("frei0r.rgbparade", {}),
+        ("qtblend", {"rotate_center": "1", "distort": "1"}),
+        ("movit.lift_gamma_gain", {"lift_r": "1.2", "gain_g": "1.2"}),
+    ]
+    for i, (svc, props) in enumerate(filters):
+        f = ET.SubElement(tractor0, "filter", id=f"fx{i}")
+        ET.SubElement(f, "property", name="mlt_service").text = svc
+        for k, v in props.items():
+            ET.SubElement(f, "property", name=k).text = v
+        ET.SubElement(f, "property", name="in").text = "0"
+        ET.SubElement(f, "property", name="out").text = str(FRAME_LENGTH - 1)
+
+    # === Update all producers to limit duration ===
+    for prod in root.findall(".//producer"):
+        ET.SubElement(prod, "property", name="length").text = str(FRAME_LENGTH)
+
+    # === Update master tractor (projectTractor) too ===
+    projectTractor = root.find(".//tractor[@id='tractor2']")
+    if projectTractor is not None:
+        for t in projectTractor.findall("track"):
+            t.set("out", "00:00:10.000")
+        projectTractor.set("out", "00:00:10.000")
+
+    # Write patched project
+    tree.write(OUTPUT)
+    print(f"[✓] Wrote patched project to {OUTPUT}")
+
+if __name__ == "__main__":
+    main()
+#!/usr/bin/env python3
+import xml.etree.ElementTree as ET
+from datetime import datetime
+
+INPUT = "patched_with_image.kdenlive"
+OUTPUT = "patched_render_final.kdenlive"
+FPS = 60
+FRAMES = 600
+TIME_STR = "00:00:09.983"
+
+def log(msg):
+    print(f"[{datetime.now().strftime('%H:%M:%S')}] {msg}")
+
+def patch_duration(tree):
+    root = tree.getroot()
+    for elem in root.iter():
+        if "out" in elem.attrib:
+            elem.set("out", TIME_STR)
+        if "length" in elem.attrib:
+            elem.set("length", TIME_STR)
+        if "duration" in elem.attrib:
+            elem.set("duration", str(FRAMES))
+        for prop in elem.findall("property"):
+            if prop.get("name") in ["kdenlive:duration", "length"]:
+                prop.text = TIME_STR
+    return tree
+
+def main():
+    tree = ET.parse(INPUT)
+    tree = patch_duration(tree)
+    tree.write(OUTPUT)
+    log(f"[✓] Duration patched to 10s → {OUTPUT}")
+
+if __name__ == "__main__":
+    main()
+#!/usr/bin/env python3
+import sys
+import xml.etree.ElementTree as ET
+
+if len(sys.argv) != 2:
+    print("Usage: patch_effects.py input.kdenlive")
+    sys.exit(1)
+
+INPUT = sys.argv[1]
+tree = ET.parse(INPUT)
+root = tree.getroot()
+
+# Target all playlist entries (video clips)
+for playlist in root.findall(".//playlist"):
+    for entry in playlist.findall("entry"):
+        # Add kaleidoscope
+        kal = ET.Element("filter", {"id": "frei0r.kaleidoscope", "in": "0", "out": "599"})
+        prop = ET.SubElement(kal, "property", {"name": "0"})
+        prop.text = "7"  # symmetry
+        entry.append(kal)
+
+        # Add RGB shift
+        rgb = ET.Element("filter", {"id": "frei0r.rgbnoise", "in": "0", "out": "599"})
+        ET.SubElement(rgb, "property", {"name": "0"}).text = "0.3"
+        entry.append(rgb)
+
+        # Add 3D tilt (rotation Y)
+        rot = ET.Element("filter", {"id": "affine", "in": "0", "out": "599"})
+        ET.SubElement(rot, "property", {"name": "rotate_y"}).text = "25"
+        entry.append(rot)
+
+# Output file
+OUTPUT = INPUT.replace(".kdenlive", "_with_effects.kdenlive")
+tree.write(OUTPUT)
+print(f"[🎨] Patched effects written to: {OUTPUT}")
+#!/usr/bin/env python3
+import xml.etree.ElementTree as ET
+import shutil
+import os
+
+TEMPLATE = "template_project.kdenlive"
+PATCHED = "patched_render_final.kdenlive"
+IMAGE_PATH = "/home/onojk123/kaleido_render_pipeline/current_abstract_video_image.jpg"
+FPS = 60
+DURATION = 10
+FRAMES = FPS * DURATION
+
+def log(msg): print(f"[+] {msg}")
+
+def patch_kdenlive_bin_effects():
+    if not os.path.exists(TEMPLATE):
+        print(f"[!] Missing template: {TEMPLATE}")
+        return
+
+    shutil.copy(TEMPLATE, PATCHED)
+    tree = ET.parse(PATCHED)
+    root = tree.getroot()
+
+    # === Step 1: Replace image path and set duration ===
+    for prod in root.findall(".//producer"):
+        for prop in prod.findall("property"):
+            if prop.get("name") == "resource":
+                prop.text = IMAGE_PATH
+            if prop.get("name") == "length":
+                prop.text = str(FRAMES)
+
+    # === Step 2: Inject effects directly in bin producers ===
+    for binclip in root.findall(".//bin//producer"):
+        # Clean old filters
+        for f in binclip.findall("filter"):
+            binclip.remove(f)
+
+        # 1. Kaleidoscope
+        kal = ET.SubElement(binclip, "filter")
+        ET.SubElement(kal, "property", name="mlt_service").text = "frei0r.kaleidoscope"
+        ET.SubElement(kal, "property", name="symmetry").text = "8"
+
+        # 2. RGB Gain
+        lift = ET.SubElement(binclip, "filter")
+        ET.SubElement(lift, "property", name="mlt_service").text = "movit.lift_gamma_gain"
+        ET.SubElement(lift, "property", name="lift_r").text = "0.05"
+        ET.SubElement(lift, "property", name="lift_g").text = "0.05"
+        ET.SubElement(lift, "property", name="lift_b").text = "0.05"
+
+        # 3. 3D Transform Zoom
+        zoom = ET.SubElement(binclip, "filter")
+        ET.SubElement(zoom, "property", name="mlt_service").text = "affine"
+        ET.SubElement(zoom, "property", name="rotate").text = "0"
+        ET.SubElement(zoom, "property", name="scale").text = "1.3"
+
+    tree.write(PATCHED)
+    log(f"[✓] Saved effects-patched project → {PATCHED}")
+
+if __name__ == "__main__":
+    patch_kdenlive_bin_effects()
+#!/usr/bin/env python3
+import xml.etree.ElementTree as ET
+import shutil
+import os
+
+TEMPLATE = "template_project.kdenlive"
+PATCHED = "patched_render_final_effects.kdenlive"
+IMAGE_PATH = "/home/onojk123/kaleido_render_pipeline/current_abstract_video_image.jpg"
+FPS = 60
+DURATION = 10
+FRAMES = FPS * DURATION
+
+def log(msg): print(f"[+] {msg}")
+
+def patch_kdenlive():
+    if not os.path.exists(TEMPLATE):
+        print(f"[!] Template missing: {TEMPLATE}")
+        return
+
+    shutil.copy(TEMPLATE, PATCHED)
+    tree = ET.parse(PATCHED)
+    root = tree.getroot()
+
+    # === Step 1: Replace image path ===
+    for prod in root.findall(".//producer"):
+        for prop in prod.findall("property"):
+            if prop.get("name") == "resource":
+                prop.text = IMAGE_PATH
+
+    # === Step 2: Set project duration ===
+    for tag in root.findall(".//property[@name='length']"):
+        tag.text = str(FRAMES)
+
+    # === Step 3: Inject effects in the timeline playlist ===
+    for playlist in root.findall(".//playlist"):
+        # Only patch the first one with a 'producer' entry (skip black backgrounds)
+        if playlist.find("entry") is not None:
+            # Remove existing filters
+            for f in playlist.findall("filter"):
+                playlist.remove(f)
+
+            # Add kaleidoscope filter
+            kal = ET.SubElement(playlist, "filter")
+            ET.SubElement(kal, "property", name="mlt_service").text = "frei0r.kaleidoscope"
+            ET.SubElement(kal, "property", name="symmetry").text = "8"
+
+            # Add lift/gain filter
+            lift = ET.SubElement(playlist, "filter")
+            ET.SubElement(lift, "property", name="mlt_service").text = "movit.lift_gamma_gain"
+            ET.SubElement(lift, "property", name="lift_r").text = "0.1"
+            ET.SubElement(lift, "property", name="lift_g").text = "0.1"
+            ET.SubElement(lift, "property", name="lift_b").text = "0.1"
+
+            # Add composite zoom
+            zoom = ET.SubElement(playlist, "filter")
+            ET.SubElement(zoom, "property", name="mlt_service").text = "qtblend"
+            ET.SubElement(zoom, "property", name="composite.rect").text = "0% 0% 130% 130%"
+            break  # Only patch first usable playlist
+
+    tree.write(PATCHED)
+    log(f"✅ Saved with effects: {PATCHED}")
+
+if __name__ == "__main__":
+    patch_kdenlive()
+#!/usr/bin/env python3
+import xml.etree.ElementTree as ET
+import os
+import re
+import subprocess
+import time
+import signal
+
+# === Configuration ===
+TEMPLATE = "template_project.kdenlive"
+OUTPUT = "patched_render_10s.kdenlive"
+IMAGE_NAME = "current_abstract_video_image.jpg"
+IMAGE_PATH = os.path.abspath(IMAGE_NAME)
+DURATION_TIME = "00:00:09.983"
+OUTPUT_VIDEO = "final_output_10s.mp4"
+DURATION_FRAMES = 600
+
+def kill_existing_melt():
+    print("[!] Checking for existing melt processes...")
+    try:
+        output = subprocess.check_output(["pgrep", "-f", "flatpak.*melt"]).decode()
+        for pid in output.strip().split("\n"):
+            print(f"[!] Killing previous melt process: {pid}")
+            os.kill(int(pid), signal.SIGKILL)
+    except subprocess.CalledProcessError:
+        print("[✓] No existing melt processes found.")
+
+def patch_kdenlive():
+    print(f"[+] Patching template: {TEMPLATE}")
+    tree = ET.parse(TEMPLATE)
+    root = tree.getroot()
+
+    # Patch producer1
+    for producer in root.findall(".//producer[@id='producer1']"):
+        for prop in producer.findall("property"):
+            name = prop.get("name")
+            if name == "resource":
+                print(f"[+] Setting image path → {IMAGE_PATH}")
+                prop.text = IMAGE_PATH
+            elif name in ("length", "kdenlive:duration"):
+                print(f"[+] Setting duration → {DURATION_TIME}")
+                prop.text = DURATION_TIME
+            elif name == "ttl":
+                prop.text = "25"
+
+    # Patch entries
+    for entry in root.findall(".//entry[@producer='producer1']"):
+        print(f"[+] Trimming clip entry → {DURATION_TIME}")
+        entry.set("out", DURATION_TIME)
+
+    # Patch tractors
+    for tractor in root.findall(".//tractor"):
+        if tractor.get("out"):
+            print(f"[+] Trimming tractor → {DURATION_TIME}")
+            tractor.set("out", DURATION_TIME)
+
+    # Patch tracks
+    for track in root.findall(".//track"):
+        if track.get("out"):
+            print(f"[+] Trimming track → {DURATION_TIME}")
+            track.set("out", DURATION_TIME)
+
+    # Patch keyframes in filters
+    for filt in root.findall(".//filter"):
+        for prop in filt.findall("property"):
+            if prop.text and re.search(r"\d{2}:\d{2}:\d{2}\.\d{3}=", prop.text):
+                matches = re.findall(r"(00:\d{2}:\d{2}\.\d{3})=([^\s;]+)", prop.text)
+                if matches:
+                    print(f"[+] Trimming keyframes for: {prop.get('name')}")
+                    prop.text = f"00:00:00.000={matches[0][1]};{DURATION_TIME}={matches[-1][1]}"
+
+    tree.write(OUTPUT, encoding="utf-8", xml_declaration=True)
+    print(f"[✓] Patched project written to: {OUTPUT}")
+
+def render_and_watch():
+    print("[+] Launching Flatpak melt render...")
+    cmd = [
+        "flatpak", "run", "--command=melt", "org.kde.kdenlive",
+        OUTPUT,
+        "-profile", "atsc_2160p_60",
+        "-consumer", f"avformat:{OUTPUT_VIDEO}",
+        "vcodec=libx264", "acodec=aac", "ab=192k"
+    ]
+    proc = subprocess.Popen(cmd)
+
+    try:
+        print("[📊] Watching file size...")
+        while proc.poll() is None:
+            if os.path.exists(OUTPUT_VIDEO):
+                size = os.path.getsize(OUTPUT_VIDEO) / (1024 * 1024)
+                print(f"[{time.strftime('%H:%M:%S')}] {OUTPUT_VIDEO}: {size:.1f} MB")
+            else:
+                print(f"[{time.strftime('%H:%M:%S')}] Waiting for output file...")
+            time.sleep(1)
+    except KeyboardInterrupt:
+        print("[!] Interrupted. Killing render process...")
+        proc.kill()
+        exit(1)
+
+    if proc.returncode == 0:
+        print(f"[✓] Render complete: {OUTPUT_VIDEO}")
+    else:
+        print("[✖] Render failed.")
+
+if __name__ == "__main__":
+    kill_existing_melt()
+    patch_kdenlive()
+    render_and_watch()
+#!/usr/bin/env python3
+import xml.etree.ElementTree as ET
+import os
+
+PROJECT_FILE = "patched_render_final.kdenlive"
+BACKUP_FILE = "patched_render_final.kdenlive.bak"
+
+REPLACEMENTS = {
+    "frei0r.kaleidoscope": "frei0r.kaleid0sc0pe",
+    "movit.lift_gamma_gain": "frei0r.liftgammagain"
+}
+
+def patch_and_print_ids(filename):
+    if not os.path.exists(filename):
+        print(f"[!] Project file not found: {filename}")
+        return False
+
+    os.rename(filename, BACKUP_FILE)
+    print(f"[🔄] Backup saved to {BACKUP_FILE}")
+
+    tree = ET.parse(BACKUP_FILE)
+    root = tree.getroot()
+
+    found_ids = set()
+    patched_count = 0
+
+    for filter_node in root.findall(".//filter"):
+        fx_id = filter_node.get("id")
+        found_ids.add(fx_id)
+
+        if fx_id in REPLACEMENTS:
+            new_id = REPLACEMENTS[fx_id]
+            print(f"[✓] Replacing {fx_id} → {new_id}")
+            filter_node.set("id", new_id)
+            patched_count += 1
+
+    print(f"\n[🔍] Found {len(found_ids)} unique filter IDs:")
+    for fx in sorted(found_ids):
+        print(f"    • {fx}")
+
+    if patched_count:
+        tree.write(PROJECT_FILE)
+        print(f"\n[✅] Patched and saved → {PROJECT_FILE} ({patched_count} changes)")
+    else:
+        print("\n[ℹ️] No matching effects were patched.")
+
+    return True
+
+if __name__ == "__main__":
+    patch_and_print_ids(PROJECT_FILE)
+#!/usr/bin/env python3
+import os
+import sys
+import shutil
+import xml.etree.ElementTree as ET
+from datetime import datetime
+
+# === Constants ===
+TEMPLATE = "template_project.kdenlive"
+PATCHED = "patched_render_10s.kdenlive"
+OUTPUT_RES_X = 1280
+OUTPUT_RES_Y = 720
+FPS = 60
+DURATION_SECONDS = 10
+AUDIO_TRACK_TAGS = ["audio", "audiotrack"]
+
+def log(msg):
+    print(f"[{datetime.now().strftime('%H:%M:%S')}] {msg}")
+
+def patch_kdenlive_template():
+    if not os.path.exists(TEMPLATE):
+        log(f"[ERROR] Missing {TEMPLATE}")
+        sys.exit(1)
+
+    shutil.copyfile(TEMPLATE, PATCHED)
+    log(f"[✓] Copied {TEMPLATE} → {PATCHED}")
+
+    tree = ET.parse(PATCHED)
+    root = tree.getroot()
+
+    # Adjust duration
+    frames_total = int(DURATION_SECONDS * FPS)
+    duration_str = f"{frames_total}"
+    for playlist in root.findall(".//playlist"):
+        if "duration" in playlist.attrib:
+            playlist.set("duration", duration_str)
+
+    # Set resolution and frame rate
+    for profile in root.findall(".//profile"):
+        profile.set("width", str(OUTPUT_RES_X))
+        profile.set("height", str(OUTPUT_RES_Y))
+        profile.set("frame_rate_num", str(FPS))
+        profile.set("frame_rate_den", "1")
+
+    # Remove all audio tracks
+    tracks = root.findall(".//track")
+    removed = 0
+    for track in tracks:
+        if track.get("type") == "audio":
+            root.find(".//tractor").remove(track)
+            removed += 1
+    log(f"[–] Removed {removed} audio tracks")
+
+    tree.write(PATCHED)
+    log(f"[✓] Patched saved to {PATCHED}")
+
+def main():
+    log("🔧 Patching Kdenlive project for 10s, 1280x720, no audio...")
+    patch_kdenlive_template()
+    log("✅ Patch complete.")
+
+if __name__ == "__main__":
+    main()
+#!/usr/bin/env python3
+import os
+import sys
+import shutil
+import xml.etree.ElementTree as ET
+from datetime import datetime
+
+# === Settings ===
+INPUT_KDENLIVE = "patched_render.kdenlive"   # Input file to clean
+OUTPUT_KDENLIVE = "patched_render_10s_clean.kdenlive"
+FPS = 60
+DURATION_SECONDS = 10
+TOTAL_FRAMES = DURATION_SECONDS * FPS
+MAX_TIME = "00:00:09.983"
+MAX_LENGTH = f"{TOTAL_FRAMES}"
+
+# === Utility ===
+def log(msg):
+    print(f"[{datetime.now().strftime('%H:%M:%S')}] {msg}")
+
+def patch_kdenlive_file():
+    if not os.path.exists(INPUT_KDENLIVE):
+        log(f"[!] Input file not found: {INPUT_KDENLIVE}")
+        sys.exit(1)
+
+    shutil.copyfile(INPUT_KDENLIVE, OUTPUT_KDENLIVE)
+    tree = ET.parse(OUTPUT_KDENLIVE)
+    root = tree.getroot()
+
+    # Fix profile (resolution and framerate)
+    for profile in root.findall(".//profile"):
+        profile.set("width", "1280")
+        profile.set("height", "720")
+        profile.set("frame_rate_num", str(FPS))
+        profile.set("frame_rate_den", "1")
+
+    # Fix all in/out durations
+    for elem in root.iter():
+        if "out" in elem.attrib:
+            elem.set("out", MAX_TIME)
+        if "length" in elem.attrib:
+            elem.set("length", MAX_TIME)
+        if "duration" in elem.attrib:
+            elem.set("duration", MAX_LENGTH)
+        if "kdenlive:duration" in elem.attrib:
+            elem.set("kdenlive:duration", MAX_TIME)
+
+    # Remove audio filters
+    removed = 0
+    for track in root.findall(".//filter"):
+        service = track.find("property[@name='mlt_service']")
+        if service is not None and service.text in ["volume", "panner"]:
+            parent = track.getparent() if hasattr(track, 'getparent') else None
+            if parent is not None:
+                parent.remove(track)
+            else:
+                # fallback: manually search and remove
+                for parent_candidate in root.iter():
+                    if track in list(parent_candidate):
+                        parent_candidate.remove(track)
+                        break
+            removed += 1
+
+    # Force no audio tracks
+    for prop in root.findall(".//property[@name='kdenlive:sequenceproperties.hasAudio']"):
+        prop.text = "0"
+
+    # Save updated file
+    tree.write(OUTPUT_KDENLIVE)
+    log(f"[✓] Patched saved to {OUTPUT_KDENLIVE}")
+    log(f"[–] Removed {removed} audio filters (volume/panner)")
+
+# === Run ===
+if __name__ == "__main__":
+    log("🔧 Cleaning and patching .kdenlive project...")
+    patch_kdenlive_file()
+    log("✅ Done. Use this for efficient 10s rendering.")
+#!/usr/bin/env python3
+import xml.etree.ElementTree as ET
+import os
+
+FPS = 60
+DURATION_SECONDS = 10
+FRAMES = FPS * DURATION_SECONDS
+
+PROJECT_FILE = "template_project.kdenlive"
+IMAGE_PATH = "current_abstract_video_image.jpg"
+
+def build_template():
+    root = ET.Element("mlt", attrib={"LC_NUMERIC": "C", "producer": "main_bin"})
+    
+    # Playlist and track
+    playlist = ET.SubElement(root, "playlist", id="playlist0")
+    entry = ET.SubElement(playlist, "entry", {"producer": "image_producer", "in": "0", "out": str(FRAMES-1)})
+    
+    tractor = ET.SubElement(root, "tractor", id="tractor0", title="Main Tractor")
+    ET.SubElement(tractor, "track", producer="playlist0")
+    ET.SubElement(tractor, "property", name="length").text = str(FRAMES)
+    ET.SubElement(tractor, "property", name="global_feed").text = "1"
+
+    # Image producer
+    image = ET.SubElement(root, "producer", id="image_producer")
+    ET.SubElement(image, "property", name="resource").text = IMAGE_PATH
+    ET.SubElement(image, "property", name="mlt_service").text = "qimage"
+    ET.SubElement(image, "property", name="length").text = str(FRAMES)
+    ET.SubElement(image, "property", name="loop").text = "0"
+
+    # Add kaleidoscope effect
+    kaleido = ET.SubElement(image, "filter")
+    ET.SubElement(kaleido, "property", name="mlt_service").text = "frei0r.kaleidoscope"
+    ET.SubElement(kaleido, "property", name="symmetry").text = "6"  # Feel free to adjust symmetry
+
+    # Add lift/gamma/gain effect
+    gamma = ET.SubElement(image, "filter")
+    ET.SubElement(gamma, "property", name="mlt_service").text = "movit.lift_gamma_gain"
+    ET.SubElement(gamma, "property", name="lift_r").text = "0.2"
+    ET.SubElement(gamma, "property", name="lift_g").text = "0.2"
+    ET.SubElement(gamma, "property", name="lift_b").text = "0.2"
+
+    # Add pan and zoom effect (via qtblend)
+    panzoom = ET.SubElement(image, "filter")
+    ET.SubElement(panzoom, "property", name="mlt_service").text = "qtblend"
+    ET.SubElement(panzoom, "property", name="composite.rect").text = "0% 0% 130% 130%"
+    ET.SubElement(panzoom, "property", name="rotate").text = "0"
+
+    tree = ET.ElementTree(root)
+    tree.write(PROJECT_FILE, encoding="utf-8", xml_declaration=True)
+    print(f"[✓] Rebuilt {PROJECT_FILE} with all effects.")
+
+if __name__ == "__main__":
+    build_template()
+#!/usr/bin/env python3
+import os
+import xml.etree.ElementTree as ET
+import shutil
+
+INPUT = "patched_render_final.kdenlive"
+OUTPUT = "patched_render_final_nuked.kdenlive"
+BACKUP = INPUT + ".bak"
+
+def log(msg):
+    print(f"[+] {msg}")
+
+def contains_wav_text(elem):
+    return any(".wav" in (t or "").lower() for t in [elem.text, elem.tail] + [p.text for p in elem.iter()])
+
+def main():
+    if not os.path.exists(INPUT):
+        log(f"[!] Missing file: {INPUT}")
+        return
+
+    shutil.copy(INPUT, BACKUP)
+    tree = ET.parse(INPUT)
+    root = tree.getroot()
+
+    removed = 0
+    for parent in root.findall(".//*"):
+        children = list(parent)
+        for child in children:
+            if contains_wav_text(child):
+                parent.remove(child)
+                removed += 1
+
+    tree.write(OUTPUT)
+    log(f"Saved aggressively cleaned file: {OUTPUT}")
+    log(f"Removed {removed} nodes containing '.wav'")
+
+if __name__ == "__main__":
+    main()
+#!/usr/bin/env python3
+import os
+import subprocess
+import time
+import shutil
+import sys
+from PIL import Image
+from xml.etree import ElementTree as ET
+
+# === CONFIG ===
+SOURCE_IMAGE = "rainbow_camouflage_resized.jpg"
+KDENLIVE_TEMPLATE = "template_project.kdenlive"
+PATCHED_PROJECT = "patched_render_10s.kdenlive"
+OUTPUT_VIDEO = "final_output_cleaned.mp4"
+RENDER_DUR = 10
+FPS = 60
+WIDTH = 1280
+HEIGHT = 720
+
+def log(msg, icon="ℹ️"):
+    print(f"[{icon}] {msg}")
+    sys.stdout.flush()
+
+def validate_mlt_services(kdenlive_path):
+    tree = ET.parse(kdenlive_path)
+    root = tree.getroot()
+    mlt_services = set()
+
+    # Collect all mlt_service attributes and warn if empty or broken
+    for elem in root.findall(".//filter"):
+        service = elem.find("property[@name='mlt_service']")
+        if service is not None:
+            mlt_services.add(service.text.strip())
+
+    log("🧩 MLT Filters Found:")
+    for svc in sorted(mlt_services):
+        path_guess = f"./squashfs-root-new/usr/lib/mlt-7/{svc}.so"
+        exists = os.path.exists(path_guess)
+        status = "✅" if exists else "⚠️ MISSING"
+        print(f"  - {svc:<30} {status}")
+    print()
+
+def clean_audio_tracks_and_patch(template_path, output_path, image_path):
+    shutil.copy(template_path, output_path)
+    tree = ET.parse(output_path)
+    root = tree.getroot()
+    duration_frames = RENDER_DUR * FPS
+
+    # Remove any audio-related producers and tracks
+    removed = 0
+    for elem in root.findall(".//producer"):
+        res = elem.find("property[@name='resource']")
+        if res is not None and res.text and res.text.lower().endswith(".wav"):
+            root.remove(elem)
+            removed += 1
+    for elem in root.findall(".//track"):
+        if "audio" in elem.attrib.get("producer", "").lower():
+            root.remove(elem)
+            removed += 1
+    if removed:
+        log(f"Removed {removed} audio-related elements", "🧹")
+
+    # Replace image path and length
+    for elem in root.findall(".//producer"):
+        for prop in elem.findall("property"):
+            if prop.get("name") == "resource":
+                prop.text = image_path
+            elif prop.get("name") == "length":
+                prop.text = str(duration_frames)
+
+    for prop in root.findall(".//property[@name='length']"):
+        prop.text = str(duration_frames)
+
+    # Update resolution if applicable
+    for elem in root.findall(".//profile"):
+        elem.set("width", str(WIDTH))
+        elem.set("height", str(HEIGHT))
+
+    tree.write(output_path)
+    log(f"Patched and cleaned project saved: {output_path}", "✓")
+
+def render_mlt_project():
+    cmd = [
+        "./squashfs-root-new/usr/bin/melt",
+        PATCHED_PROJECT,
+        "-profile", "atsc_720p_30",
+        "-consumer", f"avformat:{OUTPUT_VIDEO}",
+        "vcodec=libx264", "acodec=aac"
+    ]
+    log(f"[🎬] Rendering with melt: {OUTPUT_VIDEO}")
+    try:
+        subprocess.run(cmd, check=True)
+        log(f"[✅] Done rendering: {OUTPUT_VIDEO}")
+    except subprocess.CalledProcessError as e:
+        log(f"[❌] Melt rendering failed: {e}", "❌")
+        sys.exit(1)
+
+def main():
+    if not os.path.exists(KDENLIVE_TEMPLATE):
+        log(f"Missing {KDENLIVE_TEMPLATE}", "❌")
+        sys.exit(1)
+    if not os.path.exists(SOURCE_IMAGE):
+        log(f"Missing source image: {SOURCE_IMAGE}", "❌")
+        sys.exit(1)
+
+    log("🔍 Validating MLT filters before render...")
+    validate_mlt_services(KDENLIVE_TEMPLATE)
+
+    log("🔧 Patching template and cleaning audio...")
+    clean_audio_tracks_and_patch(KDENLIVE_TEMPLATE, PATCHED_PROJECT, os.path.abspath(SOURCE_IMAGE))
+
+    log("🎥 Rendering video...")
+    render_mlt_project()
+
+if __name__ == "__main__":
+    main()
+#!/usr/bin/env python3
+import os
+import cv2
+import numpy as np
+from tqdm import tqdm
+import argparse
+from typing import Tuple, Optional
+
+class RainbowCamouflageRenderer:
+    def __init__(self):
+        self.args = self.parse_arguments()
+        self.validate_parameters()
+        
+    def parse_arguments(self) -> argparse.Namespace:
+        """Parse command line arguments with rainbow_camouflage.jpg as default input"""
+        parser = argparse.ArgumentParser(description='Render 4K frames from rainbow camouflage image')
+        parser.add_argument('--input', type=str, default='rainbow_camouflage.jpg',
+                          help='Input image path (default: rainbow_camouflage.jpg)')
+        parser.add_argument('--output-dir', type=str, default='render_frames',
+                          help='Output directory for frames')
+        parser.add_argument('--zoom', type=float, default=13.0,
+                          help='Zoom factor (1300% = 13.0)')
+        parser.add_argument('--resolution', type=str, default='3840x2160',
+                          help='Output resolution (default: 3840x2160)')
+        parser.add_argument('--fps', type=int, default=60,
+                          help='Frames per second (default: 60)')
+        parser.add_argument('--duration', type=float, default=10.0,
+                          help='Video duration in seconds (default: 10)')
+        parser.add_argument('--threads', type=int, default=min(8, os.cpu_count()),
+                          help=f'Threads to use (default: {min(8, os.cpu_count())})')
+        parser.add_argument('--camera-path', type=str, choices=['horizontal', 'vertical', 'diagonal', 'spiral'], 
+                          default='horizontal', help='Camera movement style')
+        return parser.parse_args()
+
+    def validate_parameters(self):
+        """Validate input parameters with enhanced checks"""
+        try:
+            self.output_width, self.output_height = map(int, self.args.resolution.split('x'))
+            if self.output_width < 3840 or self.output_height < 2160:
+                print("Warning: Output resolution lower than 4K (3840x2160)")
+        except:
+            raise ValueError(f"Invalid resolution format: {self.args.resolution}")
+        
+        if not 1 < self.args.zoom <= 50:
+            raise ValueError("Zoom factor must be between 1 and 50")
+            
+        if not os.path.exists(self.args.input):
+            raise FileNotFoundError(f"Input file not found: {self.args.input}")
+
+    def generate_camera_path(self, img_width: int, img_height: int) -> np.ndarray:
+        """Generate camera path based on selected style"""
+        total_frames = int(self.args.fps * self.args.duration)
+        t = np.linspace(0, 1, total_frames)
+        
+        # Base path calculations
+        if self.args.camera_path == 'horizontal':
+            x = 0.1 * img_width + 0.8 * img_width * t
+            y = 0.5 * img_height * np.ones_like(t)
+        elif self.args.camera_path == 'vertical':
+            x = 0.5 * img_width * np.ones_like(t)
+            y = 0.1 * img_height + 0.8 * img_height * t
+        elif self.args.camera_path == 'diagonal':
+            x = 0.1 * img_width + 0.8 * img_width * t
+            y = 0.1 * img_height + 0.8 * img_height * t
+        elif self.args.camera_path == 'spiral':
+            angle = 4 * np.pi * t  # 2 full rotations
+            radius = 0.4 * min(img_width, img_height) * (1 - 0.5*t)  # Slowly zoom in
+            x = 0.5 * img_width + radius * np.cos(angle)
+            y = 0.5 * img_height + radius * np.sin(angle)
+        
+        return np.column_stack((x, y)).astype(int)
+
+    def safe_crop(self, img: np.ndarray, center_x: int, center_y: int) -> Optional[np.ndarray]:
+        """Smart cropping that handles edge cases"""
+        h, w = img.shape[:2]
+        crop_w = int(self.output_width / self.args.zoom)
+        crop_h = int(self.output_height / self.args.zoom)
+        
+        # Calculate initial crop bounds
+        x1 = center_x - crop_w // 2
+        y1 = center_y - crop_h // 2
+        x2 = x1 + crop_w
+        y2 = y1 + crop_h
+        
+        # Adjust for image boundaries
+        if x1 < 0:
+            x1, x2 = 0, crop_w
+        if y1 < 0:
+            y1, y2 = 0, crop_h
+        if x2 > w:
+            x1, x2 = w - crop_w, w
+        if y2 > h:
+            y1, y2 = h - crop_h, h
+            
+        # Final validation
+        if x1 >= x2 or y1 >= y2 or (x2 - x1) != crop_w or (y2 - y1) != crop_h:
+            return None
+            
+        return img[y1:y2, x1:x2]
+
+    def process_frame(self, img: np.ndarray, position: Tuple[int, int], frame_num: int) -> bool:
+        """Process and save a single frame with error handling"""
+        try:
+            cropped = self.safe_crop(img, position[0], position[1])
+            if cropped is None:
+                return False
+                
+            upscaled = cv2.resize(
+                cropped, 
+                (self.output_width, self.output_height),
+                interpolation=cv2.INTER_LANCZOS4
+            )
+            
+            frame_path = os.path.join(self.args.output_dir, f"frame_{frame_num:04d}.png")
+            if not cv2.imwrite(frame_path, upscaled, [cv2.IMWRITE_PNG_COMPRESSION, 3]):
+                raise IOError(f"Failed to write {frame_path}")
+                
+            return True
+            
+        except Exception as e:
+            print(f"\nError processing frame {frame_num}: {str(e)}")
+            return False
+
+    def render(self) -> bool:
+        """Main rendering workflow"""
+        print(f"\nLoading source image: {self.args.input}")
+        img = cv2.imread(self.args.input, cv2.IMREAD_COLOR)
+        if img is None:
+            raise ValueError("Failed to load input image - check if rainbow_camouflage.jpg exists")
+        
+        os.makedirs(self.args.output_dir, exist_ok=True)
+        
+        # Generate and validate path
+        path = self.generate_camera_path(img.shape[1], img.shape[0])
+        total_frames = len(path)
+        
+        print(f"\nRendering {total_frames} frames from {img.shape[1]}x{img.shape[0]} source:")
+        print(f"- Zoom: {self.args.zoom}x (Crop: {int(self.output_width/self.args.zoom)}x{int(self.output_height/self.args.zoom)})")
+        print(f"- Output: {self.output_width}x{self.output_height} {self.args.fps}fps")
+        print(f"- Path: {self.args.camera_path}")
+        print(f"- Threads: {self.args.threads}")
+        
+        # Set OpenCV threads
+        cv2.setNumThreads(self.args.threads)
+        
+        # Process frames with progress bar
+        success_count = 0
+        progress_bar = tqdm(range(total_frames), desc="Rendering frames")
+        for i in progress_bar:
+            if self.process_frame(img, path[i], i):
+                success_count += 1
+            progress_bar.set_postfix(success=f"{success_count}/{i+1}")
+        
+        success_rate = (success_count / total_frames) * 100
+        print(f"\nCompleted: {success_count}/{total_frames} frames ({success_rate:.1f}% success)")
+        
+        return success_count > total_frames * 0.95  # Require 95% success
+
+if __name__ == "__main__":
+    try:
+        renderer = RainbowCamouflageRenderer()
+        if renderer.render():
+            print("\nSUCCESS: Frame rendering completed")
+            exit(0)
+        else:
+            print("\nWARNING: Frame rendering completed with errors")
+            exit(1)
+    except Exception as e:
+        print(f"\nERROR: {str(e)}")
+        exit(1)
+#!/usr/bin/env python3
+import os
+import subprocess
+import xml.etree.ElementTree as ET
+import shutil
+from datetime import datetime
+
+TEMPLATE = "effects_template_base.kdenlive"
+PATCHED = "patched_render_final.kdenlive"
+RENDERED_IMAGE = "/home/onojk123/kaleido_render_pipeline/current_abstract_video_image.jpg"
+FINAL_OUTPUT = f"final_output_{datetime.now().strftime('%Y%m%d_%H%M%S')}.mp4"
+
+def patch_project():
+    if not os.path.exists(TEMPLATE):
+        print(f"[!] Missing template: {TEMPLATE}")
+        return False
+
+    shutil.copy(TEMPLATE, PATCHED)
+    tree = ET.parse(PATCHED)
+    root = tree.getroot()
+
+    if root.tag != "mlt":
+        print("[!] Error: Root tag is not <mlt>")
+        return False
+
+    for prod in root.findall(".//producer"):
+        if prod.attrib.get("id", "") == "image_track":
+            root.remove(prod)
+
+    new_prod = ET.SubElement(root, "producer", id="image_track")
+    ET.SubElement(new_prod, "property", name="resource").text = RENDERED_IMAGE
+    ET.SubElement(new_prod, "property", name="mlt_service").text = "qimage"
+    ET.SubElement(new_prod, "property", name="length").text = "600"
+    ET.SubElement(new_prod, "property", name="eof").text = "pause"
+
+    tree.write(PATCHED)
+    print(f"[✓] Project patched and saved: {PATCHED}")
+    return True
+
+def render_kdenlive_project():
+    print("[🎬] Starting render via Flatpak melt...")
+
+    cmd = [
+        "flatpak", "run", "--command=melt", "org.kde.kdenlive",
+        PATCHED,
+        "-profile", "hd1080",
+        "-consumer", f"avformat:{FINAL_OUTPUT}",
+        "acodec=none"
+    ]
+
+    subprocess.run(cmd, check=True)
+
+if __name__ == "__main__":
+    if patch_project():
+        render_kdenlive_project()
+#!/usr/bin/env python3
+import os
+import subprocess
+import time
+import signal
+from PIL import Image
+
+# === Configuration ===
+TEMPLATE_KDENLIVE = "template_project.kdenlive"
+PATCHED_KDENLIVE_FILE = "patched_render_dynamic.kdenlive"
+DURATION_SECONDS = 10
+IMAGE_INPUT = "current_abstract_video_image.jpg"
+
+RESOLUTIONS = [
+    ("270p", 480, 270),
+    ("360p", 640, 360),
+    ("480p", 854, 480),
+    ("720p", 1280, 720),
+    ("1080p", 1920, 1080),
+    ("1440p", 2560, 1440),
+    ("2160p", 3840, 2160),
+]
+
+# === Helper Functions ===
+
+def log(msg): print(f"[{time.strftime('%H:%M:%S')}] {msg}")
+
+def check_virtualenv():
+    if os.environ.get("VIRTUAL_ENV") is None:
+        print("🟡 WARNING: You are not inside a virtual environment!\n")
+
+def kill_existing_melt():
+    log("[!] Checking for existing melt processes...")
+    try:
+        output = subprocess.check_output(["pgrep", "melt"]).decode().split()
+        for pid in output:
+            print(f"  [!] Killing melt process {pid}")
+            os.kill(int(pid), signal.SIGKILL)
+    except subprocess.CalledProcessError:
+        print("  [✓] No existing melt processes found.")
+
+def resize_image(width, height, output_file):
+    log(f"[🖼️ ] Resizing to {width}x{height} → {output_file}")
+    img = Image.open(IMAGE_INPUT)
+    img = img.resize((width, height), Image.LANCZOS)
+    img.save(output_file, "JPEG")
+
+def patch_kdenlive(image_path, duration_frames):
+    log(f"[📄] Patching {TEMPLATE_KDENLIVE} → {PATCHED_KDENLIVE_FILE}")
+    with open(TEMPLATE_KDENLIVE, "r") as f:
+        xml = f.read()
+    xml = xml.replace("REPLACE_IMAGE_PATH", image_path)
+    xml = xml.replace("REPLACE_DURATION", str(duration_frames))
+    with open(PATCHED_KDENLIVE_FILE, "w") as f:
+        f.write(xml)
+    log(f"[✓] Patched saved to {PATCHED_KDENLIVE_FILE}")
+
+def render_with_melt(output_file, width, height):
+    log(f"[🎬] Rendering to {output_file} at profile width={width} height={height}...")
+    render_cmd = [
+        "melt",
+        PATCHED_KDENLIVE_FILE,
+        "-profile", f"{width}x{height}@60",
+        "-consumer", f"avformat:{output_file}",
+        "acodec=aac", "vcodec=libx264", "vb=20000k", "ab=128k",
+    ]
+    return subprocess.Popen(render_cmd)
+
+def monitor_output_file(filename, interval=1):
+    log("[📊] Watching file size...")
+    try:
+        while True:
+            if os.path.exists(filename):
+                size_mb = os.path.getsize(filename) / 1024 / 1024
+                print(f"{filename}: {size_mb:.1f} MB")
+            else:
+                print(f"{filename}: 0.0 MB")
+            time.sleep(interval)
+    except KeyboardInterrupt:
+        print("^C")
+        log("[!] Interrupted. Killing render process...")
+
+def run_render_ladder():
+    check_virtualenv()
+
+    for label, w, h in RESOLUTIONS:
+        print(f"\n=== 🚀 Starting {label.upper()} Render ({w}x{h}) ===")
+        kill_existing_melt()
+
+        temp_image = f"temp_image_{label}.jpg"
+        output_file = f"output_{label}.mp4"
+        resize_image(w, h, temp_image)
+
+        total_frames = DURATION_SECONDS * 60  # 60fps assumed
+        patch_kdenlive(temp_image, total_frames)
+
+        process = render_with_melt(output_file, w, h)
+
+        try:
+            monitor_output_file(output_file)
+        except KeyboardInterrupt:
+            process.kill()
+            log(f"[✓] {label.upper()} Render interrupted.")
+
+if __name__ == "__main__":
+    run_render_ladder()
+from PIL import Image
+import os
+
+# Input from generator
+src_path = "/home/ubuntu/kaleido_render_pipeline/current_abstract_video_image.jpg"
+# Output resized version for Kdenlive
+dst_path = "rainbow_camouflage_resized.jpg"
+
+# Kdenlive uses 4K UHD 16:9 input — we'll use 3840x2160
+target_size = (3840, 2160)
+
+if not os.path.exists(src_path):
+    raise FileNotFoundError(f"Image not found: {src_path}")
+
+img = Image.open(src_path)
+resized = img.resize(target_size, Image.LANCZOS)
+resized.save(dst_path)
+
+print(f"[✓] Resized image saved to: {dst_path}")
+#!/usr/bin/env python3
+import subprocess
+import os
+import shutil
+import time
+import xml.etree.ElementTree as ET
+from PIL import Image
+
+# CONFIGURATION
+IMAGE_NAME = "rainbow_camouflage_resized.jpg"
+KDENLIVE_TEMPLATE = "render_this.kdenlive"
+RENDERED_PROJECT = "patched_render.kdenlive"
+FINAL_OUTPUT = "final_output.mp4"
+
+def log(msg):
+    print(f"[+] {msg}")
+
+def run_script(script_name):
+    log(f"Running: {script_name}")
+    result = subprocess.run(["python3", script_name])
+    if result.returncode != 0:
+        print(f"[!] Script {script_name} failed.")
+        exit(1)
+
+def patch_kdenlive_project(image_path, duration):
+    if not os.path.exists(KDENLIVE_TEMPLATE):
+        print(f"[!] Missing template: {KDENLIVE_TEMPLATE}")
+        exit(1)
+
+    shutil.copy(KDENLIVE_TEMPLATE, RENDERED_PROJECT)
+    tree = ET.parse(RENDERED_PROJECT)
+    root = tree.getroot()
+
+    modified = False
+
+    # Update image path in producers
+    for prod in root.findall(".//producer"):
+        for prop in prod.findall("property"):
+            if prop.get("name") == "resource" and IMAGE_NAME in prop.text:
+                abs_path = os.path.abspath(image_path)
+                if prop.text != abs_path:
+                    log(f"Patching image path: {prop.text} → {abs_path}")
+                    prop.text = abs_path
+                    modified = True
+
+                # Add 4 contrast filters
+                existing_filters = prod.findall("filter[@id='brightness']")
+                if len(existing_filters) < 4:
+                    for _ in range(4):
+                        filt = ET.Element("filter", attrib={
+                            "id": "brightness",
+                            "in": "00:00:00.000",
+                            "out": "99:59:59.999"
+                        })
+                        ET.SubElement(filt, "property", name="brightness").text = "0"
+                        ET.SubElement(filt, "property", name="contrast").text = "1.0"
+                        ET.SubElement(filt, "property", name="saturation").text = "1.0"
+                        prod.append(filt)
+                    log("Injected 4 contrast filters (Kdenlive-style).")
+                    modified = True
+
+    # Update duration
+    for prop in root.findall(".//property[@name='duration']"):
+        old_val = prop.text
+        prop.text = str(duration)
+        if old_val != prop.text:
+            log(f"Updated video duration: {old_val} → {prop.text}")
+            modified = True
+
+    if modified:
+        tree.write(RENDERED_PROJECT)
+        log("Kdenlive project file patched.")
+    else:
+        log("Image path already correct. No patch needed.")
+
+def render_with_melt(duration):
+    log("Rendering final video using Flatpak melt...")
+
+    result = subprocess.run([
+        "flatpak", "run", "--command=melt", "org.kde.kdenlive",
+        RENDERED_PROJECT,
+        "-consumer", f"avformat:{FINAL_OUTPUT}",
+        "vcodec=libx264", "acodec=aac", "ab=192k",
+        f"length={duration}"
+    ])
+
+    if result.returncode != 0:
+        print("[+] ERROR: melt rendering failed.")
+        exit(1)
+
+# MAIN
+log("Generating rainbow camouflage...")
+run_script("generate_rainbow.py")
+
+log("Applying GIMP-style max contrast...")
+run_script("apply_max_contrast_final.py")
+
+log("Resizing to 3840x2160...")
+run_script("resize_large_image.py")
+
+# Re-save JPG to ensure valid footer
+img = Image.open(IMAGE_NAME)
+img.save(IMAGE_NAME, quality=95)
+log("Re-saved JPEG with proper footer: rainbow_camouflage_resized.jpg")
+
+# Ask user for duration
+try:
+    user_seconds = int(input("[?] Enter video duration in seconds (1 to 3600): "))
+    if not 1 <= user_seconds <= 3600:
+        raise ValueError
+except ValueError:
+    print("[!] Invalid duration. Enter a number between 1 and 3600.")
+    exit(1)
+
+log("Checking .kdenlive project for image path...")
+patch_kdenlive_project(IMAGE_NAME, user_seconds)
+
+render_with_melt(user_seconds)
+log(f"Done. Output video saved to: {FINAL_OUTPUT}")
+#!/usr/bin/env python3
+import subprocess
+import sys
+
+def run_script(script_name):
+    print(f"[🌀] Running: {script_name}")
+    try:
+        subprocess.run(["python3", script_name], check=True)
+    except subprocess.CalledProcessError as e:
+        print(f"[❌] {script_name} failed with exit code {e.returncode}")
+        sys.exit(1)
+
+def main():
+    run_script("strip_orphan_and_audio_producers.py")
+    run_script("fix_kdenlive_mlt_wrapper.py")
+    run_script("render_next.py")
+
+if __name__ == "__main__":
+    main()
+#!/usr/bin/env python3
+import xml.etree.ElementTree as ET
+import os
+
+INPUT = "effects_template_cleaned.kdenlive"
+OUTPUT = "effects_template_cleaned_final.kdenlive"
+
+def log(msg):
+    print(f"[+] {msg}")
+
+log(f"Loading project: {INPUT}")
+tree = ET.parse(INPUT)
+root = tree.getroot()
+
+producers = root.findall(".//producer")
+bad_ids = set()
+
+# Step 1: Find bad producers
+for prod in producers:
+    props = prod.findall("property")
+    for prop in props:
+        if prop.get("name") == "resource":
+            path = prop.text.strip()
+            if not os.path.isfile(path):
+                bad_id = prod.get("id")
+                log(f"[✂] Removing bad producer: {bad_id} → {path}")
+                bad_ids.add(bad_id)
+                root.remove(prod)
+
+# Step 2: Remove references to bad producers
+for playlist in root.findall(".//playlist"):
+    entries = playlist.findall("entry")
+    for entry in entries:
+        if entry.get("producer") in bad_ids:
+            playlist.remove(entry)
+            log(f"[✂] Removed playlist entry using {entry.get('producer')}")
+
+for tractor in root.findall(".//tractor"):
+    tracks = tractor.findall("track")
+    for track in tracks:
+        if track.get("producer") in bad_ids:
+            tractor.remove(track)
+            log(f"[✂] Removed tractor track using {track.get('producer')}")
+
+tree.write(OUTPUT, encoding="utf-8", xml_declaration=True)
+log(f"[✓] Cleaned project saved to: {OUTPUT}")
+#!/usr/bin/env python3
+import os
+import xml.etree.ElementTree as ET
+
+INPUT_FILE = "effects_template_base.kdenlive"
+OUTPUT_FILE = "effects_template_cleaned.kdenlive"
+
+print("[*] Loading:", INPUT_FILE)
+tree = ET.parse(INPUT_FILE)
+root = tree.getroot()
+
+bad_ids = set()
+producers = root.findall(".//producer")
+
+# First pass: Remove <producer> nodes pointing to missing files
+for producer in producers:
+    for prop in producer.findall("property"):
+        if prop.attrib.get("name") == "resource":
+            path = prop.text
+            if path and not os.path.exists(path):
+                bad_id = producer.attrib.get("id")
+                if bad_id:
+                    bad_ids.add(bad_id)
+                root.remove(producer)
+                print(f"[✂] Removed bad producer: {bad_id} ({path})")
+
+# Second pass: Remove any <entry> in <playlist> that references a bad producer
+for playlist in root.findall(".//playlist"):
+    entries = playlist.findall("entry")
+    for entry in entries:
+        if entry.attrib.get("producer") in bad_ids:
+            playlist.remove(entry)
+            print(f"[✂] Removed entry for producer: {entry.attrib['producer']}")
+
+tree.write(OUTPUT_FILE)
+print(f"[✓] Saved cleaned template to: {OUTPUT_FILE}")
+#!/usr/bin/env python3
+import os
+import sys
+import xml.etree.ElementTree as ET
+
+INPUT_PROJECT = "effects_template_base.kdenlive"
+OUTPUT_PROJECT = "effects_template_stripped.kdenlive"
+
+print(f"[+] Loading: {INPUT_PROJECT}")
+tree = ET.parse(INPUT_PROJECT)
+root = tree.getroot()
+
+# Map producer id to file path
+producer_paths = {}
+for prod in root.findall(".//producer"):
+    pid = prod.get("id")
+    path = prod.findtext("property[@name='resource']")
+    if pid and path:
+        producer_paths[pid] = path
+
+# Detect bad paths
+bad_producers = {
+    pid for pid, path in producer_paths.items()
+    if not os.path.exists(path)
+}
+
+print(f"[✓] Found {len(bad_producers)} bad producers...")
+
+# Remove bad producers
+for prod in root.findall(".//producer"):
+    if prod.get("id") in bad_producers:
+        root.remove(prod)
+
+# Remove all entries referencing those producers
+for playlist in root.findall(".//playlist"):
+    for entry in list(playlist.findall("entry")):
+        if entry.get("producer") in bad_producers:
+            playlist.remove(entry)
+
+print(f"[✓] Saving cleaned project to: {OUTPUT_PROJECT}")
+tree.write(OUTPUT_PROJECT, encoding="utf-8", xml_declaration=True)
+#!/usr/bin/env python3
+import os
+import xml.etree.ElementTree as ET
+from datetime import datetime
+
+INPUT = "cleaned_stripped_project.kdenlive"
+OUTPUT = "cleaned_fully_stripped_project.kdenlive"
+
+def log(msg):
+    print(f"[{datetime.now().strftime('%H:%M:%S')}] {msg}")
+
+def file_exists(path):
+    return os.path.exists(path)
+
+def remove_parents_with_invalid_resource(tree):
+    root = tree.getroot()
+    count = 0
+
+    for parent in list(root.iter()):
+        for prop in parent.findall("property"):
+            if prop.get("name") == "resource":
+                path = prop.text
+                if path and not file_exists(path):
+                    # Remove parent element from its grandparent
+                    for grandparent in root.iter():
+                        if parent in list(grandparent):
+                            grandparent.remove(parent)
+                            count += 1
+                            break
+                    break  # stop checking properties inside this element
+
+    return count
+
+def main():
+    if not os.path.exists(INPUT):
+        log(f"[!] Input file not found: {INPUT}")
+        return
+
+    tree = ET.parse(INPUT)
+    removed = remove_parents_with_invalid_resource(tree)
+    tree.write(OUTPUT)
+
+    log(f"[✓] Saved cleaned file: {OUTPUT}")
+    log(f"[–] Removed {removed} elements with broken resource paths")
+
+if __name__ == "__main__":
+    main()
+#!/usr/bin/env python3
+import os
+import xml.etree.ElementTree as ET
+
+INPUT_PROJECT = "effects_template_base.kdenlive"
+OUTPUT_PROJECT = "effects_template_nomusic.kdenlive"
+
+print(f"[+] Loading project: {INPUT_PROJECT}")
+tree = ET.parse(INPUT_PROJECT)
+root = tree.getroot()
+
+# Step 1: Collect all producer IDs linked to `.wav` files
+music_producer_ids = set()
+
+for producer in root.findall(".//producer"):
+    resource = producer.findtext("property[@name='resource']")
+    if resource and resource.lower().endswith(".wav"):
+        pid = producer.get("id")
+        if pid:
+            music_producer_ids.add(pid)
+            root.remove(producer)
+
+print(f"[✓] Removed {len(music_producer_ids)} <producer> blocks for .wav files")
+
+# Step 2: Collect <entry> tags referencing those producer IDs and remove them
+entry_count = 0
+for playlist in root.findall(".//playlist"):
+    for entry in list(playlist.findall("entry")):
+        if entry.get("producer") in music_producer_ids:
+            playlist.remove(entry)
+            entry_count += 1
+
+print(f"[✓] Removed {entry_count} <entry> blocks referencing music producers")
+
+# Step 3: Remove <track> or <playlist> with no entries left
+track_count = 0
+for playlist in root.findall(".//playlist"):
+    if not playlist.findall("entry"):
+        root.remove(playlist)
+        track_count += 1
+
+print(f"[✓] Removed {track_count} empty <playlist> tracks")
+
+# Step 4: Extra cleanup: remove references to any wav paths in XML
+orphan_resource_paths = 0
+for prop in root.findall(".//property[@name='resource']"):
+    if prop.text and prop.text.lower().endswith(".wav"):
+        parent = prop.getparent() if hasattr(prop, "getparent") else None
+        prop.text = ""
+        orphan_resource_paths += 1
+
+print(f"[✓] Removed {orphan_resource_paths} orphan .wav resource paths (if any)")
+
+# Step 5: Save
+tree.write(OUTPUT_PROJECT, encoding="utf-8", xml_declaration=True)
+print(f"[✓] Saved cleaned project: {OUTPUT_PROJECT}")
+#!/usr/bin/env python3
+import xml.etree.ElementTree as ET
+import os
+
+SOURCE_FILE = "effects_template_base.kdenlive"
+OUTPUT_FILE = "effects_template_cleaned.kdenlive"
+
+def log(msg):
+    print(msg)
+
+def main():
+    if not os.path.exists(SOURCE_FILE):
+        print(f"[!] Missing {SOURCE_FILE}")
+        return
+
+    tree = ET.parse(SOURCE_FILE)
+    root = tree.getroot()
+
+    all_ids = set()
+    used_ids = set()
+
+    for e in root.iter():
+        if "id" in e.attrib:
+            all_ids.add(e.attrib["id"])
+        for attr in e.attrib.values():
+            if attr in all_ids:
+                used_ids.add(attr)
+
+    removed = 0
+    for prod in root.findall(".//producer"):
+        pid = prod.attrib.get("id", "")
+        resource = prod.find("property[@name='resource']")
+        res_path = resource.text if resource is not None else ""
+        is_audio = res_path.lower().endswith((".wav", ".mp3"))
+        if pid not in used_ids or is_audio:
+            if resource is not None:
+                print(f"🧹 Removing: {resource.text}")
+            root.remove(prod)
+            removed += 1
+
+    print(f"[✓] Removed {removed} bad producers")
+
+    # Remove empty playlists
+    removed_playlists = 0
+    for playlist in root.findall(".//playlist"):
+        entries = playlist.findall("entry")
+        if not entries:
+            root.remove(playlist)
+            removed_playlists += 1
+    print(f"[✓] Removed {removed_playlists} empty playlists")
+
+    tree.write(OUTPUT_FILE)
+    print(f"[✓] Saved cleaned project: {OUTPUT_FILE}")
+
+if __name__ == "__main__":
+    main()
+#!/usr/bin/env python3
+import os
+import xml.etree.ElementTree as ET
+
+TEMPLATE = "effects_template_base.kdenlive"
+OUTPUT = "effects_template_nomusic.kdenlive"
+
+def is_missing_or_audio(path):
+    return (path.endswith(".wav") or not os.path.exists(path))
+
+def log(msg):
+    print(f"[+] {msg}")
+
+tree = ET.parse(TEMPLATE)
+root = tree.getroot()
+
+# Collect producer IDs to remove
+remove_ids = set()
+for prod in root.findall(".//producer"):
+    for prop in prod.findall("property"):
+        if prop.get("name") == "resource":
+            resource = prop.text.strip()
+            if is_missing_or_audio(resource):
+                pid = prod.get("id")
+                remove_ids.add(pid)
+                root.remove(prod)
+                log(f"Removed producer: {pid} ({resource})")
+
+# Remove entries in playlists that use removed producers
+removed_entries = 0
+for playlist in root.findall(".//playlist"):
+    for entry in list(playlist.findall("entry")):
+        if entry.get("producer") in remove_ids:
+            playlist.remove(entry)
+            removed_entries += 1
+
+log(f"Removed {removed_entries} entries referencing missing producers")
+
+# Remove empty playlists
+removed_playlists = 0
+for playlist in list(root.findall(".//playlist")):
+    if not playlist.findall("entry"):
+        root.remove(playlist)
+        removed_playlists += 1
+
+log(f"Removed {removed_playlists} empty playlists")
+
+# Save cleaned XML
+tree.write(OUTPUT, encoding="utf-8", xml_declaration=True)
+log(f"Saved cleaned project: {OUTPUT}")
+import os
+import subprocess
+from PIL import Image
+
+# === Paths ===
+INPUT_PATH = "media/distorted_rainbow_grid_small.png"
+OUTPUT_DIR = "media"
+UPSCALED_PNG_PATH = os.path.join(OUTPUT_DIR, "distorted_rainbow_grid_upscaled.png")
+FINAL_JPG_PATH = os.path.join(OUTPUT_DIR, "final_rainbow_grid.jpg")
+
+# === Force Software Rendering Environment ===
+SOFT_ENV = os.environ.copy()
+SOFT_ENV["ELECTRON_ENABLE_LOGGING"] = "true"
+SOFT_ENV["ELECTRON_NO_ATTACH_CONSOLE"] = "1"
+SOFT_ENV["ELECTRON_DISABLE_SANDBOX"] = "1"
+SOFT_ENV["LIBGL_ALWAYS_SOFTWARE"] = "1"
+SOFT_ENV["QT_QUICK_BACKEND"] = "software"
+SOFT_ENV["QT_OPENGL"] = "software"
+
+# === Upscale Function ===
+def run_upscayl(input_path):
+    print(f"Upscaling image using Upscayl: {input_path}")
+    command = [
+        "./squashfs-root/upscayl",
+        "--input", input_path,
+        "--output", OUTPUT_DIR,
+        "--scale", "4x",
+        "--mode", "Real-ESRGAN",
+        "--type", "png"
+    ]
+    try:
+        subprocess.run(command, env=SOFT_ENV, check=True)
+    except subprocess.CalledProcessError as e:
+        print("Upscayl failed:", e)
+        exit(1)
+
+# === Convert PNG to JPG ===
+def convert_to_jpg(png_path, jpg_path, quality=90):
+    print(f"Converting {png_path} to JPG ({quality}%)")
+    with Image.open(png_path) as img:
+        rgb = img.convert("RGB")
+        rgb.save(jpg_path, "JPEG", quality=quality)
+    print(f"Saved final JPG: {jpg_path}")
+
+# === Main ===
+def main():
+    if not os.path.exists(INPUT_PATH):
+        print(f"Input not found: {INPUT_PATH}")
+        return
+    run_upscayl(INPUT_PATH)
+    convert_to_jpg(UPSCALED_PNG_PATH, FINAL_JPG_PATH)
+
+if __name__ == "__main__":
+    main()
+#!/usr/bin/env bash
+set -euo pipefail
+
+TEMPLATE="render_this.kdenlive"
+OUTPUT_PREFIX="rainbow_output_$(date +%Y%m%d-%H%M%S)"
+MAX_ATTEMPTS=3
+FPS=60
+
+render_video() {
+    local duration=$1
+    local frames=$(echo "$duration * $FPS" | bc | awk '{printf "%.0f\n", $1}')
+    
+    echo "=== Rendering ${duration}s video (${frames} frames) ==="
+    
+melt \
+  -profile colorspace=rgb \
+  "$TEMPLATE" \
+  -consumer avformat:"${OUTPUT_PREFIX}.mp4" \
+    vcodec=libx264 \
+    pix_fmt=yuv444p \
+    color_range=pc \
+    crf=18 \
+    preset=slow \
+    x264-params=ref=4:deblock=-1,-1 \
+    movflags=+faststart \
+    an=1 \
+  in=0 \
+  out="$frames" \
+  -progress
+}
+
+main() {
+    read -rp "⏱️ Enter video duration in seconds (1-60): " duration
+    
+    for ((attempt=1; attempt<=MAX_ATTEMPTS; attempt++)); do
+        echo -e "\n=== Attempt $attempt/$MAX_ATTEMPTS ==="
+        if render_video "$duration"; then
+            echo -e "\n[✓] SUCCESS: ${OUTPUT_PREFIX}.mp4"
+            echo "File size: $(du -h "${OUTPUT_PREFIX}.mp4" | cut -f1)"
+            exit 0
+        fi
+        sleep 1
+    done
+    
+    echo -e "\n[✗] Failed after $MAX_ATTEMPTS attempts"
+    exit 1
+}
+
+main
+#!/bin/bash
+set -e
+
+echo "[🚨] Starting clean_and_render.sh pipeline..."
+
+# === Step 1: Generate image ===
+echo "[🎨] Generating abstract camouflage image..."
+python3 generate_rainbow_camouflage_contrast_hardedges.py
+
+# === Step 2: Resize ===
+echo "[📏] Resizing for Kdenlive input..."
+python3 resize_rainbow_image.py
+
+# === Step 3: Get duration ===
+DURATION=${VIDEO_DURATION:-10}
+echo "[⏱️] Using video duration: ${DURATION} seconds"
+
+# === Step 4: Verify plugins ===
+FREI0R_DIR="./squashfs-root-new/usr/lib/frei0r-1"
+for plugin in kaleidoscope.so rgbshift0r.so; do
+    if [ ! -f "$FREI0R_DIR/$plugin" ]; then
+        echo "[❌] Missing plugin: $plugin"
+        exit 1
+    else
+        echo "[✓] Found: $plugin"
+    fi
+done
+
+# === Step 5: Patch Kdenlive project ===
+FRAME_COUNT=$((DURATION * 60))
+echo "[🧩] Using locked-in project: patched_render.kdenlive"
+
+# === Step 6: Render with melt using lighter profile ===
+echo "[🎬] Starting melt render to final_output_cleaned.mp4 for ${DURATION} seconds..."
+./squashfs-root-new/usr/bin/melt patched_render.kdenlive -profile atsc_720p_30 -consumer avformat:final_output_cleaned.mp4 acodec=aac vcodec=libx264
+
+echo "[✅] Render complete — output saved to final_output_cleaned.mp4"
+#!/bin/bash
+INPUT_DIR="render_frames"
+OUTPUT="output/kaleidoscopic_camouflage_4k.mp4"
+FPS=60
+PRESET="slow"
+CRF=18
+
+mkdir -p output
+
+ffmpeg -y -r $FPS -i "$INPUT_DIR/frame_%04d.png" \
+       -c:v libx264 -preset $PRESET -crf $CRF \
+       -x264-params "ref=6:keyint=120:no-scenecut=1" \
+       -pix_fmt yuv420p10le \
+       -color_primaries bt2020 -color_trc smpte2084 -colorspace bt2020nc \
+       -movflags +faststart \
+       "$OUTPUT"
+
+echo "Video encoded to $OUTPUT"
+#!/bin/bash
+set -e
+
+# Usage: ./melt_render_timeout.sh <duration_seconds> <kdenlive_project_file> [melt options...]
+
+if [ "$#" -lt 2 ]; then
+  echo "Usage: $0 <duration_seconds> <kdenlive_project_file> [melt options]"
+  exit 1
+fi
+
+DURATION_SECONDS=$1
+PROJECT_FILE=$2
+shift 2
+
+# Path to melt binary inside your extracted AppImage folder
+MELT_BIN="$HOME/kaleido-video-generator/squashfs-root-new/usr/bin/melt"
+
+if [ ! -x "$MELT_BIN" ]; then
+  echo "[!] Melt binary not found or not executable at: $MELT_BIN"
+  exit 1
+fi
+
+if [ ! -f "$PROJECT_FILE" ]; then
+  echo "[!] Project file not found: $PROJECT_FILE"
+  exit 1
+fi
+
+echo "[⏳] Starting melt for approx $DURATION_SECONDS seconds..."
+
+# Launch melt in background with all remaining args passed through
+"$MELT_BIN" "$PROJECT_FILE" "$@" &
+MELT_PID=$!
+
+echo "[ℹ️] Melt PID: $MELT_PID"
+
+# Wait for specified duration, then kill melt
+sleep "$DURATION_SECONDS"
+echo "[⏹️] Timeout reached. Sending SIGINT to melt (PID $MELT_PID)..."
+kill -2 "$MELT_PID"
+
+# Wait for melt to exit cleanly
+wait "$MELT_PID" 2>/dev/null
+
+echo "[✅] Melt process ended."
+#!/bin/bash
+set -eo pipefail
+
+# Initialize
+LOG_FILE="pipeline_$(date +%s).log"
+exec > >(tee "$LOG_FILE") 2>&1
+
+echo "=== STARTING PIPELINE ==="
+
+# 1. Generate Base Image
+python3 generate_camouflage.py \
+    --width 48000 \
+    --height 10800 \
+    --output "base_camouflage.tif" || exit 1
+
+# 2. Enhance Contrast
+python3 enhance_contrast.py \
+    --input "base_camouflage.tif" \
+    --output "enhanced_camouflage.jpg" || exit 1
+
+# 3. Render Frames
+if ! python3 render_frames.py; then
+    echo "ERROR: Frame rendering failed - check $LOG_FILE"
+    exit 1
+fi
+
+# 4. Encode Video
+ffmpeg -y -framerate 60 \
+    -i "render_frames/frame_%04d.png" \
+    -c:v libx265 -crf 18 -preset slow \
+    -pix_fmt yuv420p10le \
+    -x265-params "hdr10=1" \
+    "output_4k.mp4" || exit 1
+
+echo "=== PIPELINE COMPLETED SUCCESSFULLY ==="
+#!/bin/bash
+set -e
+
+INPUT="$1"
+OUTPUT="final_output_$(date +%Y%m%d_%H%M%S).mp4"
+
+if [[ ! -f "$INPUT" ]]; then
+  echo "[!] Usage: $0 patched.kdenlive"
+  exit 1
+fi
+
+echo "[+] Rendering with Flatpak melt..."
+flatpak run --command=melt org.kde.kdenlive "$INPUT" \
+  -consumer avformat:"$HOME/Videos/$OUTPUT" vcodec=libx264 acodec=none \
+  preset=ultrafast crf=51 threads=1 progress=1
+
+echo "[✓] Render complete: $HOME/Videos/$OUTPUT"
+#!/usr/bin/env bash
+
+# === Configuration ===
+IMAGE_PATH="${1:-current_abstract_video_image.jpg}"
+DURATION_SECONDS=10
+PROJECT_TEMPLATE="render_this.kdenlive"
+PATCHED_PROJECT="patched_render.kdenlive"
+OUTPUT_VIDEO="final_output_$(date +%Y%m%d_%H%M%S).mp4"
+
+# === AppImage melt path ===
+APPIMAGE_ROOT="$HOME/KdenliveAppImage/squashfs-root"
+MELT_BIN="$APPIMAGE_ROOT/usr/bin/melt"
+FREI0R_PATH="$APPIMAGE_ROOT/usr/lib/frei0r-1"
+
+# === Patch project file ===
+echo "[+] Patching Kdenlive project for $IMAGE_PATH..."
+python3 auto_patch_render_and_export.py "$IMAGE_PATH"
+
+# === Start rendering ===
+echo "[+] Starting melt render with AppImage version (kaleid0sc0pe support)"
+env FREI0R_PATH="$FREI0R_PATH" "$MELT_BIN" "$PATCHED_PROJECT" \
+  -consumer avformat:"$OUTPUT_VIDEO" \
+  vcodec=libx264 acodec=aac ab=128k threads=2 real_time=0
+
+echo "[✓] Render complete: $OUTPUT_VIDEO"
+#!/bin/bash
+
+# === Configuration ===
+KDENLIVE_PROJECT="patched_with_image.kdenlive"
+OUTPUT_VIDEO="final_output_10s_effects.mp4"
+MELT_BIN="$HOME/kaleido-video-generator/squashfs-root-new/usr/bin/melt"
+FREI0R_PLUGINS="/usr/lib/x86_64-linux-gnu/frei0r-1"  # System path where kaleidoscope.so exists
+
+# === Log Header ===
+echo "[🎬] Rendering $KDENLIVE_PROJECT to $OUTPUT_VIDEO using AppImage melt"
+echo "[🎨] FREI0R_PATH: $FREI0R_PLUGINS"
+echo "[🧠] MELT path: $MELT_BIN"
+
+# === Run Melt ===
+env FREI0R_PATH="$FREI0R_PLUGINS" "$MELT_BIN" "$KDENLIVE_PROJECT" \
+  -consumer avformat:"$OUTPUT_VIDEO" acodec=aac vcodec=libx264 ab=128k vb=5M
+
+# === Completion Message ===
+if [ $? -eq 0 ]; then
+  echo "[✅] Render complete: $OUTPUT_VIDEO"
+else
+  echo "[❌] Render failed."
+fi
+#!/bin/bash
+
+# Activate virtual environment
+source ~/kaleido-video-generator/venv/bin/activate
+
+# Set frei0r path
+export FREI0R_PATH=/usr/local/lib/frei0r-1
+
+# Generate rainbow image
+python generate_rainbow.py || {
+    echo "Error: Failed to generate rainbow image"
+    exit 1
+}
+
+# Render with melt
+melt render_this.kdenlive || {
+    echo "Error: Rendering failed"
+    exit 1
+}
+
+deactivate  # Optional: deactivate virtualenv when done
+echo "Rendering completed successfully"
+#!/bin/bash
+
+OUTPUT="final_output_10s.mp4"
+PROJECT="render_this_2.kdenlive"
+
+# Start rendering in background
+flatpak run --command=melt org.kde.kdenlive "$PROJECT" \
+  -profile atsc_2160p_60 \
+  -consumer avformat:$OUTPUT vcodec=libx264 acodec=aac ab=192k &
+
+RENDER_PID=$!
+
+# Wait for file to appear
+echo "[+] Waiting for $OUTPUT to be created..."
+while [ ! -f "$OUTPUT" ]; do
+  sleep 1
+done
+
+echo "[+] File created. Tracking size..."
+while kill -0 "$RENDER_PID" 2>/dev/null; do
+  SIZE=$(du -h "$OUTPUT" | cut -f1)
+  echo "[`date +%H:%M:%S`] Current size: $SIZE"
+  sleep 1
+done
+
+# Final size
+SIZE=$(du -h "$OUTPUT" | cut -f1)
+echo "[✓] Render complete. Final size: $SIZE"

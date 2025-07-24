@@ -1,0 +1,38 @@
+[🚨] Starting clean_and_render.sh pipeline...
+[🎨] Generating abstract camouflage image...
+/home/ubuntu/kaleido-video-generator/generate_rainbow_camouflage_contrast_hardedges.py:29: DeprecationWarning: 'mode' parameter is deprecated and will be removed in Pillow 13 (2026-10-15)
+  img = Image.fromarray(rgb_data, mode='RGB')
+[*] Generating rainbow stripes...
+[✓] Saved: /home/ubuntu/kaleido_render_pipeline/current_abstract_video_image.jpg
+[📏] Resizing for Kdenlive input...
+[✓] Resized image saved to: rainbow_camouflage_resized.jpg
+[⏱️] Using video duration: 10 seconds
+[✓] Found: kaleidoscope.so
+[✓] Found: rgbshift0r.so
+[🧩] Using locked-in project: patched_render.kdenlive
+[🎬] Starting melt render to final_output_cleaned.mp4 for 10 seconds...
+[producer_xml] failed to load filter "(null)"
+[producer_xml] failed to load filter "(null)"
+[producer_xml] Invalid state of playlist end 0
+[mlt_producer 0x1301ebe0] <producer>
+    The MLT Qt module requires a X11 or Wayland environment.
+Please either run melt from a session with a display server or use a fake X server like xvfb:
+xvfb-run -a melt (...)
+[producer_xml] failed to load producer "avformat:/dev/zero"
+[mlt_producer 0x12c1c710] <producer>
+    The MLT Qt module requires a X11 or Wayland environment.
+Please either run melt from a session with a display server or use a fake X server like xvfb:
+xvfb-run -a melt (...)
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+|1=-10| |2= -5| |3= -2| |4= -1| |5=  0| |6=  1| |7=  2| |8=  5| |9= 10|
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
++---------------------------------------------------------------------+
+|               H = back 1 minute,  L = forward 1 minute              |
+|                 h = previous frame,  l = next frame                 |
+|           g = start of clip, j = next clip, k = previous clip       |
+|                0 = restart, q = quit, space = play                  |
++---------------------------------------------------------------------+
+Current Position:          0Current Position:          0Current Position:          3Current Position:          5Current Position:          8Current Position:         10Current Position:         12Current Position:         15Current Position:         17Current Position:         19Current Position:         22Current Position:         25Current Position:         28Current Position:         31Current Position:         34Current Position:         37Current Position:         40Current Position:         43Current Position:         45Current Position:         45Current Position:         47Current Position:         48Current Position:         50Current Position:         53Current Position:         55Current Position:         57Current Position:         59Current Position:         62Current Position:         64Current Position:         66Current Position:         69Current Position:         72Current Position:         74Current Position:         76Current Position:         78Current Position:         81Current Position:         83Current Position:         85Current Position:         87Current Position:         90Current Position:         92Current Position:         95Current Position:         97Current Position:         99Current Position:        102Current Position:        104Current Position:        106Current Position:        109Current Position:        111Current Position:        113Current Position:        116Current Position:        118Current Position:        120Current Position:        123Current Position:        125Current Position:        127Current Position:        130Current Position:        132Current Position:        134Current Position:        137Current Position:        139Current Position:        141Current Position:        143Current Position:        146Current Position:        148Current Position:        151Current Position:        153Current Position:        155Current Position:        158Current Position:        160Current Position:        162Current Position:        165Current Position:        167Current Position:        170Current Position:        172Current Position:        174Current Position:        176Current Position:        179Current Position:        181Current Position:        183Current Position:        186Current Position:        188Current Position:        190Current Position:        193Current Position:        195Current Position:        198Current Position:        200Current Position:        202Current Position:        204Current Position:        206Current Position:        209Current Position:        211Current Position:        214Current Position:        216Current Position:        219Current Position:        221Current Position:        223Current Position:        226Current Position:        228Current Position:        230Current Position:        233Current Position:        235Current Position:        237Current Position:        239Current Position:        243Current Position:        246Current Position:        249Current Position:        252Current Position:        255Current Position:        259Current Position:        262Current Position:        265Current Position:        268Current Position:        271Current Position:        274Current Position:        278Current Position:        281Current Position:        284Current Position:        287Current Position:        290Current Position:        292Current Position:        294Current Position:        296[mp4 @ 0x7acf04000f40] Timestamps are unset in a packet for stream 1. This is deprecated and will stop working in the future. Fix your code to set the timestamps properly
+[mp4 @ 0x7acf04000f40] Encoder did not produce proper pts, making some up.
+Current Position:        299Current Position:        299Current Position:        299Current Position:        299Current Position:        299Current Position:        299
+[✅] Render complete — output saved to final_output_cleaned.mp4

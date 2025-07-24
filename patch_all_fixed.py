@@ -39,7 +39,7 @@ def main():
 
     # Add example filters
     filters = [
-        ("frei0r.kaleidoscope", {"number_of_arms": "6", "angle": "0.5"}),
+        ("frei0r.kaleid0sc0pe", {"number_of_arms": "6", "angle": "0.5"}),
         ("frei0r.rgbparade", {}),
         ("qtblend", {"rotate_center": "1", "distort": "1"}),
         ("movit.lift_gamma_gain", {"lift_r": "1.2", "gain_g": "1.2"}),

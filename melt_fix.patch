@@ -1,0 +1,74 @@
+cat > melt_fix.patch << 'EOL'
+--- app.py.bak	2023-11-15 12:00:00.000000000 +0000
++++ app.py	2023-11-15 12:01:00.000000000 +0000
+@@ -123,6 +123,9 @@
+     job = jobs[job_id]
+     img_path = f"{OUTPUT_FOLDER}/{job_id}.jpg"
+     temp_files = [img_path]
++    
++    # Calculate duration in frames (assuming 30fps)
++    duration_frames = duration * 30
+     
+     try:
+         # Phase 1: Generate image
+@@ -168,45 +171,44 @@
+         # Try melt with effects
+         melt_bin = "melt"
+         if os.path.exists(melt_bin):
+-            log_job(job_id, "Rendering with melt effects")
++            log_job(job_id, "Rendering with melt effects (simplified)")
+             job["stage"] = "Applying visual effects"
+             
+             env = os.environ.copy()
+             env.update({
+                 "FREI0R_PATH": "/usr/local/lib/frei0r-1",
+-    "MLT_REPOSITORY": "/usr/lib/mlt7",
+-    "MLT_DATA": "/usr/share/mlt7",
+-    "LD_LIBRARY_PATH": "/usr/lib/x86_64-linux-gnu:/usr/local/lib"
+-                "MLT_REPOSITORY": "/usr/lib/mlt7",
++                "MLT_REPOSITORY": "/usr/lib/mlt7",
+                 "MLT_DATA": "/usr/share/mlt7",
+-                "LD_LIBRARY_PATH": "/usr/lib/x86_64-linux-gnu"
++                "LD_LIBRARY_PATH": "/usr/lib/x86_64-linux-gnu:/usr/local/lib"
+             })
+             
+-            # Melt command with professional effects chain
++            # Simplified melt command
+             render_cmd = [
+                 melt_bin,
+                 "-verbose",
+                 img_path,
+                 f"length={duration_frames}",
+                 "-filter", "avfilter.hue='h=2*PI*t:s=1'",
+-                "-filter", f"avfilter.zoompan='z=1.05:d={duration_frames}'",
+                 "-filter", "frei0r.bigsh0t_eq",
+-                "-filter", "glsl.manager",
+                 "-consumer",
+                 f"avformat:{job['output']}",
+-                "vcodec=libx264",
+-                "preset=fast",
+-                "crf=18",
+-                "pix_fmt=yuv420p",
++                "properties=x264-medium",
++                "f=mp4",
++                "vcodec=libx264",
++                "acodec=aac",
+                 "threads=4"
+             ]
+             
+             logging.info(f"Executing: {' '.join(render_cmd)}")
+             
+             with open(log_path, "w") as log_file:
+                 process = subprocess.Popen(
+                     render_cmd,
+                     env=env,
+                     stdout=log_file,
+                     stderr=subprocess.STDOUT,
+                     text=True
+                 )
++                
++                # Progress tracking
+                 while process.poll() is None:
+                     time.sleep(0.5)
+                     job["progress"] = min(90, job["progress"] + (100/duration))
+EOL

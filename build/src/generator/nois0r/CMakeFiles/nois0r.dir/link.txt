@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O2 -g -DNDEBUG -shared  -o nois0r.so CMakeFiles/nois0r.dir/nois0r.cpp.o  -lm 

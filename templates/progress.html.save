@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Render Progress</title>
+  <style>
+    #logOutput { display: none; background: #111; color: #0f0; padding: 10px; margin-top: 10px; max-height: 400px; overflow-y: scroll; }
+    #progressBarContainer { width: 100%; background: #333; margin-top: 20px; }
+    #progressBar { width: 0%; height: 24px; background: #0c0; text-align: center; color: #000; }
+    #downloadBtn { display: none; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h1>🎬 Render In Progress</h1>
+  <p id="status">Please wait...</p>
+
+  <div id="progressBarContainer">
+    <div id="progressBar">0%</div>
+  </div>
+
+  <button onclick="toggleLog()">🖥️ Toggle Terminal Log</button>
+  <pre id="logOutput"></pre>
+
+  <a id="downloadBtn" href="/download" download="final_output_cleaned.mp4">
+    <button>⬇️ Download Video</button>
+  </a>
+
+  <script>
+    const log = document.getElementById("logOutput");
+    const status = document.getElementById("status");
+    const bar = document.getElementById("progressBar");
+    const downloadBtn = document.getElementById("downloadBtn");
+    let secondsElapsed = 0;
+    let interval = setInterval(() => {
+      secondsElapsed++;
+      const percent = Math.min((secondsElapsed / 10) * 100, 100);
+      bar.style.width = percent + "%";
+      bar.textContent = percent + "%";
+    }, 1000);
+
+    function toggleLog() {
+      log.style.display = log.style.display === "block" ? "none" : "block";
+    }
+
+    const source = new EventSource("/progress");
+    source.onmessage = function (event) {
+      if (event.data.includes("[✅] Render complete")) {
+        status.textContent = "✅ Done!";
+        clearInterval(interval);
+        downloadBtn.style.display = "inline-block";
+      }
+      log.textContent += event.data + "\n";
+      log.scrollTop = log.scrollHeight;
+    };
+  </script>
+</body>
+</html>
+ang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🎬 Render In Progress</title>
+  <style>
+    body { font-family: sans-serif; padding: 2em; }
+    progress { width: 100%; height: 30px; }
+    #download { display: none; margin-top: 20px; }
+    #log-container { margin-top: 20px; }
+    #log { white-space: pre-wrap; background: #111; color: #0f0; padding: 10px; display: none; height: 300px; overflow-y: scroll; }
+    #toggleLog { cursor: pointer; color: #00f; text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <h1>🎬 Render In Progress</h1>
+  <progress id="progressBar" max="300" value="0"></progress>
+  <div id="status">Waiting for progress...</div>
+
+  <a id="download" href="/download" download="final_output_cleaned.mp4">⬇️ Download Rendered Video</a>
+
+  <div id="log-container">
+    <div id="toggleLog" onclick="toggleLog()">Show Terminal Log</div>
+    <div id="log"></div>
+  </div>
+
+  <script>
+    const progressBar = document.getElementById("progressBar");
+    const status = document.getElementById("status");
+    const log = document.getElementById("log");
+    const toggleLogLink = document.getElementById("toggleLog");
+
+    const evtSource = new EventSource("/progress");
+    evtSource.onmessage = function(e) {
+      log.textContent += e.data + "\n";
+      log.scrollTop = log.scrollHeight;
+
+      const match = e.data.match(/Current Position:\s*(\d+)/);
+      if (match) {
+        const frame = parseInt(match[1]);
+        progressBar.value = frame;
+        status.innerText = `Rendering frame ${frame}/300`;
+      }
+
+      if (e.data.includes("Render complete")) {
+        status.innerText = "✅ Render complete!";
+        progressBar.value = 300;
+        document.getElementById("download").style.display = "block";
+        evtSource.close();
+      }
+    };
+
+    function toggleLog() {
+      if (log.style.display === "none") {
+        log.style.display = "block";
+        toggleLogLink.innerText = "Hide Terminal Log";
+      } else {
+        log.style.display = "none";
+        toggleLogLink.innerText = "Show Terminal Log";
+      }
+    }
+  </script>
+</body>
+</html>

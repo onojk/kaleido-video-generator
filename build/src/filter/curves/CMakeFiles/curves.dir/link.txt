@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O2 -g -DNDEBUG -shared  -o curves.so CMakeFiles/curves.dir/curves.c.o  -lm 

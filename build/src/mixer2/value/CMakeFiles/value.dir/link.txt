@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O2 -g -DNDEBUG -shared  -o value.so CMakeFiles/value.dir/value.cpp.o  -lm 

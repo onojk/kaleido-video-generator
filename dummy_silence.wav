@@ -1,0 +1,14 @@
+# generate_dummy_audio.sh
+#!/bin/bash
+
+# Usage: ./generate_dummy_audio.sh jobs/<job-id>/
+JOB_DIR="$1"
+DUMMY_AUDIO="$JOB_DIR/dummy_silence.wav"
+
+# Only create if missing
+if [[ ! -f "$DUMMY_AUDIO" ]]; then
+    echo "[🔊] Generating silent audio for compatibility..."
+    ffmpeg -y -f lavfi -i anullsrc=r=48000:cl=stereo -t 10 "$DUMMY_AUDIO"
+else
+    echo "[✓] Dummy audio already exists: $DUMMY_AUDIO"
+fi

@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O2 -g -DNDEBUG -shared  -o timeout.so CMakeFiles/timeout.dir/timeout.cpp.o  -lm 

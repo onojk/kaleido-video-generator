@@ -1,0 +1,71 @@
+--- app.py
++++ app.py
+@@ -X,Y +X,Y @@
+def render_pipeline(job_id, duration):
+    job_dir = os.path.join("jobs", job_id)
+    os.makedirs(job_dir, exist_ok=True)
++    os.chmod(job_dir, 0o755)  # Ensure proper permissions
+
+    try:
+        log = lambda msg: JOBS[job_id]["log"].append(f"{datetime.now().strftime('%-I:%M:%S %p')}{msg if msg.startswith(' ') else ' ' + msg}")
+
+        # Generate rainbow image
+        JOBS[job_id]["stage"] = "Generating rainbow image"
+        JOBS[job_id]["progress"] = 5
+        output_image = os.path.abspath(os.path.join(job_dir, "generated.jpg"))
++        log(f"Generating image at: {output_image}")
+        subprocess.run(["python3", "generate_rainbow_contrast.py", "--output", output_image], check=True)
+        log("✔ Rainbow image generated")
+
++        # DEBUG: Verify file exists and is readable
++        if not os.path.exists(output_image):
++            raise FileNotFoundError(f"Generated image not found at {output_image}")
++        log(f"✔ File verified. Size: {os.path.getsize(output_image)} bytes")
+
++        # DEBUG: Print current working directory
++        log(f"Current working directory: {os.getcwd()}")
+
++        # DEBUG: Print absolute path
++        abs_path = os.path.abspath(output_image)
++        log(f"Absolute path to image: {abs_path}")
+
+        # Check if the template project exists
+        template_path = os.path.abspath("template_project.kdenlive")  # Add this line
+        if not os.path.exists(template_path):
+            raise FileNotFoundError(f"Template file not found at {template_path}")
+
+        log(f"✔ Template file found at: {template_path}")
+
+        # Patch Kdenlive template
+        JOBS[job_id]["stage"] = "Patching Kdenlive template"
+        JOBS[job_id]["progress"] = 15
+        patched_kdenlive = os.path.abspath(os.path.join(job_dir, "patched.kdenlive"))
+        
++        # DEBUG: Print the exact command being executed
++        cmd = ["python3", "patch_kdenlive_10s.py", "--template", template_path, "--input", output_image, "--output", patched_kdenlive, "--duration", str(duration)]
++        log(f"Executing: {' '.join(cmd)}")
+        
+        subprocess.run(cmd, check=True)
+        log("✔ Kdenlive project patched")
+
+    except subprocess.CalledProcessError as e:
+        error_msg = f"Command failed: {' '.join(e.cmd)}"
+        log(f"❌ {error_msg}")
+        JOBS[job_id]["status"] = "failed"
+        JOBS[job_id]["stage"] = error_msg
+        JOBS[job_id]["progress"] = 0
+        return
+
+    except Exception as e:
+        error_msg = f"Unexpected error: {str(e)}"
+        log(f"❌ {error_msg}")
+        JOBS[job_id]["status"] = "failed"
+        JOBS[job_id]["stage"] = error_msg
+        JOBS[job_id]["progress"] = 0
+        return
+
+    # Final success steps
+    JOBS[job_id]["stage"] = "Finalizing"
+    JOBS[job_id]["progress"] = 100
+    JOBS[job_id]["status"] = "completed"
+    log("🎉 Render completed successfully!")

@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O2 -g -DNDEBUG -shared  -o coloradj_RGB.so CMakeFiles/coloradj_RGB.dir/coloradj_RGB.c.o  -lm -lm 

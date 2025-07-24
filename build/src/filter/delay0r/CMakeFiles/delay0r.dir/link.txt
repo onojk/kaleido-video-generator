@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O2 -g -DNDEBUG -shared  -o delay0r.so CMakeFiles/delay0r.dir/delay0r.cpp.o  -lm 

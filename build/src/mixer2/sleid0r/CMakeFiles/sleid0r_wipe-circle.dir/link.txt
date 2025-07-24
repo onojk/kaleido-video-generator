@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O2 -g -DNDEBUG -shared  -o sleid0r_wipe-circle.so CMakeFiles/sleid0r_wipe-circle.dir/sleid0r_wipe-circle.c.o  -lm 

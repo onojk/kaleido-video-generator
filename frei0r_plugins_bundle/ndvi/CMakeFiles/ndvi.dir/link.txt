@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O2 -g -DNDEBUG -shared  -o ndvi.so CMakeFiles/ndvi.dir/ndvi.cpp.o  -lm /usr/lib/x86_64-linux-gnu/libcairo.so 

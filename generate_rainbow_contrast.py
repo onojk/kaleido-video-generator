@@ -1,31 +1,36 @@
-#!/usr/bin/env python3
-from PIL import Image, ImageDraw
-import colorsys
-import sys
+import numpy as np
+from PIL import Image, ImageEnhance
+import argparse
+import os
 
-def generate_rainbow(width, height):
-    """Generate rainbow with guaranteed RGB output"""
-    img = Image.new('RGB', (width, height))
-    draw = ImageDraw.Draw(img)
-    
-    for x in range(width):
-        hue = x / width  # 0.0 (red) to 1.0 (red)
-        r, g, b = [int(255 * c) for c in colorsys.hsv_to_rgb(hue, 1.0, 1.0)]
-        draw.line([(x, 0), (x, height)], fill=(r, g, b))
-    
-    # Explicit RGB conversion and verification
-    if img.mode != 'RGB':
-        img = img.convert('RGB')
-    return img
+def generate_rainbow_image(width, height):
+    """Generate a diagonal rainbow gradient image."""
+    x = np.linspace(0, 1, width)
+    y = np.linspace(0, 1, height)
+    xx, yy = np.meshgrid(x, y)
+    gradient = (xx + yy) / 2
+
+    r = np.uint8(255 * np.clip(np.sin(2 * np.pi * gradient), 0, 1))
+    g = np.uint8(255 * np.clip(np.sin(2 * np.pi * gradient + 2), 0, 1))
+    b = np.uint8(255 * np.clip(np.sin(2 * np.pi * gradient + 4), 0, 1))
+
+    image = np.stack([r, g, b], axis=2)
+    return Image.fromarray(image, mode='RGB')
+
+def apply_max_contrast(img):
+    """Apply max contrast using PIL."""
+    enhancer = ImageEnhance.Contrast(img)
+    return enhancer.enhance(3.0)
 
 if __name__ == "__main__":
-    print("[!] Generating guaranteed-color rainbow...")
-    try:
-        img = generate_rainbow(3840, 2160)
-        img.save("rainbow_gradient_heavy_contrast.jpg", 
-               quality=100,
-               subsampling=0)
-        print("[✓] Saved verified RGB image")
-    except Exception as e:
-        print(f"[X] Error: {e}", file=sys.stderr)
-        sys.exit(1)
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--output', required=True)
+    parser.add_argument('--width', type=int, default=1920)
+    parser.add_argument('--height', type=int, default=1080)
+    args = parser.parse_args()
+
+    print(f"[🎨] Generating rainbow image: {args.width}x{args.height}")
+    img = generate_rainbow_image(args.width, args.height)
+    img = apply_max_contrast(img)
+    img.save(args.output)
+    print(f"[✅] Saved: {args.output}")

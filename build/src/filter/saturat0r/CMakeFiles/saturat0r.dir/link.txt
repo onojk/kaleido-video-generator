@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O2 -g -DNDEBUG -shared  -o saturat0r.so CMakeFiles/saturat0r.dir/saturat0r.c.o  -lm 

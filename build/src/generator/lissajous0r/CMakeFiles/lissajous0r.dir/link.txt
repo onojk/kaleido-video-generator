@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O2 -g -DNDEBUG -shared  -o lissajous0r.so CMakeFiles/lissajous0r.dir/lissajous0r.cpp.o  -lm 

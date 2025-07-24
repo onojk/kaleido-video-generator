@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O2 -g -DNDEBUG -shared  -o bluescreen0r.so CMakeFiles/bluescreen0r.dir/bluescreen0r.cpp.o  -lm 

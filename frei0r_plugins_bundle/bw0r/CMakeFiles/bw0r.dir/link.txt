@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O2 -g -DNDEBUG -shared  -o bw0r.so CMakeFiles/bw0r.dir/bw0r.c.o  -lm 

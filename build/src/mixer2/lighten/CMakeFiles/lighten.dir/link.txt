@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O2 -g -DNDEBUG -shared  -o lighten.so CMakeFiles/lighten.dir/lighten.cpp.o  -lm 

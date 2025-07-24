@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O2 -g -DNDEBUG -shared  -o transparency.so CMakeFiles/transparency.dir/transparency.c.o  -lm 

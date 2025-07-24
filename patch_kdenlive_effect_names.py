@@ -6,7 +6,7 @@ PROJECT_FILE = "patched_render_final.kdenlive"
 BACKUP_FILE = "patched_render_final.kdenlive.bak"
 
 REPLACEMENTS = {
-    "frei0r.kaleidoscope": "frei0r.kaleid0sc0pe",
+    "frei0r.kaleid0sc0pe": "frei0r.kaleid0sc0pe",
     "movit.lift_gamma_gain": "frei0r.liftgammagain"
 }
 

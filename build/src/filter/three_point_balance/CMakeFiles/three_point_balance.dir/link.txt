@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC  -std=c99 -O2 -g -DNDEBUG -shared  -o three_point_balance.so CMakeFiles/three_point_balance.dir/three_point_balance.c.o  -lm 

@@ -4,8 +4,8 @@ import subprocess
 import time
 
 # === CONFIGURATION ===
-BASE_DIR = "/home/onojk123/kaleido_render_pipeline"
-GENERATE_SCRIPT = os.path.join(BASE_DIR, "rainbow_camouflage.py")
+BASE_DIR = "/home/ubuntu/kaleido-video-generator"
+GENERATE_SCRIPT = os.path.join(BASE_DIR, "generate_rainbow_camouflage_contrast_hardedges.py")
 OUTPUT_IMAGE = os.path.join(BASE_DIR, "current_abstract_video_image.jpg")
 TEMPLATE_KDENLIVE_FILE = os.path.join(BASE_DIR, "template_project.kdenlive")
 RENDERED_KDENLIVE_FILE = os.path.join(BASE_DIR, "patched_project.kdenlive")

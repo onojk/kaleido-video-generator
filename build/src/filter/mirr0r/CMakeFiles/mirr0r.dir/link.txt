@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O2 -g -DNDEBUG -shared  -o mirr0r.so CMakeFiles/mirr0r.dir/mirr0r.cpp.o  -lm /usr/lib/x86_64-linux-gnu/libcairo.so 

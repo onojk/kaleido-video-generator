@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O2 -g -DNDEBUG -shared  -o kaleid0sc0pe.so CMakeFiles/kaleid0sc0pe.dir/kaleid0sc0pe.cpp.o  -lm 

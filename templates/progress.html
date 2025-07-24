@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Render Progress</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: sans-serif;
+            max-width: 700px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background-color: #f7f7f7;
+        }
+        h1 {
+            color: #6e45e2;
+        }
+        .progress-container {
+            background: #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+        .progress-bar {
+            height: 24px;
+            background: #6e45e2;
+            width: 0%;
+            color: white;
+            text-align: center;
+            line-height: 24px;
+            transition: width 0.4s ease;
+        }
+        #console {
+            background: #222;
+            color: #0f0;
+            padding: 1rem;
+            height: 200px;
+            overflow-y: auto;
+            font-family: monospace;
+            border-radius: 4px;
+        }
+        .error {
+            color: #e74c3c;
+            margin-top: 1rem;
+        }
+        button {
+            margin-top: 1rem;
+            padding: 0.75rem 1.5rem;
+            background-color: #6e45e2;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #7d55e8;
+        }
+    </style>
+</head>
+<body>
+    <h1>Render Progress</h1>
+
+    <p><strong>Job ID:</strong> {{ job_id }}</p>
+    <div id="status">Starting...</div>
+    <div class="progress-container">
+        <div id="progress" class="progress-bar">0%</div>
+    </div>
+    <div id="console">Waiting for updates...</div>
+    <div class="error" id="error"></div>
+    <button id="downloadBtn" style="display:none;">Download Video</button>
+
+    <script>
+        const jobId = "{{ job_id }}";
+        const progressBar = document.getElementById("progress");
+        const statusEl = document.getElementById("status");
+        const consoleEl = document.getElementById("console");
+        const downloadBtn = document.getElementById("downloadBtn");
+        const errorEl = document.getElementById("error");
+
+        let lastLogLength = 0;
+
+        function log(message) {
+            const p = document.createElement("div");
+            p.textContent = message;
+            consoleEl.appendChild(p);
+            consoleEl.scrollTop = consoleEl.scrollHeight;
+        }
+
+        function showError(message) {
+            errorEl.textContent = message;
+        }
+
+        function updateUI(data) {
+            progressBar.style.width = data.progress + "%";
+            progressBar.textContent = data.progress + "%";
+            statusEl.textContent = data.stage;
+
+            // Show only new logs
+            const newLogs = data.log.slice(lastLogLength);
+            newLogs.forEach(log);
+            lastLogLength = data.log.length;
+
+            if (data.status === "completed") {
+                downloadBtn.style.display = "inline-block";
+                downloadBtn.onclick = () => {
+                    window.location.href = `/download?job_id=${jobId}`;
+                };
+            }
+
+            if (data.status === "failed") {
+                showError("❌ Render failed. See logs above.");
+                clearInterval(pollInterval);
+            }
+
+            if (data.status === "completed") {
+                clearInterval(pollInterval);
+            }
+        }
+
+        function checkJobStatus() {
+            fetch(`/job_status?job_id=${jobId}`)
+                .then(response => response.json())
+                .then(data => updateUI(data))
+                .catch(err => showError("Failed to fetch status"));
+        }
+
+        const pollInterval = setInterval(checkJobStatus, 1000);
+    </script>
+</body>
+</html>

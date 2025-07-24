@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O2 -g -DNDEBUG -shared  -o threelay0r.so CMakeFiles/threelay0r.dir/threelay0r.cpp.o  -lm 

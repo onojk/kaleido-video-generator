@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O2 -g -DNDEBUG -shared  -o IIRblur.so CMakeFiles/IIRblur.dir/IIRblur.c.o  -lm -lm 

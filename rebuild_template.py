@@ -30,7 +30,7 @@ def build_template():
 
     # Add kaleidoscope effect
     kaleido = ET.SubElement(image, "filter")
-    ET.SubElement(kaleido, "property", name="mlt_service").text = "frei0r.kaleidoscope"
+    ET.SubElement(kaleido, "property", name="mlt_service").text = "frei0r.kaleid0sc0pe"
     ET.SubElement(kaleido, "property", name="symmetry").text = "6"  # Feel free to adjust symmetry
 
     # Add lift/gamma/gain effect

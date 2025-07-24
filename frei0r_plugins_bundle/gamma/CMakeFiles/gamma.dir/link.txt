@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O2 -g -DNDEBUG -shared  -o gamma.so CMakeFiles/gamma.dir/gamma.c.o  -lm -lm 

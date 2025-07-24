@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O2 -g -DNDEBUG -shared  -o addition_alpha.so CMakeFiles/addition_alpha.dir/addition_alpha.cpp.o  -lm 

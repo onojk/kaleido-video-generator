@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O2 -g -DNDEBUG -shared  -o vectorscope.so CMakeFiles/vectorscope.dir/vectorscope.c.o  -lm -lgavl 

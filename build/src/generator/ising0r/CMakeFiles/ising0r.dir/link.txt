@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O2 -g -DNDEBUG -shared  -o ising0r.so CMakeFiles/ising0r.dir/ising0r.c.o  -lm 

@@ -1,0 +1,31 @@
+<mlt LC_NUMERIC="C" producer="main_bin">
+  <playlist id="playlist0">
+    <entry producer="image_producer" in="0" out="599" />
+  </playlist>
+  <tractor id="tractor0" title="Main Tractor" length="250">
+    <track producer="playlist0" />
+    <property name="length">600</property>
+    <property name="global_feed">1</property>
+  </tractor>
+  <producer id="image_producer" resource="jobs/c935975d-de09-49eb-ae2c-117d2c7db652/generated.jpg" length="250">
+    <property name="resource">current_abstract_video_image.jpg</property>
+    <property name="mlt_service">qimage</property>
+    <property name="length">600</property>
+    <property name="loop">0</property>
+    <filter>
+      <property name="mlt_service">frei0r.kaleidoscope</property>
+      <property name="symmetry">6</property>
+    </filter>
+    <filter>
+      <property name="mlt_service">movit.lift_gamma_gain</property>
+      <property name="lift_r">0.2</property>
+      <property name="lift_g">0.2</property>
+      <property name="lift_b">0.2</property>
+    </filter>
+    <filter>
+      <property name="mlt_service">qtblend</property>
+      <property name="composite.rect">0% 0% 130% 130%</property>
+      <property name="rotate">0</property>
+    </filter>
+  </producer>
+</mlt>

@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O2 -g -DNDEBUG -shared  -o euclid_eraser.so CMakeFiles/euclid_eraser.dir/euclid_eraser.cpp.o  -lm 

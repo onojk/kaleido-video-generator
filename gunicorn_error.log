@@ -1,0 +1,280 @@
+[2025-07-22 14:42:18 +0000] [6729] [INFO] Starting gunicorn 23.0.0
+[2025-07-22 14:42:18 +0000] [6729] [INFO] Listening at: http://127.0.0.1:5000 (6729)
+[2025-07-22 14:42:18 +0000] [6729] [INFO] Using worker: sync
+[2025-07-22 14:42:18 +0000] [6730] [INFO] Booting worker with pid: 6730
+[2025-07-22 14:42:18 +0000] [6731] [INFO] Booting worker with pid: 6731
+[2025-07-22 14:42:18 +0000] [6732] [INFO] Booting worker with pid: 6732
+[2025-07-22 14:42:18 +0000] [6733] [INFO] Booting worker with pid: 6733
+[2025-07-22 14:51:20 +0000] [6780] [INFO] Starting gunicorn 23.0.0
+[2025-07-22 14:51:20 +0000] [6780] [ERROR] Connection in use: ('127.0.0.1', 5000)
+[2025-07-22 14:51:20 +0000] [6780] [ERROR] connection to ('127.0.0.1', 5000) failed: [Errno 98] Address already in use
+[2025-07-22 14:51:21 +0000] [6780] [ERROR] Connection in use: ('127.0.0.1', 5000)
+[2025-07-22 14:51:21 +0000] [6780] [ERROR] connection to ('127.0.0.1', 5000) failed: [Errno 98] Address already in use
+[2025-07-22 14:51:22 +0000] [6780] [ERROR] Connection in use: ('127.0.0.1', 5000)
+[2025-07-22 14:51:22 +0000] [6780] [ERROR] connection to ('127.0.0.1', 5000) failed: [Errno 98] Address already in use
+[2025-07-22 14:51:23 +0000] [6780] [ERROR] Connection in use: ('127.0.0.1', 5000)
+[2025-07-22 14:51:23 +0000] [6780] [ERROR] connection to ('127.0.0.1', 5000) failed: [Errno 98] Address already in use
+[2025-07-22 14:51:24 +0000] [6780] [ERROR] Connection in use: ('127.0.0.1', 5000)
+[2025-07-22 14:51:24 +0000] [6780] [ERROR] connection to ('127.0.0.1', 5000) failed: [Errno 98] Address already in use
+[2025-07-22 14:51:25 +0000] [6780] [ERROR] Can't connect to ('127.0.0.1', 5000)
+[2025-07-22 15:04:05 +0000] [6729] [INFO] Handling signal: ttou
+[2025-07-22 15:04:06 +0000] [6729] [INFO] Handling signal: ttou
+[2025-07-22 15:04:06 +0000] [6731] [INFO] Worker exiting (pid: 6731)
+[2025-07-22 15:04:54 +0000] [7266] [INFO] Starting gunicorn 23.0.0
+[2025-07-22 15:04:54 +0000] [7266] [ERROR] Connection in use: ('127.0.0.1', 5000)
+[2025-07-22 15:04:54 +0000] [7266] [ERROR] connection to ('127.0.0.1', 5000) failed: [Errno 98] Address already in use
+[2025-07-22 15:04:55 +0000] [7266] [ERROR] Connection in use: ('127.0.0.1', 5000)
+[2025-07-22 15:04:55 +0000] [7266] [ERROR] connection to ('127.0.0.1', 5000) failed: [Errno 98] Address already in use
+[2025-07-22 15:04:56 +0000] [7266] [ERROR] Connection in use: ('127.0.0.1', 5000)
+[2025-07-22 15:04:56 +0000] [7266] [ERROR] connection to ('127.0.0.1', 5000) failed: [Errno 98] Address already in use
+[2025-07-22 15:04:57 +0000] [7266] [ERROR] Connection in use: ('127.0.0.1', 5000)
+[2025-07-22 15:04:57 +0000] [7266] [ERROR] connection to ('127.0.0.1', 5000) failed: [Errno 98] Address already in use
+[2025-07-22 15:04:58 +0000] [7266] [ERROR] Connection in use: ('127.0.0.1', 5000)
+[2025-07-22 15:04:58 +0000] [7266] [ERROR] connection to ('127.0.0.1', 5000) failed: [Errno 98] Address already in use
+[2025-07-22 15:04:59 +0000] [7266] [ERROR] Can't connect to ('127.0.0.1', 5000)
+[2025-07-22 15:05:46 +0000] [6729] [INFO] Handling signal: ttou
+[2025-07-22 15:06:03 +0000] [6729] [CRITICAL] WORKER TIMEOUT (pid:6730)
+[2025-07-22 15:06:03 +0000] [6730] [ERROR] Error handling request /generate
+Traceback (most recent call last):
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ubuntu/kaleido-video-generator/app.py", line 30, in generate_video
+    result = subprocess.run([
+  File "/usr/lib/python3.10/subprocess.py", line 505, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+  File "/usr/lib/python3.10/subprocess.py", line 1154, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+  File "/usr/lib/python3.10/subprocess.py", line 2021, in _communicate
+    ready = selector.select(timeout)
+  File "/usr/lib/python3.10/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-07-22 15:06:03 +0000] [6730] [INFO] Worker exiting (pid: 6730)
+[2025-07-22 15:06:07 +0000] [6729] [CRITICAL] WORKER TIMEOUT (pid:6732)
+[2025-07-22 15:06:07 +0000] [6732] [ERROR] Error handling request /generate
+Traceback (most recent call last):
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ubuntu/kaleido-video-generator/app.py", line 30, in generate_video
+    result = subprocess.run([
+  File "/usr/lib/python3.10/subprocess.py", line 505, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+  File "/usr/lib/python3.10/subprocess.py", line 1154, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+  File "/usr/lib/python3.10/subprocess.py", line 2021, in _communicate
+    ready = selector.select(timeout)
+  File "/usr/lib/python3.10/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-07-22 15:06:07 +0000] [6732] [INFO] Worker exiting (pid: 6732)
+[2025-07-22 15:07:47 +0000] [6729] [CRITICAL] WORKER TIMEOUT (pid:6733)
+[2025-07-22 15:07:47 +0000] [6733] [ERROR] Error handling request /generate
+Traceback (most recent call last):
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ubuntu/kaleido-video-generator/app.py", line 30, in generate_video
+    result = subprocess.run([
+  File "/usr/lib/python3.10/subprocess.py", line 505, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+  File "/usr/lib/python3.10/subprocess.py", line 1154, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+  File "/usr/lib/python3.10/subprocess.py", line 2021, in _communicate
+    ready = selector.select(timeout)
+  File "/usr/lib/python3.10/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-07-22 15:07:47 +0000] [6733] [INFO] Worker exiting (pid: 6733)
+[2025-07-22 15:07:47 +0000] [7283] [INFO] Booting worker with pid: 7283
+[2025-07-22 15:08:23 +0000] [7283] [INFO] Worker exiting (pid: 7283)
+[2025-07-22 15:08:23 +0000] [6729] [INFO] Handling signal: term
+[2025-07-22 15:08:23 +0000] [6729] [INFO] Shutting down: Master
+[2025-07-22 15:22:59 +0000] [7360] [INFO] Starting gunicorn 23.0.0
+[2025-07-22 15:22:59 +0000] [7360] [INFO] Listening at: http://127.0.0.1:5000 (7360)
+[2025-07-22 15:22:59 +0000] [7360] [INFO] Using worker: sync
+[2025-07-22 15:22:59 +0000] [7361] [INFO] Booting worker with pid: 7361
+[2025-07-22 15:22:59 +0000] [7362] [INFO] Booting worker with pid: 7362
+[2025-07-22 15:22:59 +0000] [7363] [INFO] Booting worker with pid: 7363
+[2025-07-22 15:22:59 +0000] [7364] [INFO] Booting worker with pid: 7364
+[2025-07-22 15:23:42 +0000] [7360] [INFO] Handling signal: ttou
+[2025-07-22 15:23:42 +0000] [7361] [INFO] Worker exiting (pid: 7361)
+[2025-07-22 15:25:42 +0000] [7360] [CRITICAL] WORKER TIMEOUT (pid:7362)
+[2025-07-22 15:25:42 +0000] [7362] [ERROR] Error handling request /progress
+Traceback (most recent call last):
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 182, in handle_request
+    for item in respiter:
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/werkzeug/wsgi.py", line 256, in __next__
+    return self._next()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/werkzeug/wrappers/response.py", line 32, in _iter_encoded
+    for item in iterable:
+  File "/home/ubuntu/kaleido-video-generator/app.py", line 66, in stream
+    line = progress_queue.get(timeout=0.5)
+  File "/usr/lib/python3.10/queue.py", line 180, in get
+    self.not_empty.wait(remaining)
+  File "/usr/lib/python3.10/threading.py", line 324, in wait
+    gotit = waiter.acquire(True, timeout)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-07-22 15:25:42 +0000] [7362] [INFO] Worker exiting (pid: 7362)
+[2025-07-22 15:25:42 +0000] [7385] [INFO] Booting worker with pid: 7385
+[2025-07-22 15:27:55 +0000] [7360] [INFO] Handling signal: ttou
+[2025-07-22 15:27:55 +0000] [7363] [INFO] Worker exiting (pid: 7363)
+[2025-07-22 15:29:55 +0000] [7360] [CRITICAL] WORKER TIMEOUT (pid:7385)
+[2025-07-22 15:29:55 +0000] [7385] [ERROR] Error handling request /progress
+Traceback (most recent call last):
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 182, in handle_request
+    for item in respiter:
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/werkzeug/wsgi.py", line 256, in __next__
+    return self._next()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/werkzeug/wrappers/response.py", line 32, in _iter_encoded
+    for item in iterable:
+  File "/home/ubuntu/kaleido-video-generator/app.py", line 66, in stream
+    line = progress_queue.get(timeout=0.5)
+  File "/usr/lib/python3.10/queue.py", line 180, in get
+    self.not_empty.wait(remaining)
+  File "/usr/lib/python3.10/threading.py", line 324, in wait
+    gotit = waiter.acquire(True, timeout)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-07-22 15:29:55 +0000] [7385] [INFO] Worker exiting (pid: 7385)
+[2025-07-22 15:29:55 +0000] [7416] [INFO] Booting worker with pid: 7416
+[2025-07-22 15:36:14 +0000] [7360] [INFO] Handling signal: ttou
+[2025-07-22 15:36:14 +0000] [7364] [INFO] Worker exiting (pid: 7364)
+[2025-07-22 15:38:14 +0000] [7360] [CRITICAL] WORKER TIMEOUT (pid:7416)
+[2025-07-22 15:38:14 +0000] [7416] [ERROR] Error handling request /progress
+Traceback (most recent call last):
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 182, in handle_request
+    for item in respiter:
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/werkzeug/wsgi.py", line 256, in __next__
+    return self._next()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/werkzeug/wrappers/response.py", line 32, in _iter_encoded
+    for item in iterable:
+  File "/home/ubuntu/kaleido-video-generator/app.py", line 66, in stream
+    line = progress_queue.get(timeout=0.5)
+  File "/usr/lib/python3.10/queue.py", line 180, in get
+    self.not_empty.wait(remaining)
+  File "/usr/lib/python3.10/threading.py", line 324, in wait
+    gotit = waiter.acquire(True, timeout)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-07-22 15:38:14 +0000] [7416] [INFO] Worker exiting (pid: 7416)
+[2025-07-22 15:38:14 +0000] [7436] [INFO] Booting worker with pid: 7436
+[2025-07-22 15:38:55 +0000] [7360] [INFO] Handling signal: ttou
+[2025-07-22 15:40:55 +0000] [7360] [CRITICAL] WORKER TIMEOUT (pid:7436)
+[2025-07-22 15:40:55 +0000] [7436] [ERROR] Error handling request /progress
+Traceback (most recent call last):
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 182, in handle_request
+    for item in respiter:
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/werkzeug/wsgi.py", line 256, in __next__
+    return self._next()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/werkzeug/wrappers/response.py", line 32, in _iter_encoded
+    for item in iterable:
+  File "/home/ubuntu/kaleido-video-generator/app.py", line 66, in stream
+    logging.debug(f"Starting video generation for length: {length}s")
+  File "/usr/lib/python3.10/queue.py", line 180, in get
+    self.not_empty.wait(remaining)
+  File "/usr/lib/python3.10/threading.py", line 324, in wait
+    gotit = waiter.acquire(True, timeout)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-07-22 15:40:55 +0000] [7436] [INFO] Worker exiting (pid: 7436)
+[2025-07-22 15:40:55 +0000] [7452] [INFO] Booting worker with pid: 7452
+[2025-07-22 15:45:37 +0000] [7360] [INFO] Handling signal: hup
+[2025-07-22 15:45:37 +0000] [7360] [INFO] Hang up: Master
+[2025-07-22 15:45:37 +0000] [7360] [ERROR] Worker (pid:7452) was sent SIGHUP!
+[2025-07-22 15:45:37 +0000] [7470] [INFO] Booting worker with pid: 7470
+[2025-07-22 15:45:37 +0000] [7471] [INFO] Booting worker with pid: 7471
+[2025-07-22 15:45:37 +0000] [7472] [INFO] Booting worker with pid: 7472
+[2025-07-22 15:45:37 +0000] [7360] [INFO] Handling signal: hup
+[2025-07-22 15:45:37 +0000] [7360] [INFO] Hang up: Master
+[2025-07-22 15:45:37 +0000] [7473] [INFO] Booting worker with pid: 7473
+[2025-07-22 15:45:37 +0000] [7474] [INFO] Booting worker with pid: 7474
+[2025-07-22 15:45:37 +0000] [7475] [INFO] Booting worker with pid: 7475
+[2025-07-22 15:45:37 +0000] [7476] [INFO] Booting worker with pid: 7476
+[2025-07-22 15:45:37 +0000] [7477] [INFO] Booting worker with pid: 7477
+[2025-07-22 15:45:37 +0000] [7470] [INFO] Worker exiting (pid: 7470)
+[2025-07-22 15:45:37 +0000] [7472] [INFO] Worker exiting (pid: 7472)
+[2025-07-22 15:45:37 +0000] [7471] [INFO] Worker exiting (pid: 7471)
+[2025-07-22 15:45:37 +0000] [7473] [INFO] Worker exiting (pid: 7473)
+[2025-07-22 15:45:37 +0000] [7360] [ERROR] Worker (pid:7470) was sent SIGTERM!
+[2025-07-22 15:45:37 +0000] [7360] [ERROR] Worker (pid:7471) was sent SIGTERM!
+[2025-07-22 15:45:37 +0000] [7360] [ERROR] Worker (pid:7472) was sent SIGTERM!
+[2025-07-22 20:06:56 +0000] [7360] [INFO] Handling signal: term
+[2025-07-22 20:06:56 +0000] [7477] [INFO] Worker exiting (pid: 7477)
+[2025-07-22 20:06:56 +0000] [7475] [INFO] Worker exiting (pid: 7475)
+[2025-07-22 20:06:56 +0000] [7476] [INFO] Worker exiting (pid: 7476)
+[2025-07-22 20:06:56 +0000] [7474] [INFO] Worker exiting (pid: 7474)
+[2025-07-22 20:06:56 +0000] [7360] [INFO] Shutting down: Master
+[2025-07-22 20:08:15 +0000] [7649] [INFO] Starting gunicorn 23.0.0
+[2025-07-22 20:08:15 +0000] [7649] [INFO] Listening at: http://0.0.0.0:5000 (7649)
+[2025-07-22 20:08:15 +0000] [7649] [INFO] Using worker: sync
+[2025-07-22 20:08:15 +0000] [7650] [INFO] Booting worker with pid: 7650
+[2025-07-22 20:08:15 +0000] [7651] [INFO] Booting worker with pid: 7651
+[2025-07-22 20:08:15 +0000] [7652] [INFO] Booting worker with pid: 7652
+[2025-07-22 20:08:16 +0000] [7653] [INFO] Booting worker with pid: 7653
+[2025-07-22 20:08:24 +0000] [7649] [INFO] Handling signal: int
+[2025-07-22 20:08:24 +0000] [7652] [INFO] Worker exiting (pid: 7652)
+[2025-07-22 20:08:24 +0000] [7650] [INFO] Worker exiting (pid: 7650)
+[2025-07-22 20:08:24 +0000] [7653] [INFO] Worker exiting (pid: 7653)
+[2025-07-22 20:08:24 +0000] [7651] [INFO] Worker exiting (pid: 7651)
+[2025-07-22 20:08:24 +0000] [7649] [INFO] Shutting down: Master
+[2025-07-22 20:08:34 +0000] [7655] [INFO] Starting gunicorn 23.0.0
+[2025-07-22 20:08:34 +0000] [7655] [INFO] Listening at: http://0.0.0.0:5000 (7655)
+[2025-07-22 20:08:34 +0000] [7655] [INFO] Using worker: sync
+[2025-07-22 20:08:34 +0000] [7656] [INFO] Booting worker with pid: 7656
+[2025-07-22 20:08:34 +0000] [7657] [INFO] Booting worker with pid: 7657
+[2025-07-22 20:08:34 +0000] [7658] [INFO] Booting worker with pid: 7658
+[2025-07-22 20:08:34 +0000] [7659] [INFO] Booting worker with pid: 7659
+[2025-07-22 20:08:47 +0000] [7655] [INFO] Handling signal: int
+[2025-07-22 20:08:47 +0000] [7656] [INFO] Worker exiting (pid: 7656)
+[2025-07-22 20:08:47 +0000] [7657] [INFO] Worker exiting (pid: 7657)
+[2025-07-22 20:08:47 +0000] [7659] [INFO] Worker exiting (pid: 7659)
+[2025-07-22 20:08:47 +0000] [7658] [INFO] Worker exiting (pid: 7658)
+[2025-07-22 20:08:47 +0000] [7655] [INFO] Shutting down: Master

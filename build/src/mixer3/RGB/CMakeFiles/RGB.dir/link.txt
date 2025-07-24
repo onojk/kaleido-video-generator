@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O2 -g -DNDEBUG -shared  -o RGB.so CMakeFiles/RGB.dir/RGB.c.o  -lm 

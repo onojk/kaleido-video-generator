@@ -1,3 +1,4 @@
-Current Frame:          1, percentage:          0Current Frame:          2, percentage:          0Current Frame:          3, percentage:          0Current Frame:          4, percentage:          0Current Frame:          5, percentage:          0Current Frame:          6, percentage:          0Current Frame:          7, percentage:          0Current Frame:          8, percentage:          0
-[mp4 @ 0x7bf498200f80] Timestamps are unset in a packet for stream 1. This is deprecated and will stop working in the future. Fix your code to set the timestamps properly
-[mp4 @ 0x7bf498200f80] Encoder did not produce proper pts, making some up.
+[🧹] Cleaning up previous render artifacts...
+[🎨] Generating guaranteed-color rainbow image...
+usage: generate_rainbow_contrast.py [-h] --output OUTPUT
+generate_rainbow_contrast.py: error: the following arguments are required: --output

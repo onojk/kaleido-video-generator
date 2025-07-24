@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O2 -g -DNDEBUG -shared  -o primaries.so CMakeFiles/primaries.dir/primaries.cpp.o  -lm 

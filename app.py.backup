@@ -1,0 +1,131 @@
+from flask import Flask, render_template, request, jsonify, send_file, redirect, url_for
+import os
+import uuid
+import threading
+import subprocess
+import time
+import traceback
+from datetime import datetime
+
+app = Flask(__name__)
+
+JOBS = {}
+OUTPUT_FILE = "final_output.mp4"
+
+
+def render_pipeline(job_id, duration):
+    job_dir = os.path.join("jobs", job_id)
+    os.makedirs(job_dir, exist_ok=True)
+    os.chmod(job_dir, 0o755)  # Ensure proper permissions
+
+    try:
+        log = lambda msg: JOBS[job_id]["log"].append(f"{datetime.now().strftime('%-I:%M:%S %p')}{msg if msg.startswith(' ') else ' ' + msg}")
+
+        # Generate rainbow image
+        JOBS[job_id]["stage"] = "Generating rainbow image"
+        JOBS[job_id]["progress"] = 5
+        output_image = os.path.abspath(os.path.join(job_dir, "generated.jpg"))
+        log(f"Generating image at: {output_image}")
+        subprocess.run(["python3", "generate_rainbow_contrast.py", "--output", output_image], check=True)
+        log("✔ Rainbow image generated")
+
+        # Verify file exists
+        if not os.path.exists(output_image):
+            raise FileNotFoundError(f"Generated image not found at {output_image}")
+        log(f"✔ File verified. Size: {os.path.getsize(output_image)} bytes")
+        
+        # Add debug info
+        log(f"Current working directory: {os.getcwd()}")
+        log(f"Absolute path to image: {output_image}")
+
+        # Patch Kdenlive template
+        JOBS[job_id]["stage"] = "Patching Kdenlive template"
+        JOBS[job_id]["progress"] = 15
+        patched_kdenlive = os.path.abspath(os.path.join(job_dir, "patched.kdenlive"))
+        
+        # Debug command
+        cmd = [
+            "python3", 
+            os.path.abspath("patch_kdenlive_10s.py"),
+            "--input", output_image,
+            "--output", patched_kdenlive
+        ]
+        log(f"Executing: {' '.join(cmd)}")
+        
+        # Run with full paths
+        subprocess.run(cmd, check=True)
+        log("✔ Kdenlive project patched")
+
+    except subprocess.CalledProcessError as e:
+        error_msg = f"Command failed: {' '.join(e.cmd)}"
+        log(f"❌ {error_msg}")
+        JOBS[job_id]["status"] = "failed"
+        JOBS[job_id]["stage"] = error_msg
+        JOBS[job_id]["progress"] = 0
+        return
+
+    except Exception as e:
+        error_msg = f"Unexpected error: {str(e)}"
+        log(f"❌ {error_msg}")
+        JOBS[job_id]["status"] = "failed"
+        JOBS[job_id]["stage"] = error_msg
+        JOBS[job_id]["progress"] = 0
+        return
+
+    # Final success steps
+    JOBS[job_id]["stage"] = "Finalizing"
+    JOBS[job_id]["progress"] = 100
+    JOBS[job_id]["status"] = "completed"
+    log("🎉 Render completed successfully!")
+@app.route("/")
+def index():
+    return render_template("index.html")
+
+
+@app.route("/start_render", methods=["POST"])
+def start_render():
+    duration = request.form.get("duration", type=int, default=10)
+    job_id = str(uuid.uuid4())
+    JOBS[job_id] = {
+        "status": "running",
+        "progress": 0,
+        "stage": "Queued",
+        "log": []
+    }
+    thread = threading.Thread(target=render_pipeline, args=(job_id, duration))
+    thread.start()
+    return jsonify({"redirect": url_for("progress", job_id=job_id)})
+
+
+@app.route("/progress")
+def progress():
+    return render_template("progress.html")
+
+
+@app.route("/job_status")
+def job_status():
+    job_id = request.args.get("job_id")
+    job = JOBS.get(job_id)
+    if not job:
+        return jsonify({"error": "Invalid job ID"}), 404
+
+    return jsonify({
+        "status": job["status"],
+        "progress": job["progress"],
+        "stage": job["stage"],
+        "log": job["log"][-5:]  # Last 5 log entries
+    })
+
+
+@app.route("/download")
+def download():
+    job_id = request.args.get("job_id")
+    output_path = os.path.join("jobs", job_id, "final_output.mp4")
+    if os.path.exists(output_path):
+        return send_file(output_path, as_attachment=True)
+    return "File not found", 404
+
+
+if __name__ == "__main__":
+    os.makedirs("jobs", exist_ok=True)
+    app.run(host="0.0.0.0", port=5000)

@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O2 -g -DNDEBUG -shared  -o nervous.so CMakeFiles/nervous.dir/nervous.cpp.o  -lm 

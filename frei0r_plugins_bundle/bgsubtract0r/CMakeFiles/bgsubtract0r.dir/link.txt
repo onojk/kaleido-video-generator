@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O2 -g -DNDEBUG -shared  -o bgsubtract0r.so CMakeFiles/bgsubtract0r.dir/bgsubtract0r.c.o  -lm 

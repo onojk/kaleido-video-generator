@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O2 -g -DNDEBUG -shared  -o 3dflippo.so CMakeFiles/3dflippo.dir/3dflippo.c.o  -lm 

@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O2 -g -DNDEBUG -shared  -o luminance.so CMakeFiles/luminance.dir/luminance.c.o  -lm 

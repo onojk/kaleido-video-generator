@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O2 -g -DNDEBUG -shared  -o c0rners.so CMakeFiles/c0rners.dir/c0rners.c.o  -lm 

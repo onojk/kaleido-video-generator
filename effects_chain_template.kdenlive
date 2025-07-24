@@ -1,0 +1,42 @@
+<mlt LC_NUMERIC="C" producer="main_bin">
+  <playlist id="playlist0">
+    <entry producer="image_producer" in="0" out="599">
+      <filter id="frei0r.kaleid0sc0pe" in="0" out="599">
+  <property name="pollInterval">100</property>
+        <property name="0">7</property>
+      </filter>
+      <filter id="frei0r.rgbshift0r" in="0" out="599">
+  <property name="pollInterval">100</property>
+        <property name="horizontal">0.02</property>
+        <property name="vertical">0.01</property>
+      </filter>
+      <filter id="frei0r.3dflippo" in="0" out="599">
+  <property name="pollInterval">100</property>
+        <property name="rotate_x">35</property>
+        <property name="rotate_y">20</property>
+        <property name="rotate_z">5</property>
+      </filter>
+      <filter id="frei0r.contrast0r" in="0" out="599">
+  <property name="pollInterval">100</property>
+        <property name="contrast">1.6</property>
+      </filter>
+      <filter id="frei0r.saturat0r" in="0" out="599">
+  <property name="pollInterval">100</property>
+        <property name="saturation">2.0</property>
+      </filter>
+    </entry>
+  </playlist>
+
+  <tractor id="tractor0" title="Main Tractor">
+    <track producer="playlist0" />
+    <property name="length">600</property>
+    <property name="global_feed">1</property>
+  </tractor>
+
+  <producer id="image_producer">
+    <property name="resource">rainbow_camouflage_resized.jpg</property>
+    <property name="mlt_service">qimage</property>
+    <property name="length">600</property>
+    <property name="loop">0</property>
+  </producer>
+</mlt>

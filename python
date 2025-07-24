@@ -1,0 +1,64 @@
+#!/usr/bin/env python3
+import xml.etree.ElementTree as ET
+import os
+import re
+import sys
+
+# === 🛠️ Config ===
+DURATION_TIME = "00:00:09.983"
+DURATION_FRAMES = 600
+TEMPLATE = "template_project.kdenlive"
+
+# === 📥 Parse CLI arguments ===
+if len(sys.argv) != 3:
+    print(f"Usage: {sys.argv[0]} <image_path> <output_kdenlive_file>")
+    sys.exit(1)
+
+IMAGE_PATH = os.path.abspath(sys.argv[1])
+OUTPUT = sys.argv[2]
+
+def patch_kdenlive():
+    print(f"[🧩] Patching template: {TEMPLATE}")
+    tree = ET.parse(TEMPLATE)
+    root = tree.getroot()
+
+    # === Replace image path and duration ===
+    for producer in root.findall(".//producer[@id='producer1']"):
+        for prop in producer.findall("property"):
+            name = prop.get("name")
+            if name == "resource":
+                print(f"[🎨] Setting image path → {IMAGE_PATH}")
+                prop.text = IMAGE_PATH
+            elif name in ("length", "kdenlive:duration"):
+                print(f"[⏱️] Setting duration → {DURATION_TIME}")
+                prop.text = DURATION_TIME
+            elif name == "ttl":
+                prop.text = "25"
+
+    # === Trim clip entries ===
+    for entry in root.findall(".//entry[@producer='producer1']"):
+        print(f"[✂️] Trimming clip entry → {DURATION_TIME}")
+        entry.set("out", DURATION_TIME)
+
+    # === Trim tractor, track, etc. ===
+    for tag in ["tractor", "track"]:
+        for node in root.findall(f".//{tag}"):
+            if node.get("out"):
+                print(f"[✂️] Trimming {tag} → {DURATION_TIME}")
+                node.set("out", DURATION_TIME)
+
+    # === Adjust keyframes in filters ===
+    for filt in root.findall(".//filter"):
+        for prop in filt.findall("property"):
+            if prop.text and re.search(r"\d{2}:\d{2}:\d{2}\.\d{3}=", prop.text):
+                matches = re.findall(r"(00:\d{2}:\d{2}\.\d{3})=([^\s;]+)", prop.text)
+                if matches:
+                    print(f"[🔧] Trimming keyframes for: {prop.get('name')}")
+                    prop.text = f"00:00:00.000={matches[0][1]};{DURATION_TIME}={matches[-1][1]}"
+
+    # === Write final patched project ===
+    tree.write(OUTPUT, encoding="utf-8", xml_declaration=True)
+    print(f"[✅] Patched project written to: {OUTPUT}")
+
+if __name__ == "__main__":
+    patch_kdenlive()

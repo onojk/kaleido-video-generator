@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O2 -g -DNDEBUG -shared  -o pixs0r.so CMakeFiles/pixs0r.dir/pixs0r.cc.o  -lm 

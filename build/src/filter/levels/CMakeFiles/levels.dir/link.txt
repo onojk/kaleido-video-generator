@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC  -std=c99 -O2 -g -DNDEBUG -shared  -o levels.so CMakeFiles/levels.dir/levels.c.o  -lm 

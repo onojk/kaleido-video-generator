@@ -1,0 +1,11 @@
+prefix=/usr/local
+exec_prefix=/usr/local
+libdir=/usr/local/lib
+includedir=/usr/local/include
+
+Name: frei0r
+Description: minimalistic plugin API for video effects
+Version: 1.8
+Libs:
+Cflags: -I${includedir}
+

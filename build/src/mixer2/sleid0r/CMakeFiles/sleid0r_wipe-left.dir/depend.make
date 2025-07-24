@@ -1,0 +1,2 @@
+# Empty dependencies file for sleid0r_wipe-left.
+# This may be replaced when dependencies are built.

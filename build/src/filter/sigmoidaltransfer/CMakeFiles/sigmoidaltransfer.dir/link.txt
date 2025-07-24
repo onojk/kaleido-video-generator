@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O2 -g -DNDEBUG -shared  -o sigmoidaltransfer.so CMakeFiles/sigmoidaltransfer.dir/sigmoidaltransfer.c.o  -lm 

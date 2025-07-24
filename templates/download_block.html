@@ -1,0 +1,15 @@
+<a href="/download" id="download-link" style="display:inline-block; font-size:1.2em; margin-top:1em;">⬇️ Download Rendered Video</a>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const link = document.getElementById("download-link");
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      const a = document.createElement("a");
+      a.href = this.href;
+      a.download = "final_output.mp4";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    });
+  });
+</script>

@@ -14,7 +14,7 @@ root = tree.getroot()
 for playlist in root.findall(".//playlist"):
     for entry in playlist.findall("entry"):
         # Add kaleidoscope
-        kal = ET.Element("filter", {"id": "frei0r.kaleidoscope", "in": "0", "out": "599"})
+        kal = ET.Element("filter", {"id": "frei0r.kaleid0sc0pe", "in": "0", "out": "599"})
         prop = ET.SubElement(kal, "property", {"name": "0"})
         prop.text = "7"  # symmetry
         entry.append(kal)

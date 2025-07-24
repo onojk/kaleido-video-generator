@@ -1,0 +1,35 @@
+<script>
+  const logBox = document.getElementById('logBox');
+  const progressBar = document.getElementById('bar');
+  let dotCount = 0;
+
+  const source = new EventSource('/generate');
+  source.onmessage = function(event) {
+    const msg = event.data;
+
+    const div = document.createElement('div');
+    div.textContent = msg;
+    logBox.appendChild(div);
+    logBox.scrollTop = logBox.scrollHeight;
+
+    if (msg === ".") {
+      dotCount++;
+      const percent = Math.min(100, 5 + dotCount * 5);
+      progressBar.style.width = percent + "%";
+    }
+    
+    if (msg.includes("✅")) {
+      progressBar.style.width = "100%";
+      // Show download link
+      document.getElementById('downloadContainer').style.display = "block";
+      // Auto-trigger download after 1 second
+      setTimeout(() => {
+        window.location = "/download?" + new Date().getTime();
+      }, 1000);
+    }
+  };
+
+  function toggleLog() {
+    logBox.style.display = logBox.style.display === 'none' ? 'block' : 'none';
+  }
+</script>

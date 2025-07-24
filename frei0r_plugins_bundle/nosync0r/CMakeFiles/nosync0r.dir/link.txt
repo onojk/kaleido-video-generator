@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O2 -g -DNDEBUG -shared  -o nosync0r.so CMakeFiles/nosync0r.dir/nosync0r.cpp.o  -lm 

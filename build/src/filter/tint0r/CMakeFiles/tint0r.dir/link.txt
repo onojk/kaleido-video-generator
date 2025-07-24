@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O2 -g -DNDEBUG -shared  -o tint0r.so CMakeFiles/tint0r.dir/tint0r.c.o  -lm 

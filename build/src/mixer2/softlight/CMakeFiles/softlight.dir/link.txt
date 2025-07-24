@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O2 -g -DNDEBUG -shared  -o softlight.so CMakeFiles/softlight.dir/softlight.cpp.o  -lm 

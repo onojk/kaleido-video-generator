@@ -5,12 +5,15 @@
     <property name="resource">rainbow_camouflage_resized.jpg</property>
     <property name="mlt_service">qimage</property>
     <filter mlt_service="frei0r.brightness">
+  <property name="pollInterval">100</property>
       <property name="brightness">0.1</property>
     </filter>
     <filter mlt_service="frei0r.saturat0r">
+  <property name="pollInterval">100</property>
       <property name="saturation">1.5</property>
     </filter>
     <filter mlt_service="frei0r.kaleid0sc0pe">
+  <property name="pollInterval">100</property>
       <property name="segments">6</property>
       <property name="rotation">0.25</property>
     </filter>

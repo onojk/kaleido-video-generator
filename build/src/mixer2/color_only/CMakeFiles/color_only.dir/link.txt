@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O2 -g -DNDEBUG -shared  -o color_only.so CMakeFiles/color_only.dir/color_only.cpp.o  -lm 

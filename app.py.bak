@@ -1,0 +1,166 @@
+from flask import Flask, render_template, request, jsonify, send_file, url_for
+import os
+import uuid
+import threading
+import subprocess
+import time
+from datetime import datetime
+
+app = Flask(__name__)
+
+JOBS = {}
+OUTPUT_DIR = "jobs"
+
+def render_pipeline(job_id, duration):
+    job_dir = os.path.join(OUTPUT_DIR, job_id)
+    os.makedirs(job_dir, exist_ok=True)
+    os.chmod(job_dir, 0o755)
+
+    def log(msg):
+        timestamp = datetime.now().strftime("%-I:%M:%S %p")
+        JOBS[job_id]["log"].append(f"{timestamp} {msg}")
+
+    try:
+        JOBS[job_id]["stage"] = "Generating rainbow image"
+        JOBS[job_id]["progress"] = 5
+        output_image = os.path.abspath(os.path.join(job_dir, "generated.jpg"))
+        log(f"Generating image at: {output_image}")
+        subprocess.run(["python3", "generate_rainbow_contrast.py", "--output", output_image], check=True)
+        log("✔ Rainbow image generated")
+        if not os.path.exists(output_image):
+            raise FileNotFoundError(f"Image not found: {output_image}")
+        log(f"✔ File verified. Size: {os.path.getsize(output_image)} bytes")
+
+        JOBS[job_id]["stage"] = "Patching Kdenlive template"
+        JOBS[job_id]["progress"] = 15
+        template_path = os.path.abspath("template_project.kdenlive")
+        if not os.path.exists(template_path):
+            raise FileNotFoundError(f"Template missing: {template_path}")
+        log(f"✔ Template file found at: {template_path}")
+
+        patched_kdenlive = os.path.abspath(os.path.join(job_dir, "patched.kdenlive"))
+        cmd = [
+            "python3", "patch_kdenlive_10s.py",
+            "--template", template_path,
+            "--input", output_image,
+            "--output", patched_kdenlive,
+            "--duration", str(duration)
+        ]
+        log(f"Executing: {' '.join(cmd)}")
+        subprocess.run(cmd, check=True)
+        log("✔ Kdenlive project patched")
+
+        JOBS[job_id]["stage"] = "Rendering video"
+        JOBS[job_id]["progress"] = 60
+        final_output = os.path.abspath(os.path.join(job_dir, "final_output.mp4"))
+
+        # Use xvfb-run with system melt
+        melt_cmd = [
+            "xvfb-run", "-a",
+            "melt", patched_kdenlive,
+            "-profile", "hd1080",
+            "-consumer", f"avformat:{final_output}",
+            "vcodec=libx264", "acodec=aac", "ab=128k", "threads=2"
+        ]
+
+        log(f"Starting system melt render: {' '.join(melt_cmd)}")
+        try:
+            result = subprocess.run(melt_cmd, check=True, capture_output=True, text=True)
+            log(result.stdout.strip())
+            log(result.stderr.strip())
+            log("✔ System melt render succeeded")
+
+        except subprocess.CalledProcessError as e:
+            log(f"⚠ System melt failed (code {e.returncode}). Retrying with AppImage melt...")
+
+            melt_cmd[2] = "./squashfs-root-new/usr/bin/melt"  # Swap binary only
+            try:
+                result2 = subprocess.run(melt_cmd, check=True, capture_output=True, text=True)
+                log(result2.stdout.strip())
+                log(result2.stderr.strip())
+                log("✔ AppImage melt render succeeded")
+            except subprocess.CalledProcessError as e2:
+                log(f"❌ AppImage melt failed: {e2}")
+                if hasattr(e2, "stdout"): log(e2.stdout)
+                if hasattr(e2, "stderr"): log(e2.stderr)
+                JOBS[job_id]["status"] = "failed"
+                JOBS[job_id]["stage"] = "Render failed"
+                return
+
+        if not os.path.exists(final_output):
+            raise FileNotFoundError("❌ Rendered MP4 not found")
+
+        JOBS[job_id]["stage"] = "Finalizing"
+        JOBS[job_id]["progress"] = 100
+        JOBS[job_id]["status"] = "completed"
+        log("🎉 Render completed successfully!")
+
+    except subprocess.CalledProcessError as e:
+        log(f"❌ Subprocess error: {e}")
+        JOBS[job_id]["status"] = "failed"
+        JOBS[job_id]["stage"] = "Subprocess error"
+        JOBS[job_id]["progress"] = 0
+
+    except Exception as e:
+        log(f"❌ Unexpected error: {str(e)}")
+        JOBS[job_id]["status"] = "failed"
+        JOBS[job_id]["stage"] = "Error"
+        JOBS[job_id]["progress"] = 0
+
+
+@app.route("/")
+def index():
+    return render_template("index.html")
+
+
+@app.route("/start_render", methods=["POST"])
+def start_render():
+    duration = request.form.get("duration", type=int, default=10)
+    job_id = str(uuid.uuid4())
+    JOBS[job_id] = {
+        "status": "running",
+        "progress": 0,
+        "stage": "Queued",
+        "log": []
+    }
+    thread = threading.Thread(target=render_pipeline, args=(job_id, duration))
+    thread.start()
+    return jsonify({"redirect": url_for("progress", job_id=job_id)})
+
+
+@app.route("/progress")
+def progress():
+    job_id = request.args.get("job_id")
+    return render_template("progress.html", job_id=job_id)
+    return render_template("progress.html")
+
+
+@app.route("/job_status")
+def job_status():
+    job_id = request.args.get("job_id")
+    job = JOBS.get(job_id)
+    if not job:
+        return jsonify({"error": "Invalid job ID"}), 404
+
+    return jsonify({
+        "status": job["status"],
+        "progress": job["progress"],
+        "stage": job["stage"],
+        "log": job["log"][-5:]
+    })
+
+
+@app.route("/download")
+def download():
+    job_id = request.args.get("job_id")
+    if not job_id:
+        return "Missing job ID", 400
+    final_output = os.path.join(OUTPUT_DIR, job_id, "final_output.mp4")
+    if os.path.exists(final_output):
+        return send_file(final_output, as_attachment=True)
+    return "File not found", 404
+
+
+if __name__ == "__main__":
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    app.run(host="0.0.0.0", port=5000)

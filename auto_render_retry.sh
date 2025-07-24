@@ -35,8 +35,11 @@ main() {
     for ((attempt=1; attempt<=MAX_ATTEMPTS; attempt++)); do
         echo -e "\n=== Attempt $attempt/$MAX_ATTEMPTS ==="
         if render_video "$duration"; then
-            echo -e "\n[✓] SUCCESS: ${OUTPUT_PREFIX}.mp4"
-            echo "File size: $(du -h "${OUTPUT_PREFIX}.mp4" | cut -f1)"
+       echo -e "\n[✓] SUCCESS: ${OUTPUT_PREFIX}.mp4"
+       echo "File size: $(du -h "${OUTPUT_PREFIX}.mp4" | cut -f1)"
+
+       # Rename latest output to final_output.mp4 for predictable downloading
+       mv "${OUTPUT_PREFIX}.mp4" final_output.mp4 && echo "[✓] Renamed to final_output.mp4"
             exit 0
         fi
         sleep 1

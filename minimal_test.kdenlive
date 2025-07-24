@@ -5,6 +5,7 @@
     <property name="resource">rainbow_camouflage_resized.jpg</property>
     <property name="mlt_service">qimage</property>
     <filter mlt_service="frei0r.kaleid0sc0pe">
+  <property name="pollInterval">100</property>
       <property name="segments">6</property>
     </filter>
   </producer>

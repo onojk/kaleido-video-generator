@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O2 -g -DNDEBUG -shared  -o letterb0xed.so CMakeFiles/letterb0xed.dir/letterb0xed.c.o  -lm 

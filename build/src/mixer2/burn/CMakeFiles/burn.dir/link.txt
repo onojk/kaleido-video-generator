@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O2 -g -DNDEBUG -shared  -o burn.so CMakeFiles/burn.dir/burn.cpp.o  -lm 

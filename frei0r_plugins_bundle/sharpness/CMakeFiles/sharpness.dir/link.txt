@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O2 -g -DNDEBUG -shared  -o sharpness.so CMakeFiles/sharpness.dir/sharpness.c.o  -lm 

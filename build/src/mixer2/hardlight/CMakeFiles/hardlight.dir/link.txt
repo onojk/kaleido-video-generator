@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O2 -g -DNDEBUG -shared  -o hardlight.so CMakeFiles/hardlight.dir/hardlight.cpp.o  -lm 

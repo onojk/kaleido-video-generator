@@ -1,0 +1,308 @@
+import sys
+from flask import Flask, render_template, request, jsonify, send_file
+import os, uuid, threading, time, subprocess, shutil, logging
+from datetime import datetime
+
+app = Flask(__name__)
+jobs = {}  # job_id -> status dict
+
+# Configure logging
+logging.basicConfig(
+    level=logging.DEBUG,  # Changed to DEBUG for more detailed logs
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler('render_service.log'),
+        logging.StreamHandler()
+    ]
+)
+
+OUTPUT_FOLDER = os.path.abspath("outputs")
+os.makedirs(OUTPUT_FOLDER, exist_ok=True)
+logging.debug(f"Output directory: {OUTPUT_FOLDER}")
+logging.debug(f"Directory exists: {os.path.exists(OUTPUT_FOLDER)}")
+
+# Cleanup old files on startup
+for filename in os.listdir(OUTPUT_FOLDER):
+    file_path = os.path.join(OUTPUT_FOLDER, filename)
+    try:
+        if os.path.isfile(file_path) and filename.endswith(('.mp4', '.jpg', '.log')):
+            os.unlink(file_path)
+    except Exception as e:
+        logging.error(f"Failed to delete {file_path}: {e}")
+
+@app.route("/")
+def index():
+    return render_template("index.html")
+
+@app.route("/start_render", methods=["POST"])
+def start_render():
+    try:
+        duration = int(request.form.get("duration", 10))
+        if duration <= 0 or duration > 600:
+            return jsonify({"error": "Invalid duration (must be between 1-600 seconds)"}), 400
+            
+        job_id = str(uuid.uuid4())
+        output_path = os.path.join(OUTPUT_FOLDER, f"{job_id}.mp4")
+        log_path = os.path.join(OUTPUT_FOLDER, f"{job_id}.log")
+        
+        jobs[job_id] = {
+            "status": "queued",
+            "progress": 0,
+            "stage": "Waiting to start",
+            "output": output_path,
+            "log": [],
+            "start_time": datetime.now().isoformat()
+        }
+        
+        threading.Thread(
+            target=render_task,
+            args=(job_id, duration, log_path),
+            daemon=True
+        ).start()
+        
+        return jsonify({
+            "redirect": f"/progress?job_id={job_id}",
+            "job_id": job_id
+        })
+        
+    except Exception as e:
+        logging.error(f"Start render failed: {str(e)}", exc_info=True)
+        return jsonify({"error": str(e)}), 500
+
+@app.route("/progress")
+def progress():
+    return render_template("progress.html")
+
+@app.route("/job_status")
+def job_status():
+    job_id = request.args.get("job_id")
+    if job_id not in jobs:
+        return jsonify({"error": "Job ID not found"}), 404
+        
+    job = jobs[job_id]
+    return jsonify({
+        "status": job["status"],
+        "progress": job["progress"],
+        "stage": job["stage"],
+        "log": job.get("log", [])[-10:],  # Last 10 log lines
+        "start_time": job.get("start_time"),
+        "duration": str(datetime.now() - datetime.fromisoformat(job["start_time"]))
+    })
+
+@app.route("/download")
+def download():
+    job_id = request.args.get("job_id")
+    if job_id not in jobs:
+        return "Job not found", 404
+        
+    path = jobs[job_id]["output"]
+    if not os.path.exists(path):
+        return "File not ready", 404
+        
+    try:
+        return send_file(
+            path,
+            as_attachment=True,
+            download_name=f"render_{job_id}.mp4"
+        )
+    except Exception as e:
+        logging.error(f"Download failed: {str(e)}", exc_info=True)
+        return str(e), 500
+
+def log_job(job_id, message):
+    """Helper to update job log"""
+    timestamp = datetime.now().strftime("%H:%M:%S")
+    log_entry = f"{timestamp} - {message}"
+    jobs[job_id]["log"].append(log_entry)
+    logging.info(f"Job {job_id}: {message}")
+
+def render_task(job_id, duration, log_path):
+    logging.debug(f"Python path: {sys.path}")
+    logging.debug(f"Current working directory: {os.getcwd()}")
+    job = jobs[job_id]
+    img_path = f"{OUTPUT_FOLDER}/{job_id}.jpg"
+    temp_files = [img_path]
+    
+    try:
+        # Phase 1: Generate image
+        log_job(job_id, "Generating rainbow contrast image")
+        logging.debug("About to run image generation")
+        img_result = subprocess.run(
+            ["python3", "generate_rainbow_contrast.py", "--output", img_path],
+            capture_output=True,
+            text=True
+        )
+        logging.debug(f"Image generation stdout: {img_result.stdout}")
+        logging.debug(f"Image generation stderr: {img_result.stderr}")
+        job["status"] = "rendering"
+        job["progress"] = 5
+        
+        
+        
+        if img_result.returncode != 0:
+            raise RuntimeError(f"Image generation failed: {img_result.stderr}")
+        
+        if not os.path.exists(img_path):
+            try:
+                with open(f"{OUTPUT_FOLDER}/permission_test.txt", "w") as f:
+                    f.write("test")
+                logging.debug("Permission test: could create file")
+            except Exception as e:
+                logging.error(f"Permission test failed: {str(e)}")
+            raise FileNotFoundError(f"Generated image not found at {img_path}")
+
+        # Phase 2: Prepare Kdenlive project
+        log_job(job_id, "Preparing project template")
+        job["progress"] = 20
+        
+        kdenlive_template = "template_project.kdenlive"
+        if not os.path.exists(kdenlive_template):
+            raise FileNotFoundError(f"Kdenlive template not found at {kdenlive_template}")
+            
+        patched_kdenlive = f"{OUTPUT_FOLDER}/{job_id}.kdenlive"
+        temp_files.append(patched_kdenlive)
+        
+        with open(kdenlive_template, "r") as f:
+            xml = f.read()
+            
+        xml = xml.replace("CURRENT_IMAGE_PATH.jpg", img_path)
+        xml = xml.replace("DURATION_SECONDS", str(duration))
+        
+        with open(patched_kdenlive, "w") as f:
+            f.write(xml)
+
+        # Phase 3: Render with melt (fallback to ffmpeg)
+        job["progress"] = 30
+        render_success = False
+        
+        # Try melt with effects
+        melt_bin = "melt"
+        if os.path.exists(melt_bin):
+            log_job(job_id, "Rendering with melt effects")
+            job["stage"] = "Applying visual effects"
+            
+            env = os.environ.copy()
+            env.update({
+                "FREI0R_PATH": "/usr/local/lib/frei0r-1",
+    "MLT_REPOSITORY": "/usr/lib/mlt7",
+    "MLT_DATA": "/usr/share/mlt7",
+    "LD_LIBRARY_PATH": "/usr/lib/x86_64-linux-gnu:/usr/local/lib"
+                "MLT_REPOSITORY": "/usr/lib/mlt7",
+                "MLT_DATA": "/usr/share/mlt7",
+                "LD_LIBRARY_PATH": "/usr/lib/x86_64-linux-gnu"
+            })
+            
+            # Melt command with professional effects chain
+            render_cmd = [
+                melt_bin,
+                "-verbose",
+                img_path,
+                f"length={duration_frames}",
+                "-filter", "avfilter.hue='h=2*PI*t:s=1'",
+                "-filter", f"avfilter.zoompan='z=1.05:d={duration_frames}'",
+                "-filter", "frei0r.bigsh0t_eq",
+                "-filter", "glsl.manager",
+                "-consumer",
+                f"avformat:{job['output']}",
+                "vcodec=libx264",
+                "preset=fast",
+                "crf=18",
+                "pix_fmt=yuv420p",
+                "threads=4"
+            ]
+            
+            logging.info(f"Executing: {' '.join(render_cmd)}")
+            
+            with open(log_path, "w") as log_file:
+                process = subprocess.Popen(
+                    render_cmd,
+                    env=env,
+                    stdout=log_file,
+                    stderr=subprocess.STDOUT,
+                    text=True
+                )
+                
+                # Progress tracking
+                while process.poll() is None:
+                    time.sleep(0.5)
+                    job["progress"] = min(90, job["progress"] + (100/duration))
+                    
+                if process.returncode == 0:
+                    render_success = True
+                if process.returncode == 0:
+                    render_success = True
+                    log_job(job_id, "Melt render with effects completed")
+                else:
+                    log_job(job_id, f"Melt failed (code {process.returncode})")
+        # Fallback to ffmpeg if melt fails
+        if not render_success:
+            job["stage"] = "Rendering with ffmpeg"
+            
+            ffmpeg_cmd = [
+                "ffmpeg",
+                "-loop", "1",
+                "-i", img_path,
+                "-t", str(duration),
+                "-c:v", "libx264",
+                "-pix_fmt", "yuv420p",
+                "-vf", "fps=30,scale=1920:1080",
+                "-y",
+                job['output']
+            ]
+            
+            logging.info(f"Executing ffmpeg command: {' '.join(ffmpeg_cmd)}")
+            
+            with open(log_path, "a") as log_file:
+                process = subprocess.Popen(
+                    ffmpeg_cmd,
+                    stdout=log_file,
+                    stderr=subprocess.STDOUT,
+                    text=True
+                )
+                
+                # Better progress tracking for ffmpeg
+                for i in range(30, 100, 2):
+                    if process.poll() is not None:
+                        break
+                    job["progress"] = i
+                    time.sleep(duration/35)
+                    
+                if process.wait() == 0:
+                    render_success = True
+                    log_job(job_id, "FFmpeg render completed")
+                else:
+                    log_job(job_id, f"FFmpeg render failed with code {process.returncode}")
+        
+        if not render_success:
+            raise RuntimeError("Both melt and ffmpeg renders failed")
+            
+        # Finalize
+        job["progress"] = 100
+        job["status"] = "completed"
+        job["stage"] = "Render complete"
+        log_job(job_id, "Render job completed successfully")
+        
+    except Exception as e:
+        job["status"] = "failed"
+        job["stage"] = f"Error: {str(e)}"
+        log_job(job_id, f"Render failed: {str(e)}")
+        logging.error(f"Render task failed for job {job_id}", exc_info=True)
+        
+        # Include error in progress log
+        with open(log_path, "a") as f:
+            f.write(f"\nERROR: {str(e)}\n")
+            
+    finally:
+        # Cleanup temporary files (commented out for debugging)
+        # for file_path in temp_files:
+        #     try:
+        #         logging.debug(f"Attempting to cleanup: {file_path}")
+        #         if os.path.exists(file_path):
+        #             os.unlink(file_path)
+        #     except Exception as e:
+        #         log_job(job_id, f"Cleanup failed for {file_path}: {str(e)}")
+        pass
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000, threaded=True)
+# Environment configuration

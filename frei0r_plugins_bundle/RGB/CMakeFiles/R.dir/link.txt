@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O2 -g -DNDEBUG -shared  -o R.so CMakeFiles/R.dir/R.c.o  -lm 

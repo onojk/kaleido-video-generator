@@ -16,12 +16,14 @@
 
     <!-- Filters (e.g., contrast boost) -->
     <filter id="brightness">
+  <property name="pollInterval">100</property>
       <property name="brightness">0</property>
       <property name="contrast">1.4</property>
       <property name="saturation">1.2</property>
     </filter>
 
     <filter id="frei0r.c0rners">
+  <property name="pollInterval">100</property>
       <property name="0">0.0</property> <!-- Top-left X -->
       <property name="1">0.0</property> <!-- Top-left Y -->
       <property name="2">1.0</property> <!-- Top-right X -->

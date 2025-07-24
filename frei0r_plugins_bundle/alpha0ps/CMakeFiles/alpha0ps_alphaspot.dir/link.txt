@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O2 -g -DNDEBUG -shared  -o alpha0ps_alphaspot.so CMakeFiles/alpha0ps_alphaspot.dir/alpha0ps_alphaspot.c.o  -lm -lm 

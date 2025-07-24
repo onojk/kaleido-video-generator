@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O2 -g -DNDEBUG -shared  -o plasma.so CMakeFiles/plasma.dir/plasma.cpp.o  -lm 

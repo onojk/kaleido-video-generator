@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O2 -g -DNDEBUG -shared  -o measure_pr0be.so CMakeFiles/measure_pr0be.dir/measure_pr0be.c.o  -lm 

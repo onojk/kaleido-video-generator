@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O2 -g -DNDEBUG -shared  -o flippo.so CMakeFiles/flippo.dir/flippo.c.o  -lm 

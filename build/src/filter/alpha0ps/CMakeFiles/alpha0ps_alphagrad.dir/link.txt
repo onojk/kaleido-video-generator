@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O2 -g -DNDEBUG -shared  -o alpha0ps_alphagrad.so CMakeFiles/alpha0ps_alphagrad.dir/alpha0ps_alphagrad.c.o  -lm -lm 

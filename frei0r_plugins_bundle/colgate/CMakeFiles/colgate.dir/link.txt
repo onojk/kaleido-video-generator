@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O2 -g -DNDEBUG -shared  -o colgate.so CMakeFiles/colgate.dir/colgate.c.o  -lm -lm 

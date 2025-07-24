@@ -1,0 +1,1096 @@
+[2025-07-22 20:09:20 +0000] [7662] [INFO] Starting gunicorn 23.0.0
+[2025-07-22 20:09:20 +0000] [7662] [INFO] Listening at: http://0.0.0.0:5000 (7662)
+[2025-07-22 20:09:20 +0000] [7662] [INFO] Using worker: sync
+[2025-07-22 20:09:20 +0000] [7663] [INFO] Booting worker with pid: 7663
+[2025-07-22 20:09:20 +0000] [7664] [INFO] Booting worker with pid: 7664
+[2025-07-22 20:09:20 +0000] [7665] [INFO] Booting worker with pid: 7665
+[2025-07-22 20:09:20 +0000] [7666] [INFO] Booting worker with pid: 7666
+DEBUG:root:Received generate request for length: 10s - skipping generation (test mode)
+DEBUG:root:Received generate request for length: 10s - skipping generation (test mode)
+[2025-07-22 20:10:41 +0000] [7662] [CRITICAL] WORKER TIMEOUT (pid:7664)
+[2025-07-22 20:10:41 +0000] [7664] [ERROR] Error handling request /progress
+Traceback (most recent call last):
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 182, in handle_request
+    for item in respiter:
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/werkzeug/wsgi.py", line 256, in __next__
+    return self._next()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/werkzeug/wrappers/response.py", line 32, in _iter_encoded
+    for item in iterable:
+  File "/home/ubuntu/kaleido-video-generator/app.py", line 77, in stream
+    line = progress_queue.get(timeout=0.5)
+  File "/usr/lib/python3.10/queue.py", line 180, in get
+    self.not_empty.wait(remaining)
+  File "/usr/lib/python3.10/threading.py", line 324, in wait
+    gotit = waiter.acquire(True, timeout)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-07-22 20:10:41 +0000] [7664] [INFO] Worker exiting (pid: 7664)
+[2025-07-22 20:10:41 +0000] [7668] [INFO] Booting worker with pid: 7668
+[2025-07-22 20:11:10 +0000] [7662] [CRITICAL] WORKER TIMEOUT (pid:7665)
+[2025-07-22 20:11:10 +0000] [7665] [ERROR] Error handling request /progress
+Traceback (most recent call last):
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 182, in handle_request
+    for item in respiter:
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/werkzeug/wsgi.py", line 256, in __next__
+    return self._next()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/werkzeug/wrappers/response.py", line 32, in _iter_encoded
+    for item in iterable:
+  File "/home/ubuntu/kaleido-video-generator/app.py", line 77, in stream
+    line = progress_queue.get(timeout=0.5)
+  File "/usr/lib/python3.10/queue.py", line 180, in get
+    self.not_empty.wait(remaining)
+  File "/usr/lib/python3.10/threading.py", line 324, in wait
+    gotit = waiter.acquire(True, timeout)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-07-22 20:11:10 +0000] [7665] [INFO] Worker exiting (pid: 7665)
+[2025-07-22 20:11:10 +0000] [7669] [INFO] Booting worker with pid: 7669
+[2025-07-22 20:11:11 +0000] [7662] [CRITICAL] WORKER TIMEOUT (pid:7663)
+[2025-07-22 20:11:11 +0000] [7663] [ERROR] Error handling request /progress
+Traceback (most recent call last):
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 182, in handle_request
+    for item in respiter:
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/werkzeug/wsgi.py", line 256, in __next__
+    return self._next()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/werkzeug/wrappers/response.py", line 32, in _iter_encoded
+    for item in iterable:
+  File "/home/ubuntu/kaleido-video-generator/app.py", line 77, in stream
+    line = progress_queue.get(timeout=0.5)
+  File "/usr/lib/python3.10/queue.py", line 180, in get
+    self.not_empty.wait(remaining)
+  File "/usr/lib/python3.10/threading.py", line 324, in wait
+    gotit = waiter.acquire(True, timeout)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-07-22 20:11:11 +0000] [7663] [INFO] Worker exiting (pid: 7663)
+[2025-07-22 20:11:11 +0000] [7670] [INFO] Booting worker with pid: 7670
+[2025-07-22 20:11:40 +0000] [7662] [CRITICAL] WORKER TIMEOUT (pid:7666)
+[2025-07-22 20:11:40 +0000] [7666] [ERROR] Error handling request /progress
+Traceback (most recent call last):
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 182, in handle_request
+    for item in respiter:
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/werkzeug/wsgi.py", line 256, in __next__
+    return self._next()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/werkzeug/wrappers/response.py", line 32, in _iter_encoded
+    for item in iterable:
+  File "/home/ubuntu/kaleido-video-generator/app.py", line 77, in stream
+    line = progress_queue.get(timeout=0.5)
+  File "/usr/lib/python3.10/queue.py", line 180, in get
+    self.not_empty.wait(remaining)
+  File "/usr/lib/python3.10/threading.py", line 324, in wait
+    gotit = waiter.acquire(True, timeout)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-07-22 20:11:40 +0000] [7666] [INFO] Worker exiting (pid: 7666)
+[2025-07-22 20:11:40 +0000] [7671] [INFO] Booting worker with pid: 7671
+[2025-07-22 20:24:11 +0000] [7669] [INFO] Worker exiting (pid: 7669)
+[2025-07-22 20:24:11 +0000] [7662] [INFO] Handling signal: term
+[2025-07-22 20:24:11 +0000] [7668] [INFO] Worker exiting (pid: 7668)
+[2025-07-22 20:24:11 +0000] [7670] [INFO] Worker exiting (pid: 7670)
+[2025-07-22 20:24:11 +0000] [7671] [INFO] Worker exiting (pid: 7671)
+[2025-07-22 20:24:11 +0000] [7662] [ERROR] Worker (pid:7669) was sent SIGTERM!
+[2025-07-22 20:24:12 +0000] [7662] [INFO] Shutting down: Master
+[2025-07-22 20:24:12 +0000] [7698] [INFO] Starting gunicorn 23.0.0
+[2025-07-22 20:24:12 +0000] [7698] [INFO] Listening at: http://0.0.0.0:5000 (7698)
+[2025-07-22 20:24:12 +0000] [7698] [INFO] Using worker: sync
+[2025-07-22 20:24:12 +0000] [7699] [INFO] Booting worker with pid: 7699
+[2025-07-22 20:24:12 +0000] [7700] [INFO] Booting worker with pid: 7700
+[2025-07-22 20:24:12 +0000] [7701] [INFO] Booting worker with pid: 7701
+[2025-07-22 20:24:12 +0000] [7702] [INFO] Booting worker with pid: 7702
+DEBUG:root:Starting video generation for length: 10s
+[2025-07-22 20:24:56 +0000] [7698] [CRITICAL] WORKER TIMEOUT (pid:7700)
+[2025-07-22 20:24:56 +0000] [7700] [ERROR] Error handling request /stream
+Traceback (most recent call last):
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 182, in handle_request
+    for item in respiter:
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/werkzeug/wsgi.py", line 256, in __next__
+    return self._next()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/werkzeug/wrappers/response.py", line 32, in _iter_encoded
+    for item in iterable:
+  File "/home/ubuntu/kaleido-video-generator/app.py", line 78, in event_stream
+    line = progress_queue.get(timeout=0.5)
+  File "/usr/lib/python3.10/queue.py", line 180, in get
+    self.not_empty.wait(remaining)
+  File "/usr/lib/python3.10/threading.py", line 324, in wait
+    gotit = waiter.acquire(True, timeout)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-07-22 20:24:56 +0000] [7700] [INFO] Worker exiting (pid: 7700)
+[2025-07-22 20:24:56 +0000] [7730] [INFO] Booting worker with pid: 7730
+[2025-07-22 20:30:35 +0000] [7699] [INFO] Worker exiting (pid: 7699)
+[2025-07-22 20:30:35 +0000] [7698] [INFO] Handling signal: term
+[2025-07-22 20:30:35 +0000] [7701] [INFO] Worker exiting (pid: 7701)
+[2025-07-22 20:30:35 +0000] [7702] [INFO] Worker exiting (pid: 7702)
+[2025-07-22 20:30:35 +0000] [7730] [INFO] Worker exiting (pid: 7730)
+[2025-07-22 20:30:35 +0000] [7698] [ERROR] Worker (pid:7699) was sent SIGTERM!
+[2025-07-22 20:30:35 +0000] [7698] [ERROR] Worker (pid:7701) was sent SIGTERM!
+[2025-07-22 20:30:35 +0000] [7698] [INFO] Shutting down: Master
+[2025-07-22 20:30:35 +0000] [7736] [INFO] Starting gunicorn 23.0.0
+[2025-07-22 20:30:35 +0000] [7736] [INFO] Listening at: http://0.0.0.0:5000 (7736)
+[2025-07-22 20:30:35 +0000] [7736] [INFO] Using worker: sync
+[2025-07-22 20:30:35 +0000] [7737] [INFO] Booting worker with pid: 7737
+[2025-07-22 20:30:35 +0000] [7738] [INFO] Booting worker with pid: 7738
+[2025-07-22 20:30:35 +0000] [7739] [INFO] Booting worker with pid: 7739
+[2025-07-22 20:30:35 +0000] [7740] [INFO] Booting worker with pid: 7740
+DEBUG:root:Starting video generation for length: 10s
+DEBUG:root:Starting video generation for length: 10s
+[2025-07-22 20:31:24 +0000] [7736] [CRITICAL] WORKER TIMEOUT (pid:7738)
+[2025-07-22 20:31:24 +0000] [7738] [ERROR] Error handling request /stream
+Traceback (most recent call last):
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 182, in handle_request
+    for item in respiter:
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/werkzeug/wsgi.py", line 256, in __next__
+    return self._next()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/werkzeug/wrappers/response.py", line 32, in _iter_encoded
+    for item in iterable:
+  File "/home/ubuntu/kaleido-video-generator/app.py", line 70, in event_stream
+    line = progress_queue.get(timeout=0.5)
+  File "/usr/lib/python3.10/queue.py", line 180, in get
+    self.not_empty.wait(remaining)
+  File "/usr/lib/python3.10/threading.py", line 324, in wait
+    gotit = waiter.acquire(True, timeout)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-07-22 20:31:24 +0000] [7738] [INFO] Worker exiting (pid: 7738)
+[2025-07-22 20:31:24 +0000] [7795] [INFO] Booting worker with pid: 7795
+[2025-07-22 20:31:41 +0000] [7736] [CRITICAL] WORKER TIMEOUT (pid:7740)
+[2025-07-22 20:31:41 +0000] [7740] [ERROR] Error handling request /stream
+Traceback (most recent call last):
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 182, in handle_request
+    for item in respiter:
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/werkzeug/wsgi.py", line 256, in __next__
+    return self._next()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/werkzeug/wrappers/response.py", line 32, in _iter_encoded
+    for item in iterable:
+  File "/home/ubuntu/kaleido-video-generator/app.py", line 70, in event_stream
+    line = progress_queue.get(timeout=0.5)
+  File "/usr/lib/python3.10/queue.py", line 180, in get
+    self.not_empty.wait(remaining)
+  File "/usr/lib/python3.10/threading.py", line 324, in wait
+    gotit = waiter.acquire(True, timeout)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-07-22 20:31:41 +0000] [7740] [INFO] Worker exiting (pid: 7740)
+[2025-07-22 20:31:41 +0000] [7796] [INFO] Booting worker with pid: 7796
+[2025-07-22 20:34:59 +0000] [7795] [INFO] Worker exiting (pid: 7795)
+[2025-07-22 20:34:59 +0000] [7736] [INFO] Handling signal: term
+[2025-07-22 20:34:59 +0000] [7737] [INFO] Worker exiting (pid: 7737)
+[2025-07-22 20:34:59 +0000] [7739] [INFO] Worker exiting (pid: 7739)
+[2025-07-22 20:34:59 +0000] [7796] [INFO] Worker exiting (pid: 7796)
+[2025-07-22 20:34:59 +0000] [7736] [INFO] Shutting down: Master
+[2025-07-22 20:34:59 +0000] [7799] [INFO] Starting gunicorn 23.0.0
+[2025-07-22 20:34:59 +0000] [7799] [INFO] Listening at: http://0.0.0.0:5000 (7799)
+[2025-07-22 20:34:59 +0000] [7799] [INFO] Using worker: sync
+[2025-07-22 20:34:59 +0000] [7800] [INFO] Booting worker with pid: 7800
+[2025-07-22 20:34:59 +0000] [7801] [INFO] Booting worker with pid: 7801
+[2025-07-22 20:34:59 +0000] [7802] [INFO] Booting worker with pid: 7802
+[2025-07-22 20:34:59 +0000] [7803] [INFO] Booting worker with pid: 7803
+INFO:root:[REQUEST] Starting generation thread for 10 seconds
+DEBUG:root:[THREAD] Starting generate_video_process()
+DEBUG:root:[THREAD] Running command: python3 kaleido_video_generator.py
+DEBUG:root:[PIPE] /home/ubuntu/kaleido-video-generator/generate_rainbow_camouflage_contrast_hardedges.py:29: DeprecationWarning: 'mode' parameter is deprecated and will be removed in Pillow 13 (2026-10-15)
+DEBUG:root:[PIPE] img = Image.fromarray(rgb_data, mode='RGB')
+DEBUG:root:[PIPE] [*] Generating rainbow stripes...
+DEBUG:root:[PIPE] [✓] Saved: /home/ubuntu/kaleido_render_pipeline/current_abstract_video_image.jpg
+DEBUG:root:[PIPE] [producer_xml] failed to load filter "frei0r.kaleidoscope"
+DEBUG:root:[PIPE] [producer_xml] failed to load filter "movit.lift_gamma_gain"
+DEBUG:root:[PIPE] [filter 0x64e09c496af0] The MLT Qt module requires a X11 or Wayland environment.
+DEBUG:root:[PIPE] Please either run melt from a session with a display server or use a fake X server like xvfb:
+DEBUG:root:[PIPE] xvfb-run -a melt (...)
+DEBUG:root:[PIPE] [filter 0x64e09c496af0] Filter qtblend failed
+DEBUG:root:[PIPE] [producer_xml] failed to load filter "qtblend"
+DEBUG:root:[PIPE] [mlt_producer 0x64e09c495570] <producer>
+DEBUG:root:[PIPE] The MLT Qt module requires a X11 or Wayland environment.
+DEBUG:root:[PIPE] Please either run melt from a session with a display server or use a fake X server like xvfb:
+DEBUG:root:[PIPE] xvfb-run -a melt (...)
+DEBUG:root:[PIPE] [mlt_producer 0x64e09c494de0] <producer>
+DEBUG:root:[PIPE] The MLT Qt module requires a X11 or Wayland environment.
+DEBUG:root:[PIPE] Please either run melt from a session with a display server or use a fake X server like xvfb:
+DEBUG:root:[PIPE] xvfb-run -a melt (...)
+DEBUG:root:[PIPE] [aac @ 0x79afcc002b00] Too many bits 426666.666667 > 12288 per frame requested, clamping to max
+DEBUG:root:[PIPE] [mp4 @ 0x79afcc000f40] Timestamps are unset in a packet for stream 1. This is deprecated and will stop working in the future. Fix your code to set the timestamps properly
+DEBUG:root:[PIPE] [mp4 @ 0x79afcc000f40] Encoder did not produce proper pts, making some up.
+DEBUG:root:[PIPE] [+] Generating new camouflage image...
+DEBUG:root:[PIPE] [+] Saved hard-edged camouflage: /home/ubuntu/kaleido-video-generator/current_abstract_video_image.jpg
+DEBUG:root:[PIPE] [+] Updating Kdenlive project file image path...
+DEBUG:root:[PIPE] [+] Kdenlive file patched.
+DEBUG:root:[PIPE] [+] Rendering video headlessly with Flatpak melt...
+DEBUG:root:[PIPE] [+] Render complete: /home/ubuntu/kaleido-video-generator/final_output_4k60.mp4
+INFO:root:Video generation completed successfully.
+[2025-07-22 20:35:56 +0000] [7799] [CRITICAL] WORKER TIMEOUT (pid:7800)
+[2025-07-22 20:35:56 +0000] [7800] [ERROR] Error handling request /stream
+Traceback (most recent call last):
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 182, in handle_request
+    for item in respiter:
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/werkzeug/wsgi.py", line 256, in __next__
+    return self._next()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/werkzeug/wrappers/response.py", line 32, in _iter_encoded
+    for item in iterable:
+  File "/home/ubuntu/kaleido-video-generator/app.py", line 91, in event_stream
+    line = progress_queue.get(timeout=0.5)
+  File "/usr/lib/python3.10/queue.py", line 180, in get
+    self.not_empty.wait(remaining)
+  File "/usr/lib/python3.10/threading.py", line 324, in wait
+    gotit = waiter.acquire(True, timeout)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-07-22 20:35:56 +0000] [7800] [INFO] Worker exiting (pid: 7800)
+[2025-07-22 20:35:56 +0000] [7831] [INFO] Booting worker with pid: 7831
+INFO:root:[REQUEST] Starting generation thread for 10 seconds
+DEBUG:root:[THREAD] Starting generate_video_process()
+DEBUG:root:[THREAD] Running command: python3 kaleido_video_generator.py
+DEBUG:root:[PIPE] /home/ubuntu/kaleido-video-generator/generate_rainbow_camouflage_contrast_hardedges.py:29: DeprecationWarning: 'mode' parameter is deprecated and will be removed in Pillow 13 (2026-10-15)
+DEBUG:root:[PIPE] img = Image.fromarray(rgb_data, mode='RGB')
+DEBUG:root:[PIPE] [*] Generating rainbow stripes...
+DEBUG:root:[PIPE] [✓] Saved: /home/ubuntu/kaleido_render_pipeline/current_abstract_video_image.jpg
+DEBUG:root:[PIPE] [producer_xml] failed to load filter "frei0r.kaleidoscope"
+DEBUG:root:[PIPE] [producer_xml] failed to load filter "movit.lift_gamma_gain"
+DEBUG:root:[PIPE] [filter 0x6496d8024af0] The MLT Qt module requires a X11 or Wayland environment.
+DEBUG:root:[PIPE] Please either run melt from a session with a display server or use a fake X server like xvfb:
+DEBUG:root:[PIPE] xvfb-run -a melt (...)
+DEBUG:root:[PIPE] [filter 0x6496d8024af0] Filter qtblend failed
+DEBUG:root:[PIPE] [producer_xml] failed to load filter "qtblend"
+DEBUG:root:[PIPE] [mlt_producer 0x6496d8023570] <producer>
+DEBUG:root:[PIPE] The MLT Qt module requires a X11 or Wayland environment.
+DEBUG:root:[PIPE] Please either run melt from a session with a display server or use a fake X server like xvfb:
+DEBUG:root:[PIPE] xvfb-run -a melt (...)
+DEBUG:root:[PIPE] [mlt_producer 0x6496d8022de0] <producer>
+DEBUG:root:[PIPE] The MLT Qt module requires a X11 or Wayland environment.
+DEBUG:root:[PIPE] Please either run melt from a session with a display server or use a fake X server like xvfb:
+DEBUG:root:[PIPE] xvfb-run -a melt (...)
+DEBUG:root:[PIPE] [aac @ 0x7b91f8002b00] Too many bits 426666.666667 > 12288 per frame requested, clamping to max
+DEBUG:root:[PIPE] [mp4 @ 0x7b91f8000f40] Timestamps are unset in a packet for stream 1. This is deprecated and will stop working in the future. Fix your code to set the timestamps properly
+DEBUG:root:[PIPE] [mp4 @ 0x7b91f8000f40] Encoder did not produce proper pts, making some up.
+DEBUG:root:[PIPE] [+] Generating new camouflage image...
+DEBUG:root:[PIPE] [+] Saved hard-edged camouflage: /home/ubuntu/kaleido-video-generator/current_abstract_video_image.jpg
+DEBUG:root:[PIPE] [+] Updating Kdenlive project file image path...
+DEBUG:root:[PIPE] [+] Kdenlive file patched.
+DEBUG:root:[PIPE] [+] Rendering video headlessly with Flatpak melt...
+DEBUG:root:[PIPE] [+] Render complete: /home/ubuntu/kaleido-video-generator/final_output_4k60.mp4
+INFO:root:Video generation completed successfully.
+[2025-07-22 20:37:09 +0000] [7799] [CRITICAL] WORKER TIMEOUT (pid:7831)
+[2025-07-22 20:37:09 +0000] [7831] [ERROR] Error handling request /stream
+Traceback (most recent call last):
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 182, in handle_request
+    for item in respiter:
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/werkzeug/wsgi.py", line 256, in __next__
+    return self._next()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/werkzeug/wrappers/response.py", line 32, in _iter_encoded
+    for item in iterable:
+  File "/home/ubuntu/kaleido-video-generator/app.py", line 91, in event_stream
+    line = progress_queue.get(timeout=0.5)
+  File "/usr/lib/python3.10/queue.py", line 180, in get
+    self.not_empty.wait(remaining)
+  File "/usr/lib/python3.10/threading.py", line 324, in wait
+    gotit = waiter.acquire(True, timeout)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-07-22 20:37:09 +0000] [7831] [INFO] Worker exiting (pid: 7831)
+[2025-07-22 20:37:09 +0000] [7860] [INFO] Booting worker with pid: 7860
+[2025-07-22 20:37:32 +0000] [7801] [INFO] Worker exiting (pid: 7801)
+[2025-07-22 20:37:32 +0000] [7799] [INFO] Handling signal: term
+[2025-07-22 20:37:32 +0000] [7802] [INFO] Worker exiting (pid: 7802)
+[2025-07-22 20:37:32 +0000] [7860] [INFO] Worker exiting (pid: 7860)
+[2025-07-22 20:37:32 +0000] [7803] [INFO] Worker exiting (pid: 7803)
+[2025-07-22 20:37:32 +0000] [7799] [ERROR] Worker (pid:7801) was sent SIGTERM!
+[2025-07-22 20:37:32 +0000] [7799] [INFO] Shutting down: Master
+[2025-07-22 20:37:32 +0000] [7862] [INFO] Starting gunicorn 23.0.0
+[2025-07-22 20:37:32 +0000] [7862] [INFO] Listening at: http://0.0.0.0:5000 (7862)
+[2025-07-22 20:37:32 +0000] [7862] [INFO] Using worker: sync
+[2025-07-22 20:37:32 +0000] [7863] [INFO] Booting worker with pid: 7863
+INFO:root:[REQUEST] Starting generation thread for 10 seconds
+DEBUG:root:[THREAD] Starting generate_video_process()
+DEBUG:root:[THREAD] Running command: python3 kaleido_video_generator.py
+DEBUG:root:[PIPE] /home/ubuntu/kaleido-video-generator/generate_rainbow_camouflage_contrast_hardedges.py:29: DeprecationWarning: 'mode' parameter is deprecated and will be removed in Pillow 13 (2026-10-15)
+DEBUG:root:[PIPE] img = Image.fromarray(rgb_data, mode='RGB')
+DEBUG:root:[PIPE] [*] Generating rainbow stripes...
+DEBUG:root:[PIPE] [✓] Saved: /home/ubuntu/kaleido_render_pipeline/current_abstract_video_image.jpg
+DEBUG:root:[PIPE] [producer_xml] failed to load filter "frei0r.kaleidoscope"
+DEBUG:root:[PIPE] [producer_xml] failed to load filter "movit.lift_gamma_gain"
+DEBUG:root:[PIPE] [filter 0x5580bb26eaf0] The MLT Qt module requires a X11 or Wayland environment.
+DEBUG:root:[PIPE] Please either run melt from a session with a display server or use a fake X server like xvfb:
+DEBUG:root:[PIPE] xvfb-run -a melt (...)
+DEBUG:root:[PIPE] [filter 0x5580bb26eaf0] Filter qtblend failed
+DEBUG:root:[PIPE] [producer_xml] failed to load filter "qtblend"
+DEBUG:root:[PIPE] [mlt_producer 0x5580bb26d570] <producer>
+DEBUG:root:[PIPE] The MLT Qt module requires a X11 or Wayland environment.
+DEBUG:root:[PIPE] Please either run melt from a session with a display server or use a fake X server like xvfb:
+DEBUG:root:[PIPE] xvfb-run -a melt (...)
+DEBUG:root:[PIPE] [mlt_producer 0x5580bb26cde0] <producer>
+DEBUG:root:[PIPE] The MLT Qt module requires a X11 or Wayland environment.
+DEBUG:root:[PIPE] Please either run melt from a session with a display server or use a fake X server like xvfb:
+DEBUG:root:[PIPE] xvfb-run -a melt (...)
+DEBUG:root:[PIPE] [aac @ 0x761f14002b00] Too many bits 426666.666667 > 12288 per frame requested, clamping to max
+DEBUG:root:[PIPE] [mp4 @ 0x761f14000f40] Timestamps are unset in a packet for stream 1. This is deprecated and will stop working in the future. Fix your code to set the timestamps properly
+DEBUG:root:[PIPE] [mp4 @ 0x761f14000f40] Encoder did not produce proper pts, making some up.
+DEBUG:root:[PIPE] [+] Generating new camouflage image...
+DEBUG:root:[PIPE] [+] Saved hard-edged camouflage: /home/ubuntu/kaleido-video-generator/current_abstract_video_image.jpg
+DEBUG:root:[PIPE] [+] Updating Kdenlive project file image path...
+DEBUG:root:[PIPE] [+] Kdenlive file patched.
+DEBUG:root:[PIPE] [+] Rendering video headlessly with Flatpak melt...
+DEBUG:root:[PIPE] [+] Render complete: /home/ubuntu/kaleido-video-generator/final_output_4k60.mp4
+INFO:root:Video generation completed successfully.
+INFO:root:[DOWNLOAD] Sending file: /home/ubuntu/kaleido-video-generator/final_output_4k60.mp4
+[2025-07-22 20:42:49 +0000] [7862] [INFO] Handling signal: term
+[2025-07-22 20:42:49 +0000] [7863] [INFO] Worker exiting (pid: 7863)
+[2025-07-22 20:42:49 +0000] [7862] [INFO] Shutting down: Master
+[2025-07-22 20:42:49 +0000] [7895] [INFO] Starting gunicorn 23.0.0
+[2025-07-22 20:42:49 +0000] [7895] [INFO] Listening at: http://0.0.0.0:5000 (7895)
+[2025-07-22 20:42:49 +0000] [7895] [INFO] Using worker: sync
+[2025-07-22 20:42:49 +0000] [7896] [INFO] Booting worker with pid: 7896
+INFO:root:[REQUEST] Starting generation thread for 10 seconds
+DEBUG:root:[THREAD] Starting generate_video_process()
+DEBUG:root:[THREAD] Running command: python3 kaleido_video_generator.py
+DEBUG:root:[PIPE] /home/ubuntu/kaleido-video-generator/generate_rainbow_camouflage_contrast_hardedges.py:29: DeprecationWarning: 'mode' parameter is deprecated and will be removed in Pillow 13 (2026-10-15)
+DEBUG:root:[PIPE] img = Image.fromarray(rgb_data, mode='RGB')
+DEBUG:root:[PIPE] [*] Generating rainbow stripes...
+DEBUG:root:[PIPE] [✓] Saved: /home/ubuntu/kaleido_render_pipeline/current_abstract_video_image.jpg
+DEBUG:root:[PIPE] [producer_xml] failed to load filter "frei0r.kaleidoscope"
+DEBUG:root:[PIPE] [producer_xml] failed to load filter "movit.lift_gamma_gain"
+DEBUG:root:[PIPE] [filter 0x5f56bb908af0] The MLT Qt module requires a X11 or Wayland environment.
+DEBUG:root:[PIPE] Please either run melt from a session with a display server or use a fake X server like xvfb:
+DEBUG:root:[PIPE] xvfb-run -a melt (...)
+DEBUG:root:[PIPE] [filter 0x5f56bb908af0] Filter qtblend failed
+DEBUG:root:[PIPE] [producer_xml] failed to load filter "qtblend"
+DEBUG:root:[PIPE] [mlt_producer 0x5f56bb907570] <producer>
+DEBUG:root:[PIPE] The MLT Qt module requires a X11 or Wayland environment.
+DEBUG:root:[PIPE] Please either run melt from a session with a display server or use a fake X server like xvfb:
+DEBUG:root:[PIPE] xvfb-run -a melt (...)
+DEBUG:root:[PIPE] [mlt_producer 0x5f56bb906de0] <producer>
+DEBUG:root:[PIPE] The MLT Qt module requires a X11 or Wayland environment.
+DEBUG:root:[PIPE] Please either run melt from a session with a display server or use a fake X server like xvfb:
+DEBUG:root:[PIPE] xvfb-run -a melt (...)
+DEBUG:root:[PIPE] [aac @ 0x7a6a84002b00] Too many bits 426666.666667 > 12288 per frame requested, clamping to max
+DEBUG:root:[PIPE] [mp4 @ 0x7a6a84000f40] Timestamps are unset in a packet for stream 1. This is deprecated and will stop working in the future. Fix your code to set the timestamps properly
+DEBUG:root:[PIPE] [mp4 @ 0x7a6a84000f40] Encoder did not produce proper pts, making some up.
+DEBUG:root:[PIPE] [+] Generating new camouflage image...
+DEBUG:root:[PIPE] [+] Saved hard-edged camouflage: /home/ubuntu/kaleido-video-generator/current_abstract_video_image.jpg
+DEBUG:root:[PIPE] [+] Updating Kdenlive project file image path...
+DEBUG:root:[PIPE] [+] Kdenlive file patched.
+DEBUG:root:[PIPE] [+] Rendering video headlessly with Flatpak melt...
+DEBUG:root:[PIPE] [+] Render complete: /home/ubuntu/kaleido-video-generator/final_output_4k60.mp4
+INFO:root:Video generation completed successfully.
+[2025-07-22 20:50:12 +0000] [7896] [INFO] Worker exiting (pid: 7896)
+[2025-07-22 20:50:12 +0000] [7895] [INFO] Handling signal: term
+[2025-07-22 20:50:12 +0000] [7895] [ERROR] Worker (pid:7896) was sent SIGTERM!
+[2025-07-22 20:50:12 +0000] [7930] [INFO] Starting gunicorn 23.0.0
+[2025-07-22 20:50:12 +0000] [7930] [INFO] Listening at: http://0.0.0.0:5000 (7930)
+[2025-07-22 20:50:12 +0000] [7930] [INFO] Using worker: sync
+[2025-07-22 20:50:12 +0000] [7931] [INFO] Booting worker with pid: 7931
+[2025-07-22 20:50:12 +0000] [7895] [INFO] Shutting down: Master
+=== STARTING PIPELINE ===
+Traceback (most recent call last):
+  File "/home/ubuntu/kaleido-video-generator/generate_camouflage.py", line 5, in <module>
+    from tqdm import tqdm
+ModuleNotFoundError: No module named 'tqdm'
+[2025-07-22 20:50:54 +0000] [7930] [CRITICAL] WORKER TIMEOUT (pid:7931)
+[2025-07-22 20:50:54 +0000] [7931] [ERROR] Error handling request /generate
+Traceback (most recent call last):
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ubuntu/kaleido-video-generator/app.py", line 19, in generate
+    wait_for_output_file(OUTPUT_FILE)
+  File "/home/ubuntu/kaleido-video-generator/app.py", line 34, in wait_for_output_file
+    time.sleep(1)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-07-22 20:50:54 +0000] [7931] [INFO] Worker exiting (pid: 7931)
+[2025-07-22 20:50:54 +0000] [7938] [INFO] Booting worker with pid: 7938
+=== STARTING PIPELINE ===
+Traceback (most recent call last):
+  File "/home/ubuntu/kaleido-video-generator/generate_camouflage.py", line 5, in <module>
+    from tqdm import tqdm
+ModuleNotFoundError: No module named 'tqdm'
+[2025-07-22 20:51:24 +0000] [7930] [CRITICAL] WORKER TIMEOUT (pid:7938)
+[2025-07-22 20:51:24 +0000] [7938] [ERROR] Error handling request /generate
+Traceback (most recent call last):
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ubuntu/kaleido-video-generator/app.py", line 19, in generate
+    wait_for_output_file(OUTPUT_FILE)
+  File "/home/ubuntu/kaleido-video-generator/app.py", line 34, in wait_for_output_file
+    time.sleep(1)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-07-22 20:51:24 +0000] [7938] [INFO] Worker exiting (pid: 7938)
+[2025-07-22 20:51:24 +0000] [7945] [INFO] Booting worker with pid: 7945
+[2025-07-22 20:52:53 +0000] [7930] [INFO] Handling signal: term
+[2025-07-22 20:52:53 +0000] [7945] [INFO] Worker exiting (pid: 7945)
+[2025-07-22 20:52:53 +0000] [7930] [INFO] Shutting down: Master
+[2025-07-22 20:53:01 +0000] [7948] [INFO] Starting gunicorn 23.0.0
+[2025-07-22 20:53:01 +0000] [7948] [INFO] Listening at: http://0.0.0.0:5000 (7948)
+[2025-07-22 20:53:01 +0000] [7948] [INFO] Using worker: sync
+[2025-07-22 20:53:01 +0000] [7949] [INFO] Booting worker with pid: 7949
+[2025-07-22 20:55:11 +0000] [7949] [INFO] Worker exiting (pid: 7949)
+[2025-07-22 20:55:11 +0000] [7948] [INFO] Handling signal: term
+[2025-07-22 20:55:11 +0000] [7948] [INFO] Shutting down: Master
+[2025-07-22 20:55:16 +0000] [7960] [INFO] Starting gunicorn 23.0.0
+[2025-07-22 20:55:16 +0000] [7960] [INFO] Listening at: http://0.0.0.0:5000 (7960)
+[2025-07-22 20:55:16 +0000] [7960] [INFO] Using worker: sync
+[2025-07-22 20:55:16 +0000] [7961] [INFO] Booting worker with pid: 7961
+[2025-07-22 21:05:35 +0000] [7960] [INFO] Handling signal: term
+[2025-07-22 21:05:35 +0000] [7961] [INFO] Worker exiting (pid: 7961)
+[2025-07-22 21:05:35 +0000] [7960] [INFO] Shutting down: Master
+[2025-07-22 21:05:42 +0000] [7985] [INFO] Starting gunicorn 23.0.0
+[2025-07-22 21:05:42 +0000] [7985] [INFO] Listening at: http://0.0.0.0:5000 (7985)
+[2025-07-22 21:05:42 +0000] [7985] [INFO] Using worker: sync
+[2025-07-22 21:05:42 +0000] [7986] [INFO] Booting worker with pid: 7986
+[2025-07-22 21:10:24 +0000] [7985] [INFO] Handling signal: term
+[2025-07-22 21:10:24 +0000] [7986] [INFO] Worker exiting (pid: 7986)
+[2025-07-22 21:10:25 +0000] [7985] [INFO] Shutting down: Master
+[2025-07-22 21:10:34 +0000] [7998] [INFO] Starting gunicorn 23.0.0
+[2025-07-22 21:10:34 +0000] [7998] [INFO] Listening at: http://0.0.0.0:5000 (7998)
+[2025-07-22 21:10:34 +0000] [7998] [INFO] Using worker: sync
+[2025-07-22 21:10:34 +0000] [7999] [INFO] Booting worker with pid: 7999
+[2025-07-22 21:13:12 +0000] [7998] [INFO] Handling signal: hup
+[2025-07-22 21:13:12 +0000] [7998] [INFO] Hang up: Master
+[2025-07-22 21:13:12 +0000] [7998] [ERROR] Worker (pid:7999) was sent SIGHUP!
+[2025-07-22 21:13:12 +0000] [8004] [INFO] Booting worker with pid: 8004
+[2025-07-22 22:29:43 +0000] [8004] [INFO] Worker exiting (pid: 8004)
+[2025-07-22 22:29:43 +0000] [7998] [INFO] Handling signal: term
+[2025-07-22 22:29:43 +0000] [7998] [ERROR] Worker (pid:8004) was sent SIGTERM!
+[2025-07-22 22:29:43 +0000] [7998] [INFO] Shutting down: Master
+[2025-07-22 22:29:43 +0000] [8429] [INFO] Starting gunicorn 23.0.0
+[2025-07-22 22:29:43 +0000] [8429] [INFO] Listening at: http://0.0.0.0:5000 (8429)
+[2025-07-22 22:29:43 +0000] [8429] [INFO] Using worker: sync
+[2025-07-22 22:29:43 +0000] [8431] [INFO] Booting worker with pid: 8431
+[2025-07-22 22:33:32 +0000] [8431] [INFO] Worker exiting (pid: 8431)
+[2025-07-22 22:33:32 +0000] [8429] [INFO] Handling signal: term
+[2025-07-22 22:33:32 +0000] [8440] [INFO] Starting gunicorn 23.0.0
+[2025-07-22 22:33:32 +0000] [8440] [INFO] Listening at: http://0.0.0.0:5000 (8440)
+[2025-07-22 22:33:32 +0000] [8440] [INFO] Using worker: sync
+[2025-07-22 22:33:32 +0000] [8429] [INFO] Shutting down: Master
+[2025-07-22 22:33:32 +0000] [8441] [INFO] Booting worker with pid: 8441
+[2025-07-22 22:34:14 +0000] [8440] [CRITICAL] WORKER TIMEOUT (pid:8441)
+[2025-07-22 22:34:14 +0000] [8441] [ERROR] Error handling request /stream
+Traceback (most recent call last):
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 182, in handle_request
+    for item in respiter:
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/werkzeug/wsgi.py", line 256, in __next__
+    return self._next()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/werkzeug/wrappers/response.py", line 32, in _iter_encoded
+    for item in iterable:
+  File "/home/ubuntu/kaleido-video-generator/app.py", line 66, in event_stream
+    time.sleep(1)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-07-22 22:34:14 +0000] [8441] [INFO] Worker exiting (pid: 8441)
+[2025-07-22 22:34:14 +0000] [8447] [INFO] Booting worker with pid: 8447
+[2025-07-22 22:34:45 +0000] [8440] [CRITICAL] WORKER TIMEOUT (pid:8447)
+[2025-07-22 22:34:45 +0000] [8447] [ERROR] Error handling request /stream
+Traceback (most recent call last):
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 182, in handle_request
+    for item in respiter:
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/werkzeug/wsgi.py", line 256, in __next__
+    return self._next()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/werkzeug/wrappers/response.py", line 32, in _iter_encoded
+    for item in iterable:
+  File "/home/ubuntu/kaleido-video-generator/app.py", line 66, in event_stream
+    time.sleep(1)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-07-22 22:34:45 +0000] [8447] [INFO] Worker exiting (pid: 8447)
+[2025-07-22 22:34:45 +0000] [8459] [INFO] Booting worker with pid: 8459
+[2025-07-22 22:35:19 +0000] [8440] [CRITICAL] WORKER TIMEOUT (pid:8459)
+[2025-07-22 22:35:19 +0000] [8459] [ERROR] Error handling request /stream
+Traceback (most recent call last):
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 182, in handle_request
+    for item in respiter:
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/werkzeug/wsgi.py", line 256, in __next__
+    return self._next()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/werkzeug/wrappers/response.py", line 32, in _iter_encoded
+    for item in iterable:
+  File "/home/ubuntu/kaleido-video-generator/app.py", line 66, in event_stream
+    time.sleep(1)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-07-22 22:35:19 +0000] [8459] [INFO] Worker exiting (pid: 8459)
+[2025-07-22 22:35:19 +0000] [8461] [INFO] Booting worker with pid: 8461
+[2025-07-22 22:41:17 +0000] [8461] [INFO] Worker exiting (pid: 8461)
+[2025-07-22 22:41:17 +0000] [8440] [INFO] Handling signal: term
+[2025-07-22 22:41:18 +0000] [8440] [INFO] Shutting down: Master
+[2025-07-23 15:23:19 +0000] [21239] [INFO] Starting gunicorn 23.0.0
+[2025-07-23 15:23:19 +0000] [21239] [ERROR] connection to ('0.0.0.0', 80) failed: [Errno 13] Permission denied
+[2025-07-23 15:23:20 +0000] [21239] [ERROR] connection to ('0.0.0.0', 80) failed: [Errno 13] Permission denied
+[2025-07-23 15:23:21 +0000] [21239] [ERROR] connection to ('0.0.0.0', 80) failed: [Errno 13] Permission denied
+[2025-07-23 15:23:22 +0000] [21239] [ERROR] connection to ('0.0.0.0', 80) failed: [Errno 13] Permission denied
+[2025-07-23 15:23:23 +0000] [21239] [ERROR] connection to ('0.0.0.0', 80) failed: [Errno 13] Permission denied
+[2025-07-23 15:23:24 +0000] [21239] [ERROR] Can't connect to ('0.0.0.0', 80)
+[2025-07-24 05:37:27 +0000] [96730] [INFO] Starting gunicorn 23.0.0
+[2025-07-24 05:37:27 +0000] [96730] [INFO] Listening at: http://0.0.0.0:5000 (96730)
+[2025-07-24 05:37:27 +0000] [96730] [INFO] Using worker: sync
+[2025-07-24 05:37:27 +0000] [96731] [INFO] Booting worker with pid: 96731
+[2025-07-24 05:37:27 +0000] [96732] [INFO] Booting worker with pid: 96732
+[2025-07-24 05:37:27 +0000] [96733] [INFO] Booting worker with pid: 96733
+[2025-07-24 05:37:27 +0000] [96734] [INFO] Booting worker with pid: 96734
+[2025-07-24 05:37:35 +0000] [96733] [INFO] Worker exiting (pid: 96733)
+[2025-07-24 05:37:35 +0000] [96730] [INFO] Handling signal: term
+[2025-07-24 05:37:35 +0000] [96731] [INFO] Worker exiting (pid: 96731)
+[2025-07-24 05:37:35 +0000] [96732] [INFO] Worker exiting (pid: 96732)
+[2025-07-24 05:37:35 +0000] [96734] [INFO] Worker exiting (pid: 96734)
+[2025-07-24 05:37:35 +0000] [96730] [INFO] Shutting down: Master
+[2025-07-24 05:37:39 +0000] [96737] [INFO] Starting gunicorn 23.0.0
+[2025-07-24 05:37:39 +0000] [96737] [INFO] Listening at: http://0.0.0.0:5000 (96737)
+[2025-07-24 05:37:39 +0000] [96737] [INFO] Using worker: sync
+[2025-07-24 05:37:39 +0000] [96738] [INFO] Booting worker with pid: 96738
+[2025-07-24 05:37:39 +0000] [96739] [INFO] Booting worker with pid: 96739
+[2025-07-24 05:37:39 +0000] [96740] [INFO] Booting worker with pid: 96740
+[2025-07-24 05:37:39 +0000] [96741] [INFO] Booting worker with pid: 96741
+[!] Generating guaranteed-color rainbow to jobs/7c96ee67-3d94-41cd-9655-4f27df770ea5/generated.jpg...
+[✓] Saved verified RGB image
+Error: Input file --input not found!
+[2025-07-24 05:39:28 +0000] [96738] [INFO] Worker exiting (pid: 96738)
+[2025-07-24 05:39:28 +0000] [96737] [INFO] Handling signal: term
+[2025-07-24 05:39:28 +0000] [96741] [INFO] Worker exiting (pid: 96741)
+[2025-07-24 05:39:28 +0000] [96739] [INFO] Worker exiting (pid: 96739)
+[2025-07-24 05:39:28 +0000] [96740] [INFO] Worker exiting (pid: 96740)
+[2025-07-24 05:39:29 +0000] [96737] [INFO] Shutting down: Master
+[2025-07-24 05:39:39 +0000] [96759] [INFO] Starting gunicorn 23.0.0
+[2025-07-24 05:39:39 +0000] [96759] [INFO] Listening at: http://0.0.0.0:5000 (96759)
+[2025-07-24 05:39:39 +0000] [96759] [INFO] Using worker: sync
+[2025-07-24 05:39:39 +0000] [96760] [INFO] Booting worker with pid: 96760
+[2025-07-24 05:39:39 +0000] [96761] [INFO] Booting worker with pid: 96761
+[2025-07-24 05:39:39 +0000] [96762] [INFO] Booting worker with pid: 96762
+[2025-07-24 05:39:39 +0000] [96763] [INFO] Booting worker with pid: 96763
+[!] Generating guaranteed-color rainbow to jobs/8e1b4fad-e9ef-4069-a925-f0a80db975b2/generated.jpg...
+[✓] Saved verified RGB image
+Error: Input file --input not found!
+[2025-07-24 05:42:51 +0000] [96761] [INFO] Worker exiting (pid: 96761)
+[2025-07-24 05:42:51 +0000] [96759] [INFO] Handling signal: term
+[2025-07-24 05:42:51 +0000] [96760] [INFO] Worker exiting (pid: 96760)
+[2025-07-24 05:42:51 +0000] [96762] [INFO] Worker exiting (pid: 96762)
+[2025-07-24 05:42:51 +0000] [96763] [INFO] Worker exiting (pid: 96763)
+[2025-07-24 05:42:51 +0000] [96759] [INFO] Shutting down: Master
+[2025-07-24 05:43:05 +0000] [96779] [INFO] Starting gunicorn 23.0.0
+[2025-07-24 05:43:05 +0000] [96779] [INFO] Listening at: http://0.0.0.0:5000 (96779)
+[2025-07-24 05:43:05 +0000] [96779] [INFO] Using worker: sync
+[2025-07-24 05:43:05 +0000] [96780] [INFO] Booting worker with pid: 96780
+[2025-07-24 05:43:05 +0000] [96781] [INFO] Booting worker with pid: 96781
+[2025-07-24 05:43:05 +0000] [96782] [INFO] Booting worker with pid: 96782
+[2025-07-24 05:43:05 +0000] [96783] [INFO] Booting worker with pid: 96783
+[!] Generating guaranteed-color rainbow to jobs/3d31d1ba-044f-4786-8664-61fd2b6172a7/generated.jpg...
+[✓] Saved verified RGB image
+Error: Input file --input not found!
+[2025-07-24 05:49:18 +0000] [96781] [INFO] Worker exiting (pid: 96781)
+[2025-07-24 05:49:18 +0000] [96779] [INFO] Handling signal: term
+[2025-07-24 05:49:18 +0000] [96780] [INFO] Worker exiting (pid: 96780)
+[2025-07-24 05:49:18 +0000] [96782] [INFO] Worker exiting (pid: 96782)
+[2025-07-24 05:49:18 +0000] [96783] [INFO] Worker exiting (pid: 96783)
+[2025-07-24 05:49:18 +0000] [96779] [INFO] Shutting down: Master
+[2025-07-24 05:49:28 +0000] [96852] [INFO] Starting gunicorn 23.0.0
+[2025-07-24 05:49:28 +0000] [96852] [INFO] Listening at: http://0.0.0.0:5000 (96852)
+[2025-07-24 05:49:28 +0000] [96852] [INFO] Using worker: sync
+[2025-07-24 05:49:28 +0000] [96853] [INFO] Booting worker with pid: 96853
+[2025-07-24 05:49:28 +0000] [96854] [INFO] Booting worker with pid: 96854
+[2025-07-24 05:49:28 +0000] [96855] [INFO] Booting worker with pid: 96855
+[2025-07-24 05:49:28 +0000] [96856] [INFO] Booting worker with pid: 96856
+[2025-07-24 05:49:37 +0000] [96852] [INFO] Handling signal: term
+[2025-07-24 05:49:37 +0000] [96855] [INFO] Worker exiting (pid: 96855)
+[2025-07-24 05:49:37 +0000] [96853] [INFO] Worker exiting (pid: 96853)
+[2025-07-24 05:49:37 +0000] [96854] [INFO] Worker exiting (pid: 96854)
+[2025-07-24 05:49:37 +0000] [96856] [INFO] Worker exiting (pid: 96856)
+[2025-07-24 05:49:37 +0000] [96852] [INFO] Shutting down: Master
+[2025-07-24 05:49:49 +0000] [96859] [INFO] Starting gunicorn 23.0.0
+[2025-07-24 05:49:49 +0000] [96859] [INFO] Listening at: http://0.0.0.0:5000 (96859)
+[2025-07-24 05:49:49 +0000] [96859] [INFO] Using worker: sync
+[2025-07-24 05:49:49 +0000] [96860] [INFO] Booting worker with pid: 96860
+[2025-07-24 05:49:49 +0000] [96861] [INFO] Booting worker with pid: 96861
+[2025-07-24 05:49:49 +0000] [96862] [INFO] Booting worker with pid: 96862
+[2025-07-24 05:49:50 +0000] [96863] [INFO] Booting worker with pid: 96863
+[!] Generating guaranteed-color rainbow to jobs/2359cbb4-f5a0-4e38-8936-a525af2d95a5/generated.jpg...
+[✓] Saved verified RGB image
+Error: Input file --input not found!
+[2025-07-24 05:55:29 +0000] [96860] [INFO] Worker exiting (pid: 96860)
+[2025-07-24 05:55:29 +0000] [96859] [INFO] Handling signal: term
+[2025-07-24 05:55:29 +0000] [96861] [INFO] Worker exiting (pid: 96861)
+[2025-07-24 05:55:29 +0000] [96862] [INFO] Worker exiting (pid: 96862)
+[2025-07-24 05:55:29 +0000] [96863] [INFO] Worker exiting (pid: 96863)
+[2025-07-24 05:55:30 +0000] [96859] [INFO] Shutting down: Master
+[2025-07-24 05:55:45 +0000] [96879] [INFO] Starting gunicorn 23.0.0
+[2025-07-24 05:55:45 +0000] [96879] [INFO] Listening at: http://0.0.0.0:5000 (96879)
+[2025-07-24 05:55:45 +0000] [96879] [INFO] Using worker: sync
+[2025-07-24 05:55:45 +0000] [96880] [INFO] Booting worker with pid: 96880
+[2025-07-24 05:55:46 +0000] [96881] [INFO] Booting worker with pid: 96881
+[2025-07-24 05:55:46 +0000] [96882] [INFO] Booting worker with pid: 96882
+[2025-07-24 05:55:46 +0000] [96883] [INFO] Booting worker with pid: 96883
+[!] Generating guaranteed-color rainbow to jobs/438a3029-7528-4ebd-8823-fcc9895738d2/generated.jpg...
+[✓] Saved verified RGB image
+Error: Input file --input not found!
+[2025-07-24 06:00:30 +0000] [96880] [INFO] Worker exiting (pid: 96880)
+[2025-07-24 06:00:30 +0000] [96879] [INFO] Handling signal: term
+[2025-07-24 06:00:30 +0000] [96882] [INFO] Worker exiting (pid: 96882)
+[2025-07-24 06:00:30 +0000] [96883] [INFO] Worker exiting (pid: 96883)
+[2025-07-24 06:00:30 +0000] [96881] [INFO] Worker exiting (pid: 96881)
+[2025-07-24 06:00:30 +0000] [96879] [INFO] Shutting down: Master
+[2025-07-24 06:00:58 +0000] [96895] [INFO] Starting gunicorn 23.0.0
+[2025-07-24 06:00:58 +0000] [96895] [INFO] Listening at: http://0.0.0.0:5000 (96895)
+[2025-07-24 06:00:58 +0000] [96895] [INFO] Using worker: sync
+[2025-07-24 06:00:58 +0000] [96896] [INFO] Booting worker with pid: 96896
+[2025-07-24 06:00:58 +0000] [96896] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/ubuntu/kaleido-video-generator/venv/lib/python3.10/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/ubuntu/kaleido-video-generator/app.py", line 59
+    @app.route("/")
+SyntaxError: expected 'except' or 'finally' block
+[2025-07-24 06:00:58 +0000] [96896] [INFO] Worker exiting (pid: 96896)
+[2025-07-24 06:00:58 +0000] [96895] [ERROR] Worker (pid:96896) exited with code 3
+[2025-07-24 06:00:58 +0000] [96895] [ERROR] Shutting down: Master
+[2025-07-24 06:00:58 +0000] [96895] [ERROR] Reason: Worker failed to boot.
+[2025-07-24 06:02:44 +0000] [96903] [INFO] Starting gunicorn 23.0.0
+[2025-07-24 06:02:44 +0000] [96903] [INFO] Listening at: http://0.0.0.0:5000 (96903)
+[2025-07-24 06:02:44 +0000] [96903] [INFO] Using worker: sync
+[2025-07-24 06:02:44 +0000] [96904] [INFO] Booting worker with pid: 96904
+[2025-07-24 06:02:44 +0000] [96905] [INFO] Booting worker with pid: 96905
+[2025-07-24 06:02:44 +0000] [96906] [INFO] Booting worker with pid: 96906
+[2025-07-24 06:02:44 +0000] [96907] [INFO] Booting worker with pid: 96907
+[!] Generating guaranteed-color rainbow to /home/ubuntu/kaleido-video-generator/jobs/371c44f1-cb4f-4a81-a78c-4c624f1e36bc/generated.jpg...
+[✓] Saved verified RGB image
+Error: Input file --input not found!
+[2025-07-24 06:07:38 +0000] [96905] [INFO] Worker exiting (pid: 96905)
+[2025-07-24 06:07:38 +0000] [96903] [INFO] Handling signal: term
+[2025-07-24 06:07:38 +0000] [96904] [INFO] Worker exiting (pid: 96904)
+[2025-07-24 06:07:38 +0000] [96907] [INFO] Worker exiting (pid: 96907)
+[2025-07-24 06:07:38 +0000] [96906] [INFO] Worker exiting (pid: 96906)
+[2025-07-24 06:07:38 +0000] [96903] [INFO] Shutting down: Master
+[2025-07-24 06:07:54 +0000] [96956] [INFO] Starting gunicorn 23.0.0
+[2025-07-24 06:07:54 +0000] [96956] [INFO] Listening at: http://0.0.0.0:5000 (96956)
+[2025-07-24 06:07:54 +0000] [96956] [INFO] Using worker: sync
+[2025-07-24 06:07:54 +0000] [96957] [INFO] Booting worker with pid: 96957
+[2025-07-24 06:07:54 +0000] [96958] [INFO] Booting worker with pid: 96958
+[2025-07-24 06:07:54 +0000] [96959] [INFO] Booting worker with pid: 96959
+[2025-07-24 06:07:54 +0000] [96960] [INFO] Booting worker with pid: 96960
+[!] Generating guaranteed-color rainbow to /home/ubuntu/kaleido-video-generator/jobs/4ac3bdd3-3312-4034-a21f-786180eb3e03/generated.jpg...
+[✓] Saved verified RGB image
+Error: Input file --input not found!
+[2025-07-24 06:17:19 +0000] [96958] [INFO] Worker exiting (pid: 96958)
+[2025-07-24 06:17:19 +0000] [96956] [INFO] Handling signal: term
+[2025-07-24 06:17:19 +0000] [96957] [INFO] Worker exiting (pid: 96957)
+[2025-07-24 06:17:19 +0000] [96960] [INFO] Worker exiting (pid: 96960)
+[2025-07-24 06:17:19 +0000] [96959] [INFO] Worker exiting (pid: 96959)
+[2025-07-24 06:17:19 +0000] [96956] [INFO] Shutting down: Master
+[2025-07-24 06:17:38 +0000] [97010] [INFO] Starting gunicorn 23.0.0
+[2025-07-24 06:17:38 +0000] [97010] [INFO] Listening at: http://0.0.0.0:5000 (97010)
+[2025-07-24 06:17:38 +0000] [97010] [INFO] Using worker: sync
+[2025-07-24 06:17:38 +0000] [97011] [INFO] Booting worker with pid: 97011
+[2025-07-24 06:17:39 +0000] [97012] [INFO] Booting worker with pid: 97012
+[2025-07-24 06:17:39 +0000] [97013] [INFO] Booting worker with pid: 97013
+[2025-07-24 06:17:39 +0000] [97014] [INFO] Booting worker with pid: 97014
+[!] Generating guaranteed-color rainbow to /home/ubuntu/kaleido-video-generator/jobs/b841ed7a-b6e3-438b-96d0-d7069bcb1bf3/generated.jpg...
+[✓] Saved verified RGB image
+Error: Input file --template not found!
+[2025-07-24 06:23:51 +0000] [97011] [INFO] Worker exiting (pid: 97011)
+[2025-07-24 06:23:51 +0000] [97010] [INFO] Handling signal: term
+[2025-07-24 06:23:51 +0000] [97014] [INFO] Worker exiting (pid: 97014)
+[2025-07-24 06:23:51 +0000] [97012] [INFO] Worker exiting (pid: 97012)
+[2025-07-24 06:23:51 +0000] [97013] [INFO] Worker exiting (pid: 97013)
+[2025-07-24 06:23:51 +0000] [97010] [INFO] Shutting down: Master
+[2025-07-24 06:24:07 +0000] [97028] [INFO] Starting gunicorn 23.0.0
+[2025-07-24 06:24:07 +0000] [97028] [INFO] Listening at: http://0.0.0.0:5000 (97028)
+[2025-07-24 06:24:07 +0000] [97028] [INFO] Using worker: sync
+[2025-07-24 06:24:07 +0000] [97029] [INFO] Booting worker with pid: 97029
+[2025-07-24 06:24:07 +0000] [97030] [INFO] Booting worker with pid: 97030
+[2025-07-24 06:24:07 +0000] [97031] [INFO] Booting worker with pid: 97031
+[2025-07-24 06:24:07 +0000] [97032] [INFO] Booting worker with pid: 97032
+[!] Generating guaranteed-color rainbow to /home/ubuntu/kaleido-video-generator/jobs/c935975d-de09-49eb-ae2c-117d2c7db652/generated.jpg...
+[✓] Saved verified RGB image
+2025-07-24 06:24:12,596 - INFO - File verified: /home/ubuntu/kaleido-video-generator/template_project.kdenlive
+2025-07-24 06:24:12,596 - INFO - File verified: /home/ubuntu/kaleido-video-generator/jobs/c935975d-de09-49eb-ae2c-117d2c7db652/generated.jpg
+2025-07-24 06:24:12,596 - INFO - Executing: kdenlive --template /home/ubuntu/kaleido-video-generator/template_project.kdenlive --input /home/ubuntu/kaleido-video-generator/jobs/c935975d-de09-49eb-ae2c-117d2c7db652/generated.jpg --output /home/ubuntu/kaleido-video-generator/jobs/c935975d-de09-49eb-ae2c-117d2c7db652/patched.kdenlive --duration 10
+2025-07-24 06:24:12,597 - ERROR - Unexpected error occurred.
+Traceback (most recent call last):
+  File "/home/ubuntu/kaleido-video-generator/patch_kdenlive_10s.py", line 40, in patch_kdenlive
+    result = subprocess.run(cmd, capture_output=True, text=True)
+  File "/usr/lib/python3.10/subprocess.py", line 503, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/usr/lib/python3.10/subprocess.py", line 971, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/lib/python3.10/subprocess.py", line 1863, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'kdenlive'
+2025-07-24 06:24:12,597 - ERROR - Failed to patch Kdenlive project: [Errno 2] No such file or directory: 'kdenlive'
+[2025-07-24 06:29:10 +0000] [97029] [INFO] Worker exiting (pid: 97029)
+[2025-07-24 06:29:10 +0000] [97028] [INFO] Handling signal: term
+[2025-07-24 06:29:10 +0000] [97030] [INFO] Worker exiting (pid: 97030)
+[2025-07-24 06:29:10 +0000] [97032] [INFO] Worker exiting (pid: 97032)
+[2025-07-24 06:29:10 +0000] [97031] [INFO] Worker exiting (pid: 97031)
+[2025-07-24 06:29:11 +0000] [97028] [INFO] Shutting down: Master
+[2025-07-24 06:29:25 +0000] [97068] [INFO] Starting gunicorn 23.0.0
+[2025-07-24 06:29:25 +0000] [97068] [INFO] Listening at: http://0.0.0.0:5000 (97068)
+[2025-07-24 06:29:25 +0000] [97068] [INFO] Using worker: sync
+[2025-07-24 06:29:25 +0000] [97069] [INFO] Booting worker with pid: 97069
+[2025-07-24 06:29:25 +0000] [97070] [INFO] Booting worker with pid: 97070
+[2025-07-24 06:29:25 +0000] [97071] [INFO] Booting worker with pid: 97071
+[2025-07-24 06:29:25 +0000] [97072] [INFO] Booting worker with pid: 97072
+[!] Generating guaranteed-color rainbow to /home/ubuntu/kaleido-video-generator/jobs/6b17f210-45e1-45f8-8049-2cb291c96718/generated.jpg...
+[✓] Saved verified RGB image
+Successfully patched template saved to /home/ubuntu/kaleido-video-generator/jobs/6b17f210-45e1-45f8-8049-2cb291c96718/patched.kdenlive
+[2025-07-24 06:35:42 +0000] [97070] [INFO] Worker exiting (pid: 97070)
+[2025-07-24 06:35:42 +0000] [97069] [INFO] Worker exiting (pid: 97069)
+[2025-07-24 06:35:42 +0000] [97071] [INFO] Worker exiting (pid: 97071)
+[2025-07-24 06:35:42 +0000] [97068] [INFO] Handling signal: term
+[2025-07-24 06:35:42 +0000] [97072] [INFO] Worker exiting (pid: 97072)
+[2025-07-24 06:35:42 +0000] [97068] [ERROR] Worker (pid:97071) was sent SIGTERM!
+[2025-07-24 06:35:42 +0000] [97068] [ERROR] Worker (pid:97069) was sent SIGTERM!
+[2025-07-24 06:35:42 +0000] [97068] [ERROR] Worker (pid:97070) was sent SIGTERM!
+[2025-07-24 06:35:43 +0000] [97068] [INFO] Shutting down: Master
+[2025-07-24 06:36:00 +0000] [97087] [INFO] Starting gunicorn 23.0.0
+[2025-07-24 06:36:00 +0000] [97087] [INFO] Listening at: http://0.0.0.0:5000 (97087)
+[2025-07-24 06:36:00 +0000] [97087] [INFO] Using worker: sync
+[2025-07-24 06:36:00 +0000] [97088] [INFO] Booting worker with pid: 97088
+[2025-07-24 06:36:00 +0000] [97089] [INFO] Booting worker with pid: 97089
+[2025-07-24 06:36:00 +0000] [97090] [INFO] Booting worker with pid: 97090
+[2025-07-24 06:36:00 +0000] [97091] [INFO] Booting worker with pid: 97091
+[!] Generating guaranteed-color rainbow to /home/ubuntu/kaleido-video-generator/jobs/cfe3575c-994b-451d-8659-a97ab62b7a1c/generated.jpg...
+[✓] Saved verified RGB image
+Successfully patched template saved to /home/ubuntu/kaleido-video-generator/jobs/cfe3575c-994b-451d-8659-a97ab62b7a1c/patched.kdenlive
+[2025-07-24 06:38:44 +0000] [97087] [INFO] Handling signal: term
+[2025-07-24 06:38:44 +0000] [97089] [INFO] Worker exiting (pid: 97089)
+[2025-07-24 06:38:44 +0000] [97088] [INFO] Worker exiting (pid: 97088)
+[2025-07-24 06:38:44 +0000] [97090] [INFO] Worker exiting (pid: 97090)
+[2025-07-24 06:38:44 +0000] [97091] [INFO] Worker exiting (pid: 97091)
+[2025-07-24 06:38:44 +0000] [97087] [INFO] Shutting down: Master
+[2025-07-24 06:38:56 +0000] [97188] [INFO] Starting gunicorn 23.0.0
+[2025-07-24 06:38:56 +0000] [97188] [INFO] Listening at: http://0.0.0.0:5000 (97188)
+[2025-07-24 06:38:56 +0000] [97188] [INFO] Using worker: sync
+[2025-07-24 06:38:56 +0000] [97189] [INFO] Booting worker with pid: 97189
+[2025-07-24 06:38:56 +0000] [97190] [INFO] Booting worker with pid: 97190
+[2025-07-24 06:38:56 +0000] [97191] [INFO] Booting worker with pid: 97191
+[2025-07-24 06:38:56 +0000] [97192] [INFO] Booting worker with pid: 97192
+[!] Generating guaranteed-color rainbow to /home/ubuntu/kaleido-video-generator/jobs/a332f87e-523c-497e-a572-e422eb472bad/generated.jpg...
+[✓] Saved verified RGB image
+Successfully patched template saved to /home/ubuntu/kaleido-video-generator/jobs/a332f87e-523c-497e-a572-e422eb472bad/patched.kdenlive
+[2025-07-24 06:42:36 +0000] [97189] [INFO] Worker exiting (pid: 97189)
+[2025-07-24 06:42:36 +0000] [97188] [INFO] Handling signal: term
+[2025-07-24 06:42:36 +0000] [97192] [INFO] Worker exiting (pid: 97192)
+[2025-07-24 06:42:36 +0000] [97190] [INFO] Worker exiting (pid: 97190)
+[2025-07-24 06:42:36 +0000] [97191] [INFO] Worker exiting (pid: 97191)
+[2025-07-24 06:42:36 +0000] [97188] [INFO] Shutting down: Master
+[2025-07-24 06:42:55 +0000] [97213] [INFO] Starting gunicorn 23.0.0
+[2025-07-24 06:42:55 +0000] [97213] [INFO] Listening at: http://0.0.0.0:5000 (97213)
+[2025-07-24 06:42:55 +0000] [97213] [INFO] Using worker: sync
+[2025-07-24 06:42:55 +0000] [97214] [INFO] Booting worker with pid: 97214
+[2025-07-24 06:42:55 +0000] [97215] [INFO] Booting worker with pid: 97215
+[2025-07-24 06:42:55 +0000] [97216] [INFO] Booting worker with pid: 97216
+[2025-07-24 06:42:55 +0000] [97217] [INFO] Booting worker with pid: 97217
+[!] Generating guaranteed-color rainbow to /home/ubuntu/kaleido-video-generator/jobs/4e78d4fb-5f33-46dd-928a-a77f1d26c60e/generated.jpg...
+[✓] Saved verified RGB image
+Successfully patched template saved to /home/ubuntu/kaleido-video-generator/jobs/4e78d4fb-5f33-46dd-928a-a77f1d26c60e/patched.kdenlive
+[2025-07-24 06:46:01 +0000] [97213] [INFO] Handling signal: term
+[2025-07-24 06:46:01 +0000] [97214] [INFO] Worker exiting (pid: 97214)
+[2025-07-24 06:46:01 +0000] [97217] [INFO] Worker exiting (pid: 97217)
+[2025-07-24 06:46:01 +0000] [97215] [INFO] Worker exiting (pid: 97215)
+[2025-07-24 06:46:01 +0000] [97216] [INFO] Worker exiting (pid: 97216)
+[2025-07-24 06:46:01 +0000] [97213] [INFO] Shutting down: Master
+[2025-07-24 06:46:16 +0000] [97228] [INFO] Starting gunicorn 23.0.0
+[2025-07-24 06:46:16 +0000] [97228] [INFO] Listening at: http://0.0.0.0:5000 (97228)
+[2025-07-24 06:46:16 +0000] [97228] [INFO] Using worker: sync
+[2025-07-24 06:46:16 +0000] [97229] [INFO] Booting worker with pid: 97229
+[2025-07-24 06:46:16 +0000] [97230] [INFO] Booting worker with pid: 97230
+[2025-07-24 06:46:16 +0000] [97231] [INFO] Booting worker with pid: 97231
+[2025-07-24 06:46:16 +0000] [97232] [INFO] Booting worker with pid: 97232
+[!] Generating guaranteed-color rainbow to /home/ubuntu/kaleido-video-generator/jobs/7de388f9-586e-4bb5-99c6-34c78e0754db/generated.jpg...
+[✓] Saved verified RGB image
+Successfully patched template saved to /home/ubuntu/kaleido-video-generator/jobs/7de388f9-586e-4bb5-99c6-34c78e0754db/patched.kdenlive
+[2025-07-24 06:48:18 +0000] [97232] [INFO] Worker exiting (pid: 97232)
+[2025-07-24 06:48:18 +0000] [97228] [INFO] Handling signal: term
+[2025-07-24 06:48:18 +0000] [97231] [INFO] Worker exiting (pid: 97231)
+[2025-07-24 06:48:18 +0000] [97230] [INFO] Worker exiting (pid: 97230)
+[2025-07-24 06:48:18 +0000] [97229] [INFO] Worker exiting (pid: 97229)
+[2025-07-24 06:48:19 +0000] [97228] [INFO] Shutting down: Master
+[2025-07-24 06:48:21 +0000] [97238] [INFO] Starting gunicorn 23.0.0
+[2025-07-24 06:48:21 +0000] [97238] [INFO] Listening at: http://0.0.0.0:5000 (97238)
+[2025-07-24 06:48:21 +0000] [97238] [INFO] Using worker: sync
+[2025-07-24 06:48:21 +0000] [97239] [INFO] Booting worker with pid: 97239
+[2025-07-24 06:48:22 +0000] [97240] [INFO] Booting worker with pid: 97240
+[2025-07-24 06:48:22 +0000] [97241] [INFO] Booting worker with pid: 97241
+[2025-07-24 06:48:22 +0000] [97242] [INFO] Booting worker with pid: 97242
+[2025-07-24 06:48:43 +0000] [97238] [INFO] Handling signal: term
+[2025-07-24 06:48:43 +0000] [97239] [INFO] Worker exiting (pid: 97239)
+[2025-07-24 06:48:43 +0000] [97242] [INFO] Worker exiting (pid: 97242)
+[2025-07-24 06:48:43 +0000] [97240] [INFO] Worker exiting (pid: 97240)
+[2025-07-24 06:48:43 +0000] [97241] [INFO] Worker exiting (pid: 97241)
+[2025-07-24 06:48:44 +0000] [97238] [INFO] Shutting down: Master
+[2025-07-24 06:48:52 +0000] [97245] [INFO] Starting gunicorn 23.0.0
+[2025-07-24 06:48:52 +0000] [97245] [INFO] Listening at: http://0.0.0.0:5000 (97245)
+[2025-07-24 06:48:52 +0000] [97245] [INFO] Using worker: sync
+[2025-07-24 06:48:52 +0000] [97246] [INFO] Booting worker with pid: 97246
+[2025-07-24 06:48:52 +0000] [97247] [INFO] Booting worker with pid: 97247
+[2025-07-24 06:48:52 +0000] [97248] [INFO] Booting worker with pid: 97248
+[2025-07-24 06:48:52 +0000] [97249] [INFO] Booting worker with pid: 97249
+[!] Generating guaranteed-color rainbow to /home/ubuntu/kaleido-video-generator/jobs/af9cc9f6-5ea4-40e9-b48f-3703fb0b6b0f/generated.jpg...
+[✓] Saved verified RGB image
+Successfully patched template saved to /home/ubuntu/kaleido-video-generator/jobs/af9cc9f6-5ea4-40e9-b48f-3703fb0b6b0f/patched.kdenlive
+[consumer multi] The MLT Qt module requires a X11 or Wayland environment.
+Please either run melt from a session with a display server or use a fake X server like xvfb:
+xvfb-run -a melt (...)
+[producer_xml] failed to load filter "frei0r.kaleidoscope"
+[filter 0x69e9ce0] The MLT Qt module requires a X11 or Wayland environment.
+Please either run melt from a session with a display server or use a fake X server like xvfb:
+xvfb-run -a melt (...)
+[filter 0x69e9ce0] Filter qtblend failed
+[producer_xml] failed to load filter "qtblend"
+[mlt_producer 0x69e6b20] <producer>
+    The MLT Qt module requires a X11 or Wayland environment.
+Please either run melt from a session with a display server or use a fake X server like xvfb:
+xvfb-run -a melt (...)
+[mlt_producer 0x69e5960] <producer>
+    The MLT Qt module requires a X11 or Wayland environment.
+Please either run melt from a session with a display server or use a fake X server like xvfb:
+xvfb-run -a melt (...)
+[mlt_producer 0x69e6100] <producer>
+    The MLT Qt module requires a X11 or Wayland environment.
+Please either run melt from a session with a display server or use a fake X server like xvfb:
+xvfb-run -a melt (...)
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/af9cc9f6-5ea4-40e9-b48f-3703fb0b6b0f/current_abstract_video_image.jpg"
+[mlt_producer 0x69d2d90] <producer>
+    The MLT Qt module requires a X11 or Wayland environment.
+Please either run melt from a session with a display server or use a fake X server like xvfb:
+xvfb-run -a melt (...)
+[libx264 @ 0x7a7bbc001f40] interlace + weightp is not implemented
+[filter avcolor_space] Invalid format glsl
+[filter avcolor_space] Invalid format glsl
+[2025-07-24 06:51:53 +0000] [97246] [INFO] Worker exiting (pid: 97246)
+[2025-07-24 06:51:53 +0000] [97245] [INFO] Handling signal: term
+[2025-07-24 06:51:53 +0000] [97247] [INFO] Worker exiting (pid: 97247)
+[2025-07-24 06:51:53 +0000] [97249] [INFO] Worker exiting (pid: 97249)
+[2025-07-24 06:51:53 +0000] [97248] [INFO] Worker exiting (pid: 97248)
+[2025-07-24 06:51:53 +0000] [97245] [INFO] Shutting down: Master
+[2025-07-24 06:52:08 +0000] [97264] [INFO] Starting gunicorn 23.0.0
+[2025-07-24 06:52:08 +0000] [97264] [INFO] Listening at: http://0.0.0.0:5000 (97264)
+[2025-07-24 06:52:08 +0000] [97264] [INFO] Using worker: sync
+[2025-07-24 06:52:08 +0000] [97265] [INFO] Booting worker with pid: 97265
+[2025-07-24 06:52:08 +0000] [97266] [INFO] Booting worker with pid: 97266
+[2025-07-24 06:52:08 +0000] [97267] [INFO] Booting worker with pid: 97267
+[2025-07-24 06:52:08 +0000] [97268] [INFO] Booting worker with pid: 97268
+[!] Generating guaranteed-color rainbow to /home/ubuntu/kaleido-video-generator/jobs/f560db4c-b442-4209-a102-5ac8a4362917/generated.jpg...
+[✓] Saved verified RGB image
+Successfully patched template saved to /home/ubuntu/kaleido-video-generator/jobs/f560db4c-b442-4209-a102-5ac8a4362917/patched.kdenlive
+[2025-07-24 06:55:35 +0000] [97268] [INFO] Worker exiting (pid: 97268)
+[2025-07-24 06:55:35 +0000] [97264] [INFO] Handling signal: term
+[2025-07-24 06:55:35 +0000] [97266] [INFO] Worker exiting (pid: 97266)
+[2025-07-24 06:55:35 +0000] [97267] [INFO] Worker exiting (pid: 97267)
+[2025-07-24 06:55:35 +0000] [97265] [INFO] Worker exiting (pid: 97265)
+[2025-07-24 06:55:35 +0000] [97264] [INFO] Shutting down: Master
+[2025-07-24 06:55:47 +0000] [97342] [INFO] Starting gunicorn 23.0.0
+[2025-07-24 06:55:47 +0000] [97342] [INFO] Listening at: http://0.0.0.0:5000 (97342)
+[2025-07-24 06:55:47 +0000] [97342] [INFO] Using worker: sync
+[2025-07-24 06:55:47 +0000] [97343] [INFO] Booting worker with pid: 97343
+[2025-07-24 06:55:47 +0000] [97344] [INFO] Booting worker with pid: 97344
+[2025-07-24 06:55:47 +0000] [97345] [INFO] Booting worker with pid: 97345
+[2025-07-24 06:55:47 +0000] [97346] [INFO] Booting worker with pid: 97346
+[!] Generating guaranteed-color rainbow to /home/ubuntu/kaleido-video-generator/jobs/88230907-e92a-4995-9c25-5eb496135520/generated.jpg...
+[✓] Saved verified RGB image
+Successfully patched template saved to /home/ubuntu/kaleido-video-generator/jobs/88230907-e92a-4995-9c25-5eb496135520/patched.kdenlive
+[2025-07-24 07:05:30 +0000] [97342] [INFO] Handling signal: term
+[2025-07-24 07:05:30 +0000] [97343] [INFO] Worker exiting (pid: 97343)
+[2025-07-24 07:05:30 +0000] [97345] [INFO] Worker exiting (pid: 97345)
+[2025-07-24 07:05:30 +0000] [97346] [INFO] Worker exiting (pid: 97346)
+[2025-07-24 07:05:30 +0000] [97344] [INFO] Worker exiting (pid: 97344)
+[2025-07-24 07:05:30 +0000] [97342] [INFO] Shutting down: Master
+[2025-07-24 07:05:45 +0000] [98586] [INFO] Starting gunicorn 23.0.0
+[2025-07-24 07:05:45 +0000] [98586] [INFO] Listening at: http://0.0.0.0:5000 (98586)
+[2025-07-24 07:05:45 +0000] [98586] [INFO] Using worker: sync
+[2025-07-24 07:05:45 +0000] [98587] [INFO] Booting worker with pid: 98587
+[2025-07-24 07:05:45 +0000] [98588] [INFO] Booting worker with pid: 98588
+[2025-07-24 07:05:45 +0000] [98589] [INFO] Booting worker with pid: 98589
+[2025-07-24 07:05:45 +0000] [98590] [INFO] Booting worker with pid: 98590
+[2025-07-24 07:06:26 +0000] [98586] [INFO] Handling signal: term
+[2025-07-24 07:06:26 +0000] [98588] [INFO] Worker exiting (pid: 98588)
+[2025-07-24 07:06:26 +0000] [98587] [INFO] Worker exiting (pid: 98587)
+[2025-07-24 07:06:26 +0000] [98590] [INFO] Worker exiting (pid: 98590)
+[2025-07-24 07:06:26 +0000] [98589] [INFO] Worker exiting (pid: 98589)
+[2025-07-24 07:06:27 +0000] [98586] [INFO] Shutting down: Master
+[2025-07-24 07:06:36 +0000] [98595] [INFO] Starting gunicorn 23.0.0
+[2025-07-24 07:06:36 +0000] [98595] [INFO] Listening at: http://0.0.0.0:5000 (98595)
+[2025-07-24 07:06:36 +0000] [98595] [INFO] Using worker: sync
+[2025-07-24 07:06:36 +0000] [98596] [INFO] Booting worker with pid: 98596
+[2025-07-24 07:06:36 +0000] [98597] [INFO] Booting worker with pid: 98597
+[2025-07-24 07:06:36 +0000] [98598] [INFO] Booting worker with pid: 98598
+[2025-07-24 07:06:36 +0000] [98599] [INFO] Booting worker with pid: 98599
+[!] Generating guaranteed-color rainbow to /home/ubuntu/kaleido-video-generator/jobs/139cb073-31be-4e6a-9a8f-56d86a257109/generated.jpg...
+[✓] Saved verified RGB image
+  File "/home/ubuntu/kaleido-video-generator/patch_kdenlive_10s.py", line 1
+    ```python
+    ^
+SyntaxError: invalid syntax
+[2025-07-24 07:07:45 +0000] [98599] [INFO] Worker exiting (pid: 98599)
+[2025-07-24 07:07:45 +0000] [98595] [INFO] Handling signal: term
+[2025-07-24 07:07:45 +0000] [98596] [INFO] Worker exiting (pid: 98596)
+[2025-07-24 07:07:45 +0000] [98597] [INFO] Worker exiting (pid: 98597)
+[2025-07-24 07:07:45 +0000] [98595] [ERROR] Worker (pid:98599) was sent SIGTERM!
+[2025-07-24 07:07:45 +0000] [98598] [INFO] Worker exiting (pid: 98598)
+[2025-07-24 07:07:45 +0000] [98595] [INFO] Shutting down: Master
+[2025-07-24 07:07:57 +0000] [98607] [INFO] Starting gunicorn 23.0.0
+[2025-07-24 07:07:57 +0000] [98607] [INFO] Listening at: http://0.0.0.0:5000 (98607)
+[2025-07-24 07:07:57 +0000] [98607] [INFO] Using worker: sync
+[2025-07-24 07:07:57 +0000] [98608] [INFO] Booting worker with pid: 98608
+[2025-07-24 07:07:57 +0000] [98609] [INFO] Booting worker with pid: 98609
+[2025-07-24 07:07:57 +0000] [98610] [INFO] Booting worker with pid: 98610
+[2025-07-24 07:07:57 +0000] [98611] [INFO] Booting worker with pid: 98611
+[!] Generating guaranteed-color rainbow to /home/ubuntu/kaleido-video-generator/jobs/645fbfd4-bba2-45dd-bb64-dd84f580b42c/generated.jpg...
+[✓] Saved verified RGB image
+✅ Patched template saved to /home/ubuntu/kaleido-video-generator/jobs/645fbfd4-bba2-45dd-bb64-dd84f580b42c/patched.kdenlive
+[2025-07-24 07:10:00 +0000] [98608] [INFO] Worker exiting (pid: 98608)
+[2025-07-24 07:10:00 +0000] [98607] [INFO] Handling signal: term
+[2025-07-24 07:10:00 +0000] [98611] [INFO] Worker exiting (pid: 98611)
+[2025-07-24 07:10:00 +0000] [98610] [INFO] Worker exiting (pid: 98610)
+[2025-07-24 07:10:00 +0000] [98609] [INFO] Worker exiting (pid: 98609)
+[2025-07-24 07:10:00 +0000] [98607] [INFO] Shutting down: Master
+[2025-07-24 07:10:12 +0000] [98671] [INFO] Starting gunicorn 23.0.0
+[2025-07-24 07:10:12 +0000] [98671] [INFO] Listening at: http://0.0.0.0:5000 (98671)
+[2025-07-24 07:10:12 +0000] [98671] [INFO] Using worker: sync
+[2025-07-24 07:10:12 +0000] [98672] [INFO] Booting worker with pid: 98672
+[2025-07-24 07:10:12 +0000] [98673] [INFO] Booting worker with pid: 98673
+[2025-07-24 07:10:12 +0000] [98674] [INFO] Booting worker with pid: 98674
+[2025-07-24 07:10:12 +0000] [98675] [INFO] Booting worker with pid: 98675
+[!] Generating guaranteed-color rainbow to /home/ubuntu/kaleido-video-generator/jobs/e607c284-4967-44ba-b68f-fd249ae796d4/generated.jpg...
+[✓] Saved verified RGB image
+✅ Patched template saved to /home/ubuntu/kaleido-video-generator/jobs/e607c284-4967-44ba-b68f-fd249ae796d4/patched.kdenlive
+[2025-07-24 07:12:01 +0000] [98675] [INFO] Worker exiting (pid: 98675)
+[2025-07-24 07:12:01 +0000] [98671] [INFO] Handling signal: term
+[2025-07-24 07:12:01 +0000] [98673] [INFO] Worker exiting (pid: 98673)
+[2025-07-24 07:12:01 +0000] [98674] [INFO] Worker exiting (pid: 98674)
+[2025-07-24 07:12:01 +0000] [98672] [INFO] Worker exiting (pid: 98672)
+[2025-07-24 07:12:01 +0000] [98671] [INFO] Shutting down: Master
+[2025-07-24 07:12:12 +0000] [98735] [INFO] Starting gunicorn 23.0.0
+[2025-07-24 07:12:12 +0000] [98735] [INFO] Listening at: http://0.0.0.0:5000 (98735)
+[2025-07-24 07:12:12 +0000] [98735] [INFO] Using worker: sync
+[2025-07-24 07:12:12 +0000] [98736] [INFO] Booting worker with pid: 98736
+[2025-07-24 07:12:12 +0000] [98737] [INFO] Booting worker with pid: 98737
+[2025-07-24 07:12:12 +0000] [98738] [INFO] Booting worker with pid: 98738
+[2025-07-24 07:12:12 +0000] [98739] [INFO] Booting worker with pid: 98739
+[!] Generating guaranteed-color rainbow to /home/ubuntu/kaleido-video-generator/jobs/442d663e-be4e-43b8-ba63-62b523b9b22a/generated.jpg...
+[✓] Saved verified RGB image
+✅ Patched template saved to /home/ubuntu/kaleido-video-generator/jobs/442d663e-be4e-43b8-ba63-62b523b9b22a/patched.kdenlive
+[2025-07-24 07:16:03 +0000] [98735] [INFO] Handling signal: term
+[2025-07-24 07:16:03 +0000] [98737] [INFO] Worker exiting (pid: 98737)
+[2025-07-24 07:16:03 +0000] [98736] [INFO] Worker exiting (pid: 98736)
+[2025-07-24 07:16:03 +0000] [98738] [INFO] Worker exiting (pid: 98738)
+[2025-07-24 07:16:03 +0000] [98739] [INFO] Worker exiting (pid: 98739)
+[2025-07-24 07:16:03 +0000] [98735] [INFO] Shutting down: Master
+[2025-07-24 07:16:18 +0000] [98783] [INFO] Starting gunicorn 23.0.0
+[2025-07-24 07:16:18 +0000] [98783] [INFO] Listening at: http://0.0.0.0:5000 (98783)
+[2025-07-24 07:16:18 +0000] [98783] [INFO] Using worker: sync
+[2025-07-24 07:16:18 +0000] [98784] [INFO] Booting worker with pid: 98784
+[2025-07-24 07:16:18 +0000] [98785] [INFO] Booting worker with pid: 98785
+[2025-07-24 07:16:19 +0000] [98786] [INFO] Booting worker with pid: 98786
+[2025-07-24 07:16:19 +0000] [98787] [INFO] Booting worker with pid: 98787
+[!] Generating guaranteed-color rainbow to /home/ubuntu/kaleido-video-generator/jobs/3407954d-d9f5-4e56-aefe-2d914f8bccb2/generated.jpg...
+[✓] Saved verified RGB image
+✅ Patched template saved to /home/ubuntu/kaleido-video-generator/jobs/3407954d-d9f5-4e56-aefe-2d914f8bccb2/patched.kdenlive
+[2025-07-24 09:22:41 +0000] [98783] [ERROR] Worker (pid:98784) was sent SIGHUP!
+[2025-07-24 09:22:41 +0000] [98783] [ERROR] Worker (pid:98785) was sent SIGHUP!
+[2025-07-24 09:22:41 +0000] [98783] [ERROR] Worker (pid:98786) was sent SIGHUP!
+[2025-07-24 09:22:41 +0000] [98783] [ERROR] Worker (pid:98787) was sent SIGHUP!
+[2025-07-24 09:22:41 +0000] [108534] [INFO] Booting worker with pid: 108534
+[2025-07-24 09:22:41 +0000] [108535] [INFO] Booting worker with pid: 108535
+[2025-07-24 09:22:42 +0000] [108536] [INFO] Booting worker with pid: 108536
+[2025-07-24 09:22:42 +0000] [108537] [INFO] Booting worker with pid: 108537
+[2025-07-24 09:22:42 +0000] [98783] [INFO] Handling signal: hup
+[2025-07-24 09:22:42 +0000] [98783] [INFO] Hang up: Master
+[2025-07-24 09:22:42 +0000] [108538] [INFO] Booting worker with pid: 108538
+[2025-07-24 09:22:42 +0000] [108539] [INFO] Booting worker with pid: 108539
+[2025-07-24 09:22:42 +0000] [108541] [INFO] Booting worker with pid: 108541
+[2025-07-24 09:22:42 +0000] [108534] [INFO] Worker exiting (pid: 108534)
+[2025-07-24 09:22:42 +0000] [108540] [INFO] Booting worker with pid: 108540
+[2025-07-24 09:22:42 +0000] [108535] [INFO] Worker exiting (pid: 108535)
+[2025-07-24 09:22:42 +0000] [108536] [INFO] Worker exiting (pid: 108536)
+[2025-07-24 09:22:42 +0000] [108537] [INFO] Worker exiting (pid: 108537)
+[2025-07-24 09:22:42 +0000] [98783] [ERROR] Worker (pid:108537) was sent SIGTERM!
+/home/ubuntu/kaleido-video-generator/generate_rainbow_contrast.py:18: DeprecationWarning: 'mode' parameter is deprecated and will be removed in Pillow 13 (2026-10-15)
+  return Image.fromarray(image, mode='RGB')
+[🎨] Generating rainbow image: 1920x1080
+[✅] Saved: /home/ubuntu/kaleido-video-generator/jobs/5089f77f-a54c-4c0b-a1fc-f5760c489d57/generated.jpg
+✅ Patched template saved to /home/ubuntu/kaleido-video-generator/jobs/5089f77f-a54c-4c0b-a1fc-f5760c489d57/patched.kdenlive
+/home/ubuntu/kaleido-video-generator/generate_rainbow_contrast.py:18: DeprecationWarning: 'mode' parameter is deprecated and will be removed in Pillow 13 (2026-10-15)
+  return Image.fromarray(image, mode='RGB')
+[🎨] Generating rainbow image: 1920x1080
+[✅] Saved: /home/ubuntu/kaleido-video-generator/jobs/3544334b-0ceb-4a1d-b9b5-2d3b7f3606d9/generated.jpg
+✅ Patched template saved to /home/ubuntu/kaleido-video-generator/jobs/3544334b-0ceb-4a1d-b9b5-2d3b7f3606d9/patched.kdenlive
+[2025-07-24 21:39:17 +0000] [98783] [INFO] Handling signal: term
+[2025-07-24 21:39:17 +0000] [108538] [INFO] Worker exiting (pid: 108538)
+[2025-07-24 21:39:17 +0000] [108539] [INFO] Worker exiting (pid: 108539)
+[2025-07-24 21:39:17 +0000] [108540] [INFO] Worker exiting (pid: 108540)
+[2025-07-24 21:39:17 +0000] [108541] [INFO] Worker exiting (pid: 108541)
+[2025-07-24 21:39:17 +0000] [98783] [INFO] Shutting down: Master

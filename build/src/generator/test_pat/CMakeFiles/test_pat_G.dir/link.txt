@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O2 -g -DNDEBUG -shared  -o test_pat_G.so CMakeFiles/test_pat_G.dir/test_pat_G.c.o  -lm -lm 

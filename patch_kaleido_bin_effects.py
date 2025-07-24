@@ -37,7 +37,7 @@ def patch_kdenlive_bin_effects():
 
         # 1. Kaleidoscope
         kal = ET.SubElement(binclip, "filter")
-        ET.SubElement(kal, "property", name="mlt_service").text = "frei0r.kaleidoscope"
+        ET.SubElement(kal, "property", name="mlt_service").text = "frei0r.kaleid0sc0pe"
         ET.SubElement(kal, "property", name="symmetry").text = "8"
 
         # 2. RGB Gain

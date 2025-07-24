@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O2 -g -DNDEBUG -shared  -o defish0r.so CMakeFiles/defish0r.dir/defish0r.c.o  -lm -lm 

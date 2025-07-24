@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mlt>
+    <producer id="producer0">
+        <property name="resource">input_video.mp4</property>
+    </producer>
+    <tractor id="tractor0">
+        <track producer="producer0"/>
+        <filter>
+            <property name="mlt_service">frei0r.kaleid0sc0pe</property>
+            <property name="symmetry">6</property>
+        </filter>
+        <consumer>
+            <property name="mlt_service">avformat</property>
+            <property name="resource">output.mp4</property>
+            <property name="vcodec">libx264</property>
+        </consumer>
+    </tractor>
+</mlt>

@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O2 -g -DNDEBUG -shared  -o vignette.so CMakeFiles/vignette.dir/vignette.cpp.o  -lm 

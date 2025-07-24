@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O2 -g -DNDEBUG -shared  -o glow.so CMakeFiles/glow.dir/glow.c.o  -lm 

@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O2 -g -DNDEBUG -shared  -o twolay0r.so CMakeFiles/twolay0r.dir/twolay0r.cpp.o  -lm 

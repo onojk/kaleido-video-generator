@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O2 -g -DNDEBUG -shared  -o contrast0r.so CMakeFiles/contrast0r.dir/contrast0r.c.o  -lm 

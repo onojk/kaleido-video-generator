@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O2 -g -DNDEBUG -shared  -o edgeglow.so CMakeFiles/edgeglow.dir/edgeglow.cpp.o  -lm 

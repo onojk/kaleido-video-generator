@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O2 -g -DNDEBUG -shared  -o denoise_hqdn3d.so CMakeFiles/denoise_hqdn3d.dir/denoise_hqdn3d.c.o  -lm -lm 

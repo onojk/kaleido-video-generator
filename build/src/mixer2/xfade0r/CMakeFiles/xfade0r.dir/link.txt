@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O2 -g -DNDEBUG -shared  -o xfade0r.so CMakeFiles/xfade0r.dir/xfade0r.cpp.o  -lm 

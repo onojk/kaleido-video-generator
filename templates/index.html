@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kaleido Video Generator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+  <h1>Kaleido Video Generator</h1>
+  <form id="generateForm">
+    <label for="duration">Video Duration (seconds):</label>
+    <input type="number" id="duration" name="duration" value="10" min="5" max="60" required>
+    <button type="submit">Start Render</button>
+  </form>
+  <div id="status"></div>
+
+  <script>
+    const form = document.getElementById("generateForm");
+    const status = document.getElementById("status");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const formData = new FormData(form);
+      fetch("/start_render", {
+        method: "POST",
+        body: formData,
+      })
+      .then(res => {
+        if (!res.ok) throw new Error("Server error");
+        return res.json();
+      })
+      .then(data => {
+        if (data.redirect) {
+          window.location.href = data.redirect;
+        } else {
+          status.textContent = "Render started, but no redirect returned.";
+        }
+      })
+      .catch(err => {
+        status.textContent = "❌ Error: " + err.message;
+      });
+    });
+  </script>
+</body>
+</html>

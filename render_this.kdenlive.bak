@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mlt>
+  <profile width="3840" height="2160" frame_rate_num="60"/>
+  <producer id="producer0">
+    <property name="resource">rainbow_camouflage_resized.jpg</property>
+    <property name="mlt_service">qimage</property>
+    <filter mlt_service="frei0r.brightness">
+      <property name="brightness">0.1</property>
+    </filter>
+    <filter mlt_service="frei0r.saturat0r">
+      <property name="saturation">1.5</property>
+    </filter>
+    <filter mlt_service="frei0r.kaleid0sc0pe">
+      <property name="segments">6</property>
+      <property name="rotation">0.25</property>
+    </filter>
+  </producer>
+  <playlist id="playlist0">
+    <entry producer="producer0" in="0" out="600"/>
+  </playlist>
+  <consumer mlt_service="avformat" target="enhanced_output.mp4">
+    <property name="vcodec">libx264</property>
+    <property name="crf">18</property>
+    <property name="preset">fast</property>
+  </consumer>
+</mlt>

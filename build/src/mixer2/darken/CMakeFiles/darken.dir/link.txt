@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O2 -g -DNDEBUG -shared  -o darken.so CMakeFiles/darken.dir/darken.cpp.o  -lm 

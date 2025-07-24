@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O2 -g -DNDEBUG -shared  -o cairoimagegrid.so CMakeFiles/cairoimagegrid.dir/cairoimagegrid.c.o  -lm /usr/lib/x86_64-linux-gnu/libcairo.so 
