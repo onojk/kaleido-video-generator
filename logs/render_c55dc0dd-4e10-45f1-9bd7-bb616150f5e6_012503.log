@@ -1,0 +1,16 @@
+[kaleid0sc0pe] Initializing plugin
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+|1=-10| |2= -5| |3= -2| |4= -1| |5=  0| |6=  1| |7=  2| |8=  5| |9= 10|
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
++---------------------------------------------------------------------+
+|               H = back 1 minute,  L = forward 1 minute              |
+|                 h = previous frame,  l = next frame                 |
+|           g = start of clip, j = next clip, k = previous clip       |
+|                0 = restart, q = quit, space = play                  |
++---------------------------------------------------------------------+
+[libx264 @ 0x7bf420001c00] interlace + weightp is not implemented
+[kaleid0sc0pe] Created instance 720x576
+Current Position:          0Current Position:          0[mp4 @ 0x7bf420000f40] Timestamps are unset in a packet for stream 1. This is deprecated and will stop working in the future. Fix your code to set the timestamps properly
+[mp4 @ 0x7bf420000f40] Encoder did not produce proper pts, making some up.
+Current Position:          0Current Position:          0
+[kaleid0sc0pe] Destroying instance

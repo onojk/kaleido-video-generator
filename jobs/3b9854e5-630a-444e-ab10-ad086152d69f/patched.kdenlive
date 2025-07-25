@@ -1,0 +1,20 @@
+<mlt LC_NUMERIC="C" producer="main_bin">
+  <playlist id="playlist0">
+    <entry producer="image_producer" in="0" out="249" />
+  </playlist>
+  <tractor id="tractor0" title="Main Tractor" length="250">
+    <track producer="playlist0" />
+    <property name="length">250</property>
+    <property name="global_feed">1</property>
+  </tractor>
+  <producer id="image_producer" resource="jobs/3b9854e5-630a-444e-ab10-ad086152d69f/current_abstract_video_image.jpg" length="250">
+    <property name="resource">/home/ubuntu/kaleido-video-generator/jobs/3b9854e5-630a-444e-ab10-ad086152d69f/current_abstract_video_image.jpg</property>
+    <property name="mlt_service">pixbuf</property>
+    <property name="length">600</property>
+    <property name="loop">0</property>
+    <filter>
+      <property name="mlt_service">frei0r.kaleid0sc0pe</property>
+      <property name="symmetry">6</property>
+    </filter>
+  </producer>
+</mlt>

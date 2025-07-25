@@ -1,0 +1,44 @@
+Plugin 9354877 exists in both '/home/ubuntu/kaleido-video-generator/squashfs-root-new/usr/lib/ladspa/librnnoise_ladspa.so' and '/home/ubuntu/kaleido-video-generator/squashfs-root-new/usr/lib/ladspa/librnnoise_ladspa.so'; using version in '/home/ubuntu/kaleido-video-generator/squashfs-root-new/usr/lib/ladspa/librnnoise_ladspa.so'
+No LV2 plugins were found! Check your LV2_PATH environment variable.
+No VST2 plugins were found! Check your VST_PATH environment variable.
+[kaleid0sc0pe] Initializing plugin
+[kaleid0sc0pe] Initializing plugin
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+|1=-10| |2= -5| |3= -2| |4= -1| |5=  0| |6=  1| |7=  2| |8=  5| |9= 10|
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
++---------------------------------------------------------------------+
+|               H = back 1 minute,  L = forward 1 minute              |
+|                 h = previous frame,  l = next frame                 |
+|           g = start of clip, j = next clip, k = previous clip       |
+|                0 = restart, q = quit, space = play                  |
++---------------------------------------------------------------------+
+[libx264 @ 0x712fcc201d40] interlace + weightp is not implemented
+[libx264 @ 0x712fcc201d40] using SAR=16/15
+[libx264 @ 0x712fcc201d40] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2 AVX512
+[libx264 @ 0x712fcc201d40] profile High, level 3.0, 4:2:0, 8-bit
+[libx264 @ 0x712fcc201d40] 264 - core 164 r3106M eaa68fa - H.264/MPEG-4 AVC codec - Copyleft 2003-2023 - http://www.videolan.org/x264.html - options: cabac=1 ref=3 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=3 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=tff bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=0 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc_lookahead=40 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+[kaleid0sc0pe] Created instance 720x576
+Current Position:          0Current Position:          2Current Position:          4Current Position:          6Current Position:          8Current Position:         10Current Position:         13Current Position:         15Current Position:         17Current Position:         19Current Position:         21Current Position:         23Current Position:         25Current Position:         27Current Position:         30Current Position:         32Current Position:         34Current Position:         36Current Position:         38Current Position:         40Current Position:         42Current Position:         44Current Position:         46Current Position:         48Current Position:         49Current Position:         51Current Position:         53Current Position:         55Current Position:         57Current Position:         59Current Position:         61Current Position:         63Current Position:         65Current Position:         67Current Position:         69Current Position:         71Current Position:         73Current Position:         74Current Position:         76Current Position:         78Current Position:         80Current Position:         82Current Position:         84Current Position:         86Current Position:         88Current Position:         90Current Position:         92Current Position:         94Current Position:         96Current Position:         98Current Position:        100Current Position:        102Current Position:        104Current Position:        106Current Position:        108Current Position:        110Current Position:        112Current Position:        114Current Position:        116Current Position:        118Current Position:        120Current Position:        122Current Position:        124Current Position:        126Current Position:        128Current Position:        130Current Position:        132Current Position:        134Current Position:        136Current Position:        138Current Position:        140Current Position:        142Current Position:        144Current Position:        146Current Position:        148Current Position:        150Current Position:        152Current Position:        154Current Position:        156Current Position:        158Current Position:        160Current Position:        162Current Position:        162
+[mp4 @ 0x712fcc200f80] Timestamps are unset in a packet for stream 1. This is deprecated and will stop working in the future. Fix your code to set the timestamps properly
+[mp4 @ 0x712fcc200f80] Encoder did not produce proper pts, making some up.
+[libx264 @ 0x712fcc201d40] frame I:1     Avg QP:10.59  size:  3587
+[libx264 @ 0x712fcc201d40] frame P:41    Avg QP:11.02  size:    88
+[libx264 @ 0x712fcc201d40] frame B:122   Avg QP:12.69  size:    33
+[libx264 @ 0x712fcc201d40] consecutive B-frames:  0.6%  0.0%  1.8% 97.6%
+[libx264 @ 0x712fcc201d40] mb I  I16..4: 58.5% 37.2%  4.3%
+[libx264 @ 0x712fcc201d40] mb P  I16..4:  0.0%  0.0%  0.0%  P16..4:  0.9%  0.2%  0.0%  0.0%  0.0%    skip:98.8%
+[libx264 @ 0x712fcc201d40] mb B  I16..4:  0.0%  0.0%  0.0%  B16..8:  0.1%  0.0%  0.0%  direct: 0.0%  skip:99.9%  L0:26.6% L1:73.4% BI: 0.0%
+[libx264 @ 0x712fcc201d40] field mbs: intra: 0.0% inter:0.0% skip:0.0%
+[libx264 @ 0x712fcc201d40] 8x8 transform intra:37.2% inter:100.0%
+[libx264 @ 0x712fcc201d40] coded y,uvDC,uvAC intra: 10.1% 23.7% 19.3% inter: 0.0% 0.2% 0.0%
+[libx264 @ 0x712fcc201d40] i16 v,h,dc,p: 85%  1%  5%  9%
+[libx264 @ 0x712fcc201d40] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu:  8%  7% 67%  3%  4%  2%  3%  3%  4%
+[libx264 @ 0x712fcc201d40] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 41% 18% 14%  3% 11%  5%  4%  2%  1%
+[libx264 @ 0x712fcc201d40] i8c dc,h,v,p: 79%  5%  5% 11%
+[libx264 @ 0x712fcc201d40] ref P L0: 94.6%  3.3%  2.1%
+[libx264 @ 0x712fcc201d40] ref B L0:  7.1% 92.9%
+[libx264 @ 0x712fcc201d40] ref B L1: 99.1%  0.9%
+[libx264 @ 0x712fcc201d40] kb/s:13.76
+[aac @ 0x712fcc205380] Qavg: 65536.000
+[AVIOContext @ 0x712fccbfea00] Statistics: 20502 bytes written, 2 seeks, 4 writeouts
+[kaleid0sc0pe] Destroying instance
