@@ -1,16 +1,38 @@
-Upscayl.AppImage
+# Ignore all video and image outputs
 *.mp4
-*.mp4
-path/to/largefile1
-path/to/largefile2
-venv/
+*.jpg
+*.png
+*.tif
+*.wav
 
-# Temporary/generated files
-melt.log
-render_pipeline.log
+# Ignore local builds and extracted squashfs
+build/
+squashfs-root*/
 render_frames/
-recent_files.txt
-full_tree_with_files.txt
+render_full.log
+*.log
+
+# Ignore jobs directory
+jobs/
+
+# Ignore temp files and backups
+*~
+*.bak
+*.swp
+
+# Ignore Kdenlive temp files
 *.kdenlive~
-bfg.jar
+*.mlt
+
+# Ignore virtual environments and environment config
+venv/
+.env
+
+# Ignore appimages, binaries, and tools
+Upscayl.AppImage
 kdenlive-25.04.3-x86_64.AppImage
+bfg.jar
+
+# Ignore generated trees and previews
+full_tree_with_files.txt
+recent_files.txt

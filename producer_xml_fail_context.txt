@@ -1,0 +1,1312 @@
+=== File: ./jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/render.log | Line: 3 ===
+STARTED_RENDER
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+|1=-10| |2= -5| |3= -2| |4= -1| |5=  0| |6=  1| |7=  2| |8=  5| |9= 10|
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
++---------------------------------------------------------------------+
+|               H = back 1 minute,  L = forward 1 minute              |
+|                 h = previous frame,  l = next frame                 |
+|           g = start of clip, j = next clip, k = previous clip       |
+
+---
+
+=== File: ./jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/render.log | Line: 22 ===
+[kaleid0sc0pe] Created instance 720x576
+Current Position:          0Current Position:          0Current Position:          1Current Position:          3Current Position:          5Current Position:          7Current Position:          9Current Position:         11Current Position:         13Current Position:         15Current Position:         17Current Position:         20Current Position:         22Current Position:         24Current Position:         26Current Position:         28Current Position:         30Current Position:         32Current Position:         34Current Position:         36Current Position:         38Current Position:         40Current Position:         42Current Position:         44Current Position:         46Current Position:         48Current Position:         49Current Position:         51Current Position:         53Current Position:         55Current Position:         57Current Position:         60Current Position:         62Current Position:         64Current Position:         66Current Position:         68Current Position:         70Current Position:         72Current Position:         75Current Position:         77Current Position:         79Current Position:         81Current Position:         83Current Position:         85Current Position:         87Current Position:         89Current Position:         91Current Position:         93Current Position:         95Current Position:         97Current Position:         99Current Position:        101Current Position:        103Current Position:        105Current Position:        107Current Position:        109Current Position:        111Current Position:        113Current Position:        115Current Position:        117Current Position:        119Current Position:        121Current Position:        123Current Position:        125Current Position:        127Current Position:        129Current Position:        131Current Position:        133Current Position:        135Current Position:        137Current Position:        139Current Position:        141Current Position:        143Current Position:        145Current Position:        147Current Position:        149Current Position:        151Current Position:        153Current Position:        155Current Position:        157Current Position:        159Current Position:        161Current Position:        163Current Position:        165Current Position:        167Current Position:        169Current Position:        171Current Position:        173Current Position:        175Current Position:        177Current Position:        179Current Position:        181Current Position:        183Current Position:        185Current Position:        187Current Position:        189Current Position:        191Current Position:        193Current Position:        195Current Position:        197Current Position:        199Current Position:        201Current Position:        203Current Position:        205Current Position:        207Current Position:        209Current Position:        211Current Position:        213Current Position:        215Current Position:        217Current Position:        219Current Position:        221Current Position:        223Current Position:        225Current Position:        227Current Position:        229Current Position:        231Current Position:        233Current Position:        235Current Position:        237Current Position:        239Current Position:        241Current Position:        243Current Position:        245Current Position:        247Current Position:        249Current Position:        251Current Position:        253Current Position:        255Current Position:        257Current Position:        259Current Position:        261Current Position:        263Current Position:        265Current Position:        267Current Position:        269Current Position:        271Current Position:        273Current Position:        275Current Position:        277Current Position:        279Current Position:        281Current Position:        283Current Position:        285Current Position:        287Current Position:        289Current Position:        291Current Position:        293Current Position:        295Current Position:        296Current Position:        298Current Position:        300Current Position:        302Current Position:        304Current Position:        306Current Position:        308Current Position:        310Current Position:        312Current Position:        314Current Position:        316Current Position:        318Current Position:        320Current Position:        322Current Position:        324Current Position:        326Current Position:        328Current Position:        330Current Position:        332Current Position:        334Current Position:        336Current Position:        338Current Position:        340Current Position:        342Current Position:        344Current Position:        346Current Position:        348Current Position:        350Current Position:        352Current Position:        354Current Position:        356Current Position:        358Current Position:        360Current Position:        362Current Position:        364Current Position:        366Current Position:        368Current Position:        370Current Position:        372Current Position:        374Current Position:        376Current Position:        378Current Position:        380Current Position:        382Current Position:        384Current Position:        386Current Position:        388Current Position:        390Current Position:        392Current Position:        394Current Position:        396Current Position:        398Current Position:        400Current Position:        402Current Position:        404Current Position:        406Current Position:        408Current Position:        410Current Position:        412Current Position:        414Current Position:        416Current Position:        418Current Position:        420Current Position:        422Current Position:        424Current Position:        426Current Position:        428Current Position:        430Current Position:        432Current Position:        434Current Position:        436Current Position:        438Current Position:        440Current Position:        442Current Position:        444Current Position:        446Current Position:        448Current Position:        450Current Position:        452Current Position:        454Current Position:        456Current Position:        458Current Position:        460Current Position:        462Current Position:        464Current Position:        466Current Position:        468Current Position:        470Current Position:        472Current Position:        474Current Position:        476Current Position:        478Current Position:        480Current Position:        482Current Position:        484Current Position:        486Current Position:        488Current Position:        490Current Position:        492Current Position:        494Current Position:        496Current Position:        498Current Position:        500Current Position:        502Current Position:        504Current Position:        506Current Position:        508Current Position:        510Current Position:        512Current Position:        514Current Position:        516Current Position:        518Current Position:        520Current Position:        522Current Position:        524Current Position:        526Current Position:        528Current Position:        530Current Position:        532Current Position:        534Current Position:        536Current Position:        538Current Position:        540Current Position:        542Current Position:        544Current Position:        546Current Position:        548Current Position:        550Current Position:        552Current Position:        554Current Position:        556Current Position:        558Current Position:        560Current Position:        562Current Position:        564Current Position:        566Current Position:        568Current Position:        570Current Position:        571Current Position:        573Current Position:        575Current Position:        577Current Position:        579Current Position:        581Current Position:        583Current Position:        585Current Position:        587Current Position:        589Current Position:        591Current Position:        593Current Position:        595Current Position:        597Current Position:        599[mp4 @ 0x795770000f40] Timestamps are unset in a packet for stream 1. This is deprecated and will stop working in the future. Fix your code to set the timestamps properly
+[mp4 @ 0x795770000f40] Encoder did not produce proper pts, making some up.
+Current Position:        599Current Position:        599Current Position:        599
+[kaleid0sc0pe] Destroying instance
+STARTED_RENDER
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "1"
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+|1=-10| |2= -5| |3= -2| |4= -1| |5=  0| |6=  1| |7=  2| |8=  5| |9= 10|
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+
+---
+
+=== File: ./jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/render.log | Line: 25 ===
+Current Position:        599Current Position:        599Current Position:        599
+[kaleid0sc0pe] Destroying instance
+STARTED_RENDER
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "1"
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+|1=-10| |2= -5| |3= -2| |4= -1| |5=  0| |6=  1| |7=  2| |8=  5| |9= 10|
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
++---------------------------------------------------------------------+
+|               H = back 1 minute,  L = forward 1 minute              |
+|                 h = previous frame,  l = next frame                 |
+
+---
+
+=== File: ./jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/render.log | Line: 48 ===
+[mp4 @ 0x7e1e80000f40] Encoder did not produce proper pts, making some up.
+Current Position:       1199Current Position:       1199Current Position:       1199Current Position:       1199
+[kaleid0sc0pe] Destroying instance
+[kaleid0sc0pe] Destroying instance
+./clean_and_render.sh: line 29: -profile: command not found
+STARTED_RENDER
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "11"
+
+---
+
+=== File: ./jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/render.log | Line: 51 ===
+[kaleid0sc0pe] Destroying instance
+./clean_and_render.sh: line 29: -profile: command not found
+STARTED_RENDER
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "11"
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+|1=-10| |2= -5| |3= -2| |4= -1| |5=  0| |6=  1| |7=  2| |8=  5| |9= 10|
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+
+---
+
+=== File: ./jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/render.log | Line: 54 ===
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "11"
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+|1=-10| |2= -5| |3= -2| |4= -1| |5=  0| |6=  1| |7=  2| |8=  5| |9= 10|
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
++---------------------------------------------------------------------+
+|               H = back 1 minute,  L = forward 1 minute              |
+|                 h = previous frame,  l = next frame                 |
+
+---
+
+=== File: ./jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/render.log | Line: 81 ===
+[mp4 @ 0x7540e8000f40] Timestamps are unset in a packet for stream 1. This is deprecated and will stop working in the future. Fix your code to set the timestamps properly
+[kaleid0sc0pe] Destroying instance
+[kaleid0sc0pe] Destroying instance
+[kaleid0sc0pe] Destroying instance
+./clean_and_render.sh: line 29: -profile: command not found
+STARTED_RENDER
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "11"
+
+---
+
+=== File: ./jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/render.log | Line: 84 ===
+[kaleid0sc0pe] Destroying instance
+./clean_and_render.sh: line 29: -profile: command not found
+STARTED_RENDER
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "11"
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+|1=-10| |2= -5| |3= -2| |4= -1| |5=  0| |6=  1| |7=  2| |8=  5| |9= 10|
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+
+---
+
+=== File: ./jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/render.log | Line: 87 ===
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "11"
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+|1=-10| |2= -5| |3= -2| |4= -1| |5=  0| |6=  1| |7=  2| |8=  5| |9= 10|
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
++---------------------------------------------------------------------+
+|               H = back 1 minute,  L = forward 1 minute              |
+|                 h = previous frame,  l = next frame                 |
+
+---
+
+=== File: ./jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/render.log | Line: 114 ===
+[mp4 @ 0x77a0cc000f40] Timestamps are unset in a packet for stream 1. This is deprecated and will stop working in the future. Fix your code to set the timestamps properly
+[kaleid0sc0pe] Destroying instance
+[kaleid0sc0pe] Destroying instance
+[kaleid0sc0pe] Destroying instance
+./clean_and_render.sh: line 29: -profile: command not found
+STARTED_RENDER
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "11"
+
+---
+
+=== File: ./jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/render.log | Line: 117 ===
+[kaleid0sc0pe] Destroying instance
+./clean_and_render.sh: line 29: -profile: command not found
+STARTED_RENDER
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "11"
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+|1=-10| |2= -5| |3= -2| |4= -1| |5=  0| |6=  1| |7=  2| |8=  5| |9= 10|
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+
+---
+
+=== File: ./jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/render.log | Line: 120 ===
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "11"
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+|1=-10| |2= -5| |3= -2| |4= -1| |5=  0| |6=  1| |7=  2| |8=  5| |9= 10|
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
++---------------------------------------------------------------------+
+|               H = back 1 minute,  L = forward 1 minute              |
+|                 h = previous frame,  l = next frame                 |
+
+---
+
+=== File: ./jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/render.log | Line: 147 ===
+[mp4 @ 0x7bc710000f40] Timestamps are unset in a packet for stream 1. This is deprecated and will stop working in the future. Fix your code to set the timestamps properly
+[kaleid0sc0pe] Destroying instance
+[kaleid0sc0pe] Destroying instance
+[kaleid0sc0pe] Destroying instance
+./clean_and_render.sh: line 29: -profile: command not found
+STARTED_RENDER
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "11"
+
+---
+
+=== File: ./jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/render.log | Line: 150 ===
+[kaleid0sc0pe] Destroying instance
+./clean_and_render.sh: line 29: -profile: command not found
+STARTED_RENDER
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "11"
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+|1=-10| |2= -5| |3= -2| |4= -1| |5=  0| |6=  1| |7=  2| |8=  5| |9= 10|
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+
+---
+
+=== File: ./jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/render.log | Line: 153 ===
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "11"
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+|1=-10| |2= -5| |3= -2| |4= -1| |5=  0| |6=  1| |7=  2| |8=  5| |9= 10|
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
++---------------------------------------------------------------------+
+|               H = back 1 minute,  L = forward 1 minute              |
+|                 h = previous frame,  l = next frame                 |
+
+---
+
+=== File: ./gunicorn.log | Line: 9 ===
+[2025-07-25 02:06:27 +0000] [129417] [INFO] Starting gunicorn 23.0.0
+[2025-07-25 02:06:27 +0000] [129417] [INFO] Listening at: http://0.0.0.0:5000 (129417)
+[2025-07-25 02:06:27 +0000] [129417] [INFO] Using worker: sync
+[2025-07-25 02:06:27 +0000] [129418] [INFO] Booting worker with pid: 129418
+[2025-07-25 02:06:27 +0000] [129419] [INFO] Booting worker with pid: 129419
+✅ Saved rainbow to jobs/0b6bda73-7244-4ca6-a37f-35257a80a71d/current_abstract_video_image.jpg
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/0b6bda73-7244-4ca6-a37f-35257a80a71d/jobs/0b6bda73-7244-4ca6-a37f-35257a80a71d/current_abstract_video_image.jpg"
+[libx264 @ 0x76bd10001dc0] interlace + weightp is not implemented
+Fontconfig error: Cannot load default config file: No such file: (null)
+[kaleid0sc0pe] Created instance 720x576
+Current Frame:          1, percentage:          0Current Frame:          3, percentage:          0Current Frame:          5, percentage:          0Current Frame:          7, percentage:          1Current Frame:          9, percentage:          1Current Frame:         12, percentage:          2Current Frame:         14, percentage:          2Current Frame:         16, percentage:          2Current Frame:         18, percentage:          3Current Frame:         20, percentage:          3Current Frame:         22, percentage:          3Current Frame:         24, percentage:          4Current Frame:         27, percentage:          4Current Frame:         29, percentage:          4Current Frame:         31, percentage:          5Current Frame:         33, percentage:          5Current Frame:         35, percentage:          5Current Frame:         37, percentage:          6Current Frame:         39, percentage:          6Current Frame:         41, percentage:          6Current Frame:         43, percentage:          7Current Frame:         45, percentage:          7Current Frame:         47, percentage:          7Current Frame:         49, percentage:          8Current Frame:         51, percentage:          8Current Frame:         53, percentage:          8Current Frame:         54, percentage:          9Current Frame:         56, percentage:          9Current Frame:         58, percentage:          9Current Frame:         60, percentage:         10Current Frame:         62, percentage:         10Current Frame:         64, percentage:         10Current Frame:         66, percentage:         11Current Frame:         68, percentage:         11Current Frame:         70, percentage:         11Current Frame:         72, percentage:         12Current Frame:         74, percentage:         12Current Frame:         76, percentage:         12Current Frame:         78, percentage:         13Current Frame:         80, percentage:         13Current Frame:         82, percentage:         13Current Frame:         84, percentage:         14Current Frame:         86, percentage:         14Current Frame:         88, percentage:         14Current Frame:         90, percentage:         15Current Frame:         92, percentage:         15Current Frame:         94, percentage:         15Current Frame:         96, percentage:         16Current Frame:         98, percentage:         16Current Frame:        100, percentage:         16Current Frame:        102, percentage:         17Current Frame:        104, percentage:         17Current Frame:        106, percentage:         17Current Frame:        108, percentage:         18Current Frame:        110, percentage:         18Current Frame:        112, percentage:         18Current Frame:        114, percentage:         19Current Frame:        116, percentage:         19Current Frame:        118, percentage:         19Current Frame:        120, percentage:         20Current Frame:        122, percentage:         20Current Frame:        124, percentage:         20Current Frame:        126, percentage:         21Current Frame:        128, percentage:         21Current Frame:        130, percentage:         21Current Frame:        132, percentage:         22Current Frame:        134, percentage:         22Current Frame:        136, percentage:         22Current Frame:        138, percentage:         23Current Frame:        140, percentage:         23Current Frame:        142, percentage:         23Current Frame:        144, percentage:         24Current Frame:        146, percentage:         24Current Frame:        148, percentage:         24Current Frame:        150, percentage:         25Current Frame:        152, percentage:         25Current Frame:        154, percentage:         25Current Frame:        156, percentage:         26Current Frame:        158, percentage:         26Current Frame:        160, percentage:         26Current Frame:        162, percentage:         27Current Frame:        164, percentage:         27Current Frame:        166, percentage:         27Current Frame:        168, percentage:         28Current Frame:        170, percentage:         28Current Frame:        172, percentage:         28Current Frame:        174, percentage:         29Current Frame:        176, percentage:         29Current Frame:        178, percentage:         29Current Frame:        180, percentage:         30Current Frame:        182, percentage:         30Current Frame:        184, percentage:         30Current Frame:        186, percentage:         31Current Frame:        188, percentage:         31Current Frame:        190, percentage:         31Current Frame:        192, percentage:         32Current Frame:        194, percentage:         32Current Frame:        196, percentage:         32Current Frame:        198, percentage:         33Current Frame:        200, percentage:         33Current Frame:        202, percentage:         33Current Frame:        204, percentage:         34Current Frame:        206, percentage:         34Current Frame:        208, percentage:         34Current Frame:        210, percentage:         35Current Frame:        212, percentage:         35Current Frame:        214, percentage:         35Current Frame:        216, percentage:         36Current Frame:        218, percentage:         36Current Frame:        221, percentage:         36Current Frame:        223, percentage:         37Current Frame:        225, percentage:         37Current Frame:        227, percentage:         37Current Frame:        229, percentage:         38Current Frame:        231, percentage:         38Current Frame:        233, percentage:         38Current Frame:        235, percentage:         39Current Frame:        237, percentage:         39Current Frame:        239, percentage:         39Current Frame:        241, percentage:         40Current Frame:        243, percentage:         40Current Frame:        245, percentage:         40Current Frame:        247, percentage:         41Current Frame:        249, percentage:         41Current Frame:        251, percentage:         41Current Frame:        253, percentage:         42Current Frame:        255, percentage:         42Current Frame:        257, percentage:         42Current Frame:        259, percentage:         43Current Frame:        261, percentage:         43Current Frame:        263, percentage:         43Current Frame:        265, percentage:         44Current Frame:        267, percentage:         44Current Frame:        269, percentage:         44Current Frame:        271, percentage:         45Current Frame:        273, percentage:         45Current Frame:        275, percentage:         45Current Frame:        277, percentage:         46Current Frame:        279, percentage:         46Current Frame:        281, percentage:         46Current Frame:        283, percentage:         47Current Frame:        285, percentage:         47Current Frame:        287, percentage:         47Current Frame:        289, percentage:         48Current Frame:        291, percentage:         48Current Frame:        292, percentage:         48Current Frame:        294, percentage:         49Current Frame:        296, percentage:         49Current Frame:        298, percentage:         49Current Frame:        300, percentage:         50Current Frame:        302, percentage:         50Current Frame:        304, percentage:         50Current Frame:        306, percentage:         51Current Frame:        308, percentage:         51Current Frame:        310, percentage:         51Current Frame:        312, percentage:         52Current Frame:        314, percentage:         52Current Frame:        316, percentage:         52Current Frame:        318, percentage:         53Current Frame:        320, percentage:         53Current Frame:        322, percentage:         53Current Frame:        324, percentage:         54Current Frame:        326, percentage:         54Current Frame:        328, percentage:         54Current Frame:        330, percentage:         55Current Frame:        332, percentage:         55Current Frame:        334, percentage:         55Current Frame:        336, percentage:         56Current Frame:        338, percentage:         56Current Frame:        340, percentage:         56Current Frame:        342, percentage:         57Current Frame:        344, percentage:         57Current Frame:        346, percentage:         57Current Frame:        347, percentage:         57Current Frame:        349, percentage:         58Current Frame:        351, percentage:         58Current Frame:        353, percentage:         58Current Frame:        355, percentage:         59Current Frame:        357, percentage:         59Current Frame:        359, percentage:         59Current Frame:        361, percentage:         60Current Frame:        363, percentage:         60Current Frame:        365, percentage:         60Current Frame:        367, percentage:         61Current Frame:        369, percentage:         61Current Frame:        371, percentage:         61Current Frame:        373, percentage:         62Current Frame:        375, percentage:         62Current Frame:        377, percentage:         62Current Frame:        379, percentage:         63Current Frame:        381, percentage:         63Current Frame:        383, percentage:         63Current Frame:        385, percentage:         64Current Frame:        387, percentage:         64Current Frame:        389, percentage:         64Current Frame:        391, percentage:         65Current Frame:        393, percentage:         65Current Frame:        395, percentage:         65Current Frame:        397, percentage:         66Current Frame:        399, percentage:         66Current Frame:        401, percentage:         66Current Frame:        403, percentage:         67Current Frame:        405, percentage:         67Current Frame:        407, percentage:         67Current Frame:        409, percentage:         68Current Frame:        411, percentage:         68Current Frame:        413, percentage:         68Current Frame:        415, percentage:         69Current Frame:        417, percentage:         69Current Frame:        419, percentage:         69Current Frame:        421, percentage:         70Current Frame:        423, percentage:         70Current Frame:        425, percentage:         70Current Frame:        427, percentage:         71Current Frame:        429, percentage:         71Current Frame:        431, percentage:         71Current Frame:        433, percentage:         72Current Frame:        435, percentage:         72Current Frame:        437, percentage:         72Current Frame:        439, percentage:         73Current Frame:        441, percentage:         73Current Frame:        443, percentage:         73Current Frame:        445, percentage:         74Current Frame:        447, percentage:         74Current Frame:        450, percentage:         75Current Frame:        452, percentage:         75Current Frame:        454, percentage:         75Current Frame:        455, percentage:         75Current Frame:        457, percentage:         76Current Frame:        459, percentage:         76Current Frame:        461, percentage:         76Current Frame:        463, percentage:         77Current Frame:        465, percentage:         77Current Frame:        467, percentage:         77Current Frame:        470, percentage:         78Current Frame:        472, percentage:         78Current Frame:        474, percentage:         79Current Frame:        476, percentage:         79Current Frame:        478, percentage:         79Current Frame:        480, percentage:         80Current Frame:        482, percentage:         80Current Frame:        484, percentage:         80Current Frame:        486, percentage:         81Current Frame:        488, percentage:         81Current Frame:        490, percentage:         81Current Frame:        492, percentage:         82Current Frame:        494, percentage:         82Current Frame:        496, percentage:         82Current Frame:        498, percentage:         83Current Frame:        500, percentage:         83Current Frame:        502, percentage:         83Current Frame:        504, percentage:         84Current Frame:        506, percentage:         84Current Frame:        508, percentage:         84Current Frame:        510, percentage:         85Current Frame:        512, percentage:         85Current Frame:        514, percentage:         85Current Frame:        516, percentage:         86Current Frame:        518, percentage:         86Current Frame:        520, percentage:         86Current Frame:        522, percentage:         87Current Frame:        524, percentage:         87Current Frame:        526, percentage:         87Current Frame:        528, percentage:         88Current Frame:        530, percentage:         88Current Frame:        532, percentage:         88Current Frame:        534, percentage:         89Current Frame:        536, percentage:         89Current Frame:        538, percentage:         89Current Frame:        540, percentage:         90Current Frame:        542, percentage:         90Current Frame:        544, percentage:         90Current Frame:        546, percentage:         91Current Frame:        548, percentage:         91Current Frame:        550, percentage:         91Current Frame:        552, percentage:         92Current Frame:        554, percentage:         92Current Frame:        556, percentage:         92Current Frame:        558, percentage:         93Current Frame:        560, percentage:         93Current Frame:        561, percentage:         93Current Frame:        563, percentage:         93Current Frame:        565, percentage:         94Current Frame:        567, percentage:         94Current Frame:        569, percentage:         94Current Frame:        571, percentage:         95Current Frame:        573, percentage:         95Current Frame:        575, percentage:         95Current Frame:        577, percentage:         96Current Frame:        580, percentage:         96Current Frame:        582, percentage:         97Current Frame:        584, percentage:         97Current Frame:        586, percentage:         97Current Frame:        588, percentage:         98Current Frame:        590, percentage:         98Current Frame:        592, percentage:         98Current Frame:        595, percentage:         99Current Frame:        597, percentage:         99Current Frame:        599, percentage:         99[mp4 @ 0x76bd10000f40] Timestamps are unset in a packet for stream 1. This is deprecated and will stop working in the future. Fix your code to set the timestamps properly
+[mp4 @ 0x76bd10000f40] Encoder did not produce proper pts, making some up.
+
+[kaleid0sc0pe] Destroying instance
+
+---
+
+=== File: ./output.txt | Line: 29 ===
+
+--- Generating Audio ---
+[✓] Audio generated
+
+--- Starting Render ---
+Executing: xvfb-run -a melt patched.kdenlive -progress -consumer avformat:final_output.mp4 acodec=aac ab=128k vcodec=libx264 vb=8000k
+[producer_xml] failed to load filter "frei0r.kaleidoscope"
+[producer_xml] failed to load producer "jobs/b9472f89-3f1d-4772-b179-f4520b0f0f68/generated.jpg"
+[filter avcolor_space] Invalid format glsl
+[swscaler @ 0x633eaa5fedc0] Warning: data is not aligned! This can lead to a speed loss
+[filter avcolor_space] Invalid format glsl
+[producer_xml] failed to load filter "frei0r.kaleidoscope"
+[producer_xml] failed to load producer "jobs/b9472f89-3f1d-4772-b179-f4520b0f0f68/generated.jpg"
+[libx264 @ 0x735398003e00] interlace + weightp is not implemented
+[filter avcolor_space] Invalid format glsl
+
+---
+
+=== File: ./output.txt | Line: 34 ===
+Executing: xvfb-run -a melt patched.kdenlive -progress -consumer avformat:final_output.mp4 acodec=aac ab=128k vcodec=libx264 vb=8000k
+[producer_xml] failed to load filter "frei0r.kaleidoscope"
+[producer_xml] failed to load producer "jobs/b9472f89-3f1d-4772-b179-f4520b0f0f68/generated.jpg"
+[filter avcolor_space] Invalid format glsl
+[swscaler @ 0x633eaa5fedc0] Warning: data is not aligned! This can lead to a speed loss
+[filter avcolor_space] Invalid format glsl
+[producer_xml] failed to load filter "frei0r.kaleidoscope"
+[producer_xml] failed to load producer "jobs/b9472f89-3f1d-4772-b179-f4520b0f0f68/generated.jpg"
+[libx264 @ 0x735398003e00] interlace + weightp is not implemented
+[filter avcolor_space] Invalid format glsl
+[filter avcolor_space] Invalid format glsl
+[filter avcolor_space] Invalid format glsl
+[filter avcolor_space] Invalid format glsl
+[filter avcolor_space] Invalid format glsl
+[filter avcolor_space] Invalid format glsl
+
+---
+
+=== File: ./logs/render_3b9854e5-630a-444e-ab10-ad086152d69f_010054.log | Line: 2 ===
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/3b9854e5-630a-444e-ab10-ad086152d69f/jobs/3b9854e5-630a-444e-ab10-ad086152d69f/current_abstract_video_image.jpg"
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+|1=-10| |2= -5| |3= -2| |4= -1| |5=  0| |6=  1| |7=  2| |8=  5| |9= 10|
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
++---------------------------------------------------------------------+
+|               H = back 1 minute,  L = forward 1 minute              |
+|                 h = previous frame,  l = next frame                 |
+|           g = start of clip, j = next clip, k = previous clip       |
+
+---
+
+=== File: ./logs/render_3b9854e5-630a-444e-ab10-ad086152d69f_010207.log | Line: 2 ===
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/3b9854e5-630a-444e-ab10-ad086152d69f/jobs/3b9854e5-630a-444e-ab10-ad086152d69f/current_abstract_video_image.jpg"
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+|1=-10| |2= -5| |3= -2| |4= -1| |5=  0| |6=  1| |7=  2| |8=  5| |9= 10|
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
++---------------------------------------------------------------------+
+|               H = back 1 minute,  L = forward 1 minute              |
+|                 h = previous frame,  l = next frame                 |
+|           g = start of clip, j = next clip, k = previous clip       |
+
+---
+
+=== File: ./logs/render_c55dc0dd-4e10-45f1-9bd7-bb616150f5e6_012010.log | Line: 2 ===
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/current_abstract_video_image.jpg"
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+|1=-10| |2= -5| |3= -2| |4= -1| |5=  0| |6=  1| |7=  2| |8=  5| |9= 10|
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
++---------------------------------------------------------------------+
+|               H = back 1 minute,  L = forward 1 minute              |
+|                 h = previous frame,  l = next frame                 |
+|           g = start of clip, j = next clip, k = previous clip       |
+
+---
+
+=== File: ./logs/render_3b9854e5-630a-444e-ab10-ad086152d69f_010358.log | Line: 2 ===
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/3b9854e5-630a-444e-ab10-ad086152d69f/../jobs/3b9854e5-630a-444e-ab10-ad086152d69f/current_abstract_video_image.jpg"
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+|1=-10| |2= -5| |3= -2| |4= -1| |5=  0| |6=  1| |7=  2| |8=  5| |9= 10|
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
++---------------------------------------------------------------------+
+|               H = back 1 minute,  L = forward 1 minute              |
+|                 h = previous frame,  l = next frame                 |
+|           g = start of clip, j = next clip, k = previous clip       |
+
+---
+
+=== File: ./logs/render_c55dc0dd-4e10-45f1-9bd7-bb616150f5e6_011259.log | Line: 2 ===
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/current_abstract_video_image.jpg"
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+|1=-10| |2= -5| |3= -2| |4= -1| |5=  0| |6=  1| |7=  2| |8=  5| |9= 10|
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
++---------------------------------------------------------------------+
+|               H = back 1 minute,  L = forward 1 minute              |
+|                 h = previous frame,  l = next frame                 |
+|           g = start of clip, j = next clip, k = previous clip       |
+
+---
+
+=== File: ./logs/render_3b9854e5-630a-444e-ab10-ad086152d69f_005634.log | Line: 2 ===
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/3b9854e5-630a-444e-ab10-ad086152d69f/jobs/3b9854e5-630a-444e-ab10-ad086152d69f/current_abstract_video_image.jpg"
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+|1=-10| |2= -5| |3= -2| |4= -1| |5=  0| |6=  1| |7=  2| |8=  5| |9= 10|
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
++---------------------------------------------------------------------+
+|               H = back 1 minute,  L = forward 1 minute              |
+|                 h = previous frame,  l = next frame                 |
+|           g = start of clip, j = next clip, k = previous clip       |
+
+---
+
+=== File: ./logs/render_c55dc0dd-4e10-45f1-9bd7-bb616150f5e6_011054.log | Line: 2 ===
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/current_abstract_video_image.jpg"
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+|1=-10| |2= -5| |3= -2| |4= -1| |5=  0| |6=  1| |7=  2| |8=  5| |9= 10|
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
++---------------------------------------------------------------------+
+|               H = back 1 minute,  L = forward 1 minute              |
+|                 h = previous frame,  l = next frame                 |
+|           g = start of clip, j = next clip, k = previous clip       |
+
+---
+
+=== File: ./logs/render_c55dc0dd-4e10-45f1-9bd7-bb616150f5e6_011513.log | Line: 2 ===
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/current_abstract_video_image.jpg"
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+|1=-10| |2= -5| |3= -2| |4= -1| |5=  0| |6=  1| |7=  2| |8=  5| |9= 10|
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
++---------------------------------------------------------------------+
+|               H = back 1 minute,  L = forward 1 minute              |
+|                 h = previous frame,  l = next frame                 |
+|           g = start of clip, j = next clip, k = previous clip       |
+
+---
+
+=== File: ./logs/render_c55dc0dd-4e10-45f1-9bd7-bb616150f5e6_011409.log | Line: 2 ===
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/current_abstract_video_image.jpg"
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+|1=-10| |2= -5| |3= -2| |4= -1| |5=  0| |6=  1| |7=  2| |8=  5| |9= 10|
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
++---------------------------------------------------------------------+
+|               H = back 1 minute,  L = forward 1 minute              |
+|                 h = previous frame,  l = next frame                 |
+|           g = start of clip, j = next clip, k = previous clip       |
+
+---
+
+=== File: ./logs/render_3b9854e5-630a-444e-ab10-ad086152d69f_005805.log | Line: 2 ===
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/3b9854e5-630a-444e-ab10-ad086152d69f/jobs/3b9854e5-630a-444e-ab10-ad086152d69f/current_abstract_video_image.jpg"
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+|1=-10| |2= -5| |3= -2| |4= -1| |5=  0| |6=  1| |7=  2| |8=  5| |9= 10|
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
++---------------------------------------------------------------------+
+|               H = back 1 minute,  L = forward 1 minute              |
+|                 h = previous frame,  l = next frame                 |
+|           g = start of clip, j = next clip, k = previous clip       |
+
+---
+
+=== File: ./logs/render_3b9854e5-630a-444e-ab10-ad086152d69f_005913.log | Line: 2 ===
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/3b9854e5-630a-444e-ab10-ad086152d69f/jobs/3b9854e5-630a-444e-ab10-ad086152d69f/current_abstract_video_image.jpg"
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+|1=-10| |2= -5| |3= -2| |4= -1| |5=  0| |6=  1| |7=  2| |8=  5| |9= 10|
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
++---------------------------------------------------------------------+
+|               H = back 1 minute,  L = forward 1 minute              |
+|                 h = previous frame,  l = next frame                 |
+|           g = start of clip, j = next clip, k = previous clip       |
+
+---
+
+=== File: ./nohup.out | Line: 925 ===
+    The MLT Qt module requires a X11 or Wayland environment.
+Please either run melt from a session with a display server or use a fake X server like xvfb:
+xvfb-run -a melt (...)
+[mlt_producer 0x69e6100] <producer>
+    The MLT Qt module requires a X11 or Wayland environment.
+Please either run melt from a session with a display server or use a fake X server like xvfb:
+xvfb-run -a melt (...)
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/af9cc9f6-5ea4-40e9-b48f-3703fb0b6b0f/current_abstract_video_image.jpg"
+[mlt_producer 0x69d2d90] <producer>
+    The MLT Qt module requires a X11 or Wayland environment.
+Please either run melt from a session with a display server or use a fake X server like xvfb:
+xvfb-run -a melt (...)
+[libx264 @ 0x7a7bbc001f40] interlace + weightp is not implemented
+[filter avcolor_space] Invalid format glsl
+[filter avcolor_space] Invalid format glsl
+
+---
+
+=== File: ./producer_xml_fail_context.txt | Line: 4 ===
+=== File: ./jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/render.log | Line: 3 ===
+STARTED_RENDER
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+|1=-10| |2= -5| |3= -2| |4= -1| |5=  0| |6=  1| |7=  2| |8=  5| |9= 10|
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
++---------------------------------------------------------------------+
+|               H = back 1 minute,  L = forward 1 minute              |
+|                 h = previous frame,  l = next frame                 |
+|           g = start of clip, j = next clip, k = previous clip       |
+
+---
+
+=== File: ./producer_xml_fail_context.txt | Line: 23 ===
+[kaleid0sc0pe] Created instance 720x576
+Current Position:          0Current Position:          0Current Position:          1Current Position:          3Current Position:          5Current Position:          7Current Position:          9Current Position:         11Current Position:         13Current Position:         15Current Position:         17Current Position:         20Current Position:         22Current Position:         24Current Position:         26Current Position:         28Current Position:         30Current Position:         32Current Position:         34Current Position:         36Current Position:         38Current Position:         40Current Position:         42Current Position:         44Current Position:         46Current Position:         48Current Position:         49Current Position:         51Current Position:         53Current Position:         55Current Position:         57Current Position:         60Current Position:         62Current Position:         64Current Position:         66Current Position:         68Current Position:         70Current Position:         72Current Position:         75Current Position:         77Current Position:         79Current Position:         81Current Position:         83Current Position:         85Current Position:         87Current Position:         89Current Position:         91Current Position:         93Current Position:         95Current Position:         97Current Position:         99Current Position:        101Current Position:        103Current Position:        105Current Position:        107Current Position:        109Current Position:        111Current Position:        113Current Position:        115Current Position:        117Current Position:        119Current Position:        121Current Position:        123Current Position:        125Current Position:        127Current Position:        129Current Position:        131Current Position:        133Current Position:        135Current Position:        137Current Position:        139Current Position:        141Current Position:        143Current Position:        145Current Position:        147Current Position:        149Current Position:        151Current Position:        153Current Position:        155Current Position:        157Current Position:        159Current Position:        161Current Position:        163Current Position:        165Current Position:        167Current Position:        169Current Position:        171Current Position:        173Current Position:        175Current Position:        177Current Position:        179Current Position:        181Current Position:        183Current Position:        185Current Position:        187Current Position:        189Current Position:        191Current Position:        193Current Position:        195Current Position:        197Current Position:        199Current Position:        201Current Position:        203Current Position:        205Current Position:        207Current Position:        209Current Position:        211Current Position:        213Current Position:        215Current Position:        217Current Position:        219Current Position:        221Current Position:        223Current Position:        225Current Position:        227Current Position:        229Current Position:        231Current Position:        233Current Position:        235Current Position:        237Current Position:        239Current Position:        241Current Position:        243Current Position:        245Current Position:        247Current Position:        249Current Position:        251Current Position:        253Current Position:        255Current Position:        257Current Position:        259Current Position:        261Current Position:        263Current Position:        265Current Position:        267Current Position:        269Current Position:        271Current Position:        273Current Position:        275Current Position:        277Current Position:        279Current Position:        281Current Position:        283Current Position:        285Current Position:        287Current Position:        289Current Position:        291Current Position:        293Current Position:        295Current Position:        296Current Position:        298Current Position:        300Current Position:        302Current Position:        304Current Position:        306Current Position:        308Current Position:        310Current Position:        312Current Position:        314Current Position:        316Current Position:        318Current Position:        320Current Position:        322Current Position:        324Current Position:        326Current Position:        328Current Position:        330Current Position:        332Current Position:        334Current Position:        336Current Position:        338Current Position:        340Current Position:        342Current Position:        344Current Position:        346Current Position:        348Current Position:        350Current Position:        352Current Position:        354Current Position:        356Current Position:        358Current Position:        360Current Position:        362Current Position:        364Current Position:        366Current Position:        368Current Position:        370Current Position:        372Current Position:        374Current Position:        376Current Position:        378Current Position:        380Current Position:        382Current Position:        384Current Position:        386Current Position:        388Current Position:        390Current Position:        392Current Position:        394Current Position:        396Current Position:        398Current Position:        400Current Position:        402Current Position:        404Current Position:        406Current Position:        408Current Position:        410Current Position:        412Current Position:        414Current Position:        416Current Position:        418Current Position:        420Current Position:        422Current Position:        424Current Position:        426Current Position:        428Current Position:        430Current Position:        432Current Position:        434Current Position:        436Current Position:        438Current Position:        440Current Position:        442Current Position:        444Current Position:        446Current Position:        448Current Position:        450Current Position:        452Current Position:        454Current Position:        456Current Position:        458Current Position:        460Current Position:        462Current Position:        464Current Position:        466Current Position:        468Current Position:        470Current Position:        472Current Position:        474Current Position:        476Current Position:        478Current Position:        480Current Position:        482Current Position:        484Current Position:        486Current Position:        488Current Position:        490Current Position:        492Current Position:        494Current Position:        496Current Position:        498Current Position:        500Current Position:        502Current Position:        504Current Position:        506Current Position:        508Current Position:        510Current Position:        512Current Position:        514Current Position:        516Current Position:        518Current Position:        520Current Position:        522Current Position:        524Current Position:        526Current Position:        528Current Position:        530Current Position:        532Current Position:        534Current Position:        536Current Position:        538Current Position:        540Current Position:        542Current Position:        544Current Position:        546Current Position:        548Current Position:        550Current Position:        552Current Position:        554Current Position:        556Current Position:        558Current Position:        560Current Position:        562Current Position:        564Current Position:        566Current Position:        568Current Position:        570Current Position:        571Current Position:        573Current Position:        575Current Position:        577Current Position:        579Current Position:        581Current Position:        583Current Position:        585Current Position:        587Current Position:        589Current Position:        591Current Position:        593Current Position:        595Current Position:        597Current Position:        599[mp4 @ 0x795770000f40] Timestamps are unset in a packet for stream 1. This is deprecated and will stop working in the future. Fix your code to set the timestamps properly
+[mp4 @ 0x795770000f40] Encoder did not produce proper pts, making some up.
+Current Position:        599Current Position:        599Current Position:        599
+[kaleid0sc0pe] Destroying instance
+STARTED_RENDER
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "1"
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+|1=-10| |2= -5| |3= -2| |4= -1| |5=  0| |6=  1| |7=  2| |8=  5| |9= 10|
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+
+---
+
+=== File: ./producer_xml_fail_context.txt | Line: 26 ===
+Current Position:        599Current Position:        599Current Position:        599
+[kaleid0sc0pe] Destroying instance
+STARTED_RENDER
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "1"
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+|1=-10| |2= -5| |3= -2| |4= -1| |5=  0| |6=  1| |7=  2| |8=  5| |9= 10|
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+
+---
+
+
+---
+
+=== File: ./producer_xml_fail_context.txt | Line: 39 ===
+---
+
+=== File: ./jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/render.log | Line: 25 ===
+Current Position:        599Current Position:        599Current Position:        599
+[kaleid0sc0pe] Destroying instance
+STARTED_RENDER
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "1"
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+|1=-10| |2= -5| |3= -2| |4= -1| |5=  0| |6=  1| |7=  2| |8=  5| |9= 10|
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+
+---
+
+=== File: ./producer_xml_fail_context.txt | Line: 42 ===
+Current Position:        599Current Position:        599Current Position:        599
+[kaleid0sc0pe] Destroying instance
+STARTED_RENDER
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "1"
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+|1=-10| |2= -5| |3= -2| |4= -1| |5=  0| |6=  1| |7=  2| |8=  5| |9= 10|
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
++---------------------------------------------------------------------+
+|               H = back 1 minute,  L = forward 1 minute              |
+|                 h = previous frame,  l = next frame                 |
+
+---
+
+=== File: ./producer_xml_fail_context.txt | Line: 61 ===
+[mp4 @ 0x7e1e80000f40] Encoder did not produce proper pts, making some up.
+Current Position:       1199Current Position:       1199Current Position:       1199Current Position:       1199
+[kaleid0sc0pe] Destroying instance
+[kaleid0sc0pe] Destroying instance
+./clean_and_render.sh: line 29: -profile: command not found
+STARTED_RENDER
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "11"
+
+---
+
+=== File: ./producer_xml_fail_context.txt | Line: 64 ===
+[kaleid0sc0pe] Destroying instance
+./clean_and_render.sh: line 29: -profile: command not found
+STARTED_RENDER
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "11"
+
+---
+
+
+---
+
+=== File: ./producer_xml_fail_context.txt | Line: 67 ===
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "11"
+
+---
+
+=== File: ./jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/render.log | Line: 51 ===
+[kaleid0sc0pe] Destroying instance
+./clean_and_render.sh: line 29: -profile: command not found
+
+---
+
+=== File: ./producer_xml_fail_context.txt | Line: 77 ===
+---
+
+=== File: ./jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/render.log | Line: 51 ===
+[kaleid0sc0pe] Destroying instance
+./clean_and_render.sh: line 29: -profile: command not found
+STARTED_RENDER
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "11"
+
+---
+
+=== File: ./producer_xml_fail_context.txt | Line: 80 ===
+[kaleid0sc0pe] Destroying instance
+./clean_and_render.sh: line 29: -profile: command not found
+STARTED_RENDER
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "11"
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+|1=-10| |2= -5| |3= -2| |4= -1| |5=  0| |6=  1| |7=  2| |8=  5| |9= 10|
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+
+---
+
+=== File: ./producer_xml_fail_context.txt | Line: 83 ===
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "11"
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+|1=-10| |2= -5| |3= -2| |4= -1| |5=  0| |6=  1| |7=  2| |8=  5| |9= 10|
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+
+---
+
+
+---
+
+=== File: ./producer_xml_fail_context.txt | Line: 93 ===
+|1=-10| |2= -5| |3= -2| |4= -1| |5=  0| |6=  1| |7=  2| |8=  5| |9= 10|
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+
+---
+
+=== File: ./jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/render.log | Line: 54 ===
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "11"
+
+---
+
+=== File: ./producer_xml_fail_context.txt | Line: 96 ===
+---
+
+=== File: ./jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/render.log | Line: 54 ===
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "11"
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+|1=-10| |2= -5| |3= -2| |4= -1| |5=  0| |6=  1| |7=  2| |8=  5| |9= 10|
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+
+---
+
+=== File: ./producer_xml_fail_context.txt | Line: 99 ===
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "11"
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+|1=-10| |2= -5| |3= -2| |4= -1| |5=  0| |6=  1| |7=  2| |8=  5| |9= 10|
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
++---------------------------------------------------------------------+
+|               H = back 1 minute,  L = forward 1 minute              |
+|                 h = previous frame,  l = next frame                 |
+
+---
+
+=== File: ./producer_xml_fail_context.txt | Line: 118 ===
+[mp4 @ 0x7540e8000f40] Timestamps are unset in a packet for stream 1. This is deprecated and will stop working in the future. Fix your code to set the timestamps properly
+[kaleid0sc0pe] Destroying instance
+[kaleid0sc0pe] Destroying instance
+[kaleid0sc0pe] Destroying instance
+./clean_and_render.sh: line 29: -profile: command not found
+STARTED_RENDER
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "11"
+
+---
+
+=== File: ./producer_xml_fail_context.txt | Line: 121 ===
+[kaleid0sc0pe] Destroying instance
+./clean_and_render.sh: line 29: -profile: command not found
+STARTED_RENDER
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "11"
+
+---
+
+
+---
+
+=== File: ./producer_xml_fail_context.txt | Line: 124 ===
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "11"
+
+---
+
+=== File: ./jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/render.log | Line: 84 ===
+[kaleid0sc0pe] Destroying instance
+./clean_and_render.sh: line 29: -profile: command not found
+
+---
+
+=== File: ./producer_xml_fail_context.txt | Line: 134 ===
+---
+
+=== File: ./jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/render.log | Line: 84 ===
+[kaleid0sc0pe] Destroying instance
+./clean_and_render.sh: line 29: -profile: command not found
+STARTED_RENDER
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "11"
+
+---
+
+=== File: ./producer_xml_fail_context.txt | Line: 137 ===
+[kaleid0sc0pe] Destroying instance
+./clean_and_render.sh: line 29: -profile: command not found
+STARTED_RENDER
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "11"
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+|1=-10| |2= -5| |3= -2| |4= -1| |5=  0| |6=  1| |7=  2| |8=  5| |9= 10|
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+
+---
+
+=== File: ./producer_xml_fail_context.txt | Line: 140 ===
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "11"
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+|1=-10| |2= -5| |3= -2| |4= -1| |5=  0| |6=  1| |7=  2| |8=  5| |9= 10|
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+
+---
+
+
+---
+
+=== File: ./producer_xml_fail_context.txt | Line: 150 ===
+|1=-10| |2= -5| |3= -2| |4= -1| |5=  0| |6=  1| |7=  2| |8=  5| |9= 10|
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+
+---
+
+=== File: ./jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/render.log | Line: 87 ===
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "11"
+
+---
+
+=== File: ./producer_xml_fail_context.txt | Line: 153 ===
+---
+
+=== File: ./jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/render.log | Line: 87 ===
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "11"
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+|1=-10| |2= -5| |3= -2| |4= -1| |5=  0| |6=  1| |7=  2| |8=  5| |9= 10|
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+
+---
+
+=== File: ./producer_xml_fail_context.txt | Line: 156 ===
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "11"
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+|1=-10| |2= -5| |3= -2| |4= -1| |5=  0| |6=  1| |7=  2| |8=  5| |9= 10|
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
++---------------------------------------------------------------------+
+|               H = back 1 minute,  L = forward 1 minute              |
+|                 h = previous frame,  l = next frame                 |
+
+---
+
+=== File: ./producer_xml_fail_context.txt | Line: 175 ===
+[mp4 @ 0x77a0cc000f40] Timestamps are unset in a packet for stream 1. This is deprecated and will stop working in the future. Fix your code to set the timestamps properly
+[kaleid0sc0pe] Destroying instance
+[kaleid0sc0pe] Destroying instance
+[kaleid0sc0pe] Destroying instance
+./clean_and_render.sh: line 29: -profile: command not found
+STARTED_RENDER
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "11"
+
+---
+
+=== File: ./producer_xml_fail_context.txt | Line: 178 ===
+[kaleid0sc0pe] Destroying instance
+./clean_and_render.sh: line 29: -profile: command not found
+STARTED_RENDER
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "11"
+
+---
+
+
+---
+
+=== File: ./producer_xml_fail_context.txt | Line: 181 ===
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "11"
+
+---
+
+=== File: ./jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/render.log | Line: 117 ===
+[kaleid0sc0pe] Destroying instance
+./clean_and_render.sh: line 29: -profile: command not found
+
+---
+
+=== File: ./producer_xml_fail_context.txt | Line: 191 ===
+---
+
+=== File: ./jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/render.log | Line: 117 ===
+[kaleid0sc0pe] Destroying instance
+./clean_and_render.sh: line 29: -profile: command not found
+STARTED_RENDER
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "11"
+
+---
+
+=== File: ./producer_xml_fail_context.txt | Line: 194 ===
+[kaleid0sc0pe] Destroying instance
+./clean_and_render.sh: line 29: -profile: command not found
+STARTED_RENDER
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "11"
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+|1=-10| |2= -5| |3= -2| |4= -1| |5=  0| |6=  1| |7=  2| |8=  5| |9= 10|
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+
+---
+
+=== File: ./producer_xml_fail_context.txt | Line: 197 ===
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "11"
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+|1=-10| |2= -5| |3= -2| |4= -1| |5=  0| |6=  1| |7=  2| |8=  5| |9= 10|
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+
+---
+
+
+---
+
+=== File: ./producer_xml_fail_context.txt | Line: 207 ===
+|1=-10| |2= -5| |3= -2| |4= -1| |5=  0| |6=  1| |7=  2| |8=  5| |9= 10|
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+
+---
+
+=== File: ./jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/render.log | Line: 120 ===
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "11"
+
+---
+
+=== File: ./producer_xml_fail_context.txt | Line: 210 ===
+---
+
+=== File: ./jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/render.log | Line: 120 ===
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "11"
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+|1=-10| |2= -5| |3= -2| |4= -1| |5=  0| |6=  1| |7=  2| |8=  5| |9= 10|
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+
+---
+
+=== File: ./producer_xml_fail_context.txt | Line: 213 ===
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "11"
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+|1=-10| |2= -5| |3= -2| |4= -1| |5=  0| |6=  1| |7=  2| |8=  5| |9= 10|
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
++---------------------------------------------------------------------+
+|               H = back 1 minute,  L = forward 1 minute              |
+|                 h = previous frame,  l = next frame                 |
+
+---
+
+=== File: ./producer_xml_fail_context.txt | Line: 232 ===
+[mp4 @ 0x7bc710000f40] Timestamps are unset in a packet for stream 1. This is deprecated and will stop working in the future. Fix your code to set the timestamps properly
+[kaleid0sc0pe] Destroying instance
+[kaleid0sc0pe] Destroying instance
+[kaleid0sc0pe] Destroying instance
+./clean_and_render.sh: line 29: -profile: command not found
+STARTED_RENDER
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "11"
+
+---
+
+=== File: ./producer_xml_fail_context.txt | Line: 235 ===
+[kaleid0sc0pe] Destroying instance
+./clean_and_render.sh: line 29: -profile: command not found
+STARTED_RENDER
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "11"
+
+---
+
+
+---
+
+=== File: ./producer_xml_fail_context.txt | Line: 238 ===
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "11"
+
+---
+
+=== File: ./jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/render.log | Line: 150 ===
+[kaleid0sc0pe] Destroying instance
+./clean_and_render.sh: line 29: -profile: command not found
+
+---
+
+=== File: ./producer_xml_fail_context.txt | Line: 248 ===
+---
+
+=== File: ./jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/render.log | Line: 150 ===
+[kaleid0sc0pe] Destroying instance
+./clean_and_render.sh: line 29: -profile: command not found
+STARTED_RENDER
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "11"
+
+---
+
+=== File: ./producer_xml_fail_context.txt | Line: 251 ===
+[kaleid0sc0pe] Destroying instance
+./clean_and_render.sh: line 29: -profile: command not found
+STARTED_RENDER
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "11"
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+|1=-10| |2= -5| |3= -2| |4= -1| |5=  0| |6=  1| |7=  2| |8=  5| |9= 10|
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+
+---
+
+=== File: ./producer_xml_fail_context.txt | Line: 254 ===
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "11"
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+|1=-10| |2= -5| |3= -2| |4= -1| |5=  0| |6=  1| |7=  2| |8=  5| |9= 10|
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+
+---
+
+
+---
+
+=== File: ./producer_xml_fail_context.txt | Line: 264 ===
+|1=-10| |2= -5| |3= -2| |4= -1| |5=  0| |6=  1| |7=  2| |8=  5| |9= 10|
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+
+---
+
+=== File: ./jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/render.log | Line: 153 ===
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "11"
+
+---
+
+=== File: ./producer_xml_fail_context.txt | Line: 267 ===
+---
+
+=== File: ./jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/render.log | Line: 153 ===
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "11"
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+|1=-10| |2= -5| |3= -2| |4= -1| |5=  0| |6=  1| |7=  2| |8=  5| |9= 10|
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+
+---
+
+=== File: ./producer_xml_fail_context.txt | Line: 270 ===
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "./squashfs-root-new/usr/bin/melt"
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/jobs/c55dc0dd-4e10-45f1-9bd7-bb616150f5e6/generated.jpg"
+Failed to load "11"
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+|1=-10| |2= -5| |3= -2| |4= -1| |5=  0| |6=  1| |7=  2| |8=  5| |9= 10|
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
++---------------------------------------------------------------------+
+|               H = back 1 minute,  L = forward 1 minute              |
+|                 h = previous frame,  l = next frame                 |
+
+---
+
+=== File: ./producer_xml_fail_context.txt | Line: 289 ===
+[2025-07-25 02:06:27 +0000] [129417] [INFO] Starting gunicorn 23.0.0
+[2025-07-25 02:06:27 +0000] [129417] [INFO] Listening at: http://0.0.0.0:5000 (129417)
+[2025-07-25 02:06:27 +0000] [129417] [INFO] Using worker: sync
+[2025-07-25 02:06:27 +0000] [129418] [INFO] Booting worker with pid: 129418
+[2025-07-25 02:06:27 +0000] [129419] [INFO] Booting worker with pid: 129419
+✅ Saved rainbow to jobs/0b6bda73-7244-4ca6-a37f-35257a80a71d/current_abstract_video_image.jpg
+[kaleid0sc0pe] Initializing plugin
+[producer_xml] failed to load producer "/home/ubuntu/kaleido-video-generator/jobs/0b6bda73-7244-4ca6-a37f-35257a80a71d/jobs/0b6bda73-7244-4ca6-a37f-35257a80a71d/current_abstract_video_image.jpg"
+[libx264 @ 0x76bd10001dc0] interlace + weightp is not implemented
+Fontconfig error: Cannot load default config file: No such file: (null)
+[kaleid0sc0pe] Created instance 720x576
+Current Frame:          1, percentage:          0Current Frame:          3, percentage:          0Current Frame:          5, percentage:          0Current Frame:          7, percentage:          1Current Frame:          9, percentage:          1Current Frame:         12, percentage:          2Current Frame:         14, percentage:          2Current Frame:         16, percentage:          2Current Frame:         18, percentage:          3Current Frame:         20, percentage:          3Current Frame:         22, percentage:          3Current Frame:         24, percentage:          4Current Frame:         27, percentage:          4Current Frame:         29, percentage:          4Current Frame:         31, percentage:          5Current Frame:         33, percentage:          5Current Frame:         35, percentage:          5Current Frame:         37, percentage:          6Current Frame:         39, percentage:          6Current Frame:         41, percentage:          6Current Frame:         43, percentage:          7Current Frame:         45, percentage:          7Current Frame:         47, percentage:          7Current Frame:         49, percentage:          8Current Frame:         51, percentage:          8Current Frame:         53, percentage:          8Current Frame:         54, percentage:          9Current Frame:         56, percentage:          9Current Frame:         58, percentage:          9Current Frame:         60, percentage:         10Current Frame:         62, percentage:         10Current Frame:         64, percentage:         10Current Frame:         66, percentage:         11Current Frame:         68, percentage:         11Current Frame:         70, percentage:         11Current Frame:         72, percentage:         12Current Frame:         74, percentage:         12Current Frame:         76, percentage:         12Current Frame:         78, percentage:         13Current Frame:         80, percentage:         13Current Frame:         82, percentage:         13Current Frame:         84, percentage:         14Current Frame:         86, percentage:         14Current Frame:         88, percentage:         14Current Frame:         90, percentage:         15Current Frame:         92, percentage:         15Current Frame:         94, percentage:         15Current Frame:         96, percentage:         16Current Frame:         98, percentage:         16Current Frame:        100, percentage:         16Current Frame:        102, percentage:         17Current Frame:        104, percentage:         17Current Frame:        106, percentage:         17Current Frame:        108, percentage:         18Current Frame:        110, percentage:         18Current Frame:        112, percentage:         18Current Frame:        114, percentage:         19Current Frame:        116, percentage:         19Current Frame:        118, percentage:         19Current Frame:        120, percentage:         20Current Frame:        122, percentage:         20Current Frame:        124, percentage:         20Current Frame:        126, percentage:         21Current Frame:        128, percentage:         21Current Frame:        130, percentage:         21Current Frame:        132, percentage:         22Current Frame:        134, percentage:         22Current Frame:        136, percentage:         22Current Frame:        138, percentage:         23Current Frame:        140, percentage:         23Current Frame:        142, percentage:         23Current Frame:        144, percentage:         24Current Frame:        146, percentage:         24Current Frame:        148, percentage:         24Current Frame:        150, percentage:         25Current Frame:        152, percentage:         25Current Frame:        154, percentage:         25Current Frame:        156, percentage:         26Current Frame:        158, percentage:         26Current Frame:        160, percentage:         26Current Frame:        162, percentage:         27Current Frame:        164, percentage:         27Current Frame:        166, percentage:         27Current Frame:        168, percentage:         28Current Frame:        170, percentage:         28Current Frame:        172, percentage:         28Current Frame:        174, percentage:         29Current Frame:        176, percentage:         29Current Frame:        178, percentage:         29Current Frame:        180, percentage:         30Current Frame:        182, percentage:         30Current Frame:        184, percentage:         30Current Frame:        186, percentage:         31Current Frame:        188, percentage:         31Current Frame:        190, percentage:         31Current Frame:        192, percentage:         32Current Frame:        194, percentage:         32Current Frame:        196, percentage:         32Current Frame:        198, percentage:         33Current Frame:        200, percentage:         33Current Frame:        202, percentage:         33Current Frame:        204, percentage:         34Current Frame:        206, percentage:         34Current Frame:        208, percentage:         34Current Frame:        210, percentage:         35Current Frame:        212, percentage:         35Current Frame:        214, percentage:         35Current Frame:        216, percentage:         36Current Frame:        218, percentage:         36Current Frame:        221, percentage:         36Current Frame:        223, percentage:         37Current Frame:        225, percentage:         37Current Frame:        227, percentage:         37Current Frame:        229, percentage:         38Current Frame:        231, percentage:         38Current Frame:        233, percentage:         38Current Frame:        235, percentage:         39Current Frame:        237, percentage:         39Current Frame:        239, percentage:         39Current Frame:        241, percentage:         40Current Frame:        243, percentage:         40Current Frame:        245, percentage:         40Current Frame:        247, percentage:         41Current Frame:        249, percentage:         41Current Frame:        251, percentage:         41Current Frame:        253, percentage:         42Current Frame:        255, percentage:         42Current Frame:        257, percentage:         42Current Frame:        259, percentage:         43Current Frame:        261, percentage:         43Current Frame:        263, percentage:         43Current Frame:        265, percentage:         44Current Frame:        267, percentage:         44Current Frame:        269, percentage:         44Current Frame:        271, percentage:         45Current Frame:        273, percentage:         45Current Frame:        275, percentage:         45Current Frame:        277, percentage:         46Current Frame:        279, percentage:         46Current Frame:        281, percentage:         46Current Frame:        283, percentage:         47Current Frame:        285, percentage:         47Current Frame:        287, percentage:         47Current Frame:        289, percentage:         48Current Frame:        291, percentage:         48Current Frame:        292, percentage:         48Current Frame:        294, percentage:         49Current Frame:        296, percentage:         49Current Frame:        298, percentage:         49Current Frame:        300, percentage:         50Current Frame:        302, percentage:         50Current Frame:        304, percentage:         50Current Frame:        306, percentage:         51Current Frame:        308, percentage:         51Current Frame:        310, percentage:         51Current Frame:        312, percentage:         52Current Frame:        314, percentage:         52Current Frame:        316, percentage:         52Current Frame:        318, percentage:         53Current Frame:        320, percentage:         53Current Frame:        322, percentage:         53Current Frame:        324, percentage:         54Current Frame:        326, percentage:         54Current Frame:        328, percentage:         54Current Frame:        330, percentage:         55Current Frame:        332, percentage:         55Current Frame:        334, percentage:         55Current Frame:        336, percentage:         56Current Frame:        338, percentage:         56Current Frame:        340, percentage:         56Current Frame:        342, percentage:         57Current Frame:        344, percentage:         57Current Frame:        346, percentage:         57Current Frame:        347, percentage:         57Current Frame:        349, percentage:         58Current Frame:        351, percentage:         58Current Frame:        353, percentage:         58Current Frame:        355, percentage:         59Current Frame:        357, percentage:         59Current Frame:        359, percentage:         59Current Frame:        361, percentage:         60Current Frame:        363, percentage:         60Current Frame:        365, percentage:         60Current Frame:        367, percentage:         61Current Frame:        369, percentage:         61Current Frame:        371, percentage:         61Current Frame:        373, percentage:         62Current Frame:        375, percentage:         62Current Frame:        377, percentage:         62Current Frame:        379, percentage:         63Current Frame:        381, percentage:         63Current Frame:        383, percentage:         63Current Frame:        385, percentage:         64Current Frame:        387, percentage:         64Current Frame:        389, percentage:         64Current Frame:        391, percentage:         65Current Frame:        393, percentage:         65Current Frame:        395, percentage:         65Current Frame:        397, percentage:         66Current Frame:        399, percentage:         66Current Frame:        401, percentage:         66Current Frame:        403, percentage:         67Current Frame:        405, percentage:         67Current Frame:        407, percentage:         67Current Frame:        409, percentage:         68Current Frame:        411, percentage:         68Current Frame:        413, percentage:         68Current Frame:        415, percentage:         69Current Frame:        417, percentage:         69Current Frame:        419, percentage:         69Current Frame:        421, percentage:         70Current Frame:        423, percentage:         70Current Frame:        425, percentage:         70Current Frame:        427, percentage:         71Current Frame:        429, percentage:         71Current Frame:        431, percentage:         71Current Frame:        433, percentage:         72Current Frame:        435, percentage:         72Current Frame:        437, percentage:         72Current Frame:        439, percentage:         73Current Frame:        441, percentage:         73Current Frame:        443, percentage:         73Current Frame:        445, percentage:         74Current Frame:        447, percentage:         74Current Frame:        450, percentage:         75Current Frame:        452, percentage:         75Current Frame:        454, percentage:         75Current Frame:        455, percentage:         75Current Frame:        457, percentage:         76Current Frame:        459, percentage:         76Current Frame:        461, percentage:         76Current Frame:        463, percentage:         77Current Frame:        465, percentage:         77Current Frame:        467, percentage:         77Current Frame:        470, percentage:         78Current Frame:        472, percentage:         78Current Frame:        474, percentage:         79Current Frame:        476, percentage:         79Current Frame:        478, percentage:         79Current Frame:        480, percentage:         80Current Frame:        482, percentage:         80Current Frame:        484, percentage:         80Current Frame:        486, percentage:         81Current Frame:        488, percentage:         81Current Frame:        490, percentage:         81Current Frame:        492, percentage:         82Current Frame:        494, percentage:         82Current Frame:        496, percentage:         82Current Frame:        498, percentage:         83Current Frame:        500, percentage:         83Current Frame:        502, percentage:         83Current Frame:        504, percentage:         84Current Frame:        506, percentage:         84Current Frame:        508, percentage:         84Current Frame:        510, percentage:         85Current Frame:        512, percentage:         85Current Frame:        514, percentage:         85Current Frame:        516, percentage:         86Current Frame:        518, percentage:         86Current Frame:        520, percentage:         86Current Frame:        522, percentage:         87Current Frame:        524, percentage:         87Current Frame:        526, percentage:         87Current Frame:        528, percentage:         88Current Frame:        530, percentage:         88Current Frame:        532, percentage:         88Current Frame:        534, percentage:         89Current Frame:        536, percentage:         89Current Frame:        538, percentage:         89Current Frame:        540, percentage:         90Current Frame:        542, percentage:         90Current Frame:        544, percentage:         90Current Frame:        546, percentage:         91Current Frame:        548, percentage:         91Current Frame:        550, percentage:         91Current Frame:        552, percentage:         92Current Frame:        554, percentage:         92Current Frame:        556, percentage:         92Current Frame:        558, percentage:         93Current Frame:        560, percentage:         93Current Frame:        561, percentage:         93Current Frame:        563, percentage:         93Current Frame:        565, percentage:         94Current Frame:        567, percentage:         94Current Frame:        569, percentage:         94Current Frame:        571, percentage:         95Current Frame:        573, percentage:         95Current Frame:        575, percentage:         95Current Frame:        577, percentage:         96Current Frame:        580, percentage:         96Current Frame:        582, percentage:         97Current Frame:        584, percentage:         97Current Frame:        586, percentage:         97Current Frame:        588, percentage:         98Current Frame:        590, percentage:         98Current Frame:        592, percentage:         98Current Frame:        595, percentage:         99Current Frame:        597, percentage:         99Current Frame:        599, percentage:         99[mp4 @ 0x76bd10000f40] Timestamps are unset in a packet for stream 1. This is deprecated and will stop working in the future. Fix your code to set the timestamps properly
+[mp4 @ 0x76bd10000f40] Encoder did not produce proper pts, making some up.
+
+[kaleid0sc0pe] Destroying instance
+
+---
+
+=== File: ./static/render.log | Line: 21 ===
+[producer_xml] failed to load filter "(null)"
+[producer_xml] failed to load filter "(null)"
+[producer_xml] Invalid state of playlist end 0
+[mlt_producer 0x1301ebe0] <producer>
+    The MLT Qt module requires a X11 or Wayland environment.
+Please either run melt from a session with a display server or use a fake X server like xvfb:
+xvfb-run -a melt (...)
+[producer_xml] failed to load producer "avformat:/dev/zero"
+[mlt_producer 0x12c1c710] <producer>
+    The MLT Qt module requires a X11 or Wayland environment.
+Please either run melt from a session with a display server or use a fake X server like xvfb:
+xvfb-run -a melt (...)
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+|1=-10| |2= -5| |3= -2| |4= -1| |5=  0| |6=  1| |7=  2| |8=  5| |9= 10|
++-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+ +-----+
+
+---
+

@@ -78,7 +78,7 @@
         const downloadBtn = document.getElementById("downloadBtn");
         const errorEl = document.getElementById("error");
 
-        let lastLogLength = 0;
+        let lastStatus = "";
 
         function log(message) {
             const p = document.createElement("div");
@@ -96,33 +96,35 @@
             progressBar.textContent = data.progress + "%";
             statusEl.textContent = data.stage;
 
-            // Show only new logs
-            const newLogs = data.log.slice(lastLogLength);
-            newLogs.forEach(log);
-            lastLogLength = data.log.length;
+            if (data.stage !== lastStatus) {
+                log(data.stage);
+                lastStatus = data.stage;
+            }
 
-            if (data.status === "completed") {
+            if (data.status === "complete") {
+                log("🎉 Render complete");
+                clearInterval(pollInterval);
                 downloadBtn.style.display = "inline-block";
                 downloadBtn.onclick = () => {
                     window.location.href = `/download?job_id=${jobId}`;
                 };
             }
 
-            if (data.status === "failed") {
+            if (data.status === "error") {
+                log("❌ Render failed");
                 showError("❌ Render failed. See logs above.");
-                clearInterval(pollInterval);
-            }
-
-            if (data.status === "completed") {
                 clearInterval(pollInterval);
             }
         }
 
         function checkJobStatus() {
-            fetch(`/job_status?job_id=${jobId}`)
-                .then(response => response.json())
-                .then(data => updateUI(data))
-                .catch(err => showError("Failed to fetch status"));
+            fetch(`/progress_data?job_id=${jobId}`)
+                .then(response => {
+                    if (!response.ok) throw new Error("Status fetch failed");
+                    return response.json();
+                })
+                .then(updateUI)
+                .catch(err => showError("⚠️ Failed to fetch status"));
         }
 
         const pollInterval = setInterval(checkJobStatus, 1000);
