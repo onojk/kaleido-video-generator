@@ -58,10 +58,17 @@
              oninput="spdVal.textContent = this.value">
     </label>
 
-    <label>🎚️ Quality (CRF): <strong id="crfVal">18</strong> <small>(lower = better)</small>
-      <input type="range" id="crf" min="0" max="51" value="18"
-             oninput="crfVal.textContent = this.value">
+    <label>🎬 Quality Preset:
+      <select id="quality_preset" onchange="updatePresetInfo()">
+        <option value="preview_480p">Preview 480p — fast, ~small file</option>
+        <option value="preview_720p">Preview 720p — fast, ~medium file</option>
+        <option value="standard_hd" selected>Standard HD 1080p — balanced</option>
+        <option value="full_hd">Full HD 1080p — high quality</option>
+        <option value="4k_uhd">4K UHD — large file</option>
+        <option value="4k_hq">4K HQ — maximum quality, very large</option>
+      </select>
     </label>
+    <small id="presetInfo" style="color:#aaa;display:block;margin-top:2px;">1920×1080 · CRF 18 · medium preset · 30 fps</small>
   </section>
 
   <!-- ── Advanced ── -->
@@ -110,6 +117,20 @@
   </section>
 
 <script>
+// -- Preset info --
+const PRESET_INFO = {
+  preview_480p: "854×480 · CRF 32 · ultrafast · 24 fps",
+  preview_720p: "1280×720 · CRF 28 · ultrafast · 24 fps",
+  standard_hd:  "1920×1080 · CRF 18 · medium · 30 fps",
+  full_hd:      "1920×1080 · CRF 12 · slow · 30 fps",
+  "4k_uhd":     "3840×2160 · CRF 12 · slow · 30 fps",
+  "4k_hq":      "3840×2160 · CRF 8 · slow · 30 fps",
+};
+function updatePresetInfo() {
+  const key = document.getElementById("quality_preset").value;
+  document.getElementById("presetInfo").textContent = PRESET_INFO[key] || "";
+}
+
 // -- CPU polling --
 function updateCPU() {
   fetch("/server_load").then(r => r.json()).then(d => {
@@ -140,7 +161,7 @@ function startRender() {
   body.append("brightness",    document.getElementById("brightness").value);
   body.append("contrast",      document.getElementById("contrast").value);
   body.append("speed",         document.getElementById("speed").value);
-  body.append("crf",           document.getElementById("crf").value);
+  body.append("quality_preset", document.getElementById("quality_preset").value);
   body.append("kaleido_sides", document.getElementById("kaleido_sides").value);
   body.append("seed_quad",     document.getElementById("seed_quad").value);
   if (document.getElementById("mirror_q1").checked)    body.append("mirror_q1",   "on");

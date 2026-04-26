@@ -57,10 +57,17 @@ APPLY_SWIRL="$(resolve_script apply_swirl.py)"
 SWIRL_SCRIPT="$APPLY_SWIRL"
 [[ -f "$APPLY_SWIRL_FAST" ]] && SWIRL_SCRIPT="$APPLY_SWIRL_FAST"
 
-# Auto-optimize for short renders
-if (( DURATION <= 30 )) && [[ "$FAST_PREVIEW" = "0" ]]; then
+# Output resolution from quality preset (WIDTH/HEIGHT passed by app.py)
+WIDTH="${WIDTH:-1920}"
+HEIGHT="${HEIGHT:-1080}"
+IS_PREVIEW="${IS_PREVIEW:-0}"
+OW="$WIDTH"
+OH="$HEIGHT"
+
+# Auto-optimize for short renders — only auto-enable FAST_PREVIEW on preview presets
+if (( DURATION <= 30 )) && [[ "$IS_PREVIEW" = "1" ]] && [[ "$FAST_PREVIEW" = "0" ]]; then
   FAST_PREVIEW=1
-  echo "[INFO] Auto-enabling FAST_PREVIEW for ${DURATION}s render"
+  echo "[INFO] Auto-enabling FAST_PREVIEW for ${DURATION}s preview render"
 fi
 if (( DURATION <= 30 )); then
   SKIP_SWIRL=1           # skip side-bake swirl during segment generation
@@ -71,16 +78,12 @@ if (( DURATION < 60 )) && (( EXTRA_CAP > 4096 )); then EXTRA_CAP=4096; fi
 
 # Auto-set NUM_SHAPES based on duration
 if [[ -z "${NUM_SHAPES:-}" ]]; then
-  if   (( DURATION <= 30  )); then NUM_SHAPES=150
-  elif (( DURATION <= 120 )); then NUM_SHAPES=250
-  else NUM_SHAPES=400; fi
+  if (( DURATION <= 30 )); then NUM_SHAPES=600
+  else NUM_SHAPES=1000; fi
 fi
 export NUM_SHAPES
 
-# Output resolution: 1080p for short renders, 4K otherwise
-if (( DURATION <= 30 )); then OW=1920; OH=1080; else OW=3840; OH=2160; fi
-
-# FAST_PREVIEW tweaks
+# FAST_PREVIEW tweaks (preset already set by app.py for preview modes)
 if [[ "$FAST_PREVIEW" = "1" ]]; then PRESET="ultrafast"; CRF="26"; FPS="24"; fi
 
 echo "[INFO] PivotSwirls DURATION=${DURATION}s • FPS $FPS • FAST_PREVIEW=$FAST_PREVIEW"

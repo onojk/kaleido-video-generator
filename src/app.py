@@ -40,6 +40,18 @@ app = Flask(
 
 jobs: dict[str, "RenderJob"] = {}
 
+# ---------------------------------------------------------------------------
+# Quality presets  (name → ffmpeg encoding params)
+# ---------------------------------------------------------------------------
+QUALITY_PRESETS: dict[str, dict] = {
+    "preview_480p": {"width": 854,  "height": 480,  "crf": 32, "ffmpeg_preset": "ultrafast", "fps": 24, "is_preview": True},
+    "preview_720p": {"width": 1280, "height": 720,  "crf": 28, "ffmpeg_preset": "ultrafast", "fps": 24, "is_preview": True},
+    "standard_hd":  {"width": 1920, "height": 1080, "crf": 18, "ffmpeg_preset": "medium",    "fps": 30, "is_preview": False},
+    "full_hd":      {"width": 1920, "height": 1080, "crf": 12, "ffmpeg_preset": "slow",      "fps": 30, "is_preview": False},
+    "4k_uhd":       {"width": 3840, "height": 2160, "crf": 12, "ffmpeg_preset": "slow",      "fps": 30, "is_preview": False},
+    "4k_hq":        {"width": 3840, "height": 2160, "crf": 8,  "ffmpeg_preset": "slow",      "fps": 30, "is_preview": False},
+}
+
 
 # ---------------------------------------------------------------------------
 # Job class
@@ -96,17 +108,22 @@ class RenderJob:
     # ------------------------------------------------------------------
     def run(
         self,
-        duration:   int   = 10,
-        brightness: int   = 0,
-        contrast:   int   = 0,
-        speed:      float = 10.0,
-        colors:     list  | None = None,
-        apply_kden: bool  = False,
-        fill_mandala: bool = False,
-        skip_mirror: bool  = False,
-        seed_quad:  str   = "br",
-        kaleido_sides: int = 8,
-        crf:        int   = 18,
+        duration:      int   = 10,
+        brightness:    int   = 0,
+        contrast:      int   = 0,
+        speed:         float = 10.0,
+        colors:        list  | None = None,
+        apply_kden:    bool  = False,
+        fill_mandala:  bool  = False,
+        skip_mirror:   bool  = False,
+        seed_quad:     str   = "br",
+        kaleido_sides: int   = 8,
+        width:         int   = 1920,
+        height:        int   = 1080,
+        crf:           int   = 18,
+        ffmpeg_preset: str   = "medium",
+        fps:           int   = 30,
+        is_preview:    bool  = False,
     ) -> None:
         try:
             os.makedirs(self.working_dir, exist_ok=True)
@@ -145,7 +162,12 @@ class RenderJob:
                 "SKIP_MIRROR":   "1" if skip_mirror else "0",
                 "SEED_QUAD":     seed_quad,
                 "KALEIDO_SIDES": str(kaleido_sides),
+                "WIDTH":         str(width),
+                "HEIGHT":        str(height),
                 "CRF":           str(crf),
+                "PRESET":        ffmpeg_preset,
+                "FPS":           str(fps),
+                "IS_PREVIEW":    "1" if is_preview else "0",
             })
 
             generate_sh = os.path.join(self.working_dir, "generate.sh")
@@ -221,9 +243,10 @@ def start_render():
     apply_kden  = request.form.get("apply_kden") == "on"
     fill_mandala= request.form.get("fill_mandala") == "on"
     skip_mirror = request.form.get("skip_mirror") == "on"
-    seed_quad   = request.form.get("seed_quad", "br")
+    seed_quad     = request.form.get("seed_quad", "br")
     kaleido_sides = int(request.form.get("kaleido_sides", 8))
-    crf         = int(request.form.get("crf", 18))
+    quality_preset = request.form.get("quality_preset", "standard_hd")
+    p = QUALITY_PRESETS.get(quality_preset, QUALITY_PRESETS["standard_hd"])
 
     job = RenderJob(job_id, mirror_q1=mirror_q1)
     jobs[job_id] = job
@@ -241,7 +264,12 @@ def start_render():
             skip_mirror=skip_mirror,
             seed_quad=seed_quad,
             kaleido_sides=kaleido_sides,
-            crf=crf,
+            width=p["width"],
+            height=p["height"],
+            crf=p["crf"],
+            ffmpeg_preset=p["ffmpeg_preset"],
+            fps=p["fps"],
+            is_preview=p["is_preview"],
         ),
         daemon=True,
     ).start()
