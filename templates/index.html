@@ -97,6 +97,7 @@
   <!-- ── Launch ── -->
   <button id="renderBtn" onclick="startRender()">▶️ Start Render</button>
   <button id="cancelBtn" onclick="cancelRender()" style="display:none;margin-left:10px;background:#c0392b;">⛔ Cancel</button>
+  <button id="newRenderBtn" onclick="resetForNewRender()" style="display:none;margin-left:10px;">🔄 Start New Render</button>
 
   <!-- ── Status ── -->
   <section class="panel" id="statusPanel" style="display:none">
@@ -141,14 +142,31 @@ function updateCPU() {
 }
 updateCPU();
 
-// -- Render --
+// -- Render state --
 let currentJobId = null;
+let pollingActive = false;
+
+function _stopPolling() { pollingActive = false; }
+
+function _showNewRenderBtn() {
+  document.getElementById("cancelBtn").style.display = "none";
+  document.getElementById("newRenderBtn").style.display = "";
+}
+
+// Called only when the user explicitly clicks "Start New Render"
+function resetForNewRender() {
+  document.getElementById("renderBtn").disabled = false;
+  document.getElementById("newRenderBtn").style.display = "none";
+  document.getElementById("downloadBlock").style.display = "none";
+  currentJobId = null;
+}
 
 function startRender() {
   const colors = [...document.querySelectorAll('input[name="colors"]:checked')].map(c => c.value);
   if (colors.length < 4) { alert("Please select at least 4 colors."); return; }
 
   document.getElementById("renderBtn").disabled = true;
+  document.getElementById("newRenderBtn").style.display = "none";
   document.getElementById("cancelBtn").style.display = "";
   document.getElementById("statusPanel").style.display = "";
   document.getElementById("downloadBlock").style.display = "none";
@@ -156,23 +174,24 @@ function startRender() {
   document.getElementById("stepText").textContent = "";
 
   const body = new FormData();
-  body.append("colors",        colors.join(","));
-  body.append("duration",      document.getElementById("duration").value);
-  body.append("brightness",    document.getElementById("brightness").value);
-  body.append("contrast",      document.getElementById("contrast").value);
-  body.append("speed",         document.getElementById("speed").value);
+  body.append("colors",         colors.join(","));
+  body.append("duration",       document.getElementById("duration").value);
+  body.append("brightness",     document.getElementById("brightness").value);
+  body.append("contrast",       document.getElementById("contrast").value);
+  body.append("speed",          document.getElementById("speed").value);
   body.append("quality_preset", document.getElementById("quality_preset").value);
-  body.append("kaleido_sides", document.getElementById("kaleido_sides").value);
-  body.append("seed_quad",     document.getElementById("seed_quad").value);
-  if (document.getElementById("mirror_q1").checked)    body.append("mirror_q1",   "on");
-  if (document.getElementById("apply_kden").checked)   body.append("apply_kden",  "on");
-  if (document.getElementById("fill_mandala").checked) body.append("fill_mandala","on");
-  if (document.getElementById("skip_mirror").checked)  body.append("skip_mirror", "on");
+  body.append("kaleido_sides",  document.getElementById("kaleido_sides").value);
+  body.append("seed_quad",      document.getElementById("seed_quad").value);
+  if (document.getElementById("mirror_q1").checked)    body.append("mirror_q1",    "on");
+  if (document.getElementById("apply_kden").checked)   body.append("apply_kden",   "on");
+  if (document.getElementById("fill_mandala").checked) body.append("fill_mandala", "on");
+  if (document.getElementById("skip_mirror").checked)  body.append("skip_mirror",  "on");
 
   fetch("/start_render", { method: "POST", body })
     .then(r => r.json())
     .then(({ job_id }) => {
       currentJobId = job_id;
+      pollingActive = true;
       pollStatus(job_id);
       pollLogs(job_id);
     });
@@ -180,41 +199,45 @@ function startRender() {
 
 function cancelRender() {
   if (!currentJobId) return;
+  _stopPolling();
   fetch(`/cancel/${currentJobId}`, { method: "POST" })
     .then(r => r.json())
     .then(() => {
       document.getElementById("statusText").textContent = "cancelled";
-      document.getElementById("cancelBtn").style.display = "none";
-      document.getElementById("renderBtn").disabled = false;
+      _showNewRenderBtn();
       currentJobId = null;
     });
 }
 
 function pollStatus(id) {
+  if (!pollingActive) return;
   fetch(`/job_status/${id}`).then(r => r.json()).then(d => {
     document.getElementById("statusText").textContent = d.status;
     document.getElementById("pctText").textContent    = d.progress + "%";
     document.getElementById("progressBar").style.width = d.progress + "%";
 
     if (d.status === "completed") {
+      _stopPolling();
       document.getElementById("downloadLink").href = `/download/${id}`;
       document.getElementById("downloadBlock").style.display = "";
-      document.getElementById("cancelBtn").style.display = "none";
-      document.getElementById("renderBtn").disabled = false;
+      _showNewRenderBtn();
     } else if (d.status === "failed") {
+      _stopPolling();
       document.getElementById("statusText").textContent += " ❌ " + (d.error || "");
-      document.getElementById("cancelBtn").style.display = "none";
-      document.getElementById("renderBtn").disabled = false;
+      _showNewRenderBtn();
     } else if (d.status === "cancelled") {
-      document.getElementById("cancelBtn").style.display = "none";
-      document.getElementById("renderBtn").disabled = false;
+      _stopPolling();
+      _showNewRenderBtn();
     } else {
       setTimeout(() => pollStatus(id), 1500);
     }
+  }).catch(() => {
+    if (pollingActive) setTimeout(() => pollStatus(id), 3000);
   });
 }
 
 function pollLogs(id) {
+  if (!pollingActive) return;
   fetch(`/job_log/${id}`).then(r => r.json()).then(d => {
     if (d.log) {
       const el = document.getElementById("logOutput");
@@ -224,7 +247,9 @@ function pollLogs(id) {
     if (d.current_step) {
       document.getElementById("stepText").textContent = d.current_step;
     }
-    setTimeout(() => pollLogs(id), 1500);
+    if (pollingActive) setTimeout(() => pollLogs(id), 1500);
+  }).catch(() => {
+    if (pollingActive) setTimeout(() => pollLogs(id), 3000);
   });
 }
 </script>

@@ -190,6 +190,7 @@ class RenderJob:
 
             returncode = self.proc.returncode
             self.proc = None
+            self._log(f"generate.sh exited — returncode={returncode}")
 
             if self._cancelled:
                 return
@@ -199,9 +200,11 @@ class RenderJob:
 
             output = os.path.join(self.working_dir, "kaleido_output.mp4")
             if not os.path.exists(output):
-                raise FileNotFoundError("kaleido_output.mp4 not produced by pipeline")
+                self._log("ERROR: returncode=0 but kaleido_output.mp4 not found")
+                raise FileNotFoundError("Output file not produced by pipeline")
 
             self.output_file = output
+            self._log("Output file confirmed present ✅")
             self.update_stage(5)
             self._log("Job completed successfully ✅")
 
@@ -284,9 +287,11 @@ def job_status(job_id: str):
         return jsonify({"error": "Job not found"}), 404
 
     progress = job.progress
+    # Never let interpolation flip a terminal state's progress
+    terminal = job.status in ("completed", "failed", "cancelled")
 
     # During step 5 (progress 20–60 %), interpolate finer progress from [SEG N/M] log markers
-    if job.status not in ("completed", "failed", "cancelled") and 20 <= progress < 60:
+    if not terminal and progress == 20:
         try:
             with open(job.log_path) as fh:
                 log_text = fh.read()
