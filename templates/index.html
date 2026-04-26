@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kaleidoscope Video Generator</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <h1>🌈 Kaleidoscope Video Generator</h1>
+  <p class="byline">by <a href="https://github.com/onojk" target="_blank">@onojk</a></p>
+
+  <!-- ── Colors ── -->
+  <section class="panel">
+    <h2>🎨 Colors <small>(select ≥ 4)</small></h2>
+    <div class="color-grid">
+      {% set palette = [
+          ("red",    "#ff0000"),
+          ("orange", "#ff8c00"),
+          ("yellow", "#ffd700"),
+          ("green",  "#00cc00"),
+          ("blue",   "#0055ff"),
+          ("indigo", "#4b0082"),
+          ("violet", "#ee82ee")
+      ] %}
+      {% for name, hex in palette %}
+      <label class="color-chip">
+        <input type="checkbox" name="colors" value="{{ name }}"
+               {% if name in ['red','orange','yellow','green'] %}checked{% endif %}>
+        <span class="swatch" style="background:{{ hex }};"></span>
+        {{ name | capitalize }}
+      </label>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- ── Sliders ── -->
+  <section class="panel">
+    <h2>⚙️ Render Settings</h2>
+
+    <label>🎞️ Duration: <strong id="durVal">10s</strong>
+      <input type="range" id="duration" min="10" max="3600" value="10"
+             oninput="durVal.textContent = this.value + 's'">
+    </label>
+
+    <label>🌓 Brightness: <strong id="briVal">0</strong>
+      <input type="range" id="brightness" min="-127" max="127" value="0"
+             oninput="briVal.textContent = this.value">
+    </label>
+
+    <label>🌗 Contrast: <strong id="conVal">0</strong>
+      <input type="range" id="contrast" min="-127" max="127" value="0"
+             oninput="conVal.textContent = this.value">
+    </label>
+
+    <label>💨 Scroll Speed: <strong id="spdVal">10</strong>
+      <input type="range" id="speed" min="1" max="100" value="10"
+             oninput="spdVal.textContent = this.value">
+    </label>
+
+    <label>🎚️ Quality (CRF): <strong id="crfVal">18</strong> <small>(lower = better)</small>
+      <input type="range" id="crf" min="0" max="51" value="18"
+             oninput="crfVal.textContent = this.value">
+    </label>
+  </section>
+
+  <!-- ── Advanced ── -->
+  <section class="panel">
+    <h2>🔬 Advanced Effects</h2>
+    <label class="toggle"><input type="checkbox" id="mirror_q1"> Mirror Q1 quadrant</label>
+    <label class="toggle"><input type="checkbox" id="apply_kden"> Frei0r radial kaleidoscope</label>
+    <label class="toggle"><input type="checkbox" id="fill_mandala"> Mandala fill</label>
+    <label class="toggle"><input type="checkbox" id="skip_mirror"> Skip 2×2 mirror</label>
+
+    <label>🧩 Kaleidoscope sides: <strong id="ksdVal">12</strong>
+      <input type="range" id="kaleido_sides" min="3" max="32" value="12"
+             oninput="ksdVal.textContent = this.value">
+    </label>
+
+    <label>🌱 Seed quadrant:
+      <select id="seed_quad">
+        <option value="br" selected>Bottom-right</option>
+        <option value="bl">Bottom-left</option>
+        <option value="tr">Top-right</option>
+        <option value="tl">Top-left</option>
+      </select>
+    </label>
+  </section>
+
+  <!-- ── Launch ── -->
+  <button id="renderBtn" onclick="startRender()">▶️ Start Render</button>
+  <button id="cancelBtn" onclick="cancelRender()" style="display:none;margin-left:10px;background:#c0392b;">⛔ Cancel</button>
+
+  <!-- ── Status ── -->
+  <section class="panel" id="statusPanel" style="display:none">
+    <h2>📊 Status</h2>
+    <p><strong id="statusText">—</strong> &nbsp;<span id="pctText">0%</span></p>
+    <div class="progress-bar"><div class="progress-fill" id="progressBar"></div></div>
+    <p id="stepText" style="color:#00aaff;font-family:monospace;font-size:0.85em;min-height:1.4em;margin:4px 0;"></p>
+    <pre id="logOutput">[waiting for log…]</pre>
+    <div id="downloadBlock" style="display:none">
+      <a id="downloadLink" href="#" class="dl-btn">📥 Download Video</a>
+    </div>
+  </section>
+
+  <!-- ── Server load ── -->
+  <section class="panel">
+    <h2>🖥️ Server Load</h2>
+    <div id="cpuGraph" class="cpu-bar">[waiting…]</div>
+  </section>
+
+<script>
+// -- CPU polling --
+function updateCPU() {
+  fetch("/server_load").then(r => r.json()).then(d => {
+    const pct = d.cpu >= 0 ? d.cpu : 0;
+    const bar = "█".repeat(Math.round(pct / 5)).padEnd(20, "░");
+    document.getElementById("cpuGraph").textContent = `CPU ${pct.toFixed(1)}% [${bar}]`;
+  }).catch(() => {}).finally(() => setTimeout(updateCPU, 2000));
+}
+updateCPU();
+
+// -- Render --
+let currentJobId = null;
+
+function startRender() {
+  const colors = [...document.querySelectorAll('input[name="colors"]:checked')].map(c => c.value);
+  if (colors.length < 4) { alert("Please select at least 4 colors."); return; }
+
+  document.getElementById("renderBtn").disabled = true;
+  document.getElementById("cancelBtn").style.display = "";
+  document.getElementById("statusPanel").style.display = "";
+  document.getElementById("downloadBlock").style.display = "none";
+  document.getElementById("logOutput").textContent = "";
+  document.getElementById("stepText").textContent = "";
+
+  const body = new FormData();
+  body.append("colors",        colors.join(","));
+  body.append("duration",      document.getElementById("duration").value);
+  body.append("brightness",    document.getElementById("brightness").value);
+  body.append("contrast",      document.getElementById("contrast").value);
+  body.append("speed",         document.getElementById("speed").value);
+  body.append("crf",           document.getElementById("crf").value);
+  body.append("kaleido_sides", document.getElementById("kaleido_sides").value);
+  body.append("seed_quad",     document.getElementById("seed_quad").value);
+  if (document.getElementById("mirror_q1").checked)    body.append("mirror_q1",   "on");
+  if (document.getElementById("apply_kden").checked)   body.append("apply_kden",  "on");
+  if (document.getElementById("fill_mandala").checked) body.append("fill_mandala","on");
+  if (document.getElementById("skip_mirror").checked)  body.append("skip_mirror", "on");
+
+  fetch("/start_render", { method: "POST", body })
+    .then(r => r.json())
+    .then(({ job_id }) => {
+      currentJobId = job_id;
+      pollStatus(job_id);
+      pollLogs(job_id);
+    });
+}
+
+function cancelRender() {
+  if (!currentJobId) return;
+  fetch(`/cancel/${currentJobId}`, { method: "POST" })
+    .then(r => r.json())
+    .then(() => {
+      document.getElementById("statusText").textContent = "cancelled";
+      document.getElementById("cancelBtn").style.display = "none";
+      document.getElementById("renderBtn").disabled = false;
+      currentJobId = null;
+    });
+}
+
+function pollStatus(id) {
+  fetch(`/job_status/${id}`).then(r => r.json()).then(d => {
+    document.getElementById("statusText").textContent = d.status;
+    document.getElementById("pctText").textContent    = d.progress + "%";
+    document.getElementById("progressBar").style.width = d.progress + "%";
+
+    if (d.status === "completed") {
+      document.getElementById("downloadLink").href = `/download/${id}`;
+      document.getElementById("downloadBlock").style.display = "";
+      document.getElementById("cancelBtn").style.display = "none";
+      document.getElementById("renderBtn").disabled = false;
+    } else if (d.status === "failed") {
+      document.getElementById("statusText").textContent += " ❌ " + (d.error || "");
+      document.getElementById("cancelBtn").style.display = "none";
+      document.getElementById("renderBtn").disabled = false;
+    } else if (d.status === "cancelled") {
+      document.getElementById("cancelBtn").style.display = "none";
+      document.getElementById("renderBtn").disabled = false;
+    } else {
+      setTimeout(() => pollStatus(id), 1500);
+    }
+  });
+}
+
+function pollLogs(id) {
+  fetch(`/job_log/${id}`).then(r => r.json()).then(d => {
+    if (d.log) {
+      const el = document.getElementById("logOutput");
+      el.textContent = d.log.join("");
+      el.scrollTop = el.scrollHeight;
+    }
+    if (d.current_step) {
+      document.getElementById("stepText").textContent = d.current_step;
+    }
+    setTimeout(() => pollLogs(id), 1500);
+  });
+}
+</script>
+</body>
+</html>

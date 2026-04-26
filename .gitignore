@@ -1,0 +1,72 @@
+# Kaleidoscope Video Generator — .gitignore
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Per-job output (can be huge)
+jobs/
+
+# Logs
+logs/
+*.log
+nohup.out
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Temp / scratch images and videos
+tmp/
+tmp_chunks/
+tmp_seamless_chunks/
+*.mp4
+*.jpg
+*.png
+!assets/
+!static/
+
+# Backup files
+*.bak
+*.backup
+*.bak.*
+*.original
+*.save
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*~
+
+# Build artifacts
+build/
+squashfs-root*/
+
+# Large binaries
+*.jar
+*.AppImage
+*.zip
+*.so
+
+# Kdenlive project scratch files
+patched_*.kdenlive
+cleaned_*.kdenlive
+rendered_*.kdenlive
+*.kdenlive.bak
+tmp.kdenlive
+
+# Misc debug files
+all-files.txt
+all_scripts.txt
+suspect_calls.txt
+terminal_output.txt
+directory_tree.txt
+kaleido_tree.txt
+project_tree.txt
+pipeline_*.log
+render_*.log
+gunicorn*.log
