@@ -37,6 +37,12 @@ SCROLL_SPEED="${SCROLL_SPEED:-0.02}"
 SWIRL_PASSES="${SWIRL_PASSES:-2}"
 PIX_FMT="${PIX_FMT:-yuv420p}"
 
+# Parallel rendering
+SEGMENT_LEN="${SEGMENT_LEN:-30}"   # max seconds per parallel render chunk
+WORKERS="${WORKERS:-$(( $(nproc) / 2 ))}"
+(( WORKERS < 1 )) && WORKERS=1
+(( WORKERS > 8 )) && WORKERS=8
+
 # Radial kaleidoscope (Frei0r) + sides count (8 is classic)
 APPLY_KDEN="${APPLY_KDEN:-0}"      # 1 = apply frei0r=kaleid0sc0pe before quadrants
 KALEIDO_SIDES="${KALEIDO_SIDES:-12}"
@@ -56,6 +62,12 @@ APPLY_SWIRL_FAST="$(resolve_script apply_swirl_fast.py)"
 APPLY_SWIRL="$(resolve_script apply_swirl.py)"
 SWIRL_SCRIPT="$APPLY_SWIRL"
 [[ -f "$APPLY_SWIRL_FAST" ]] && SWIRL_SCRIPT="$APPLY_SWIRL_FAST"
+
+# Install GNU parallel if absent (needed for multi-core segment rendering)
+if ! command -v parallel &>/dev/null; then
+  echo "[INFO] Installing GNU parallel for multi-core rendering..."
+  sudo apt-get install -y parallel 2>/dev/null || true
+fi
 
 # Output resolution from quality preset (WIDTH/HEIGHT passed by app.py)
 WIDTH="${WIDTH:-1920}"
@@ -165,22 +177,76 @@ render_segment() {
   fi
 }
 
-# Build alternating segments
-_T=$SECONDS; echo "[STEP 5/8] Rendering pan segments (${LOOPS} loop(s), ${SEG_LEN}s each, swirl=${SKIP_SWIRL})..."
-LIST="$TMP/list.txt"; : > "$LIST"
-for ((i=0;i<LOOPS;i++)); do
-  if [[ "$SKIP_SWIRL" = "1" ]]; then SRC_A="$TMP/wide_base.jpg"; else bake_side_swirl "right" "$TMP/wide_next_A.png"; SRC_A="$TMP/wide_next_A.png"; fi
-  render_segment "L2R" "$SRC_A" "$TMP/seg_${i}_A.mp4"; echo "file '$TMP/seg_${i}_A.mp4'" >> "$LIST"
+# ── Swirl pre-bake (once, shared by all parallel workers) ───────────────────
+_T=$SECONDS
+if [[ "$SKIP_SWIRL" != "1" ]]; then
+  echo "[INFO] Pre-baking swirled sources (L2R + R2L)..."
+  bake_side_swirl "right" "$TMP/wide_swirl_L2R.jpg"
+  bake_side_swirl "left"  "$TMP/wide_swirl_R2L.jpg"
+  SRC_L2R="$TMP/wide_swirl_L2R.jpg"
+  SRC_R2L="$TMP/wide_swirl_R2L.jpg"
+else
+  SRC_L2R="$TMP/wide_base.jpg"
+  SRC_R2L="$TMP/wide_base.jpg"
+fi
 
-  if [[ "$SKIP_SWIRL" = "1" ]]; then SRC_B="$TMP/wide_base.jpg"; else bake_side_swirl "left" "$TMP/wide_next_B.png";  SRC_B="$TMP/wide_next_B.png";  fi
-  render_segment "R2L" "$SRC_B" "$TMP/seg_${i}_B.mp4"; echo "file '$TMP/seg_${i}_B.mp4'" >> "$LIST"
-done
+# ── Segment cache (keyed to base image + encoding params) ───────────────────
+BASE_HASH=$(md5sum "$TMP/wide_base.jpg" 2>/dev/null | cut -c1-8 || echo "nohash")
+PARAMS_HASH=$(printf '%s' "${OW}x${OH}|${CRF}|${PRESET}|${FPS}|${SCROLL_SPEED}|${SEGMENT_LEN}|${SKIP_SWIRL}" | md5sum | cut -c1-8)
+CACHE_KEY="${BASE_HASH}_${PARAMS_HASH}"
+SEGS_DIR="$TMP/segs/${CACHE_KEY}"
+mkdir -p "$SEGS_DIR"
+echo "[INFO] Segment cache: $CACHE_KEY"
+
+# ── Plan segments via Python helper ─────────────────────────────────────────
+SEG_SPECS="$TMP/seg_specs.txt"
+export SEG_LEN SEGMENT_LEN DURATION LOOPS TOTAL_W OW OH SEGS_DIR SRC_L2R SRC_R2L
+python3 "$(resolve_script plan_segments.py)" > "$SEG_SPECS"
+
+TOTAL_SEGS=$(grep '^TOTAL_SEGS=' "$SEG_SPECS" | cut -d= -f2)
+echo "[STEP 5/8] Parallel segment render: ${TOTAL_SEGS} segments × ≤${SEGMENT_LEN}s, ${WORKERS} worker(s)..."
+
+# ── Generate one runner script per segment ───────────────────────────────────
+RUNNERS_DIR="$TMP/runners"; mkdir -p "$RUNNERS_DIR"
+CONCAT_LIST="$TMP/concat_segs.txt"; : > "$CONCAT_LIST"
+RUNNERS=()
+
+while IFS='|' read -r _idx _src _xexpr _cdur _out; do
+  [[ "$_idx" =~ ^[0-9] ]] || continue
+  echo "file '$_out'" >> "$CONCAT_LIST"
+  _runner="$RUNNERS_DIR/$(printf 'run_%05d.sh' "$_idx")"
+  cat > "$_runner" << RUNNER_EOF
+#!/usr/bin/env bash
+if [[ -f '${_out}' ]]; then echo "[SEG ${_idx}/${TOTAL_SEGS} cached]"; exit 0; fi
+ffmpeg -y -loglevel warning -loop 1 -i '${_src}' -vf "crop=${OW}:${OH}:x=${_xexpr}:y=0" -t ${_cdur} -r ${FPS} -c:v libx264 -preset ${PRESET} -crf ${CRF} -pix_fmt ${PIX_FMT} '${_out}'
+echo "[SEG ${_idx}/${TOTAL_SEGS}]"
+RUNNER_EOF
+  chmod +x "$_runner"
+  RUNNERS+=("$_runner")
+done < "$SEG_SPECS"
+
+# ── Dispatch ─────────────────────────────────────────────────────────────────
+if [[ "$DRY_RUN" = "1" ]]; then
+  echo "[DRY_RUN] Would dispatch ${#RUNNERS[@]} segment runners with $WORKERS workers"
+elif command -v parallel &>/dev/null && (( WORKERS > 1 )); then
+  parallel --line-buffer -j"$WORKERS" bash ::: "${RUNNERS[@]}"
+else
+  _pids=()
+  for _r in "${RUNNERS[@]}"; do
+    bash "$_r" &
+    _pids+=($!)
+    if (( ${#_pids[@]} >= WORKERS )); then
+      wait "${_pids[0]}" 2>/dev/null || true
+      _pids=("${_pids[@]:1}")
+    fi
+  done
+  (( ${#_pids[@]} > 0 )) && wait "${_pids[@]}" 2>/dev/null || true
+fi
 echo "[TIMING] Step 5 done in $(( SECONDS - _T ))s"
 
-_T=$SECONDS; echo "[STEP 6/8] Assembling final video (${DURATION}s, ${FPS}fps, CRF ${CRF})..."
-run_or_echo ffmpeg -y -loglevel warning -f concat -safe 0 -i "$LIST" -c copy "$TMP/pair_loop.mp4"
-run_or_echo ffmpeg -y -loglevel warning -i "$TMP/pair_loop.mp4" -t "$DURATION" \
-  -c:v libx264 -preset "$PRESET" -crf "$CRF" -pix_fmt "$PIX_FMT" "$TMP/pan_final.mp4"
+# ── Step 6: concat pre-trimmed segments (no re-encode needed) ────────────────
+_T=$SECONDS; echo "[STEP 6/8] Concatenating ${TOTAL_SEGS} segments → pan_final.mp4..."
+run_or_echo ffmpeg -y -loglevel warning -f concat -safe 0 -i "$CONCAT_LIST" -c copy "$TMP/pan_final.mp4"
 echo "[TIMING] Step 6 done in $(( SECONDS - _T ))s"
 
 _T=$SECONDS; echo "[STEP 7/8] Applying effects and writing output..."

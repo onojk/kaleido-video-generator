@@ -131,7 +131,7 @@ class RenderJob:
             self.update_stage(0)
 
             # Copy pipeline scripts into job dir so they run self-contained
-            for fname in ("generate.sh", "generate_camogen_image.py", "apply_swirl.py"):
+            for fname in ("generate.sh", "generate_camogen_image.py", "apply_swirl.py", "plan_segments.py"):
                 src = os.path.join(SCRIPTS_DIR, fname)
                 dst = os.path.join(self.working_dir, fname)
                 shutil.copy2(src, dst)
@@ -282,9 +282,25 @@ def job_status(job_id: str):
     job = jobs.get(job_id)
     if job is None:
         return jsonify({"error": "Job not found"}), 404
+
+    progress = job.progress
+
+    # During step 5 (progress 20–60 %), interpolate finer progress from [SEG N/M] log markers
+    if job.status not in ("completed", "failed", "cancelled") and 20 <= progress < 60:
+        try:
+            with open(job.log_path) as fh:
+                log_text = fh.read()
+            seg_matches = re.findall(r'\[SEG (\d+)/(\d+)', log_text)
+            if seg_matches:
+                done, total = int(seg_matches[-1][0]) + 1, int(seg_matches[-1][1])
+                if total > 0:
+                    progress = int(20 + (done / total) * 40)
+        except Exception:
+            pass
+
     return jsonify({
         "status":      job.status,
-        "progress":    job.progress,
+        "progress":    progress,
         "output_file": job.output_file,
         "error":       job.error,
     })
@@ -300,7 +316,7 @@ def job_log(job_id: str):
             lines = fh.readlines()
         current_step = None
         for line in reversed(lines):
-            m = re.search(r'\[STEP \d+/\d+\][^\n]*', line)
+            m = re.search(r'\[(?:STEP|SEG) \d+/\d+\][^\n]*', line)
             if m:
                 current_step = m.group(0).strip()
                 break
