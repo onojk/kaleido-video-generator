@@ -43,9 +43,12 @@ WORKERS="${WORKERS:-$(( $(nproc) / 2 ))}"
 (( WORKERS < 1 )) && WORKERS=1
 (( WORKERS > 8 )) && WORKERS=8
 
-# Radial kaleidoscope (Frei0r) + sides count (8 is classic)
+# Radial kaleidoscope (Frei0r) — KALEIDO_SIDES is the number of wedges;
+# normalized internally as sides/128 for the frei0r segmentation parameter.
 APPLY_KDEN="${APPLY_KDEN:-0}"      # 1 = apply frei0r=kaleid0sc0pe before quadrants
 KALEIDO_SIDES="${KALEIDO_SIDES:-12}"
+KALEIDO_ORIGIN_X="${KALEIDO_ORIGIN_X:-0.5}"   # sample origin x (0.0–1.0, default center)
+KALEIDO_ORIGIN_Y="${KALEIDO_ORIGIN_Y:-0.5}"   # sample origin y (0.0–1.0, default center)
 
 # Quadrant->mirror mandala fill
 FILL_MANDALA="${FILL_MANDALA:-0}"  # 1 = do the quadrant clone/mirror tiling
@@ -281,13 +284,15 @@ _frei0r_available() {
   return 1
 }
 
+SEG_NORMALIZED=$(awk -v s="$KALEIDO_SIDES" 'BEGIN{printf "%.6f", s/128}')
+
 _T=$SECONDS; echo "[STEP 7/8] Applying effects and writing output..."
 # -------------------- optional Frei0r radial kaleidoscope --------------------
 if _frei0r_available; then
   if [[ "$APPLY_KDEN" = "1" ]]; then
-    log "🧪 Applying Frei0r radial kaleid0sc0pe (${KALEIDO_SIDES} wedges)…"
+    log "🧪 Applying Frei0r radial kaleid0sc0pe (${KALEIDO_SIDES} wedges, origin ${KALEIDO_ORIGIN_X}|${KALEIDO_ORIGIN_Y})…"
     run_or_echo ffmpeg -y -loglevel warning -i "$SOURCE_FOR_MANDALA" \
-      -vf "format=rgba,frei0r=kaleid0sc0pe:${KALEIDO_SIDES},format=${PIX_FMT}" \
+      -vf "format=rgba,frei0r=filter_name=kaleid0sc0pe:filter_params=${KALEIDO_ORIGIN_X}|${KALEIDO_ORIGIN_Y}|${SEG_NORMALIZED},format=${PIX_FMT}" \
       -r "$FPS" "$TMP/kden_k${KALEIDO_SIDES}.mp4"
     SOURCE_FOR_MANDALA="$TMP/kden_k${KALEIDO_SIDES}.mp4"
   else
@@ -372,10 +377,10 @@ fi
 
 if _frei0r_available; then
   KALEIDO_TMP="$TMP/kaleido_k${KALEIDO_SIDES}.mp4"
-  echo "[INFO] Running frei0r=kaleid0sc0pe:${KALEIDO_SIDES} on $(basename "$OUTPUT")..."
+  echo "[INFO] Running kaleid0sc0pe (${KALEIDO_SIDES} wedges, origin ${KALEIDO_ORIGIN_X}|${KALEIDO_ORIGIN_Y}) on $(basename "$OUTPUT")..."
   run_or_echo ffmpeg -y -loglevel warning \
     -i "$OUTPUT" \
-    -vf "format=rgba,frei0r=kaleid0sc0pe:${KALEIDO_SIDES},format=${PIX_FMT}" \
+    -vf "format=rgba,frei0r=filter_name=kaleid0sc0pe:filter_params=${KALEIDO_ORIGIN_X}|${KALEIDO_ORIGIN_Y}|${SEG_NORMALIZED},format=${PIX_FMT}" \
     -r "$FPS" -c:v libx264 -preset "$PRESET" -crf "$CRF" -pix_fmt "$PIX_FMT" \
     "$KALEIDO_TMP"
   if [[ "$DRY_RUN" = "1" ]] || [[ -f "$KALEIDO_TMP" ]]; then
