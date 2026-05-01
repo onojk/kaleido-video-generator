@@ -271,9 +271,19 @@ else
 
 fi # end RAW_VIDEO_SRC bypass
 
+# Returns 0 if frei0r kaleid0sc0pe is usable, 1 otherwise
+_frei0r_available() {
+  ffmpeg -hide_banner -filters 2>/dev/null | grep -iq "kaleid" && return 0
+  local _p
+  for _p in /usr/lib/frei0r-1/kaleid0sc0pe.so /usr/local/lib/frei0r-1/kaleid0sc0pe.so; do
+    [[ -f "$_p" ]] && return 0
+  done
+  return 1
+}
+
 _T=$SECONDS; echo "[STEP 7/8] Applying effects and writing output..."
 # -------------------- optional Frei0r radial kaleidoscope --------------------
-if ffmpeg -hide_banner -filters 2>/dev/null | grep -q "frei0r"; then
+if _frei0r_available; then
   if [[ "$APPLY_KDEN" = "1" ]]; then
     log "🧪 Applying Frei0r radial kaleid0sc0pe (${KALEIDO_SIDES} wedges)…"
     run_or_echo ffmpeg -y -loglevel warning -i "$TMP/pan_final.mp4" \
@@ -350,16 +360,6 @@ echo "[TIMING] Step 7 done in $(( SECONDS - _T ))s"
 # -------------------- step 8: frei0r kaleidoscope final pass --------------------
 KALEIDO_APPLIED=0
 _T=$SECONDS; echo "[STEP 8/8] Applying frei0r kaleidoscope (${KALEIDO_SIDES} sides) to final output..."
-
-# Returns 0 if frei0r kaleid0sc0pe is usable, 1 otherwise
-_frei0r_available() {
-  ffmpeg -hide_banner -filters 2>/dev/null | grep -iq "kaleid" && return 0
-  local _p
-  for _p in /usr/lib/frei0r-1/kaleid0sc0pe.so /usr/local/lib/frei0r-1/kaleid0sc0pe.so; do
-    [[ -f "$_p" ]] && return 0
-  done
-  return 1
-}
 
 if ! _frei0r_available; then
   echo "[INFO] frei0r not found — attempting: sudo apt-get install -y frei0r-plugins"
