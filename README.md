@@ -181,6 +181,10 @@ See `CLAUDE.md` for the full developer reference.
 
 ---
 
+## See also
+
+[Abstrakt](https://github.com/onojk/abstrakt) — drives this pipeline with pygame audio-reactive visualizers to produce symmetric mandala-style music videos from an audio file.
+
 ## License
 
 MIT — see LICENSE
