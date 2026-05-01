@@ -286,7 +286,7 @@ _T=$SECONDS; echo "[STEP 7/8] Applying effects and writing output..."
 if _frei0r_available; then
   if [[ "$APPLY_KDEN" = "1" ]]; then
     log "🧪 Applying Frei0r radial kaleid0sc0pe (${KALEIDO_SIDES} wedges)…"
-    run_or_echo ffmpeg -y -loglevel warning -i "$TMP/pan_final.mp4" \
+    run_or_echo ffmpeg -y -loglevel warning -i "$SOURCE_FOR_MANDALA" \
       -vf "format=rgba,frei0r=kaleid0sc0pe:${KALEIDO_SIDES},format=${PIX_FMT}" \
       -r "$FPS" "$TMP/kden_k${KALEIDO_SIDES}.mp4"
     SOURCE_FOR_MANDALA="$TMP/kden_k${KALEIDO_SIDES}.mp4"
