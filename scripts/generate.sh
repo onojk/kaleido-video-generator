@@ -291,8 +291,10 @@ _T=$SECONDS; echo "[STEP 7/8] Applying effects and writing output..."
 if _frei0r_available; then
   if [[ "$APPLY_KDEN" = "1" ]]; then
     log "🧪 Applying Frei0r radial kaleid0sc0pe (${KALEIDO_SIDES} wedges, origin ${KALEIDO_ORIGIN_X}|${KALEIDO_ORIGIN_Y})…"
+    # frei0r kaleid0sc0pe (frei0r 2.3.3) produces black output when width%4 ∈ {2,3}.
+    # Guard: pad to next multiple-of-4 width before the filter, crop back after.
     run_or_echo ffmpeg -y -loglevel warning -i "$SOURCE_FOR_MANDALA" \
-      -vf "format=rgba,frei0r=filter_name=kaleid0sc0pe:filter_params=${KALEIDO_ORIGIN_X}|${KALEIDO_ORIGIN_Y}|${SEG_NORMALIZED},format=${PIX_FMT}" \
+      -vf "pad=w='ceil(iw/4)*4':h=ih:x=0:y=0:color=black,format=rgba,frei0r=filter_name=kaleid0sc0pe:filter_params=${KALEIDO_ORIGIN_X}|${KALEIDO_ORIGIN_Y}|${SEG_NORMALIZED},crop=${OW}:${OH}:0:0,format=${PIX_FMT}" \
       -r "$FPS" "$TMP/kden_k${KALEIDO_SIDES}.mp4"
     SOURCE_FOR_MANDALA="$TMP/kden_k${KALEIDO_SIDES}.mp4"
   else
@@ -307,7 +309,7 @@ MIRROR_SOURCE="$SOURCE_FOR_MANDALA"
 if [[ "$SKIP_MIRROR" != "1" ]]; then
   log "🧩 Applying 2×2 mirror…"
   run_or_echo ffmpeg -y -loglevel warning -i "$SOURCE_FOR_MANDALA" \
-    -filter_complex "[0:v]crop=iw/2:ih/2:iw/2:ih/2,split=4[q1][q2][q3][q4]; \
+    -filter_complex "[0:v]crop=iw/2:ih/2:0:0,split=4[q1][q2][q3][q4]; \
                      [q2]hflip[q2h]; \
                      [q3]vflip[q3v]; \
                      [q4]hflip, vflip[q4hv]; \
@@ -378,9 +380,10 @@ fi
 if _frei0r_available; then
   KALEIDO_TMP="$TMP/kaleido_k${KALEIDO_SIDES}.mp4"
   echo "[INFO] Running kaleid0sc0pe (${KALEIDO_SIDES} wedges, origin ${KALEIDO_ORIGIN_X}|${KALEIDO_ORIGIN_Y}) on $(basename "$OUTPUT")..."
+  # Same width-alignment guard as step 7 (frei0r 2.3.3 bug: black output when width%4 ∈ {2,3}).
   run_or_echo ffmpeg -y -loglevel warning \
     -i "$OUTPUT" \
-    -vf "format=rgba,frei0r=filter_name=kaleid0sc0pe:filter_params=${KALEIDO_ORIGIN_X}|${KALEIDO_ORIGIN_Y}|${SEG_NORMALIZED},format=${PIX_FMT}" \
+    -vf "pad=w='ceil(iw/4)*4':h=ih:x=0:y=0:color=black,format=rgba,frei0r=filter_name=kaleid0sc0pe:filter_params=${KALEIDO_ORIGIN_X}|${KALEIDO_ORIGIN_Y}|${SEG_NORMALIZED},crop=${OW}:${OH}:0:0,format=${PIX_FMT}" \
     -r "$FPS" -c:v libx264 -preset "$PRESET" -crf "$CRF" -pix_fmt "$PIX_FMT" \
     "$KALEIDO_TMP"
   if [[ "$DRY_RUN" = "1" ]] || [[ -f "$KALEIDO_TMP" ]]; then
